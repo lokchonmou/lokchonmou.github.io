@@ -20,4 +20,4 @@
 | led                       | led           | CHIP-LED0603                |
 | 3.3V regulator            |               | lm1117                      |
 
-焊板: 30 x25格
+<img src="DSC07905.JPG" style="zoom:10%;" />
