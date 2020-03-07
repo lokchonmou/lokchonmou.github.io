@@ -20,4 +20,4 @@
 | led                       | led           | CHIP-LED0603                |
 | 3.3V regulator            |               | lm1117                      |
 
-<img src="DSC07905.JPG" style="zoom:10%;" />
+<img src="DSC07905.JPG" style="zoom:70%;" />
