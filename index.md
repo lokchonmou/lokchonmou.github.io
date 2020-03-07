@@ -35,6 +35,7 @@ The end ...
 ---
  
 # 常用電子零件
+
 |名稱| Key Word| Package|
 | -- | -- | -- |
 |可變電阻 |	Potentiometer| 		CA6|
@@ -54,6 +55,8 @@ The end ...
 |diode| | do214ac|
 |led | led|CHIP-LED0603|
 |3.3V regulator | |lm1117|
+
 --- 
+
 焊板: 30 x25格
 
