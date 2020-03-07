@@ -1,4 +1,40 @@
-# This is page 1
+# index
+
+## Sample Markdown
+
+This is some basic, sample markdown.
+
+### Second Heading
+
+* Unordered lists, and:
+  1. One
+  2. Two
+  3. Three
+* More
+
+> Blockquote
+
+And **bold**, _italics_, and even _italics and later **bold**_. Even ~~strikethrough~~. [A link](https://markdowntohtml.com) to somewhere.
+
+And code highlighting:
+
+```javascript
+var foo = 'bar';
+
+function baz(s) {
+   return foo + ':' + s;
+}
+```
+
+Or inline code like `var foo = 'bar';`.
+
+Or an image of bears
+
+![bears](http://placebear.com/200/200)
+
+The end ...
+
+## 常用電子零件
 
 | 名稱 | Key Word | Package |
 | :--- | :--- | :--- |
@@ -20,5 +56,5 @@
 | led | led | CHIP-LED0603 |
 | 3.3V regulator |  | lm1117 |
 
-![](../.gitbook/assets/dsc07905.JPG)
+焊板: 30 x25格
 
