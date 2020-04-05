@@ -97,7 +97,7 @@ class Matrix{
         }
         return null;
     }
-    
+
       PVector mat2vector(){
           return mat2vector(this);
     }
@@ -262,7 +262,7 @@ class Matrix{
             Matrix C = new Matrix(M.m); // cofactor matrix
             for (int i = 0; i < M.m; i++)
                 for (int j = 0; j < M.m; j++)
-                    C.value[i][j] = (pow(-1, i+j) * getCofactor(i, j).det());
+                    C.value[i][j] = (pow(-1, i+j) * M.getCofactor(i, j).det());
             return C.transpose();
         }
         return null;
