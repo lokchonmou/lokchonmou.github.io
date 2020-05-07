@@ -111,3 +111,74 @@ void loop() {
 `FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS);` : ==注意是`GRB`而不是`RGB`==，是刻意的，典型的WS2811和WS2812也是紅和綠相反的。
 
 `FastLED.setBrightness(127);` : 用來調節LED的光亮度，數值由`0`至`255`，如果無需調節，也可以不用打這一句。
+
+## 預設彩虹燈
+
+FastLED library其實有預設的彩虹燈等Palette是非常適合做觀賞燈的。
+
+### 電路圖
+
+![arduino](arduino.png)
+
+ws2812 LED是有信號==方向性==的，尤其是燈帶，不要搞錯，signal要接在`Din`腳，`+5V`接正電源，如果只需要亮==少量==的燈，直接接Arduino 的`5V`也可以。
+
+###程式碼
+
+```java
+#include <FastLED.h>
+
+#define LED_PIN     6
+#define NUM_LEDS    10
+#define BRIGHTNESS  64
+#define LED_TYPE    WS2811
+#define COLOR_ORDER GRB
+CRGB leds[NUM_LEDS];
+
+#define UPDATES_PER_SECOND 100
+
+CRGBPalette16 currentPalette;
+TBlendType    currentBlending;
+
+extern CRGBPalette16 myRedWhiteBluePalette;
+extern const TProgmemPalette16 myRedWhiteBluePalette_p PROGMEM;
+
+void setup() {
+    delay( 3000 ); // power-up safety delay
+    FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
+    FastLED.setBrightness(  BRIGHTNESS );
+    
+    currentPalette = RainbowColors_p;
+    //currentPalette = RainbowStripeColors_p;
+    //currentPalette = CloudColors_p;
+    //currentPalette = PartyColors_p;
+    
+    currentBlending = LINEARBLEND;
+    //currentBlending = NOBLEND;
+}
+
+void loop()	{
+    
+    static uint8_t startIndex = 0;
+    startIndex = startIndex + 1; /* motion speed */
+    
+    FillLEDsFromPaletteColors( startIndex);
+    
+    FastLED.show();
+    FastLED.delay(1000 / UPDATES_PER_SECOND);
+}
+
+void FillLEDsFromPaletteColors( uint8_t colorIndex)	{
+    uint8_t brightness = 255;
+    
+    for( int i = 0; i < NUM_LEDS; i++) {
+        leds[i] = ColorFromPalette(currentPalette, colorIndex, brightness, currentBlending);
+        colorIndex += 3;
+    }
+}
+```
+
+### 說明
+
+==詳細的demo，可以在file --> Example --> FastLED --> ColorPalette 中找到==，但其程式有點長和複雜，我將其簡化了一下。
+
+22行`currentPalette = RainbowColors_p;` : FastLED內置了幾個Palette，分別為`RainbowColors_p`, `RainbowStripeColors_p`, `CloudColors_p`, `PartyColors_p`，也可以自己定義的。
