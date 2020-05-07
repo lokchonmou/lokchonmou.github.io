@@ -10,7 +10,7 @@
 
 ## 下載外掛library
 
-[下載](https://drive.google.com/file/d/0B9NGkn47UjtlMm1lUjU5bFBRUTA/view?usp=sharing) (安裝方法參考[這裡](https://www.arduino.cc/en/guide/libraries))。
+[下載](./LiquidCrystal_I2C.zip) (安裝方法參考[這裡](https://www.arduino.cc/en/guide/libraries))。
 
 ## I^2^C LCD Display
 
@@ -36,7 +36,7 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void setup()
 {
-  lcd.init();
+  lcd.begin();
   lcd.backlight();
 }
 
@@ -53,7 +53,7 @@ void loop()
 
 `LiquidCrystal_I2C lcd(0x27, 16, 2); ` : 宣告一個lcd，slave終身編號是`0x27`(這個是16進制，即`0010 0111`)，這個編號是LCD的解讀器固定的，如果要修改，就要焊接解讀器的跳線。`16, 2`是指LCD橫有16個字符寬，直有2個字符高。
 
-`lcd.init();`
+`lcd.begin();`
 `lcd.backlight();`
 
 初始化LCD和開LCD背光燈。
