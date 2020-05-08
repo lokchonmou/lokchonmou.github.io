@@ -66,38 +66,42 @@ ws2812 LED是有信號==方向性==的，尤其是燈帶，不要搞錯，signal
 
 ```java
 #include <FastLED.h>
-
 // How many leds in your strip?
 #define NUM_LEDS 10
 
-// For led chips  WS2812 DATA_PIN (Din).  
+// For led chips  WS2812 DATA_PIN (Din).
 #define DATA_PIN 6
-
 // Define the array of leds
 CRGB leds[NUM_LEDS];
 
 void setup() {
+  FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS);
+  // GRB ordering is typical
 
-     FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS);  
-     // GRB ordering is typical
-     FastLED.setBrightness(127);
-     //FastLED.setBrightness(BRIGHTNESS);
-     //where BRIGHTNESS = 0 - 255
+  FastLED.setBrightness(127);
 }
 
 void loop() {
-  for (int i = 0; i < NUM_LEDS; i++){
-      leds[i] = CRGB(25*i,0,0);
-      //leds[ID] = CRGB(R, G, B); where RGB = 0 - 255
-      if (i >= 1)	leds[i-1] = CRGB(0,0,0);
-      FastLED.show();
-      delay(500);
+
+  for (int i = 0; i < NUM_LEDS; i++) {
+    leds[i] = CRGB(255, 0, 0);
+    FastLED.show();
+    delay(100);
   }
-  for (int i = 0; i < NUM_LEDS; i++){
-      leds[NUM_LEDS-i] = CRGB(0,25*i,0);
-      if (i <= NUM_LEDS-2)	leds[NUM_LEDS-i+1] = CRGB(0,0,0);
-      FastLED.show();
-      delay(500);
+
+  for (int i = 0; i <= NUM_LEDS; i++) {
+    leds[i] = CRGB(0, 255, 0);
+    if (i >= 1)   leds[i - 1] = CRGB(0, 0, 0);
+    FastLED.show();
+    delay(500);
+  }
+
+
+  for (int i = 0; i <= NUM_LEDS; i++) {
+    leds[NUM_LEDS-i-1] = CRGB(0, 0, 255);
+    leds[NUM_LEDS-i] = CRGB(0, 0, 0);
+    FastLED.show();
+    delay(500);
   }
 }
 ```
