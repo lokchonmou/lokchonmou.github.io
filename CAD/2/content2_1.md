@@ -74,3 +74,57 @@
 17. 在標題為active的大前題下，開一個新的component叫bottom
 
 ![image17](./image17.gif)
+
+18. 開一個新的sketch，點選inner的底部，並用hotkey 'p'，project投影頂板到底板
+
+![image18](./image18.gif)
+
+19. 用hotkey 'E'，擠出厚度thickness
+
+![image19](./image19.gif)
+
+20. 選回主標題旁邊的黑點，將active放到根目錄，按hotkey 's'搜尋"new component"，開一個新的component叫"back"
+
+![image20](./image20.gif)
+
+21. 在back的面，開一個新的sketch, 用hotkey 'p'或者用's'搜尋"project"，投影inner的背面和榫位的方型
+
+![image21](./image21.gif)
+
+22. 用hotkey 'e'擠出厚度為"thickness"的板
+
+![image22](./image22.gif)
+
+23. 退回標題的active黑點, 重覆以上步驟, 在front正面投影project和擠出extrude出與背面一樣的板
+
+![image23](./image23.gif)
+
+24. 在標題目錄開一個新的component叫left, 在inner的左邊點選開一個new sketch, 今次除了投影上下的榫位，也要把前後板的厚度點選，不然出來的盒子，旁邊會少了一角
+
+![image24](./image24.gif)
+
+25. 重覆以上步驟，把右邊right的板都造好，檢查一下總共有7個component，包括inner和6個面，如果不小心之前忘記先新增component再extrude body, 可以在左邊的欄中找到該body，按滑鼠右鍵把該body轉成component
+
+![image25](./image25.gif)
+
+26. 用hotkey 'j'去joint接合膠板，joint有很多種，最常見的就是ridge joint，就是直接將兩個component好似用膠水般黏合，如果中途問你之前move後是否要capture position，可以選yes，即紀錄move後的位置
+
+![image26](./image26.gif)
+
+27. 在全部joint好之後可以把這個capture position在歷史欄中刪除
+
+![image27](./image27.gif)
+
+28. 在歷史欄中，找回原本top板的sketch，double click進入修改，用offset定位，加入4個3mm的鑽孔，用來安裝固定的六角柱
+
+![image28](./image28.gif)
+
+29. 將offset後的線點選，用hotkey 'X'轉成輔助線，最後就可以在四邊畫四個3mm的孔用來安裝固定的六角柱，在歷史欄中的extrude中重新點選，不要extrude那4個圓，就會多了4鑽孔
+
+![image29](./image29.gif)
+
+30. 重覆以上步驟，在底板也加入4個鑽孔(可以直接用hotkey 'p'把頂板的孔project到底板，確保上下是一致的)
+
+![image30](./image30.gif)
+
+完成。如果有需要，可以先退回歷史修改尺寸或加入其他設計，或者在這個步驟後再加新的sketch去修改。
