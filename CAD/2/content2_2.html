@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>LCM STUDIO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+    html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+    iframe { margin: auto; }
+    a.url { word-break: break-all; }
+    a:active, a:hover { outline: 0px; }
+    .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+    #write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+    #write.first-line-indent p { text-indent: 2em; }
+    #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+    #write.first-line-indent li { margin-left: 2em; }
+    .for-image #write { padding-left: 8px; padding-right: 8px; }
+    body.typora-export { padding-left: 30px; padding-right: 30px; }
+    .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+    @media screen and (max-width: 500px) {
+        body.typora-export { padding-left: 0px; padding-right: 0px; }
+        #write { padding-left: 20px; padding-right: 20px; }
+        .CodeMirror-sizer { margin-left: 0px !important; }
+        .CodeMirror-gutters { display: none !important; }
+    }
+    #write li > figure:last-child { margin-bottom: 0.5rem; }
+    #write ol, #write ul { position: relative; }
+    img { max-width: 100%; vertical-align: middle; }
+    button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+    input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+    *, ::after, ::before { box-sizing: border-box; }
+    #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+    #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+    p { line-height: inherit; }
+    h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+    p { orphans: 4; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.4rem; }
+    h5 { font-size: 1.2rem; }
+    h6 { font-size: 1rem; }
+    .md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+    .hidden { display: none; }
+    .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+    a { cursor: pointer; }
+    sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+    sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+    #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+    figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+    figure > table { margin: 0px !important; }
+    tr { break-inside: avoid; break-after: auto; }
+    thead { display: table-header-group; }
+    table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+    table.md-table td { min-width: 32px; }
+    .CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+    .CodeMirror-linenumber { }
+    .CodeMirror { text-align: left; }
+    .CodeMirror-placeholder { opacity: 0.3; }
+    .CodeMirror pre { padding: 0px 4px; }
+    .CodeMirror-lines { padding: 0px; }
+    div.hr:focus { cursor: none; }
+    #write pre { white-space: pre-wrap; }
+    #write.fences-no-line-wrapping pre { white-space: pre; }
+    #write pre.ty-contain-cm { white-space: normal; }
+    .CodeMirror-gutters { margin-right: 4px; }
+    .md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+    .md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+    #write .md-fences.mock-cm { white-space: pre-wrap; }
+    .md-fences.md-fences-with-lineno { padding-left: 0px; }
+    #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+    .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+    .CodeMirror-line, twitterwidget { break-inside: avoid; }
+    .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+    .footnotes + .footnotes { margin-top: 0px; }
+    .md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+    li div { padding-top: 0px; }
+    blockquote { margin: 1rem 0px; }
+    li .mathjax-block, li p { margin: 0.5rem 0px; }
+    li { margin: 0px; position: relative; }
+    blockquote > :last-child { margin-bottom: 0px; }
+    blockquote > :first-child, li > :first-child { margin-top: 0px; }
+    .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+    #write .footnote-line { white-space: pre-wrap; }
+    @media print {
+        body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+        #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+        .typora-export * { -webkit-print-color-adjust: exact; }
+        html.blink-to-pdf { font-size: 13px; }
+        .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+        .typora-export #write::after { height: 0px; }
+    }
+    .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+    a img, img a { cursor: pointer; }
+    pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+    p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+    p > .md-image:only-child { display: inline-block; width: 100%; }
+    #write .MathJax_Display { margin: 0.8em 0px 0px; }
+    .md-math-block { width: 100%; }
+    .md-math-block:not(:empty)::after { display: none; }
+    [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+    .md-task-list-item { position: relative; list-style-type: none; }
+    .task-list-item.md-task-list-item { padding-left: 0px; }
+    .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+    .math { font-size: 1rem; }
+    .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+    .md-toc-content { position: relative; margin-left: 0px; }
+    .md-toc-content::after, .md-toc::after { display: none; }
+    .md-toc-item { display: block; color: rgb(65, 131, 196); }
+    .md-toc-item a { text-decoration: none; }
+    .md-toc-inner:hover { text-decoration: underline; }
+    .md-toc-inner { display: inline-block; cursor: pointer; }
+    .md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+    .md-toc-h2 .md-toc-inner { margin-left: 2em; }
+    .md-toc-h3 .md-toc-inner { margin-left: 4em; }
+    .md-toc-h4 .md-toc-inner { margin-left: 6em; }
+    .md-toc-h5 .md-toc-inner { margin-left: 8em; }
+    .md-toc-h6 .md-toc-inner { margin-left: 10em; }
+    @media screen and (max-width: 48em) {
+        .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+        .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+        .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+        .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+    }
+    a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+    .footnote-line a:not(.reversefootnote) { color: inherit; }
+    .md-attr { display: none; }
+    .md-fn-count::after { content: "."; }
+    code, pre, samp, tt { font-family: var(--monospace); }
+    kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+    .md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+    code { text-align: left; }
+    a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+    .md-inline-math .MathJax_SVG .noError { display: none !important; }
+    .html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+    .md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+    .MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+    .MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+    .MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+    .MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+    .MathJax_SVG * { transition: none; }
+    .MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+    .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+    .md-diagram-panel > svg { max-width: 100%; }
+    [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+    [lang="mermaid"] .node text { font-size: 1rem; }
+    table tr th { border-bottom-width: 0px; }
+    video { max-width: 100%; display: block; margin: 0px auto; }
+    iframe { max-width: 100%; width: 100%; border: none; }
+    .highlight td, .highlight tr { border: 0px; }
+    svg[id^="mermaidChart"] { line-height: 1em; }
+    mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+    .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+    mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+    .CodeMirror { height: auto; }
+    .CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+    .CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+    .CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+    .CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit inherit; background-repeat: inherit inherit; }
+    .CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+    .cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+    .cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+    .cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+    .cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+    .cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+    .cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+    .cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+    .cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+    .cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+    .cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+    .cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+    .cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+    .cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+    .cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+    .cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+    .cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+    .cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+    .cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+    .cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+    .cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+    .cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+    .cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+    .cm-negative { color: rgb(221, 68, 68); }
+    .cm-positive { color: rgb(34, 153, 34); }
+    .cm-header, .cm-strong { font-weight: 700; }
+    .cm-del { text-decoration: line-through; }
+    .cm-em { font-style: italic; }
+    .cm-link { text-decoration: underline; }
+    .cm-error { color: red; }
+    .cm-invalidchar { color: red; }
+    .cm-constant { color: rgb(38, 139, 210); }
+    .cm-defined { color: rgb(181, 137, 0); }
+    div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+    div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+    .cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+    .CodeMirror { position: relative; overflow: hidden; }
+    .CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+    .CodeMirror-sizer { position: relative; }
+    .CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+    .CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+    .CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+    .CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+    .CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+    .CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+    .CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+    .CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+    .CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+    .CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+    .CodeMirror-lines { cursor: text; }
+    .CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; background-repeat: initial initial; }
+    .CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+    .CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+    .CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+    .CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+    .CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+    .CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+    .CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+    .CodeMirror-measure pre { position: static; }
+    .CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+    .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+    .CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+    .cm-searching { background-color: rgba(255, 255, 0, 0.4); background-position: initial initial; background-repeat: initial initial; }
+    @media print {
+        .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+    }
+
+
+    :root {
+        --side-bar-bg-color: #fafafa;
+        --control-text-color: #000000;
+    }
+
+    @include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+    @include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+    @include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+    /* =========== */
+
+    /* devanagari */
+    /* latin-ext */
+    /* latin */
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-family: "PT Serif", "Noto Serif TC";
+        color: rgb(10,10,10);
+        line-height: 1.6;
+        /* background-color: #e7e7e7; */
+    }
+
+    #write {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        padding-bottom: 100px;
+    }
+    #write > ul:first-child,
+    #write > ol:first-child{
+        margin-top: 30px;
+    }
+
+    a {
+        color: #2c98f0;
+        text-decoration: underline;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        position: relative;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        line-height: 1.4;
+        cursor: text;
+    }
+    h1:hover a.anchor,
+    h2:hover a.anchor,
+    h3:hover a.anchor,
+    h4:hover a.anchor,
+    h5:hover a.anchor,
+    h6:hover a.anchor {
+        text-decoration: none;
+    }
+    h1 tt,
+    h1 code {
+        font-size: inherit;
+    }
+    h2 tt,
+    h2 code {
+        font-size: inherit;
+    }
+    h3 tt,
+    h3 code {
+        font-size: inherit;
+    }
+    h4 tt,
+    h4 code {
+        font-size: inherit;
+    }
+    h5 tt,
+    h5 code {
+        font-size: inherit;
+    }
+    h6 tt,
+    h6 code {
+        font-size: inherit;
+    }
+    h1 {
+        font-family: "Lato","Poppins", Helvetica, sans-serif;
+        font-weight: bold;
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+        font-size: 64px;
+        color: #eee;
+        background-color: #2c98f0;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    h2 {
+        font-family: "Lato","Poppins", Helvetica, sans-serif;
+        font-weight: bold;
+        padding-bottom: .3em;
+        font-size: 48px;
+        line-height: 1.225;
+        border-bottom: 1px solid #eee;
+        color: #2c98f0;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    h3 {
+        font-family: "Lato","Poppins", Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1.5em;
+        line-height: 1.43;
+    }
+    h4 {
+        font-family: "Lato","Poppins", Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1.25em;
+    }
+    h5 {
+        font-family: "Lato","Poppins", Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1em;
+    }
+    h6 {
+        font-family: "Lato","Poppins", Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 1em;
+        color: #777;
+    }
+    p,
+    blockquote,
+    ul,
+    ol,
+    dl,
+    table{
+        margin: 0.8em 0;
+    }
+    li>ol,
+    li>ul {
+        margin: 0 0;
+    }
+    hr {
+        height: 2px;
+        padding: 0;
+        margin: 16px 0;
+        /* background-color: #e7e7e7; */
+        border: 0 none;
+        overflow: hidden;
+        box-sizing: content-box;
+    }
+
+    li p.first {
+        display: inline-block;
+    }
+    ul,
+    ol {
+        padding-left: 30px;
+    }
+    ul:first-child,
+    ol:first-child {
+        margin-top: 0;
+    }
+    ul:last-child,
+    ol:last-child {
+        margin-bottom: 0;
+    }
+    blockquote {
+        border-left: 4px solid #dfe2e5;
+        padding: 0 15px;
+        color: #777777;
+    }
+    blockquote blockquote {
+        padding-right: 0;
+    }
+    table {
+        padding: 0;
+        word-break: initial;
+    }
+    table tr {
+        border-top: 1px solid #AAAAAA;
+        margin: 0;
+        padding: 0;
+    }
+
+    table tr th {
+        /* font-weight: bold;
+        border: 1px solid #333333;
+        border-bottom: 2px solid #333333;
+        margin: 0;
+        padding: 6px 13px;
+        background: #2c98f0; */
+        border: 1px solid #333333;
+        margin: 0;
+        padding: 6px 13px;
+    }
+    table tr td {
+        border: 1px solid #333333;
+        margin: 0;
+        padding: 6px 13px;
+    }
+    table tr th:first-child,
+    table tr td:first-child {
+        margin-top: 0;
+    }
+    table tr th:last-child,
+    table tr td:last-child {
+        margin-bottom: 0;
+    }
+
+    .CodeMirror-lines {
+        padding-left: 4px;
+    }
+
+    .code-tooltip {
+        box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+        border-top: 1px solid #ffffff;
+        font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+    }
+
+    .md-fences,
+    code,
+    tt {
+        border: 1px solid #CCCCCC;
+        /* background-color: #FFFFFF; */
+        border-radius: 3px;
+        padding: 0;
+        padding: 2px 4px 0px 4px;
+        font-size: 0.9em;
+        font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+    }
+
+    code {
+        border: 1px solid #CCCCCC;
+        /* background-color: #FFFFFF; */
+        border-radius: 3px;
+        padding: 0;
+        padding: 2px 4px 0px 4px;
+        font-size: 0.9em;
+        font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+    }
+
+    .md-fences {
+        margin-bottom: 15px;
+        margin-top: 15px;
+        padding-top: 8px;
+        padding-bottom: 6px;
+    }
+
+
+    .md-task-list-item > input {
+        margin-left: -1.3em;
+    }
+
+    @media print {
+        html {
+            font-size: 13px;
+        }
+        table,
+        pre {
+            page-break-inside: avoid;
+        }
+        pre {
+            word-wrap: break-word;
+        }
+    }
+
+    .md-fences {
+        /* background-color: #FFFFFF; */
+    }
+    #write pre.md-meta-block {
+        padding: 1rem;
+        font-size: 85%;
+        line-height: 1.45;
+        background-color: #FFFFFF;
+        border: 0;
+        border-radius: 3px;
+        color: #777777;
+        margin-top: 0 !important;
+    }
+
+    .mathjax-block>.code-tooltip {
+        bottom: .375rem;
+    }
+
+    .md-mathjax-midline {
+        background: #fafafa;
+    }
+
+    #write>h3.md-focus:before{
+        left: -1.5625rem;
+        top: .375rem;
+    }
+    #write>h4.md-focus:before{
+        left: -1.5625rem;
+        top: .285714286rem;
+    }
+    #write>h5.md-focus:before{
+        left: -1.5625rem;
+        top: .285714286rem;
+    }
+    #write>h6.md-focus:before{
+        left: -1.5625rem;
+        top: .285714286rem;
+    }
+    .md-image>.md-meta {
+        /*border: 1px solid #ddd;*/
+        border-radius: 3px;
+        padding: 2px 0px 0px 4px;
+        font-size: 0.9em;
+        color: inherit;
+    }
+
+    .md-tag {
+        color: #a7a7a7;
+        opacity: 1;
+    }
+
+    .md-toc {
+        margin-top:20px;
+        padding-bottom:20px;
+    }
+
+    .sidebar-tabs {
+        border-bottom: none;
+    }
+
+    #typora-quick-open {
+        border: 1px solid #ddd;
+        background-color: #f8f8f8;
+    }
+
+    #typora-quick-open-item {
+        background-color: #FAFAFA;
+        border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    /** focus mode */
+    .on-focus-mode blockquote {
+        border-left-color: rgba(85, 85, 85, 0.12);
+    }
+
+    header, .context-menu, .megamenu-content, footer{
+        font-family: "Segoe UI", "PT Serif", "Arial", sans-serif;
+    }
+
+    .file-node-content:hover .file-node-icon,
+    .file-node-content:hover .file-node-open-state{
+        visibility: visible;
+    }
+
+    .mac-seamless-mode #typora-sidebar {
+        background-color: #fafafa;
+        background-color: var(--side-bar-bg-color);
+    }
+
+    .md-lang {
+        color: #b4654d;
+    }
+
+    .html-for-mac .context-menu {
+        --item-hover-bg-color: #E6F0FE;
+    }
+
+    #md-notification .btn {
+        border: 0;
+    }
+
+    .dropdown-menu .divider {
+        border-color: #e5e5e5;
+    }
+
+    .ty-preferences .window-content {
+        background-color: #fafafa;
+    }
+
+    .ty-preferences .nav-group-item.active {
+        color: white;
+        background: #999;
+    }
+
+
+
+</style>
+</head>
+<body>
+
+    <!-- !PAGE CONTENT! ============================================================================================================= -->
+
+    <div class="w3-main" style="margin-left:300px;">
+        <div  id='write'  class = 'is-node'>
+            <header>
+
+
+
+                <h1 class="page-title">2.2 Advanced box</h1></header><div class="page-body"><p id="13365f43-5836-48a4-baad-16bd1be8b99c" class="">
+                </p><figure id="62b08f14-83ee-46ad-b6a5-e5de05601f37" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_141616.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_141616.png"/></a></figure><figure id="00ae3ee0-5398-4684-b2d1-eea5efee7acc"><div class="block-color-yellow_background source"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/box_2_Drawing_v12.pdf">box_2_Drawing_v12.pdf</a></div></figure><p id="51263035-18b7-4d33-ae70-33e7383b6fbf" class="">
+                </p><p id="bc69608c-729e-4af6-89a3-674d030f1cb6" class="">今次製作的，為這樣的一個盒子。</p><p id="a69f39fa-7fda-4fa4-b0bc-b5559de63de1" class="">
+                </p><ol id="f3722629-6eb8-4337-a75b-a9c6ae606bef" class="numbered-list" start="1"><li>首先建立一個inner的內層, 指定其形狀</li></ol><figure id="269ef272-4a08-43bf-bbd8-192df046ad7a" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_122910.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_122910.png"/></a></figure><p id="9bfff684-cdea-45fd-a593-7695cef5219d" class="">2. 新增一個叫&quot;side&quot;的component, </p><ul id="4f60d71e-ae5c-4752-b818-aff88d386564" class="bulleted-list"><li>在梯形的旁邊投影</li></ul><ul id="bad466ce-26e1-4e31-81f8-e2928709122b" class="bulleted-list"><li>用thickness 3mm擠出</li></ul><ul id="989019b5-79f4-4f4e-90b2-a0f67b30e80a" class="bulleted-list"><li>用joint來組合</li></ul><div id="e5b0fcb7-b252-481c-8148-c52826ac2f0f" class="column-list"><div id="069020ed-5a54-499f-8cec-6b3ce9bb2181" style="width:50%" class="column"><figure id="cdede7d0-6b3a-4755-8a57-818be96d9fc3" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_122947.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_122947.png"/></a></figure></div><div id="139d49e4-c091-4a75-9cef-6e408b323e91" style="width:50%" class="column"><figure id="e80cefcf-46d4-4797-8138-8df42c963bbc" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123015.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123015.png"/></a></figure></div></div><p id="c6c21e8d-f0f3-4a01-b7da-53c459145416" class="">3. 確保黑點在最上層，複製/貼上和組合另一個側面</p><figure id="abcf5dad-889c-4256-baeb-6be2d03c184c" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123036.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123036.png"/></a></figure><p id="98e02ac5-1923-4aed-95c9-484b0a0d39c9" class="">4. 跟著就可以建立斜面;      </p><ul id="532405c2-1076-4cfa-b476-fe119c22486a" class="bulleted-list"><li>確保黑點在最上層;</li></ul><ul id="b6eebfb0-ee1c-4476-a3b3-f08c3012da55" class="bulleted-list"><li>開一個新的component; 在斜面上投影;</li></ul><ul id="f377c2ff-7517-4734-aa9b-8068d3d66115" class="bulleted-list"><li>斜面的上和下要預留多少許(通常做斜面的原因是用來展示的)</li></ul><div id="b92951ea-94ad-410b-b93b-c410c5eb57a5" class="column-list"><div id="61bcea32-5d1e-45a8-a64b-b10898e292e6" style="width:50%" class="column"><figure id="df2d0da5-ad69-49fb-bc19-c753a4f57d3f" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123123.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123123.png"/></a></figure></div><div id="d7046609-64b4-492f-84af-e92b9362e455" style="width:50.00000000000004%" class="column"><figure id="dd2f6f84-7356-487f-9980-411e1db8efea" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123153.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123153.png"/></a></figure></div></div><p id="462edffd-22d5-4214-932f-bd418e6f64ff" class="">5. 接著就可以製作頂板</p><ul id="2e914444-c0da-41de-82f8-da0a2e52ea10" class="bulleted-list"><li>確保黑點在最上層</li></ul><ul id="6dac52be-eb32-4a27-b1b6-91347e1d3835" class="bulleted-list"><li>開一個新的component</li></ul><ul id="633fbf81-5ca6-49c4-9d85-a2380aff437d" class="bulleted-list"><li>投影在頂視圖的面</li></ul><ul id="f5b867af-e5ca-4c84-ba00-b2df80a630f3" class="bulleted-list"><li>上面和旁邊預留<code>2*thickness</code>的距離</li></ul><ul id="1c7d0b34-9537-4fd7-a3b7-cb6f194b22de" class="bulleted-list"><li>由於前面的斜面會與這塊頂板相撞, 所以這塊板必須要短一些，下面的<code>fx: 2.517</code>的尺寸，其實是<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>t</mi><mi>h</mi><mi>i</mi><mi>c</mi><mi>k</mi><mi>n</mi><mi>e</mi><mi>s</mi><mi>s</mi></mrow><mrow><mi>t</mi><mi>a</mi><mi>n</mi><mo stretchy="false">(</mo><mn>180</mn><mo>−</mo><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi><mi>A</mi><mi>n</mi><mi>g</mi><mi>l</mi><mi>e</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{thickness}{tan(180-sideAngle)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.400108em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801079999999999em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight">n</span><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mord mtight">8</span><span class="mord mtight">0</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">d</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">A</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight">h</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span></li></ul><div id="0c7cb24e-645e-4c8d-9534-f6253d13f574" class="column-list"><div id="235618b0-9f44-4af1-b744-bc2f4977b3fe" style="width:50%" class="column"><figure id="1b05988a-f510-429b-ad83-e1d5fe913394" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123238.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123238.png"/></a></figure></div><div id="5636c7f0-2995-4a80-81ca-5b6b7be2daee" style="width:50%" class="column"><figure id="e5d9d307-05b9-4385-bc39-70d5b99232e1" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123315.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_123315.png"/></a></figure></div></div><p id="8b6ec371-66e8-44b6-8b5a-07c1917d4cb7" class="">6.  接著是做底板:</p><ul id="12a083ab-8ea0-4e50-9e83-2958e409b32f" class="bulleted-list"><li>確保小黑點在最上層</li></ul><ul id="cfa42507-f829-4987-b74a-9bf7c99b5e4e" class="bulleted-list"><li>開一個新的component</li></ul><ul id="ebf1f1b7-89a9-4276-87f1-cb124bb6f696" class="bulleted-list"><li>在inner的底部開一個新的sketch</li></ul><ul id="66744083-2a49-47c6-917a-288956f2d360" class="bulleted-list"><li>投影底部和左右兩塊板, 再在前和後方繪畫四個方型留為榫位</li></ul><ul id="13803345-bdff-4ac2-ba71-b0dc68f5e388" class="bulleted-list"><li>在外面再加上一層<code>thickness</code>的厚度製造榫位</li></ul><div id="5f607f10-d27f-4585-bc41-3b41da13c9c6" class="column-list"><div id="aea2a9e0-2148-43ab-9b41-1df64056b9a2" style="width:50%" class="column"><figure id="bbb02a62-2868-41b2-8d15-98201261504a" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_140305.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_140305.png"/></a></figure></div><div id="b65dedba-81c6-4927-a64e-4b83c41a929d" style="width:50%" class="column"><figure id="b63981c1-7c77-44dc-b7ec-f4a8d8bd2f09" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_140343.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_140343.png"/></a></figure></div></div><p id="660d75b9-b8b4-4054-baca-76d1ef69cfb6" class="">7.  跟著就是畫前方的板:</p><ul id="b7dcbca2-2083-41cf-b1ef-4db9731873ad" class="bulleted-list"><li>確保小黑點在最上層</li></ul><ul id="943ace3a-226e-4998-97ee-9cff91ce81f6" class="bulleted-list"><li>開一個新的component</li></ul><ul id="411c301f-3ac3-49d9-97f4-6e6b34d6aa65" class="bulleted-list"><li>在inner的前方開一個新的sketch</li></ul><ul id="d2b44469-bbcc-4f96-86a7-633d31502214" class="bulleted-list"><li>投影inner的前方和兩塊側板</li></ul><ul id="87033676-67dd-4727-9b53-75cdd7129593" class="bulleted-list"><li>跟頂板一樣，這塊板會與斜板相擁，所以要縮短一些，圖中的<code>fx:3.575</code>，其實是<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>t</mi><mi>h</mi><mi>i</mi><mi>c</mi><mi>k</mi><mi>n</mi><mi>e</mi><mi>s</mi><mi>s</mi></mrow><mrow><mi>t</mi><mi>a</mi><mi>n</mi><mo stretchy="false">(</mo><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi><mi>A</mi><mi>n</mi><mi>g</mi><mi>l</mi><mi>e</mi><mo>−</mo><mn>90</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{thickness}{tan(sideAngle-90)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.400108em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801079999999999em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight">n</span><span class="mopen mtight">(</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">d</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">A</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span><span class="mbin mtight">−</span><span class="mord mtight">9</span><span class="mord mtight">0</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight">h</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span></li></ul><div id="de456121-34fa-41e8-b01c-0d2631d6ef5a" class="column-list"><div id="4bcaae18-2341-4772-bb00-f4b473bf2e05" style="width:50%" class="column"><figure id="3a1d52f7-7c9a-40d7-8009-054bb6124a0b" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_140437.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_140437.png"/></a></figure></div><div id="72400c27-ac12-49b5-bdfd-9faf595a7def" style="width:50%" class="column"><figure id="c55cf475-9eea-4c8e-8bf8-1ed649f35574" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_140510.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_140510.png"/></a></figure></div></div><p id="644c813f-f43b-4987-8722-78344d87e513" class="">8.  最後則是繪畫背面的板:</p><ul id="db29f3b9-b4b7-43fd-89ca-8cbeacfabba5" class="bulleted-list"><li>確保小黑點在最上層</li></ul><ul id="3c913dbe-040a-45d2-a60c-b0526579c6b0" class="bulleted-list"><li>開一個新的component</li></ul><ul id="b41b07a3-c7d0-4f15-a223-da518e504ad6" class="bulleted-list"><li>在inner的背面開一個新的sketch</li></ul><ul id="df8e26d7-8503-4aa5-bbf4-aed882d4721f" class="bulleted-list"><li>投影背面和上下左右的板</li></ul><ul id="98782b29-56b4-4663-babd-5404697ca40a" class="bulleted-list"><li>在左右位置各加長<code>thickness</code>的長度, 用來做入榫</li></ul><ul id="a209d423-ab24-4b32-a8fa-67142647a28b" class="bulleted-list"><li>最後擠出和joint就大功告成</li></ul><div id="01393c4a-33f8-41f5-b66c-ae16d2ee8680" class="column-list"><div id="182999a1-8604-4888-93ff-db8e9fb19d15" style="width:50%" class="column"><figure id="d371fd6b-7962-4aa1-b427-2bb21761cf3c" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_141525.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_141525.png"/></a></figure><p id="4a7b63e2-3afc-4463-a71f-626a5619d9e5" class="">
+                </p></div><div id="a84694a7-6a0c-40e4-a651-469fcce30f02" style="width:50%" class="column"><figure id="e218cfa7-2d44-48fd-a685-27e06b73f5d4" class="image"><a href="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_141601.png"><img style="width:528px" src="2%202%20Advanced%20box%2062b08f1483ee46adb6a5e5de05601f37/_2021-02-02_141601.png"/></a></figure></div></div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
+    <!-- End page content ============================================================================================================ -->
+
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-blue w3-collapse w3-display-position w3-large w3-padding" style="top:43px; z-index:9;width:300px;font-weight:bold;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-36"><b>LCM STUDIO</b></h3>
+            <hr>
+        </div>
+        <object name="sideBarMenu" width="100%" height="500px" type="text/html" data="../sideBarMenu.html"> </object>
+    </nav>
+
+    <!-- Top menu Navbar -->
+    <object name="topBar"
+    style="position:fixed; top:0px; z-index:10;"
+    width="100%" height="43px"
+    type="text/html"
+    data="../../topBar.html">
+</object>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-black w3-large w3-padding" style="z-index:11;">
+    <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">☰</a>
+    <span>LCM STUDIO</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:0px;padding-right:58px">
+    <p class="w3-right">Powered by
+        <a  href="https://lokchonmou.github.io/"
+        target="_blank"
+        class="w3-hover-opacity">
+        LOK CHON MOU
+    </a>
+</p>
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+}
+</script>
+
+
+
+
+
+</body>
+</html>
