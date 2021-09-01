@@ -14,7 +14,7 @@
 
 1. 首先建立一個inner的內層, 指定其形狀(尺寸pdf上有)
 
-<img src="_20210202_122910.png" style="zoom:50%;" />
+<img src="20210202122910.png" style="zoom:50%;"/>
 
 2. 新增一個叫"side"的component,
 
