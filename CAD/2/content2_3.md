@@ -2,7 +2,7 @@
 
 本節要繪製的，是下圖這一部四足連杆機械人。本節主要學習應用fusion360中的joint功能，應用不同的joint去模擬連杆機械人的效果。
 
-<img src="2222.gif" alt="2222.gif" style="zoom:50%;" />
+<img src="2222.gif" style="zoom:50%;" />
 
 
 
@@ -14,7 +14,7 @@
 
 ##檔案
 
-本次會應用到的檔案(以下為step檔)，下載**解壓**後，在fusion左邊欄尋找"upload"鍵，就能上載到fuison中應用 
+本次會應用到的檔案(以下為step檔)，下載**解壓**後，在fusion左邊欄尋找"upload"鍵，就能上載到fuison中應用
 
 [useful robotics component step.zip](useful_robotics_component_step.zip)
 
@@ -23,25 +23,25 @@
 [https://grabcad.com/library/tamiya-70093-3-speed-crank-axle-gearbox-kit-1](https://grabcad.com/library/tamiya-70093-3-speed-crank-axle-gearbox-kit-1)
 [https://grabcad.com/library/tamiya-crank-1](https://grabcad.com/library/tamiya-crank-1)
 
-<img src="upload.gif" alt="upload.gif" style="zoom:50%;" />
+<img src="upload.gif" style="zoom:50%;" />
 
 ##STEP 1
 
 首先，繪製底板，用"s"搜尋"new component", 開一個新的component，名為"base", 或者你自己喜歡的名字。並**確保黑色小點在旁邊**, 代表activate
 
-<img src="_2021-02-04_150029.png" alt="_2021-02-04_150029.png"/>
+<img src="_20210204_150029.png"/>
 
 接著在xy平面(或水平面)， 開一個新的sketch，繪制如下:
 
-<img src="2%203%20Walking%20linkage%20robot%20f9bbafb4552c44eda98c4237cfd543fa.png" alt="2%203%20Walking%20linkage%20robot%20f9bbafb4552c44eda98c4237cfd543fa.png" style="zoom:33%;" /> <img src="_2021-02-04_150627.png" alt="_2021-02-04_150627.png" style="zoom:33%;" />
+<img src="2%203%20Walking%20linkage%20robot%20f9bbafb4552c44eda98c4237cfd543fa.png"  style="zoom:33%;" /> <img src="_20210204_150627.png" style="zoom:33%;" />
 
 
 
-1. 先用"s"搜尋"change parameter"，開啟參數列表，定義一個新的參數叫"thickness", 值為3mm，跟著用"e"，擠出`thickness` 的厚度
+1. 先用"s"搜尋"change parameter"，開啟參數列表，定義一個新的參數叫"thickness", 值為3mm，跟著用"e"，擠出`thickness` 的厚度 
 
-<img src="_2021-02-04_153033.png" alt="_2021-02-04_153033.png" style="zoom:50%;"/>
+<img src="_20210204_153033.png" alt="_20210204_153033.png" style="zoom:75%;" />
 
-<img src="_2021-02-04_150710.png" alt="_2021-02-04_150710.png" style="zoom:33%;" />
+<img src="_20210204_150710.png" style="zoom:33%;" />
 
 ##STEP 2
 
@@ -54,26 +54,26 @@
 1. 利用"s"搜尋"insert derive"功能，將70093 gearbox插入衍生到此檔案中。
 2. 在70093的component上, 按mouse右鍵, 選擇rigid group
 
-<img src="insert_derive.gif" alt="insert_derive.gif" style="zoom:33%;" /> <img src="rigid_group.gif" alt="rigid_group.gif" style="zoom:33%;" />
+<img src="insert_derive.gif" style="zoom:33%;" /> <img src="rigid_group.gif" style="zoom:33%;" />
 
 1. 確保小黑點在這個70093 gearbox旁。
 2. 用"e"將齒輪箱的軸適當地修短(或增長, 如果有需要)
 3. 再用"j"把齒輪箱組合到底板
 
-<img src="_2021-02-05_103611.png" alt="_2021-02-05_103611.png" style="zoom:33%;" /> <img src="_2021-02-05_103646.png" alt="_2021-02-05_103646.png" style="zoom:33%;" />
+<img src="_20210205_103611.png" style="zoom:33%;" /> <img src="_20210205_103646.png" style="zoom:33%;" />
 
-<img src="_2021-02-04_150821.png" alt="_2021-02-04_150821.png" style="zoom:33%;" />
+<img src="_20210204_150821.png" style="zoom:33%;"/>
 
 1. 重復，利用"s"搜尋"derive"功能，將另一個70093 gearbox插入衍生到此檔案中。
 2. 確保小黑點在新派入的70093旁
 3. 跟上面一樣，用"e"將齒輪箱的長軸適當修剪一下
 4. 用"j"組合到底板上
 
-*如果用step檔案，今次derive的是70093R*
+💡*如果用step檔案，今次derive的是70093R*
 
-**<u>記得要用derive功能來插入衍生，不要用copy & paste，否則修改齒輪箱時，左右兩邊會同步喔!!!!</u>**
+❗️**<u>記得要用derive功能來插入衍生，不要用copy & paste，否則修改齒輪箱時，左右兩邊會同步喔!!!!</u>**
 
-<img src="_2021-02-04_150936.png" alt="_2021-02-04_150936.png" style="zoom:33%;" />
+<img src="_20210204_150936.png" style="zoom:33%;" />
 
 ##STEP 3
 
@@ -89,9 +89,9 @@
 8. 繪畫一個寬10mm的方型
 9. 可用中點或對稱限制，方型對稱於中線
 
-可以在component的左方找到一個眼睛的icon，點選後可隱藏component方便操作
+💡*可以在component的左方找到一個眼睛的icon，點選後可隱藏component方便操作*
 
-<img src="_2021-02-04_151001.png" alt="_2021-02-04_151001.png" style="zoom:33%;" /> <img src="_2021-02-04_151116.png" alt="_2021-02-04_151116.png" style="zoom:33%;" />
+<img src="_20210204_151001.png" style="zoom:33%;" /> <img src="_20210204_151116.png" style="zoom:33%;" />
 
 
 
@@ -99,13 +99,13 @@
 2. 在sheet metal的頁面中，找到"Flange"的icon，或者用"s"來搜尋"Flange"
 3. 點選剛剛的方型，變成1個厚度2mm的金屬簿片
 
-**<u>確保要用"Flange"製作金屬薄片，不要用"e" extrude擠出</u>**
+❗️**<u>確保要用"Flange"製作金屬薄片，不要用"e" extrude擠出</u>**
 
-<img src="_2021-02-04_151605.png" alt="_2021-02-04_151605.png" style="zoom:50%;" /> <img src="_2021-02-04_151406.png" alt="_2021-02-04_151406.png" style="zoom:50%;" />
+<img src="_20210204_151605.png" style="zoom:50%;" /> <img src="_20210204_151406.png" style="zoom:50%;" />
 
 
 
-<img src="_2021-02-04_151132.png" alt="_2021-02-04_151132.png" style="zoom:33%;" /> <img src="_2021-02-04_151201.png" alt="_2021-02-04_151201.png" style="zoom:33%;" />
+<img src="_20210204_151132.png" style="zoom:33%;" /> <img src="_20210204_151201.png" style="zoom:33%;" />
 
 
 
@@ -114,9 +114,7 @@
 3. 今次凸出，高16mm(由outer face計起)，位置則由"inside"內側計起
 4. 重復，鋁片的另一邊也是16mm高
 
-<img src="_2021-02-04_151700.png" alt="_2021-02-04_151700.png" style="zoom:33%;" /> <img src="_2021-02-04_151729.png" alt="_2021-02-04_151729.png" style="zoom:33%;" />
-
-
+<img src="_20210204_151700.png" style="zoom:33%;" /> <img src="_20210204_151729.png" style="zoom:33%;" />
 
 1. 繼續確保小黑點在"L support"旁邊
 2. 用"s"搜尋"new sketch", 在凸起的鋁板表面開一個新的sketch
@@ -125,21 +123,17 @@
 5. 在鋁板劃一條中線和一個3mm的圓
 6. 用constraints的第一個icon "horizontal and vertical"，指定3mm圓的高度和長軸同高
 
-<img src="_2021-02-04_151900.png" alt="_2021-02-04_151900.png" style="zoom:33%;" /> <img src="_2021-02-04_151819.png" alt="_2021-02-04_151819.png" style="zoom:33%;" />
-
-
+<img src="_20210204_151900.png" style="zoom:33%;" /> <img src="_20210204_151819.png" style="zoom:33%;" />
 
 1. 用"e" extrude，選擇3mm圓，到"extent type"用"to object"，將圓孔穿到鋁板的另一面
 2. 最後用"f" fillet修圓角，半徑隨意，一般2mm或3mm
 
-<img src="_2021-02-04_151932.png" alt="_2021-02-04_151932.png" style="zoom:33%;" /> <img src="_2021-02-04_151950.png" alt="_2021-02-04_151950.png" style="zoom:33%;" />
-
-
+<img src="_20210204_151932.png" style="zoom:33%;" /> <img src="_20210204_151950.png" style="zoom:33%;" />
 
 1. 接著就可以將小黑點褪回最外層
 2. 用"j" 組合，將鋁板組合到底板
 
-<img src="_2021-02-04_152038.png" alt="_2021-02-04_152038.png" style="zoom:33%;" />
+<img src="_20210204_152038.png" style="zoom:33%;" />
 
 ##STEP 4
 
@@ -149,10 +143,9 @@
 4. 在表面用"new sketch"開一個新的sketch
 5. 投影並繪製一條線，如圖
 
-*可善用component旁的小眼睛icon，適當地顯示和隱藏component，方便操作*
+💡*可善用component旁的小眼睛icon，適當地顯示和隱藏component，方便操作*
 
-<img src="_2021-02-04_152258.png" alt="_2021-02-04_152258.png" style="zoom:30%;" /> <img src="_2021-02-04_152420.png" alt="_2021-02-04_152420.png" style="zoom:50%;" />
-
+<img src="_20210204_152258.png" style="zoom:30%;" /> <img src="_20210204_152420.png" style="zoom:50%;" />
 
 
 1. 繼續確保小黑點在tamiya crank曲柄的旁邊
@@ -164,7 +157,7 @@
 
 <span style='font-size:20px;'>&#10071;</span><i><b>如果是用step檔案的話, joint的時候要到"motion"頁面，選用joint的類型為revolving joint</b></i>
 
-<img src="_2021-02-04_152500.png" alt="_2021-02-04_152500.png" style="zoom:50%;" /> <img src="_2021-02-04_152553.png" alt="_2021-02-04_152553.png" style="zoom:50%;" />
+<img src="_20210204_152500.png" style="zoom:50%;" /> <img src="_20210204_152553.png" style="zoom:50%;" />
 
 ##STEP 5
 
@@ -177,7 +170,7 @@
 
 <span style='font-size:20px;'>&#128161;</span><i>*同樣, 如果是用step檔的70093齒輪箱, joint的類型應為revolving joint*</i>
 
-<img src="_2021-02-04_152703.png" alt="_2021-02-04_152703.png" style="zoom:50%;" />
+<img src="_20210204_152703.png" style="zoom:50%;" />
 
 ##STEP 6
 
@@ -187,7 +180,7 @@
 
 接下來的所有腳和連杆，請確保必須要在"legs"的下方，否則複製之時，全部的joint組合的關係都會散落，要重新組合
 
-<img src="_2021-02-04_152803.png" alt="_2021-02-04_152803.png" style="zoom:100%;" /> <img src="_2021-02-04_152839.png" alt="_2021-02-04_152839.png" style="zoom:100%;" />
+<img src="_20210204_152803.png" style="zoom:100%;" /> <img src="_20210204_152839.png" style="zoom:100%;" />
 
 ##STEP 7
 
@@ -196,16 +189,14 @@
 3. 跟著下圖的尺寸繪製
 4. 繪製之時，可以用"s"尋找"change parameter", 將連杆的尺寸設為變數，之後只要一改這個變數就會全部更改
 
-<img src="_2021-02-04_153033%201.png" alt="_2021-02-04_153033%201.png" style="zoom:40%;" /> <img src="Untitled.png" alt="Untitled.png" style="zoom:33%;" />
+<img src="_20210204_153033%201.png" style="zoom:40%;" /> <img src="Untitled.png" style="zoom:33%;" />
 
-
-
-<img src="_2021-02-04_152945.png" alt="_2021-02-04_152945.png" style="zoom:33%;" />
+<img src="_20210204_152945.png" style="zoom:33%;" />
 
 1. 擠出`thickness`的厚度
 2. 再用"f" fillet角度，半徑隨意，約2mm-3mm
 
-<img src="_2021-02-04_172005.png" alt="_2021-02-04_172005.png" style="zoom: 33%;" /> <img src="_2021-02-04_172031.png" alt="_2021-02-04_172031.png" style="zoom:33%;" />
+<img src="_20210204_172005.png" style="zoom: 33%;" /> <img src="_20210204_172031.png" style="zoom:33%;" />
 
 ##STEP 8
 
@@ -217,13 +208,13 @@
 
 <span style='font-size:20px;'>&#128161;</span><i>*可以善用hide/show功能，暫時隱藏其他零件*</i>
 
-<img src="_2021-02-04_172124.png" alt="_2021-02-04_172124.png" style="zoom:80%;" /> <img src="_2021-02-04_172309.png" alt="_2021-02-04_172309.png" style="zoom:33%;" />
+<img src="_20210204_172124.png" style="zoom:80%;" /> <img src="_20210204_172309.png" style="zoom:33%;" />
 
-<img src="_2021-02-04_172419.png" alt="_2021-02-04_172419.png" style="zoom:33%;" />
+<img src="_20210204_172419.png" style="zoom:33%;" />
 
 ##STEP 9
 
-接下來開始複製和組裝左腳: 
+接下來開始複製和組裝左腳:
 
 1. 首先將全部零件全部顯示出來方便操作
 2. 用"j"將"linkage1"組裝在鋁片上
@@ -233,7 +224,7 @@
     4. 完成後，會發現這個joint的符號會出現在最上層
     5. 即使是在activage"legs"(小黑點在legs旁)時操作，這個joint也會在"legs"之外，之後複製"legs"時，並不會跟著複製
 
-<img src="_2021-02-04_172904.png" alt="_2021-02-04_172904.png" style="zoom:33%;" /> <img src="_2021-02-04_172546.png" alt="_2021-02-04_172546.png" style="zoom:33%;" />
+<img src="_20210204_172904.png" style="zoom:33%;" /> <img src="_20210204_172546.png" style="zoom:33%;" />
 
 ##STEP 10
 
@@ -241,9 +232,9 @@
 2. 到"motion"頁面選擇"cylindrical" joint, 這類型的joint有2個自由度, 一個是旋轉, 另一個是緣著旋轉軸移動，所以上面選的4mm offset只是參考，並沒有限制的
 3. 跟上面的rev7一樣，這個joint即使是在"legs" activate下做, joint也不是在"legs"底下的，因為曲柄並非在"legs"底下
 
-<img src="_2021-02-04_172749.png" alt="_2021-02-04_172749.png" style="zoom:33%;" /> <img src="_2021-02-04_172824.png" alt="_2021-02-04_172824.png" style="zoom:33%;" />
+<img src="_20210204_172749.png" style="zoom:33%;" /> <img src="_20210204_172824.png" style="zoom:33%;" />
 
-<img src="_2021-02-04_172639.png" alt="_2021-02-04_172639.png" style="zoom:33%;" />
+<img src="_20210204_172639.png" style="zoom:33%;" />
 
 ##STEP 11
 
@@ -255,7 +246,7 @@
 
 <span style='font-size:20px;'>&#128161;</span> <i>記著四連杆組合的秘決為: 3個joints 中, 2個revolve joints 1個cylindrical joint, 次序可以隨意, 這樣就不用計算offset的距離和thickness的厚度</i>
 
-<img src="_2021-02-04_173054.png" alt="_2021-02-04_173054.png" style="zoom:33%;" /> <img src="_2021-02-04_173150.png" alt="_2021-02-04_173150.png" style="zoom:55%;" />
+<img src="_20210204_173054.png" style="zoom:33%;" /> <img src="_20210204_173150.png" style="zoom:55%;" />
 
 ##STEP 12
 
@@ -263,7 +254,7 @@
 2. 將"leg1"和"linkage1"用ctrl-c/ctrl-v複製一份, 複製成leg1:2和linkage1:2, 如圖
 3. 確保兩隻腳兩條連杆都是在同一個component "legs"之下
 
-<img src="_2021-02-04_175259.png" alt="_2021-02-04_175259.png" style="zoom:33%;" />
+<img src="_20210204_175259.png" style="zoom:33%;" />
 
 ##STEP 13
 
@@ -273,7 +264,7 @@
 2. 用"joint"將"leg1:2"組合到"linkage1"之上，offset 1mm間距
 3. 到"motion"頁面，joint的類型為"revolving" joint
 
-同樣地, 圖2 
+同樣地, 圖2
 
 1. 將"linkage1:2"連接到"leg1:2"上
 2. "motion" type為"revolving" joint
@@ -285,9 +276,9 @@
 2. "motion" type為"cylindrical" joint
 3. 今次可以不用offset, 因為用cylindrical joint會自動因應剛才兩個offset而調整間隔
 
-<img src="_2021-02-04_175357.png" alt="_2021-02-04_175357.png" style="zoom:33%;" /><img src="_2021-02-04_175516.png" alt="_2021-02-04_175516.png" style="zoom:33%;" />
+<img src="_20210204_175357.png" style="zoom:33%;" /> <img src="_20210204_175516.png" style="zoom:33%;" />
 
-<img src="_2021-02-04_175643.png" alt="_2021-02-04_175643.png" style="zoom:33%;" />
+<img src="_20210204_175643.png" style="zoom:33%;" />
 
 ##STEP 14
 
@@ -306,7 +297,7 @@
 
 ❗**fusion360的鏡像功能是不能複製joint的關係的，所以如果要強求完全左右對稱, 則要全部重新joint一次**
 
-<img src="_2021-02-04_180800.png" alt="_2021-02-04_180800.png" style="zoom:33%;" />
+<img src="_20210204_180800.png" style="zoom:33%;" />
 
 ##STEP 16
 
@@ -314,7 +305,7 @@
 2. "motion" type為"revolving" joint
 3. offset 1mm
 
-<img src="_2021-02-04_180840.png" alt="_2021-02-04_180840.png" style="zoom:33%;" /><img src="_2021-02-04_180951.png" alt="_2021-02-04_180951.png" style="zoom:33%;" />
+<img src="_20210204_180840.png" style="zoom:33%;" /><img src="_20210204_180951.png" style="zoom:33%;" />
 
 ##STEP 17
 
@@ -322,7 +313,7 @@
 2. "motion" type為"cylindrical" joint
 3. 今次可以不用offset, 因為用cylindrical joint會自動因應剛才兩個offset而調整間隔
 
-<img src="_2021-02-04_181140.png" alt="_2021-02-04_181140.png" style="zoom:33%;" />
+<img src="_20210204_181140.png" style="zoom:33%;" />
 
 ##完成
 
