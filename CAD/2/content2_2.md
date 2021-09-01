@@ -22,13 +22,13 @@
 - 用thickness 3mm擠出
 - 用joint來組合
 
-<img src="_20210202_122947.png" style="zoom:50%;" />
+<img src="20210202122947.png" style="zoom:50%;" />
 
-<img src="_20210202123015.png" style="zoom:50%;" />
+<img src="20210202123015.png" style="zoom:50%;" />
 
 3. 確保黑點在最上層，複製/貼上和組合另一個側面
 
-<img src="_20210202_123036.png" style="zoom:50%;" />
+<img src="20210202123036.png" style="zoom:50%;" />
 
 4. 跟著就可以建立斜面;      
 
@@ -36,9 +36,9 @@
 - 開一個新的component; 在斜面上投影;
 - 斜面的上和下要預留多少許(通常做斜面的原因是用來展示的)
 
-<img src="_20210202_123123.png" style="zoom:50%;" />
+<img src="20210202123123.png" style="zoom:50%;" />
 
-<img src="_20210202_123153.png" style="zoom:50%;" />
+<img src="20210202123153.png" style="zoom:50%;" />
 
 5. 接著就可以製作頂板
 
@@ -48,9 +48,9 @@
 - 上面和旁邊預留`2*thickness`的距離
 - 由於前面的斜面會與這塊頂板相撞, 所以這塊板必須要短一些，下面的`fx: 2.517`的尺寸，其實是$\frac{thickness}{tan(180-sideAngle)}$
 
-<img src="_20210202_123238.png" style="zoom:50%;" />
+<img src="20210202123238.png" style="zoom:50%;" />
 
-<img src="_20210202_123315.png" style="zoom:50%;" />
+<img src="20210202123315.png" style="zoom:50%;" />
 
 6.  接著是做底板:
 
@@ -60,9 +60,9 @@
 - 投影底部和左右兩塊板, 再在前和後方繪畫四個方型留為榫位
 - 在外面再加上一層`thickness`的厚度製造榫位
 
-<img src="_20210202_140305.png" style="zoom:50%;" />
+<img src="20210202140305.png" style="zoom:50%;" />
 
-<img src="_20210202_140343.png" style="zoom:50%;" />
+<img src="20210202140343.png" style="zoom:50%;" />
 
 7.  跟著就是畫前方的板:
 
@@ -72,9 +72,9 @@
 - 投影inner的前方和兩塊側板
 - 跟頂板一樣，這塊板會與斜板相撞，所以要縮短一些，圖中的`fx:3.575`，其實是$\frac{thickness}{tan(sideAngle-90)}$
 
-<img src="_20210202_140437.png" style="zoom:50%;" />
+<img src="20210202140437.png" style="zoom:50%;" />
 
-<img src="_20210202_140510.png" style="zoom:50%;" />
+<img src="20210202140510.png" style="zoom:50%;" />
 
 8.  最後則是繪畫背面的板:
 
@@ -85,9 +85,9 @@
 - 在左右位置各加長`thickness`的長度, 用來做入榫
 - 最後擠出和joint就大功告成
 
-<img src="_20210202_141525.png" style="zoom:50%;" />
+<img src="20210202141525.png" style="zoom:50%;" />
 
-<img src="_20210202_141601.png" style="zoom:50%;" />
+<img src="20210202141601.png" style="zoom:50%;" />
 
 ##完成
 
