@@ -1,4 +1,3 @@
-<!doctype html>
 <!DOCTYPE html>
 <html lang="en">
 <title>LCM STUDIO</title>
@@ -7,20 +6,24 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+
+
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
 .for-image #write { padding-left: 8px; padding-right: 8px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
@@ -29,14 +32,14 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; }
-button, input, select, textarea { color: inherit; font: inherit; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
 p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
 p { orphans: 4; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.8rem; }
@@ -48,17 +51,17 @@ h6 { font-size: 1rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
 a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px !important; }
+figure > table { margin: 0px; }
 tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
-.CodeMirror-linenumber { user-select: none; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -68,8 +71,8 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping pre { white-space: pre; }
 #write pre.ty-contain-cm { white-space: normal; }
 .CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
-.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
 #write .md-fences.mock-cm { white-space: pre-wrap; }
 .md-fences.md-fences-with-lineno { padding-left: 0px; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
@@ -77,37 +80,41 @@ div.hr:focus { cursor: none; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
 li { margin: 0px; position: relative; }
 blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
-  html.blink-to-pdf { font-size: 13px; }
-  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
 p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
 p > .md-image:only-child { display: inline-block; width: 100%; }
 #write .MathJax_Display { margin: 0.8em 0px 0px; }
 .md-math-block { width: 100%; }
 .md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
 [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
 .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
 .math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
 .md-toc-content::after, .md-toc::after { display: none; }
 .md-toc-item { display: block; color: rgb(65, 131, 196); }
@@ -131,31 +138,74 @@ a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; 
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
-code { text-align: left; vertical-align: initial; }
-a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
-.md-inline-math .MathJax_SVG .noError { display: none !important; }
-.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
-.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
-.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
-.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
-.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
-.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
-.MathJax_SVG * { transition: none 0s ease 0s; }
-.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
 [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom: 0px; }
+table tr th { border-bottom-width: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
 iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
-svg[id^="mermaidChart"] { line-height: 1em; }
-mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
-mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix { height: auto; margin-top: 16px; margin-bottom: 16px; }
+.md-require-zoom-fix foreignObject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
 
 
 :root {
@@ -543,81 +593,229 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						} :root {--mermaid-font-zoom:1em ;}  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+
 </style>
-</head>
 <body>
 
 
-        <!-- !PAGE CONTENT! ============================================================================================================= -->
-        <div class="w3-main" style="margin-left:300px;">
-            <div  id='write'  class = 'is-node'><h1><a name="0-useful-robotics-parts" class="md-header-anchor"></a><span>0. Useful robotics parts</span></h1><p><span>Fusion360為一個很好用、免費、強大的特徵編輯CAD軟件，而我們做機械人，做設計，常用到一些實物的零部件，現整理一下方便大家下載使用。</span></p><p><span>最update版本請在</span><a href='https://grabcad.com/library/useful-robotics-parts-1'><span>grabCAD</span></a><span>下載。如果嫌grabCAD需要注冊麻煩，也可在按</span><a href='./useful robotics parts.zip'><span>這裡</span></a><span>。</span></p></div>
+    <!-- !PAGE CONTENT! ============================================================================================================= -->
+    <div class="w3-main" style="margin-left:300px;">
+        <div class='typora-export-content'>
+        <div id='write'  class=''><h1 id='0-preparation'><span>0. Preparation</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#0-preparation">0. Preparation</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3"><a class="md-toc-inner" href="#fusion360簡介">Fusion360簡介</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n8"><a class="md-toc-inner" href="#注冊教育版">注冊教育版</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n12"><a class="md-toc-inner" href="#step-1">Step 1</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n21"><a class="md-toc-inner" href="#step-2">Step 2</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n28"><a class="md-toc-inner" href="#step-3">Step 3</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n40"><a class="md-toc-inner" href="#step-4">Step 4</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n53"><a class="md-toc-inner" href="#step-5">Step 5</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n58"><a class="md-toc-inner" href="#step-6">Step 6</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n67"><a class="md-toc-inner" href="#step-7">Step 7</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n87"><a class="md-toc-inner" href="#useful-robotics-parts">Useful Robotics parts </a></span></p></div><h2 id='fusion360簡介'><span>Fusion360簡介</span></h2><p><img src="ad.jpg" alt="What Is Fusion 360? – Simply Explained | All3DP" style="zoom: 18%;" /><img src="fusion360-complex-design.jpg" alt="Is Fusion 360 good for 3D printing? – 3D Solved" style="zoom:33%;" /></p><p><span>Fusion360為Autodesk公司所推出的3D特徵編輯軟件。</span></p><p><span>跟其下的autoCAD和inventor作為區分，autoCAD是最經典的2d繪圖軟件, 在各個工程層面都有十分廣泛的應用，但，autoCAD雖然有3d功能，但並非用特徵編輯，如果3d模型較為複雜，部件較多或經常修改，用非特徵編輯的軟件會十分吃力。</span></p><p><span>Inventor是autodesk公司早期就推出的特徵編輯軟件，是針對機械工程師設計，目標市場的競爭對手有十分出名的solidwork和solidedge等。此類特徵編輯軟件在繪製三維零件時，在概念上與編程類似，都是設定變量，一步一步執行，例如2d sketch--&gt;擠出--&gt;2d sketch--&gt;削減等等，類似編程編碼由上而下去執行。而Fusion360軟件，就是一個輕量版/web base的Invertor軟件，由於剛開始推出時有一年的免費試用，之後個人版也不收費(現在只有一個月試用，之後個人版也不收費，不過限制增多了)，一推出就受到廣大maker所喜愛。而後來fusion360更加整合了autodesk其下另一款pcb編程軟件eagle的功能，今到Invertor和fusion360的用戶目標區分出來，Invertor比較適合機械工程的深度用家，而fusion360除了比較適合初學者外，</span><strong><span>也因為整合了pcb功能，變得十分適合機電整合的項目製作</span></strong><span>。</span></p><h2 id='注冊教育版'><span>注冊教育版</span></h2><p><span>自從fusion360的個人版限制增多後，申請教育版就變得十分重要，是故，十分鼓勵同學申請教育版，不要浪費教學資源。</span></p><p><span>申請教育版的流程，以往十分簡單，只要有@edu尾的電郵去注冊就可以，但現在收緊了很多，以下是截至2021年9月的申請流程，如果之後再有更新，以下方法未必合用。</span></p><p><span>💡</span><em><strong><u><span>以下注冊的資料請不要亂填，因autodesk公司的審查越來越嚴格，如果最後一步的上載資料與所填資料不符，可能導致不能注冊成功</span></u></strong></em></p><h3 id='step-1'><span>Step 1</span></h3><ol start='' ><li><span>到google直接搜尋</span><code>fusion 360 education</code></li><li><span>找到</span><code>Fusion 360 | Free Software for Students and Educators..</code><span>的網頁</span></li><li><span>你也可能找到下圖的一個影片，是一個香港導師所拍攝的粵語注冊教學</span></li></ol><p><img src="螢幕擷取畫面 (4).png" alt="螢幕擷取畫面 (4)" style="zoom:50%;" /></p><h3 id='step-2'><span>Step 2</span></h3><ol start='' ><li><span>進入網站後，會找到一個醒目的</span><code>GET STARTED</code><span>按鍵</span></li><li><span>按下開始注冊</span></li></ol><p><img src="螢幕擷取畫面 (5).png" alt="螢幕擷取畫面 (5)" style="zoom:33%;" /></p><h3 id='step-3'><span>Step 3</span></h3><ol start='' ><li><span>在Country中嘗試找</span><code>Macau</code><span>，如果沒有的話則選</span><code>China</code></li><li><span>在Educational role中，選擇你的身分</span><code>Student</code></li><li><span>在Institution Type中，選擇</span><code>`High School/Secondary</code></li><li><span>出生日期則根據自己的出生日期填寫，之後忘記密碼有可能會驗證生日，所以不要亂填</span></li></ol><p><strong><u><span>❗Fusion教育版需要年滿14歲才能注冊，所以如果你未滿14歲的話, 在年份上修改一下到足夠14歲</span></u></strong></p><p><img src="螢幕擷取畫面 (6).png" alt="螢幕擷取畫面 (6)" style="zoom:50%;" /><img src="螢幕擷取畫面 (7).png" alt="螢幕擷取畫面 (7)" style="zoom:50%;" /></p><h3 id='step-4'><span>Step 4</span></h3><ol start='' ><li><span>在資料注冊頁面填入以下資料</span></li><li><span>First name是名字，Last Name 是你的姓，請用英文，根據你在本校和教青局注冊的資料填寫</span>
+        <em><strong><u><span>❗此名稱用於之後核對你上傳的資料，所以請勿亂填，資料要對得上</span></u></strong></em></li><li><span>填上email </span><em><strong><u><span>❗記得要使用@ism.edu.mo的電郵來注冊</span></u></strong></em></li><li><span>最後填上password和checkbox就可以</span></li></ol><p><img src="螢幕擷取畫面 (9).png" alt="螢幕擷取畫面 (9)" style="zoom:50%;" /><img src="螢幕擷取畫面 (10).png" alt="螢幕擷取畫面 (10)" style="zoom:50%;" /></p><p><span>之後就會收要求確認電郵地址</span></p><p><img src="螢幕擷取畫面 (11).png" alt="螢幕擷取畫面 (11)" style="zoom:50%;" /></p><h3 id='step-5'><span>Step 5</span></h3><ol start='' ><li><span>去到你的eclass電郵帳號下，等待收取確認郵件, 並在郵件中的連結按下確認。</span></li></ol><p><img src="螢幕擷取畫面 (12).png" alt="螢幕擷取畫面 (12)" style="width:50%;" /><img src="螢幕擷取畫面 (13).png" alt="螢幕擷取畫面 (13)" style="width:50%;" /></p><h3 id='step-6'><span>Step 6</span></h3><ol start='' ><li><span>確認完郵件之後， autodesk會要求你確認所在學校</span></li><li><span>在學校中&quot;Name of educational institution&quot;，用繁體中文打上</span><code>澳門慈幼中學</code><span>，一般打到第3或第4個字已經會有提示讓你選擇</span></li><li><span>&quot;Enrolled from date&quot;和&quot;Expected graduation date&quot;為入讀和預計畢業日期，如實填寫自己form1入學的年份， 月份為9月和預計form6畢業的年份，月份為7月</span></li></ol><p><img src="螢幕擷取畫面 (15).png" alt="螢幕擷取畫面 (15)" style="zoom:50%;" /><img src="螢幕擷取畫面 (16).png" alt="螢幕擷取畫面 (16)" style="zoom:50%;" /></p><h3 id='step-7'><span>Step 7</span></h3><ol start='' ><li><p><span>之後就會進入產品下載的頁面。</span></p></li><li><p><span>在第一個fusion360的&quot;get started&quot;按下就會叫你再確認一下個人資料, 如無更改可按下&quot;confirm&quot;。</span></p></li><li><p><span>最後一步，在下載之前，autodesk會要求你出示在這間學校就讀的證明並人工驗證。</span></p></li><li><p><span>你可以上載:</span></p><ol start='' ><li><strong><span>成績表: 如果你不介意的話，而且也是最方便的辦法，用手機拍下上載即可。</span></strong></li><li><span>學校發出的在學證明: 此辦法比較麻煩。</span></li><li><span>學生證: 由於教青局的學生證上是沒有任何資料的，你需要下載教青局的手機app，之後掃瞄學生證上的qr code，就會得到下面的學生資料，但此資料又沒有學生的姓名，</span><strong><span>所以你需要cap下手機的畫面，同時也要將學生證拍照同時上傳</span></strong></li></ol></li><li><p><span>如果資料正確，大概一日之後就會驗證成功。成功了的話就會發現登入fusion360後title會多了一個教育版的字樣。</span></p></li><li><p><span>等待驗證的日子內，請經常檢看驗證的email, 如果不能成功驗證的話, 會電郵告訴你缺了甚麼。</span></p></li></ol><p><img src="螢幕擷取畫面 (21).png" alt="螢幕擷取畫面 (21)" style="zoom:50%;" /></p><p><img src="螢幕擷取畫面 (22).png" alt="螢幕擷取畫面 (22)" style="zoom:33%;" /><img src="螢幕擷取畫面 (24).png" alt="螢幕擷取畫面 (24)" style="zoom:50%;" /></p><h2 id='useful-robotics-parts'><span>Useful Robotics parts </span></h2><p><span>我們做機械人，做設計，常用到一些實物的零部件，現整理一下方便大家下載使用。</span></p><p><span>最update版本請在</span><a href='https://grabcad.com/library/useful-robotics-parts-1'><span>grabCAD</span></a><span>下載。如果嫌grabCAD需要注冊麻煩，也可在按</span><a href='./useful robotics parts.zip'><span>這裡</span></a><span>。</span></p><p><span>下載完成後可以到project頁面開一個新的folder, 例如叫tools, 將解壓後的零件到</span><em><span>.step檔</span></em><span>)拖放入去再按</span><strong><u><span>上載</span></u></strong><span>即可。</span></p><p><img src="upload.gif" alt="img" style="zoom: 33%;" /></p><p>&nbsp;</p></div></div>
+
+    </div>
+    <!-- End page content ============================================================================================================ -->
+
+
+
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-blue w3-collapse w3-display-position w3-large w3-padding" style="top:43px; z-index:9;width:300px;font-weight:bold;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-36"><b>LCM STUDIO</b></h3>
+            <hr>
         </div>
-        <!-- End page content ============================================================================================================ -->
+        <object name="sideBarMenu" width="100%" height="500px" type="text/html" data="../sideBarMenu.html"> </object>
+    </nav>
 
+    <!-- Top menu Navbar -->
+    <object name="topBar"
+            style="position:fixed; top:0px; z-index:10;"
+            width="100%" height="43px"
+            type="text/html"
+            data="../../topBar.html">
+    </object>
 
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-black w3-large w3-padding" style="z-index:11;">
+        <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">☰</a>
+        <span>LCM STUDIO</span>
+    </header>
 
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-        <!-- Sidebar/menu -->
-        <nav class="w3-sidebar w3-blue w3-collapse w3-display-position w3-large w3-padding" style="top:43px; z-index:9;width:300px;font-weight:bold;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" id="mySidebar"><br>
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-            <div class="w3-container">
-                <h3 class="w3-padding-36"><b>LCM STUDIO</b></h3>
-                <hr>
-            </div>
-            <object name="sideBarMenu" width="100%" height="500px" type="text/html" data="../sideBarMenu.html"> </object>
-        </nav>
+    <!-- W3.CSS Container -->
+    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:0px;padding-right:58px">
+        <p class="w3-right">Powered by
+            <a  href="https://lokchonmou.github.io/"
+                target="_blank"
+                class="w3-hover-opacity">
+                LOK CHON MOU
+            </a>
+        </p>
+    </div>
 
-        <!-- Top menu Navbar -->
-        <object name="topBar"
-                style="position:fixed; top:0px; z-index:10;"
-                width="100%" height="43px"
-                type="text/html"
-                data="../../topBar.html">
-        </object>
+    <script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
 
-        <!-- Top menu on small screens -->
-        <header class="w3-container w3-top w3-hide-large w3-black w3-large w3-padding" style="z-index:11;">
-            <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">☰</a>
-            <span>LCM STUDIO</span>
-        </header>
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
 
-        <!-- Overlay effect when opening sidebar on small screens -->
-        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-        <!-- W3.CSS Container -->
-        <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:0px;padding-right:58px">
-            <p class="w3-right">Powered by
-                <a  href="https://lokchonmou.github.io/"
-                    target="_blank"
-                    class="w3-hover-opacity">
-                    LOK CHON MOU
-                </a>
-            </p>
-        </div>
-
-        <script>
-        // Script to open and close sidebar
-        function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
-            document.getElementById("myOverlay").style.display = "block";
-        }
-
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-            document.getElementById("myOverlay").style.display = "none";
-        }
-
-        // Modal Image Gallery
-        function onClick(element) {
-            document.getElementById("img01").src = element.src;
-            document.getElementById("modal01").style.display = "block";
-            var captionText = document.getElementById("caption");
-            captionText.innerHTML = element.alt;
-        }
-    </script>
-
-
-
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+</script>
 
 </body>
 </html>
