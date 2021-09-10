@@ -1,0 +1,44 @@
+#1.1 Fusion360基本設定
+
+本章將會介紹fusion360的基本設定和用法。
+
+[TOC]
+
+##Step 1 如何存/讀檔
+
+1. 進入到fusion360之後，會見到左手邊會有一個9小格組成的符號，打開後會見到你所有的project。
+2. 例如現在你需要設計一部相撲機械人，那你的機械人可能牽涉到很多的零部件，那麼，開一個新的project就可以方便管理。
+3. 現在，試試開一個新的project，名為`first project`，或者好像我一般，叫`XXX's first project`
+
+<img src="fusion11.png" alt="fusion11" style="zoom:100%;" />
+
+1. 進入project後，一樣可以開很多個不同的folder，用來分別管理，例如可以將所有的螺絲、絲母等cad圖放入一個folder，所有的馬達、齒輪放一個folder等等。
+2. 要記住，所有的fusion360檔案，都是存在自己的account下，可以下載*`*.f3d`檔來保存(教育版或付費個人版，免費版到期後不能下載f3d檔案)，或者如果圖檔包含其他很多零部件組合成的話, 下載的則會是`*.f3z`檔
+3. **由於fusion是網上作業的，所以記得每次都要確定使的account是否自己的**
+
+<img src="fusion12.png" alt="fusion12" style="zoom:50%;" />
+
+## Step 2 設定環境
+
+1. 去到畫圖中下方，點選瑩幕般的符號，會出現effects的選項，將所有effects全部關掉，電腦會快一點，如果是有獨立顯卡或十分高階的電腦，可以試著開幾個來試試，視覺效果更好
+
+![fusion13](fusion13.png)
+
+2. 在旁邊的小格icon，按下，可以開啟或關閉ground上的比例格，我自己習慣就會閉掉，因為一開始劃一個物件，就可按其參照比例，但開著也可以。
+
+![fusion14](fusion14.png)
+
+3. 跟著去到畫面右上角，對著小屋的icon，按***<u>mouse右鍵</u>***，就可以設定視角模式，我自己習慣用最下的prespective with ortho faces，在平時是透視圖，近的大點遠的小一點，但正頂側視圖時又會變回平行投影，方便看尺寸
+
+![fusion15](fusion15.png)
+
+##Step 3 認識介面
+
+1. Fusion360 的介面分為上，左和下
+2. 上介面包括:
+	1. 上介面有不同的工作頁和不同的tag，你可以試試按下design的按鍵，就可以去到例如Design, rendering, drawing, simulation等不同的工作頁面，之後會一一教學
+	2. design頁面中，有不同的tag，常用的有solid, sheet metal和tools, 其他surface和mech對一些產品造型，汽車返計等會比較常用，但都時我們都不會用
+3. 左介面主要包含你在此設計中的所有零部件。每個零部件都可以設定主從關係，而每個2d sketch也一樣可以設定主從關係，所以最常見的是忘記設計該件立體件(body)是屬於哪一個零件，從而令到在做零件組合時發生問題
+4. 下面的是建圖歷史區，fusion360是特徵編輯軟件，會將會部的編輯紀錄都記下，如果要修改之前的參數，只需要在歷史中找到該編輯動作，雙擊就可以修改，對3d打印等尤為有幫助
+
+<img src="fusion16.png" alt="fusion16" style="zoom:100%;" />
