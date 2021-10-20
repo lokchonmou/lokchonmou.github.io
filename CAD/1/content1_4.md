@@ -166,10 +166,9 @@
 ## 3. 練習題
 
 <img src="p1.png" alt="p1" style="width:50%;" /><img src="p2.png" alt="p2" style="width:50%;" />
-
+https://youtu.be/0AK_zHFIUKs                   				       https://youtu.be/W40Nc4NCgDc
 <img src="p4.png" alt="p4" style="width:50%;" /><img src="p3.png" alt="p3" style="width:50%;" />
-
+https://youtu.be/WyS9xKw7dhQ                 				 https://youtu.be/1tDP7zA7B4o   
 <img src="p5.png" alt="p5" style="width:50%;" /><img src="p6.png" alt="p6" style="width:50%;" />
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MtPDQY1uG8c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://youtu.be/e5pYnCBlMb8                      				 https://youtu.be/MtPDQY1uG8c
 
