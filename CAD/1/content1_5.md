@@ -1,3 +1,5 @@
+
+
 # 1.5 Advance 3D drawing
 
 如果你打開Fusion360上方的工具列，你會發現有很多各式各樣的工具，這些工具在繪圖時會非常有幫忙，本章會介紹幾個常用的工具。
@@ -42,6 +44,8 @@ Shell為十分好用的薄殼功能，點選作為開口的面，指定厚度，
 💡*中間打橫的骨距離lego底部為`2mm`*
 
 ![xL7Efcd](xL7Efcd.png)
+
+[答案](https://youtu.be/-H9wA8gW15w)
 
 <img src="fusion56.gif" alt="fusion55" style="zoom:50%;" />
 
@@ -93,7 +97,7 @@ loft時需要用center line rail
 
 ###練習題2
 
-這一題則是讓你練習的，可以先在top view劃兩個柱體，之後再在side view劃v型，會容易一點。
+這一題則是讓你練習的，可以先在top view劃兩個柱體，之後再在side view劃v型，會容易一點。[答案](https://youtu.be/qnPlgmWt2RY)
 
 <img src="fusion510.png" alt="fusion510" style="zoom:100%;" />
 
