@@ -132,7 +132,7 @@ Masks頁面: 上面是決定阻焊綠油距離焊盤要多少緩衝。下面Limi
 
 ## 練習1
 
-**555+4017 LED Roulette Circuit**
+**555+4017 LED Roulette Circuit**[^1]
 
 ![circuit](circuit.png)
 
@@ -156,11 +156,7 @@ Masks頁面: 上面是決定阻焊綠油距離焊盤要多少緩衝。下面Limi
 
 有以點需要特別注意:
 
-1. LED的負極都是接在同一個節點的，所以除了`VCC`和`GND`之後，這個節點也需要特別手動佈線轉用粗線
-
-   <img src="image-20220131180619603.png" align="middle" alt="image-20220131180619603" style="width:80%;" />
-
-2. 在`Design Rule` 的設定裡，記得將`Annular Ring`裡的Pads 選項轉大少許，否則在焊接時很容易虛焊
+1. 在`Design Rule` 的設定裡，記得將`Annular Ring`裡的Pads 選項轉大少許，否則在焊接時很容易虛焊
 
    <img src="image-20220131181154113.png" align="middle" alt="image-20220131181154113" style="width:80%;" />
 
@@ -184,3 +180,7 @@ LED3 LED4 LED5
 LED6      LED7
 ```
 
+
+
+[^1]: 有些IC的power線預設是接在特定的例如vcc, vdd等引腳，所以會隱藏起來, 要將其展示出來，步驟如下:
+<img src="image-20220215151416510.png" alt="image-20220215151416510" style="zoom:67%;" /> <img src="image-20220215151437625.png" alt="image-20220215151437625" style="zoom:67%;" /> <img src="image-20220215151524403.png" alt="image-20220215151524403" style="zoom:67%;" />  
