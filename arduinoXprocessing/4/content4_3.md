@@ -159,6 +159,8 @@ Masks頁面: 上面是決定阻焊綠油距離焊盤要多少緩衝。下面Limi
 1. 在`Design Rule` 的設定裡，記得將`Annular Ring`裡的Pads 選項轉大少許，否則在焊接時很容易虛焊
 
    <img src="image-20220131181154113.png" align="middle" alt="image-20220131181154113" style="width:80%;" />
+   
+   ![image-20220131180532807](image-20220131180532807.png)
 
 ## 練習2
 
