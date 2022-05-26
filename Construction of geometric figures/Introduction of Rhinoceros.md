@@ -65,6 +65,29 @@ There are three main parts in the user interface:
 
 <img src="line.gif" alt="line" style="width:75%;" />
 
+
+
+To draw a line with certain length:
+
+1. You can select the first point
+2. Then input the length of the line, e.g. 10
+3. There will be a white line to link the curser, but the black line to show the 10mm length
+4. Hold the key `SHIFT` to define the line horizontal(水平) or vertebral(垂直)
+5. Click the mouse left click to confirm the line
+
+<img src="line2.gif" alt="line2" style="width:75%;" />
+
+
+
+To draw a line with certain angle and length:
+
+1. You can first select the start point
+2. Input `<60` and press `ENTER` to constrain the line 60 degree along the x-axis
+3. Input `10` and press `ENTER` to constrain the length of line as 10mm
+4. Click mouse left to confirm and finish
+
+<img src="line3.gif" alt="line3" style="width:75%;" />
+
 ### `Polyline`
 
 If you want to draw a few continues line segment, you can use command `polyline`
