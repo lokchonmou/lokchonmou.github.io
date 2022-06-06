@@ -25,7 +25,7 @@
 
 5. Project(投影)/ include: 將並非在這個sketch中的圖元投影在這個sketch中，而intercept就是將2d sketch的平面相交對應立體所得到的切面
 
-<img src="fusion116.gif" alt="fusion116" style="width:50%;" /><img src="fusion117.gif" alt="fusion117" style="width:50%;" />
+<img src="fusion116.gif" alt="fusion116" style="width:45%;" /><img src="fusion117.gif" alt="fusion117" style="width:45%;" />
 
 ## 編修工具
 
