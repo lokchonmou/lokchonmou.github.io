@@ -108,3 +108,22 @@ If you want to fillet(建立圓角) two object
 
 <img src="image-20220308203714210.png" alt="image-20220308203714210" style="width:45%;" /><img src="image-20220310124055307.png" alt="image-20220310124055307" style="width:45%;" />
 
+ANSWER:
+
+1. 
+<img src="EX1_1.gif" alt="EX1_1" style="zoom:50%;" />
+<img src="EX1_2.gif" alt="EX1_2" style="zoom:50%;" />
+<img src="EX1_3.gif" alt="EX1_3" style="zoom:50%;" />
+<img src="EX1_4.gif" alt="EX1_4" style="zoom:50%;" />
+2. 
+<img src="EX2.gif" alt="EX2" style="zoom:50%;" />
+3. 
+<img src="EX3.gif" alt="EX3" style="zoom:50%;" />
+4. 自己做
+5. 
+<img src="EX5.gif" alt="EX5" style="zoom:50%;" />
+6. <img src="EX6.gif" alt="EX6" style="zoom:50%;" />
+7. 自己做
+8. 自己做
+9. 
+<img src="EX9.gif" alt="EX9" style="zoom:50%;" />
