@@ -1,8 +1,8 @@
 #1.3 2D constraints
 
-Fusion360跟autocad/rhino等最大的分別，是它的特徵編輯性，情況更加像**數學幾何**。相反，autocad和rhino是用座標系統去做編輯的。
+Fusion360跟AutoCAD/rhino等最大的分別，是它的特徵編輯性，情況更加像**數學幾何**。相反，AutoCAD和rhino是用座標系統去做編輯的。
 
-舉一個例子，如果用autocad/rhino等，劃一條相切兩個圓的線，線的儲存方法是紀錄線段的頭尾兩點的座標，但如果兩個圓的尺寸和位置有所改變，**切線是不會跟著變的**。但特徵編輯軟件的特色，是更接近**數學幾何的邏輯**，切線是紀錄線的幾何特性是相切，所以即使圓的尺寸和座標變動，線段也會相切兩個圓。
+舉一個例子，如果用AutoCAD/rhino等，劃一條相切兩個圓的線，線的儲存方法是紀錄線段的頭尾兩點的座標，但如果兩個圓的尺寸和位置有所改變，**切線是不會跟著變的**。但特徵編輯軟件的特色，是更接近**數學幾何的邏輯**，切線是紀錄線的幾何特性是相切，所以即使圓的尺寸和座標變動，線段也會相切兩個圓。
 
 [TOC]
 
@@ -88,3 +88,136 @@ Fusion360跟autocad/rhino等最大的分別，是它的特徵編輯性，情況�
 💡 *此功能適用於貝茲曲線*
 
 <img src="fusion114.gif" alt="fusion114" style="zoom:50%;" />
+
+## 練習
+
+### 練習1
+
+![2dSketch9](2dSketch9.gif)
+
+
+1. 首先跟據其大約外型, 用hotkey `L`, 劃出大約的型狀
+
+<img src="2dSketch1.gif" alt="2dSketch1" style="zoom:50%;" />
+
+
+2. 用`Horizontal/Vertical(水準/垂直)`或者`Perpendicular(垂直)`工具, 確保所有線都是垂直或水平的
+
+<img src="2dSketch2.gif" alt="2dSketch2" style="zoom:50%;" />
+
+3. 用`Collinear(共線)`工具, 將"腳"設定成同一水平
+
+<img src="2dSketch3.gif" alt="2dSketch3" style="zoom:50%;" />
+
+4. 用`Equal(相等)`工具將"腳"的寬度設定成相等
+
+<img src="2dSketch4.gif" alt="2dSketch4" style="zoom:50%;" />
+
+5. 用hotkey `D`, 設定左下角的水平線為`20`
+6. 之後設定左下角的小垂直線為`25`高
+
+<img src="2dSketch5.gif" alt="2dSketch5" style="zoom:50%;" />
+
+7. 其他尺寸跟據下圖標示, 記得確認一下全部線都變成黑色
+
+<img src="2dSketch6.gif" alt="2dSketch6" style="zoom:50%;" />
+
+8. 用hotkey `C`劃兩個圓形
+9. 用`Horizontal/Vertical(水準/垂直)`工具點選兩個圓心, 令圓形水平
+10. 用`Equal(相等)`工具將兩個圓的尺寸設定成相等
+
+<img src="2dSketch7.gif" alt="2dSketch7" style="zoom:50%;" />
+
+11. 最後設定圓形的尺寸和位置
+
+<img src="2dSketch8.gif" alt="2dSketch8" style="zoom:50%;" />
+
+
+
+### 練習2
+
+![2dSketch14](2dSketch14.gif)
+
+1. 用hotkey `L`和用hotkey `S`搜尋`3 point arc`, 劃出大概形狀(可以用mouse右鍵招出快速指令重覆上一次的指令)
+
+<img src="2dSketch10.gif" alt="2dSketch10" style="zoom:50%;" />
+
+2. 之後用`L`劃一條中心線, 用hotkey `X`將其變成作圖線
+3. 用`Tangent(相切)`工具令所有圓都相切(如果左手邊的圓跟我的不同, 未有相切, 都要選擇令其相切)
+
+<img src="2dSketch11.gif" alt="2dSketch11" style="zoom:50%;" />
+
+4. 用`Coincident(重合)`工具令右下的圓形圓心跟橫線重合
+5. 用`Symmetry(對稱)`工具, 先分別點選要對稱物件, 最後點選對稱線, 令整個圖形完全對稱
+
+<img src="2dSketch12.gif" alt="2dSketch12" style="zoom:50%;" />
+
+6. 用hotkey `C`劃兩個圓形, 用`Concentric(同心)`工具令圓形跟左右兩隻"耳仔"同心(或者你可以一開始就點選兩隻耳仔的圓心作為圓心)
+7. 用`Equal(相等)`工具將兩個圓形限制成同一尺寸
+
+<img src="2dSketch13.gif" alt="2dSketch13" style="zoom:50%;" />
+
+8. 最後就可以用hotkey `D`標示全部尺寸，確保每一條線都是黑色
+
+<img src="2dSketch14.gif" alt="2dSketch14" style="zoom:50%;" />
+
+### 練習3
+
+![2dSketch21](2dSketch21.gif)
+
+1. 由於圖形是對稱的, 所以跟之前一樣, 以原點為起點, 大約劃一下圖形的外形
+
+<img src="2dSketch15.gif" alt="2dSketch15" style="zoom:50%;" />
+
+2. 如果有些線沒有水平/垂直, 可以用`Horizontal/Vertical(水準/垂直) `或`Perpendicular(垂直)`工具令其水平/垂直(我的圖除了最後一條線外都是水平/垂直的)
+3. 最後一條線, 可以用`Perpendicular(垂直)`工具垂直最左手邊的垂直線或用`Horizontal/Vertical(水準/垂直) `工具強制其水平, 或像我的方法用`Collinear(共線)`工具
+4. 劃一條穿過原點的中心線, 用hotkey `X`將其變成作圖線
+
+<img src="2dSketch16.gif" alt="2dSketch16" style="zoom:50%;" />
+
+5. 用`Symmetry(對稱)`工具令所有垂直線對稱
+6. 用`Collinear(共線)`工具將水平線變成同一水平
+
+<img src="2dSketch17.gif" alt="2dSketch17" style="zoom:50%;" />
+
+7. 之後就可以用hotkey `D`標示全部尺寸, 今次部分尺寸要選點到點之間的距離標示<img src="2dSketch18.gif" alt="2dSketch18" style="zoom:50%;" />
+
+8. 之後用hotkey `S`搜尋`center rectangle`劃一個30x50的長方形, 長方形頂部距離最高點為20
+
+<img src="2dSketch19.gif" alt="2dSketch19" style="zoom:50%;" />
+
+9. 最後, 用`center to center slot`指令劃槽, 一般機械部件, 這種兩頭圓形中間長形的形狀稱為`slot`, 常見的機械部件軟件都會有這個指令
+10. 之後就可以用對稱工具令slot對稱，最後標示尺寸
+
+<img src="2dSketch20.gif" alt="2dSketch20" style="zoom:50%;" />
+
+### 練習4 ~6
+
+以下3題用到`slot`, `Tangent(相切)`限制, `3-point arc`, `line`, `circle`
+
+<img src="image-20220308201351801.png" alt="image-20220308201351801" style="width:45%;" /><img src="image-20220308204627751.png" alt="image-20220308204627751" style="width:45%;" />
+
+<img src="image-20220308205155202.png" alt="image-20220308205155202" style="width:45%;" />
+
+### 練習7 ~ 9
+
+以下3題用到 `Symmetry(對稱)`限制, `Tangent(相切)`限制, `center rectangle`, `3-point arc`, `line`, `circle`
+<img src="image-20220309110038369.png" alt="image-20220309110038369" style="width:45%;" /><img src="image-20220309102033227.png" alt="image-20220309102033227" style="width:45%;" />
+
+<img src="image-20220311122325621.png" alt="image-20220311122325621" style="width:45%;" />
+
+### 練習10~ 13
+
+以下幾題如有需要, 可以先劃圓和線, 再用`fillet `指令或`trim`指令去修圓和裁剪, 用法跟autoCAD 或 Rhinoceros是一樣的, 但小心`fillet `或`trim`後，會令線段的關係消息變回藍線, 這時候就要重新再指定關係
+
+<img src="image-20220308193820988.png" style="width:45%;" /><img src="image-20220309105129862.png" alt="image-20220309105129862" style="width:45%;" />
+
+<img src="image-20220309182914898.png" alt="image-20220309105129862" style="width:45%;" /><img src="image-20220310122246576.png" alt="image-20220310122246576" style="width:45%;" />
+
+
+
+###練習14 ~ 15
+
+Harder problem. 這兩題用`trim`, `Offset`,配合`fillet`指令會最容易完成
+
+<img src="image-20220308203714210.png" alt="image-20220308203714210" style="width:45%;" /><img src="image-20220310124055307.png" alt="image-20220310124055307" style="width:45%;" />

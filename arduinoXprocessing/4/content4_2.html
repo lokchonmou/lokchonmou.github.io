@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>LCM STUDIO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; background-repeat: initial initial; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); background-position: initial initial; background-repeat: initial initial; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #000000;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* devanagari */
+/* latin-ext */
+/* latin */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "PT Serif", "Noto Serif TC";
+    color: rgb(10,10,10);
+    line-height: 1.6;
+    /* background-color: #e7e7e7; */
+}
+
+#write {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #2c98f0;
+    text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: 64px;
+    color: #eee;
+    background-color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h2 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: .3em;
+    font-size: 48px;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+h3 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+h5 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+h6 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    /* background-color: #e7e7e7; */
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #AAAAAA;
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    /* font-weight: bold;
+    border: 1px solid #333333;
+    border-bottom: 2px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+    background: #2c98f0; */
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #ffffff;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+code {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    /* background-color: #FFFFFF; */
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+    left: -1.5625rem;
+    top: .375rem;
+}
+#write>h4.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h5.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h6.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "PT Serif", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+
+</style>
+</head>
+<body  >
+
+    <!-- !PAGE CONTENT! ============================================================================================================= -->
+    <div class="w3-main" style="margin-left:300px;">
+      <div class='typora-export-content'>
+      <div id='write'  class=' first-line-indent'><h1 id='42-繪製電路圖與佈線圖'><span>4.2 繪製電路圖與佈線圖</span></h1><p><span>讓我們由一個最簡單的555調光器示範開始。</span></p><p><img src="image-20220111162553843.png" referrerpolicy="no-referrer" alt="image-20220111162553843"></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#42-繪製電路圖與佈線圖">4.2 繪製電路圖與佈線圖</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n5"><a class="md-toc-inner" href="#start">Start</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n9"><a class="md-toc-inner" href="#電路圖">電路圖</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n20"><a class="md-toc-inner" href="#插入零件">插入零件</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n51"><a class="md-toc-inner" href="#連接零件">連接零件</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n60"><a class="md-toc-inner" href="#electrical-rule-checkerc">Electrical Rule Check(ERC)</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n63"><a class="md-toc-inner" href="#佈線圖">佈線圖</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n67"><a class="md-toc-inner" href="#準備工作">準備工作</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n78"><a class="md-toc-inner" href="#將零件排好">將零件排好</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n89"><a class="md-toc-inner" href="#佈線">佈線</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n142"><a class="md-toc-inner" href="#自動佈線">自動佈線</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n154"><a class="md-toc-inner" href="#附錄--如何在自動佈線中將所有power線都變粗">附錄--如何在自動佈線中將所有power線都變粗</a></span></p></div><h2 id='start'><span>Start</span></h2><p><img src="image-20220111144254961.png" referrerpolicy="no-referrer" alt="image-20220111144254961"></p><p><span>開啟EAGLE軟件，EAGLE軟件自從幾年前被Autodesk公司收購後，就跟其他Autodesk一樣可以登入Autodesk account，之後可以與自己的Fusion360 account有互動，將繪製好的PCB直接推送上fusion360變成立體圖，而fusion修改零件位置也能反映在eagle之上。</span></p><p><span>不過現階段暫時不用登入也可以。</span></p><h2 id='電路圖'><span>電路圖</span></h2><p><img src="image-20220111144717072.png" referrerpolicy="no-referrer" alt="image-20220111144717072"></p><ul><li><span>左手邊藍色圈起來的工具列，常用的工具都放在這裡</span></li><li><span>上面紅色圈的是次工具列，當左手邊的工具點選後，上面的工具列會跟著有變化</span></li><li><span>棕色圈起來的是設計資訊，會列出文件的頁數，零件，佈線等等，如果覺得沒甚麼用途，可將其都時關掉(反剔這麼)</span>
+      <img src="image-20220111160512186.png" alt="image-20220111160512186" style="zoom:70%;" /></li><li><span>最後綠色區域是線路圖的部分</span></li></ul><h3 id='插入零件'><span>插入零件</span></h3><p><img src="image-20220111160750493.png" referrerpolicy="no-referrer" alt="image-20220111160750493"></p><p><span>在劃線路圖的上方命令欄打</span><code>add</code><span>，或者在左邊工具欄點選。</span></p><p><img src="image-20220111160936166.png" referrerpolicy="no-referrer" alt="image-20220111160936166"></p><p><span>這時會彈出一個元件列表出來。我們需要找到IC555，所以在搜尋列中尋找。</span></p><p>&nbsp;</p><p><img src="image-20220111161733166.png" referrerpolicy="no-referrer" alt="image-20220111161733166"></p><p><mark><span>搜尋請打</span><code>*555</code><span>，eagle預計搜尋是完整文字搜尋，如果只打555，要找到555前有前置文字就需要加上</span><code>*</code></mark></p><p><img src="image-20220111161858090.png" referrerpolicy="no-referrer" alt="image-20220111161858090"></p><p><span>在劃圖區中放下零件。</span></p><p><img src="image-20220111162344371.png" referrerpolicy="no-referrer" alt="image-20220111162344371"></p><p><span>重覆，搜尋</span><code>resistor</code><span>在</span><code>rcl</code><span> library中，找到</span><code>R-US</code><span>，零件package則為</span><code>0207/10</code><span>，這些package會在之後詳細講解。</span></p><p><img src="image-20220111190517487.png" referrerpolicy="no-referrer" alt="image-20220111190517487"></p><ol start='' ><li><p><span>跟據手繪的線路圖，依次將需要用的零件在library中找出來放在繪圖區上</span></p></li><li><p><mark><span>零件的library可以在上圖左則的Parts區域看得到</span></mark></p></li><li><p><span>在放置的過程中</span></p><ol start='' ><li><span>可用</span><code>move</code><span>指令來移動零件</span><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup></li><li><span>在移動時按</span><em><span>滑鼠右鍵</span></em><span>則可以很方便地旋轉(或者直接用</span><code>rotate</code><span>指令都可以)</span></li><li><span>可用</span><code>copy</code><span>指令來複製零件。</span></li><li><span>可用</span><code>name</code><span>來為零件命名</span></li><li><span>用</span><code>value</code><span>來為零件設定值</span></li></ol></li></ol><h3 id='連接零件'><span>連接零件</span></h3><p><img src="image-20220111190617726.png" referrerpolicy="no-referrer" alt="image-20220111190617726"></p><ol start='' ><li><span>可用</span><code>net</code><span>指令來為零件與零件之間接線</span></li><li><span>在用net指今的時候，可按</span><em><span>滑鼠右鍵</span></em><span>來改變接線的方向，你也可以在上方的工具列改變接線的形狀。</span></li><li><mark><span>如果接線有重疊，而又有需要連在一起的，記得用</span><code>junction</code><span>指令為其加入墨點以表示是連結的</span></mark></li></ol><h3 id='electrical-rule-checkerc'><span>Electrical Rule Check(ERC)</span></h3><p><img src="image-20220112083136630.png" referrerpolicy="no-referrer" alt="image-20220112083136630"></p><p><span>接著則要做ERC，檢查一下零件的接線有沒有問題，一般都只會見到有warnings，可以了解一下是甚麼原因，但如果見到有error的就一定要處理。常見的errors可能有: 忘記用</span><code>junction</code><span>將接線連接、接線沒有真的接到零件、忘記接線、接漏。而常見的warnings不外乎都是零件沒有值。如果不想下次再做ERC時再見到這些warnings，可以按Approve去接受這些warnings。</span></p><h2 id='佈線圖'><span>佈線圖</span></h2><p><img src="image-20220112095346331.png" referrerpolicy="no-referrer" alt="image-20220112095346331"></p><p><span>電路圖繪製好之後，就到電路板的佈線圖，這個部分和實物有直接關係，所以佈線時有些地方需要注意。</span></p><p><span>按下上方工具列有一個小小的白色/綠色icon，寫著SCH/BRD的icon。之後會問你是否要生成一個brd檔案, 答&quot;是&quot;就可以。</span></p><h3 id='準備工作'><span>準備工作</span></h3><p><img src="image-20220112095648595.png" referrerpolicy="no-referrer" alt="image-20220112095648595"></p><p><span>之後就會見到一個與之前差不多的介面，插入的零件已經放置在一旁，有幼細的黃色線，代表著剛才sch檔所繪製的電路接線。</span></p><p><img src="image-20220112095924811.png" referrerpolicy="no-referrer" alt="image-20220112095924811"></p><p><span>在左側跟之前一樣會有design manager，列出當前的元件，佈線signal的trace長度、寬度等資訊，跟之前一樣，如果電腦屏幕大小的話可以到&quot;view&quot;當中反剔就可以暫時消失。</span></p><p><img src="image-20220112100319497.png" referrerpolicy="no-referrer" alt="image-20220112100319497"></p><p><span>先進行準備工作，第一個步驟是打開左上角icon的網格工具，或直接在命令列打</span><code>grid</code><span>。</span></p><p><span>Display選擇On，Size則選擇100mil，而下方的Alt則選擇50mill。如此，你在佈線圖上的所有移動和佈線距離都但鎖定在100mil的網格，而當你按下</span><em><span>鍵盤的Alt鍵</span></em><span>時，就會變成50mil的網格。</span></p><p><mark><span>100mil即為1/1000英寸，即2.54mm，是典型的面包板的間隔距離，也是一般通孔元件的標準間距，所以佈線圖單位通常都用mil而不用mm</span></mark></p><p><img src="image-20220112101859854.png" referrerpolicy="no-referrer" alt="image-20220112101859854"></p><p><span>最後在開始</span><code>layer</code><span>，將第27和28層的tValue和bValue打開，這兩層是元件的值，預計不會印在電路板上，但如果沒有的話，焊的時候會非常不便。</span></p><h3 id='將零件排好'><span>將零件排好</span></h3><p><img src="image-20220112135137178.png" referrerpolicy="no-referrer" alt="image-20220112135137178"></p><ol start='' ><li><span>跟著就可以用</span><code>move</code><span>指令，將元件移動到合這位置</span></li><li><span>移動時可以用</span><em><span>滑鼠右鍵</span></em><span>旋轉，或者用</span><code>rotate</code><span>指令</span></li><li><span>移動時可以用</span><em><span>滑鼠中鍵</span></em><span>將元件反轉到板的下方，或者用</span><code>mirror</code><span>指令(不過今次所有零件我們都會放在頂層)</span></li><li><span>移動時要留意黃線的連接，留意零件的方向和排位，確保之後的指線盡可能短。</span></li></ol><h3 id='佈線'><span>佈線</span></h3><p><img src="image-20220112104530279.png" referrerpolicy="no-referrer" alt="image-20220112104530279"></p><ol start='' ><li><p><span>之後就可以按工具列的佈線鍵或直接在命令列打</span><code>route</code><span>。</span></p></li><li><p><span>上方就會出現另一個工具列，由左至右有幾項需要注意:</span></p><ol start='' ><li><p><span>Layer: 有top或者bottom選擇，就是雙面版的頂層或底層</span></p></li><li><p><span>第二個是避障功能:</span></p><ol start='' ><li><span>第一個icon，佈線時直接無視其他零件和佈線;</span></li><li><span>第二個，佈線時自動轉彎和避開其他佈線和pad</span></li><li><span>第二個，佈線時會推開其他已經佈好的線</span></li></ol></li><li><p><span>Width: 佈線的線寬。</span></p><p><span> </span></p></li></ol></li></ol><p><img src="image-20220112104431281.png" alt="image-20220112104431281" style="zoom:50%;" /></p><ol start='' ><li><p><span>先說在前，eagle是有自動佈線的，只要盡量確保接線是最短距離，絕大部分情況下自動佈線就可以</span></p></li><li><p><span>一般情況下，</span><mark><span>預設是6mil</span></mark><span>，這是一般PCB工廠所能生產的最幼線寬</span></p></li><li><p><span>需要特別留意的是供電的電源線線寬，最好是人手佈線的，eagle有功能可以將供電線加寬，但會一併加粗其他用作signal的正極或負極信號線，所以最好都是人手佈線</span></p></li><li><p><span>而考慮線寬需要有多寬，可以去到上面的PCB Trace Width Calculator計算:</span></p><ol start='' ><li><span>首先設定需要的電流，今次的PWM調光器，有可能推動較多的燈，所以預計電流可以預大一點，就設定在2A</span></li><li><span>Thickness: 即前一章所講，PCB的覆銅，是計算每一平方英尺有多少oz的銅，一般PCB板為1oz, 如果要訂制2oz的會貴非常多</span></li><li><span>Temperature Rise: 是容許PCB的線升溫多少，以環境溫度25度計算，如果容許PCB線到達65度，那麼容許升溫就是40度</span></li><li><span>最後是Trace Length: 線的長度，由於今次板的大小約5cm x 3cm，所以trace的長度大約2吋就夠</span></li><li><mark><span>最後得出，外層的佈線，需要線寬最少是13.3mil，那我們取多一點點用15mil</span></mark></li></ol><h3 id='手動佈線'><span>手動佈線</span></h3><p><img src="image-20220113082827528.png" referrerpolicy="no-referrer" alt="image-20220113082827528"></p></li><li><p><span>主要供電佈線大概這樣，你可以用自己的方式去佈，不一定要完全跟我的佈線</span></p></li><li><p><span>PCB板佈線，有經驗的工程師都會告訴你，盡量要避免有直角，尤其是高頻信號線，因直角會令trace的電容值有影響。</span></p></li><li><p><span>除非你的焊功有一定程度，否則電源線只需要有足夠的寬度就可以，太粗的話除了之後在焊接時會因為熱被擴散開去，會難焊很多，很容易虛焊。</span></p></li><li><p><span>其他的信號線就可以自動佈線。</span></p></li></ol><h3 id='自動佈線'><span>自動佈線</span></h3><p><img src="image-20220113113037157.png" referrerpolicy="no-referrer" alt="image-20220113113037157"></p><p><span>按下自動佈線的icon。</span></p><p><img src="image-20220113113112728.png" alt="image-20220113113112728"  /></p><p><span>之後就會彈出一個setup的精靈，1-16的意思是eagle最高支持16層的夾板，會我們今次的板只有上下兩層，所以只有1的top和16的bottom需要佈線。按</span><code>continue</code><span>繼續</span></p><p><img src="image-20220113113316343.png" referrerpolicy="no-referrer" alt="image-20220113113316343"></p><p><span>因為我們剛才手動佈了一點線，所以會有36%已完成，按下</span><code>start</code><span>繼續。</span></p><p><img src="image-20220113113407402.png" referrerpolicy="no-referrer" alt="image-20220113113407402"></p><p><span>等待電腦佈線計算，通常下面幾個會計算得比較快，最上的一個因為有經過最佳調教，所以會時間久一點，如無特別的話，用第一個結果就可以了。</span><mark><span>記得確保佈線是100%完成!!!</span></mark></p><p><img src="image-20220113113432751.png" referrerpolicy="no-referrer" alt="image-20220113113432751"></p><p><span>佈好之後就是這個樣子。</span></p><p><span>下一章就會介紹其他必要的設定和怎樣輸出成gerber檔給代工公司生產。</span></p><h3 id='附錄--如何在自動佈線中將所有power線都變粗'><span>附錄--如何在自動佈線中將所有power線都變粗</span></h3><p><img src="image-20220204170743452.png" alt="image-20220204170743452" style="zoom:80%;" /></p><p><span>找到</span><code>Edit--&gt;Net class</code><span>。</span></p><p><img src="image-20220204171135395.png" alt="image-20220204171135395" style="WIDTH:45%;" /><img src="image-20220204171417204.png" alt="image-20220204171417204" style="width:45%;" /></p><ol start='' ><li><span>在第一版按下</span><code>add</code><span>鍵，新增一個class，名稱叫</span><code>POWER</code><span>(或其他名稱都可以)。</span></li><li><span>將</span><code>GND</code><span>和</span><code>+12V</code><span>都加進這個class中</span></li><li><span>在第二版的</span><code>rules</code><span>中，將POWER的線寬強制轉做15mil</span></li><li><span>接下</span><code>ok</code></li></ol><p><span>這塊pcb板因空間十分充裕，所以所有power線都轉成15mil都沒有問題，但如果空間十分狹窄，用這個方法會將本來應該是信號線的</span><code>+12V</code><span>和</span><code>GND</code><span>都變寬(例如IC555的4腳雖然接著</span><code>+12V</code><span>，但並非power腳位)</span></p><p>&nbsp;</p><div class='footnotes-area'  ><hr/>
+      <div class='footnote-line'><span class='md-fn-count'>1</span> <span>用</span><code>group</code><span>指令圈起要群組移動的零件，再輸入</span><code>move</code><span>指令，最後對著highlight後的群組按mouse右鍵，就會找到</span><code>Group:move</code> <a name='dfref-footnote-1' href='#ref-footnote-1' title='回到文件' class='reversefootnote' >↩</a></div></div></div></div>
+
+    </div>
+    <!-- End page content ============================================================================================================ -->
+
+
+
+
+        <!-- Sidebar/menu -->
+        <nav class="w3-sidebar w3-blue w3-collapse w3-display-position w3-large w3-padding" style="top:43px; z-index:9;width:300px;font-weight:bold;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" id="mySidebar"><br>
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+            <div class="w3-container">
+                <h3 class="w3-padding-36"><b>LCM STUDIO</b></h3>
+                <hr>
+            </div>
+            <object name="sideBarMenu" width="100%" height="500px" type="text/html" data="../sideBarMenu.html"> </object>
+        </nav>
+
+        <!-- Top menu Navbar -->
+        <object name="topBar"
+                style="position:fixed; top:0px; z-index:10;"
+                width="100%" height="43px"
+                type="text/html"
+                data="../../topBar.html">
+        </object>
+
+        <!-- Top menu on small screens -->
+        <header class="w3-container w3-top w3-hide-large w3-black w3-large w3-padding" style="z-index:11;">
+            <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">☰</a>
+            <span>LCM STUDIO</span>
+        </header>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+        <!-- W3.CSS Container -->
+        <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:0px;padding-right:58px">
+            <p class="w3-right">Powered by
+                <a  href="https://lokchonmou.github.io/"
+                    target="_blank"
+                    class="w3-hover-opacity">
+                    LOK CHON MOU
+                </a>
+            </p>
+        </div>
+
+        <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+    </script>
+
+    </body>
+    </html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>LCM STUDIO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; background-repeat: initial initial; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); background-position: initial initial; background-repeat: initial initial; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #000000;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* devanagari */
+/* latin-ext */
+/* latin */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "PT Serif", "Noto Serif TC";
+    color: rgb(10,10,10);
+    line-height: 1.6;
+    /* background-color: #e7e7e7; */
+}
+
+#write {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #2c98f0;
+    text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: 64px;
+    color: #eee;
+    background-color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h2 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: .3em;
+    font-size: 48px;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+h3 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+h5 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+h6 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    /* background-color: #e7e7e7; */
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #AAAAAA;
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    /* font-weight: bold;
+    border: 1px solid #333333;
+    border-bottom: 2px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+    background: #2c98f0; */
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #ffffff;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+code {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    /* background-color: #FFFFFF; */
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+    left: -1.5625rem;
+    top: .375rem;
+}
+#write>h4.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h5.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h6.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "PT Serif", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+
+</style>
+</head>
+<body  >
+
+    <!-- !PAGE CONTENT! ============================================================================================================= -->
+    <div class="w3-main" style="margin-left:300px;">
+      <div class='typora-export-content'>
+      <div id='write'  class=' first-line-indent'><h1 id='26-sumo-robot'><span>2.6 Sumo Robot</span></h1><p><span>本節是介紹如何去組裝一隻相撲機械人。做好後效果如下:</span></p><p><img src="Screenshot 2022-03-14 174220.png" alt="Screenshot 2022-03-14 174220" style="zoom:80%;" /></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n1390"><a class="md-toc-inner" href="#26-sumo-robot">2.6 Sumo Robot</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n1395"><a class="md-toc-inner" href="#step-1-準備工作檔案">Step 1: 準備工作/檔案</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n1400"><a class="md-toc-inner" href="#step-2-建立小車底盤">Step 2: 建立小車底盤</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1401"><a class="md-toc-inner" href="#繪製底盤">繪製底盤</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1441"><a class="md-toc-inner" href="#插入底盤零件">插入底盤零件</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n1476"><a class="md-toc-inner" href="#step-3-繪製和組裝小車第二層板">Step 3: 繪製和組裝小車第二層板</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1477"><a class="md-toc-inner" href="#繪畫小車底板">繪畫小車底板</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1511"><a class="md-toc-inner" href="#插入arduino-uno">插入Arduino UNO</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1543"><a class="md-toc-inner" href="#按入六角柱">按入六角柱</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n1573"><a class="md-toc-inner" href="#step-4-安裝sensor電池">Step 4: 安裝sensor、電池</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1574"><a class="md-toc-inner" href="#為底盤開孔">為底盤開孔</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1598"><a class="md-toc-inner" href="#插入和安裝底盤sensor和電池架">插入和安裝底盤sensor和電池架</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1612"><a class="md-toc-inner" href="#為頂板開孔和安裝sensor">為頂板開孔和安裝sensor</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n1642"><a class="md-toc-inner" href="#step-5-製作前擋板和鏟">Step 5: 製作前擋板和鏟</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1644"><a class="md-toc-inner" href="#製作3d打印支架">製作3D打印支架</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1690"><a class="md-toc-inner" href="#安裝三角支架到底板">安裝三角支架到底板</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1722"><a class="md-toc-inner" href="#繪製鏟和前擋板">繪製鏟和前擋板</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n1761"><a class="md-toc-inner" href="#為前擋板開孔讓偵敵紅外線sensor能穿過">為前擋板開孔，讓偵敵紅外線sensor能穿過</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n1799"><a class="md-toc-inner" href="#step-6-微調">Step 6: 微調</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n1836"><a class="md-toc-inner" href="#step-7-功課">Step 7: 功課</a></span></p></div><h2 id='step-1-準備工作檔案'><span>Step 1: 準備工作/檔案</span></h2><p><span>本次會應用到的檔案(以下為step檔)，下載</span><strong><span>解壓</span></strong><span>後，在fusion左邊欄尋找&quot;upload&quot;鍵，就能上載到fusion中應用</span></p><p><a href='useful_robotics_component_step.zip'><span>useful robotics component step.zip</span></a></p><p><span>以下展示如何下載、解壓和上傳:</span></p><p><img src="upload.gif" style="zoom:50%;" /></p><h2 id='step-2-建立小車底盤'><span>Step 2: 建立小車底盤</span></h2><h3 id='繪製底盤'><span>繪製底盤</span></h3><p><img src="Screenshot 2022-03-14 142246.png" alt="Screenshot 2022-03-14 142246" style="width:45%;" /><span> </span><img src="Screenshot 2022-03-14 142311.png" alt="Screenshot 2022-03-14 142311" style="width:45%;" /></p><ol start='' ><li><span>開始一個新的設計</span></li><li><span>開一個new component</span></li><li><span>名字叫</span><code>bottom</code></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 142341-16472534115661.png" alt="Screenshot 2022-03-14 142341" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 142411-16472534165382.png" alt="Screenshot 2022-03-14 142411" style="width:45%;" /></p><ol start='' ><li><span>確保小黑點在bottom這個component旁邊</span></li><li><span>開一個</span><code>new sketch</code></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 143037.png" referrerpolicy="no-referrer" alt="Screenshot 2022-03-14 143037"></p><ol start='' ><li><span>底盤尺寸可參考上面的圖</span></li><li><u><em><span>尺寸不用完全一樣一模, 尤其是機械人的長和寬, 畫好後之後可以修改的</span></em></u></li></ol><p><img src="Screenshot 2022-03-14 143148.png" alt="Screenshot 2022-03-14 143148" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 143228.png" alt="Screenshot 2022-03-14 143228" style="WIDTH:45%;" /></p><ol start='' ><li><span>搜尋</span><code>change parameters</code></li><li><span>開一個新的變數叫</span><code>thickness</code><span>, 值為</span><code>3mm</code></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 143251 (2)_LI.jpg" alt="Screenshot 2022-03-14 143251 (2)_LI" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 143337.png" alt="Screenshot 2022-03-14 143337" style="width:45%;" /></p><ol start='' ><li><span>將底板擠出</span><code>thickness</code><span>的厚度</span></li><li><span>習慣地將擠出好的板做fillet, 實物切割出來時才不會割手</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 143856.png" alt="Screenshot 2022-03-14 143856" style="zoom:60%;" /></p><p><span>最後，在零件樹按滑鼠右鍵，按下</span><code>Ground</code><span>，</span><code>Ground</code><span>後拖動底板就不會動，所有的joint都以底板為準。</span></p><p>&nbsp;</p><h3 id='插入底盤零件'><span>插入底盤零件</span></h3><p><img src="Screenshot 2022-03-14 143522-16472540795493.png" alt="Screenshot 2022-03-14 143522" style="width:45%;" /><img src="Screenshot 2022-03-14 143554-16472542153901.png" alt="Screenshot 2022-03-14 143554" style="width:45%;" /></p><p><img src="Screenshot 2022-03-14 143639.png" alt="Screenshot 2022-03-14 143639" style="WIDTH:60%;" /></p><ol start='' ><li><mark><span>將小黑點褪回第一層</span></mark></li><li><span>將</span><code>ball castor CY 15A</code><span> 拖入當前檔案中</span></li><li><span>按</span><code>ok</code></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 143704.png" alt="Screenshot 2022-03-14 143704" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 143814.png" alt="Screenshot 2022-03-14 143814" style="WIDTH:45%;" /></p><ol start='' ><li><span>對著左手邊的零件樹的</span><code>ball castor</code><span>按滑鼠右鍵</span></li><li><span>找到</span><code>Rigid Group</code><span>按下(因上傳的是</span><code>*.step</code><span>檔，所有的零件都沒有joint的關係，所以一移動就會散開，所以要先做</span><code>Rigid Group</code><span>將其全部組成一group)</span></li><li><span>用hotkey </span><code>J</code><span>，將牛眼輪連接到底板，墊高</span><code>3mm</code><span>(實際組裝時用3mm墊圈墊高)</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 144242.png" alt="Screenshot 2022-03-14 144242" style="width:45%;" /><img src="Screenshot 2022-03-14 144205.png" alt="Screenshot 2022-03-14 144205" style="width:45%;" /></p><ol start='' ><li><p><span>其他零件都一樣:</span></p><ol start='' ><li><span>先拖到當前畫面，接</span><code>ok</code><span>;</span></li><li><span>再做</span><code>Rigid Group</code></li><li><span>最後用hotkey </span><code>J</code><span> 組裝到相對的位置</span></li></ol></li><li><p><em><strong><u><span>在組裝56mm Sport Tires時，可以將連軸器插入六角軸15mm</span></u></strong></em></p></li></ol><h2 id='step-3-繪製和組裝小車第二層板'><span>Step 3: 繪製和組裝小車第二層板</span></h2><h3 id='繪畫小車底板'><span>繪畫小車底板</span></h3><p><img src="Screenshot 2022-03-14 144408.png" alt="Screenshot 2022-03-14 144408" style="width:80%;" /></p><ol start='' ><li><mark><span>將小黑點褪回第一層</span></mark></li><li><span>開一個new component</span></li><li><span>名字叫</span><code>top</code></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 144424.png" alt="Screenshot 2022-03-14 144424" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 144450.png" alt="Screenshot 2022-03-14 144450" style="WIDTH:45%;" /></p><ol start='' ><li><mark><span>確保小黑點在新的</span><code>top</code><span> component旁</span></mark></li><li><span>按下</span><code>offset plane</code></li><li><span>在小車的底板表面，offset </span><code>40mm</code><span>(工場的六角柱只有20mm和8mm兩種，如果是這兩個數字以外，可以組合起來，或直接轉用3d打印墊高)</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 144517.png" alt="Screenshot 2022-03-14 144517" style="width:45%;" /><img src="Screenshot 2022-03-14 144547.png" alt="Screenshot 2022-03-14 144547" style="width:45%;" /></p><ol start='' ><li><span>在新開的offset plane上按下</span><code>new sketch</code></li><li><span>用hotkey </span><code>p</code><span>或直接搜尋</span><code>project</code><span>，投影底板到這個面上</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 144839.png" alt="Screenshot 2022-03-14 144839" style="width:45%;" /><img src="Screenshot 2022-03-14 144920.png" alt="Screenshot 2022-03-14 144920" style="width:45%;" /><img src="Screenshot 2022-03-14 145010.png" alt="Screenshot 2022-03-14 145010" style="zoom:45%;" /></p><ol start='' ><li><span>跟據上圖先繪畫頂板的安裝孔和頂板的輪廓(尺寸之後可以按需要修改)</span></li><li><span>擠出</span><code>thickness</code><span>的厚度</span></li><li><span>順手將擠出後的尖角做fillet</span></li></ol><h3 id='插入arduino-uno'><span>插入Arduino UNO</span></h3><p><img src="Screenshot 2022-03-14 145403.png" alt="Screenshot 2022-03-14 145403" style="zoom:45%;" /></p><ol start='' ><li><span>繼續確保小黑點在top的component旁</span></li><li><span>在top的上面的面，開一個</span><code>new sketch</code></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 145653.png" alt="Screenshot 2022-03-14 145653" style="width:45%;" /><img src="Screenshot 2022-03-14 145849.png" alt="Screenshot 2022-03-14 145849" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 145923.png" alt="Screenshot 2022-03-14 145923" style="width:45%;" /></p><ol start='' ><li><span>接下來，要將Arduino安裝在頂板上，所以要跟據Arduino UNO來開孔</span></li><li><span>Arduino UNO的第四個孔因太近零件，所以不安裝也沒有關係</span></li><li><span>之後就可以將3個圓穿孔</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 145957.png" alt="Screenshot 2022-03-14 145957" style="width:45%;" /><img src="Screenshot 2022-03-14 150031.png" alt="Screenshot 2022-03-14 150031" style="width:45%;" /></p><ol start='' ><li><span>打開零件樹，找到</span><code>top</code><span>的</span><code>Sketch1</code></li><li><span>將四旁邊的頂板安裝孔profile選取並一路穿孔到底板</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 150119.png" alt="Screenshot 2022-03-14 150119" style="width:45%;" /><img src="Screenshot 2022-03-14 150148.png" alt="Screenshot 2022-03-14 150148" style="width:45%;" /><img src="Screenshot 2022-03-14 150247.png" alt="Screenshot 2022-03-14 150247" style="width:45%;" /></p><ol start='' ><li><span>將Arduino UNO拖入當前檔案中</span></li><li><span>在零件樹找到它，按滑鼠右鍵，點選</span><code>Rigid Group</code><span>，將整個UNO板變成一個group</span></li><li><span>將UNO用hotkey </span><code>J</code><span> 組合到頂板上，</span><mark><span>記得要保持3mm間距，實際用螺絲安裝時請記得加墊圈，否則電線腳會壓斷</span></mark></li></ol><h3 id='按入六角柱'><span>按入六角柱</span></h3><p><img src="Screenshot 2022-03-14 150401.png" alt="Screenshot 2022-03-14 150401" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 150504.png" alt="Screenshot 2022-03-14 150504" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 150528.png" alt="Screenshot 2022-03-14 150528" style="width:45%;" /></p><p>&nbsp;</p><ol start='' ><li><span>將小黑點褪回最上層</span></li><li><span>開一個新的component叫</span><code>double hex</code></li><li><span>確保小黑點在新開的component中</span></li><li><span>將六角柱hex spacer M3x20拖入當前文件中(可以連續拖兩次或拖完一次後複製貼上)</span></li><li><span>最後就可以用hotkey </span><code>J</code><span> 將兩個六角柱接上</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 150654.png" alt="Screenshot 2022-03-14 150654" style="WIDTH:35%;" /><img src="Screenshot 2022-03-14 150810.png" alt="Screenshot 2022-03-14 150810" style="WIDTH:55%;" /></p><ol start='' ><li><mark><span>joint好後，將小黑點褪回最上層</span></mark></li><li><span>將component </span><code>double hex</code><span>複製貼上四份</span></li><li><span>之後就可以用hotkey </span><code>J</code><span> 組合到小車底盤上</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 150846.png" alt="Screenshot 2022-03-14 150846" style="width:75%;" /></p><ol start='' ><li><span>最後，將頂板同樣用hotkey </span><code>J</code><span> 組合到其中一支六角柱上</span></li><li><span>拖動一下現全的模型的零件，全部不能拖動就是正常了。</span></li></ol><h2 id='step-4-安裝sensor電池'><span>Step 4: 安裝sensor、電池</span></h2><h3 id='為底盤開孔'><span>為底盤開孔</span></h3><p><img src="Screenshot 2022-03-14 151034.png" alt="Screenshot 2022-03-14 151034" style="width:33%;" /><img src="Screenshot 2022-03-14 151404.png" alt="Screenshot 2022-03-14 151404" style="width:33%;" /></p><p><span>上面為需要安裝在底盤的電池盒和對地下的跌落感測，接下來我們要為底盤加孔來放置sensor和電池。</span></p><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 151616.png" alt="Screenshot 2022-03-14 151616" style="width:45%;" /><img src="Screenshot 2022-03-14 151830.png" alt="Screenshot 2022-03-14 151830" style="width:35%;" /></p><ol start='' ><li><mark><span>先將小黑點放到component </span><code>bottom</code><span>的旁邊</span></mark></li><li><span>在小車底盤的表面開一個new sketch</span></li><li><span>首先繪製對地面的跌落感測安裝孔</span></li><li><span>sensor會放在車的底部，所以只要開安裝孔就可以，但要另外加一個孔來穿電線，所以才會有另一個8x8mm的方形</span></li><li><mark><span>上面10和18的尺寸是隨便定的，之後你需要修改，見最後一章</span></mark></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 152029.png" alt="Screenshot 2022-03-14 152029" style="WIDTH:35%;" /><img src="Screenshot 2022-03-14 152105.png" alt="Screenshot 2022-03-14 152105" style="WIDTH:55%;" /></p><ol start='' ><li><span>之後就可以劃中心線，將sensor安裝孔鏡像到右邊，另外再劃上電池安裝的電池架</span></li><li><span>之後點選剛劃的圓和方，為底盤開孔</span></li></ol><p>&nbsp;</p><h3 id='插入和安裝底盤sensor和電池架'><span>插入和安裝底盤sensor和電池架</span></h3><p><img src="Screenshot 2022-03-14 152205.png" alt="Screenshot 2022-03-14 152205" style="width:70%;" /></p><ol start='' ><li><span>將兩個Line Sensor(拖兩次或者拖完一次後複製貼上)和電池架Battery stand 拖到當前畫面</span></li><li><span>記得拖動後，在零件樹中，為這三個Components按滑鼠右鍵，各自做</span><code>Rigid Group</code><span>，否則一移動或joint後，line sensor就會散開</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 152324.png" alt="Screenshot 2022-03-14 152324" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 152526.png" alt="Screenshot 2022-03-14 152526" style="WIDTH:45%;" /></p><ol start='' ><li><span>將line sensor用hotkey </span><code>J</code><span>組合到盤底，sensor PCB有45度角的為小車前方，</span><mark><span>記得將sensor向下offset 3mm，實際安裝時也要用3mm墊圈將sensor墊高，否則一上緊螺絲，電線腳就會壓彎</span></mark></li><li><span>安裝好兩邊跌落sensor後就可以安裝電池架</span></li></ol><h3 id='為頂板開孔和安裝sensor'><span>為頂板開孔和安裝sensor</span></h3><p><img src="Screenshot 2022-03-14 154808.png" alt="Screenshot 2022-03-14 154808" style="width:35%;" /></p><ol start='' ><li><span>頂板要安裝的sensor為上方的sensor，由於頂板上層已安裝Arduino UNO，所以sensor要安裝在頂板的下方</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 154421.png" alt="Screenshot 2022-03-14 154421" style="width:45%;" /><img src="Screenshot 2022-03-15 174848.png" alt="Screenshot 2022-03-15 174848" style="zoom:45%;" /></p><ol start='' ><li><span>將小黑點按到component </span><code>top</code><span>的旁邊</span></li><li><span>在頂板的底面開一個new sketch</span></li><li><span>按照右圖的尺寸繪畫3個孔，之後穿孔，</span><mark><span>尺寸是暫定的，到最後全機組合好後會按需要修改</span></mark></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 155922.png" alt="Screenshot 2022-03-14 155922" style="width:45%;" /><img src="Screenshot 2022-03-14 160003.png" alt="Screenshot 2022-03-14 160003" style="width:45%;" /></p><ol start='' ><li><span>穿孔後，</span><mark><span>將小黑點褪回最上層</span></mark></li><li><span>將</span><code>IR Sensor(FC51)</code><span>拖到當前文件，可以拖三次或複製貼上，需要三隻sensor</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 160629.png" alt="Screenshot 2022-03-14 160629" style="width:60%;" /></p><ol start='' ><li><span>將3隻FC51 sensor用hotkey </span><code>J</code><span> 組合到頂板的底層</span></li><li><span>sensor左右兩隻不是向正前方，左邊sensor指向右邊45度，右邊sensor指向左邊45度</span></li><li><span>sensor記得要offset 3mm距離，實際安裝時也要加3mm墊圈，否則電線腳會被壓彎</span></li></ol><h2 id='step-5-製作前擋板和鏟'><span>Step 5: 製作前擋板和鏟</span></h2><p><span>來到這一步，機械人已基本完成，有基本的功能，接下來最後一步要製作前方的檔板和鏟，第一個步驟是要先製作用以安裝前方檔板的支架。</span></p><h3 id='製作3d打印支架'><span>製作3D打印支架</span></h3><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 160850.png" alt="Screenshot 2022-03-14 160850" style="width:45%;" /><img src="Screenshot 2022-03-14 160940.png" alt="Screenshot 2022-03-14 160940" style="width:45%;" /></p><ol start='' ><li><mark><span>先將小黑點褪回最上一層</span></mark></li><li><span>開一個新的component，名字叫</span><code>triangle</code></li><li><span>確保小黑點在新開的component旁，開一個new sketch，位置點選世界的YZ平面就可以</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 161022.png" alt="Screenshot 2022-03-14 161022" style="width:45%;" /><img src="Screenshot 2022-03-14 161852.png" alt="Screenshot 2022-03-14 161852" style="width:45%;" /></p><p><img src="Screenshot 2022-03-14 173501.png" alt="Screenshot 2022-03-14 173501" style="width:25%;" /></p><ol start='' ><li><span>投影頂板和底板的前端兩條線</span></li><li><span>就可以跟著右圖的尺寸去定三角形支架</span></li><li><em><strong><span>尺寸是暫定的，之後你可以跟據需要自行修改，例如我這個高30mm，已經有點擋到了上面偵測敵人的sensor，所以我後來改矮了變左成25mm</span></strong></em></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 161945.png" alt="Screenshot 2022-03-14 161945" style="width:45%;" /><img src="Screenshot 2022-03-14 162037.png" alt="Screenshot 2022-03-14 162037" style="width:45%;" /></p><ol start='' ><li><span>之後就可以用hotkey </span><code>E</code><span> 擠出</span></li><li><span>擠出厚度為</span><code>10mm</code><span>，今次我選用了</span><code>Symmetric</code><span>而非預設的</span><code>One Side</code><span>，原因是對稱的話比較好操作，你用原本的</span><code>One Side</code><span>也可以</span></li><li><span>之後就可以到斜面開一個new sketch</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 162124.png" alt="Screenshot 2022-03-14 162124" style="width:30%;" /><img src="Screenshot 2022-03-14 162150.png" alt="Screenshot 2022-03-14 162150" style="width:60%;" /></p><p><img src="Screenshot 2022-03-14 162206.png" alt="Screenshot 2022-03-14 162206" style="width:30%;" /><img src="Screenshot 2022-03-14 162307.png" alt="Screenshot 2022-03-14 162307" style="width:30%;" /><img src="Screenshot 2022-03-14 162328.png" alt="Screenshot 2022-03-14 162328" style="width:30%;" /></p><ol start='' ><li><span>在斜面開一個孔用來安裝前方的鏟，孔徑用3mm就可以，因3D打印出來尺寸會小一點，開3mm孔用自攻3mm螺絲安裝就剛剛好</span></li><li><span>開兩個孔就最好，但因位置有限，所以我只開了一個</span></li><li><span>跟著上面的45度斜面也一樣，開一個new sketch再開兩個孔，用來安裝檔板</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 165745.png" alt="Screenshot 2022-03-14 165745" style="width:35%;" /><img src="Screenshot 2022-03-14 165801.png" alt="Screenshot 2022-03-14 165801" style="width:55%;" /></p><ol start='' ><li><span>最後三角支架的底部也要開孔，用來安裝在底板上</span></li><li><em><strong><span>如果你不跟我的尺寸，有修改過尺寸，記得三個面都開孔後，觀察一下幾個孔會否重疊了，否則安裝螺絲時螺絲會撞在一起</span></strong></em></li></ol><h3 id='安裝三角支架到底板'><span>安裝三角支架到底板</span></h3><p><img src="Screenshot 2022-03-14 165429.png" alt="Screenshot 2022-03-14 165429" style="width:45%;" /><img src="Screenshot 2022-03-14 165445.png" alt="Screenshot 2022-03-14 165445" style="width:45%;" /></p><ol start='' ><li><mark><span>將小黑點按到bottom旁邊</span></mark><span>，我們要為底板開孔去安裝三角支架</span></li><li><span>在底板表面開一個new sketch</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 170011.png" alt="Screenshot 2022-03-14 170011" style="width:45%;" /><img src="Screenshot 2022-03-14 170259.png" alt="Screenshot 2022-03-14 170259" style="width:45%;" /></p><p><img src="Screenshot 2022-03-14 170330.png" alt="Screenshot 2022-03-14 170330" style="width:45%;" /></p><ol start='' ><li><span>用hotkey </span><code>P</code><span> project投影三支架的底部到這個sketch當中</span></li><li><span>劃兩條水平線作圖線，用midpoint約束穿過三角支架底的兩個孔</span></li><li><span>在兩旁距離70mm處各開兩個圓</span></li><li><span>將4個孔鑽孔底板</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 170441.png" alt="Screenshot 2022-03-14 170441" style="width:45%;" /><img src="Screenshot 2022-03-14 170529.png" alt="Screenshot 2022-03-14 170529" style="width:45%;" /></p><ol start='' ><li><mark><span>將小黑點褪回最上層</span></mark></li><li><span>將</span><code>triangle</code><span> component 複製多一份</span></li><li><span>就可以分別用hotkey </span><code>J</code><span> 組合到底板</span></li><li><u><em><strong><span>如果你不按我的尺寸，或之後有所修改的話，請記得認真檢查一下三角支架有否撞到齒輪箱或電池架</span></strong></em></u></li><li><u><em><strong><span>安裝三角支架到底盤前，請先將馬達接線和測試一下是否運作正常，否則安裝後三角支架會阻礙將馬達拆出來接線和維修</span></strong></em></u></li></ol><h3 id='繪製鏟和前擋板'><span>繪製鏟和前擋板</span></h3><p><img src="Screenshot 2022-03-14 170847.png" alt="Screenshot 2022-03-14 170847" style="width:45%;" /><img src="Screenshot 2022-03-14 170916.png" alt="Screenshot 2022-03-14 170916" style="width:45%;" /></p><ol start='' ><li><span>確保小黑點褪回到最上層</span></li><li><span>開一個new component，名叫</span><code>front plane</code></li><li><span>在三角支架20度的面(左邊或右邊都可以)開一個new sketch</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 170944.png" alt="Screenshot 2022-03-14 170944" style="width:45%;" /><img src="Screenshot 2022-03-14 171601.png" alt="Screenshot 2022-03-14 171601" style="width:45%;" /></p><p><img src="Screenshot 2022-03-14 171617.png" alt="Screenshot 2022-03-14 171617" style="width:45%;" /></p><ol start='' ><li><span>用hotkey </span><code>P</code><span> project投影兩邊的三角支架</span></li><li><span>繪劃一條中心作圖線，劃一個長方形，長方形的頂邊要穿過20度長方到的頂邊</span></li><li><span>之後就可以擠出厚度</span><code>thickness</code></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 171708.png" alt="Screenshot 2022-03-14 171708" style="width:45%;" /><img src="Screenshot 2022-03-14 171823.png" alt="Screenshot 2022-03-14 171823" style="width:45%;" /></p><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 172106.png" alt="Screenshot 2022-03-14 172106" style="width:45%;" /></p><ol start='' ><li><span>之後45度擋板也一樣，先在隨便一邊的45度斜面開一個new sketch</span></li><li><span>將兩邊45度的斜面和</span><em><strong><span>前鏟板的頂邊</span></strong></em><span>投影到這個sketch中</span></li><li><span>之後就可以劃一個長旁形再擠出</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 172642.png" alt="Screenshot 2022-03-14 172642" style="zoom:70%;" /></p><ol start='' ><li><em><strong><span>完成後觀察一下，在側視圖看，兩塊板應該是剛剛好沒有相撞的</span></strong></em></li><li><span>之後就可以將鏟和擋板用hotkey J 組合到三角支架上</span></li><li><span>(我沒有cap圖展示joint的過程，請自行完成，因鏟和支架都是同一個component的兩個body，所以拖動時兩塊板會一起拖動是正常的)</span></li></ol><h3 id='為前擋板開孔讓偵敵紅外線sensor能穿過'><span>為前擋板開孔，讓偵敵紅外線sensor能穿過</span></h3><p><img src="Screenshot 2022-03-14 172759.png" alt="Screenshot 2022-03-14 172759" style="width:60%;" /><img src="Screenshot 2022-03-14 172914.png" alt="Screenshot 2022-03-14 172914" style="width:30%;" /></p><ol start='' ><li><span>確保將小黑點選到component </span><code>front plane</code></li><li><span>點選在其中一邊45度的sensor的平面，開一個new sketch</span></li><li><span>在sensor的LED和接收器的兩個圓中間為圓心，劃一個直徑15mm的圓</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 173008.png" alt="Screenshot 2022-03-14 173008" style="width:45%;" /></p><ol start='' ><li><span>將這個圓擠出一個</span><code>new body</code><span>，距離隨意，只要長過底盤就可以</span></li><li><em><strong><span>但記得要設定</span><code>taper angle</code><span>，這個角度會在擠出時使擠出的面積越來越大，至於為何是5度，就要視乎你用的sensor的發散角，我這次是跟據經驗設定的，如果你用其他的sensor，就要看看datasheet</span></strong></em></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 173101.png" alt="Screenshot 2022-03-14 173101" style="width:45%;" /><img src="Screenshot 2022-03-14 173137.png" alt="Screenshot 2022-03-14 173137" style="width:45%;" /></p><p><img src="Screenshot 2022-03-14 173247.png" alt="Screenshot 2022-03-14 173247" style="width:45%;" /></p><ol start='' ><li><span>擠出後，繼續確保小黑點在</span><code>front plane</code><span>旁</span></li><li><span>在45度斜面的表面開一個new sketch</span></li><li><span>按hotkey </span><code>S</code><span>，搜尋</span><code>intersect</code><span>，顧名思義就是相交的意思，這個指令可以將另一個body相交到這個sketch plane的輪廓勾出來</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 173840.png" alt="Screenshot 2022-03-14 173840" style="width:45%;" /><img src="Screenshot 2022-03-14 173902.png" alt="Screenshot 2022-03-14 173902" style="width:45%;" /></p><ol start='' ><li><span>跟據這個橢圓形的中心點，就可以知道sensor射出來，該在那開槽才不會阻礙紅外線發射接收</span></li><li><span>劃一個對稱的長方形，</span><mark><span>尺寸是暫定的，你可按需要修改</span></mark></li><li><span>之後就可以將其開槽</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 174220-16474953744691.png" alt="Screenshot 2022-03-14 174220" style="width:80%;" /></p><p><span> </span><font size="+2" style="color:red"><span>恭喜，大致已完成設計!!!!!!看看你的設計是否和我的設計差不多，會否有地方有error或會相撞</span></font></p><h2 id='step-6-微調'><span>Step 6: 微調</span></h2><p><img src="Screenshot 2022-03-14 174259.png" alt="Screenshot 2022-03-14 174259" style="width:45%;" /><img src="Screenshot 2022-03-14 174326.png" alt="Screenshot 2022-03-14 174326" style="width:45%;" /></p><ol start='' ><li><mark><span>將小黑點褪回最上層</span></mark></li><li><span>搜尋</span><code>Section Analysis</code></li><li><span>選取世界座標的YZ平面(或你機械人的側面平面)</span></li><li><span>將機械人割開一半方便觀察</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 174454.png" alt="Screenshot 2022-03-14 174454" style="width:45%;" /><img src="Screenshot 2022-03-14 174410.png" alt="Screenshot 2022-03-14 174410" style="width:45%;" /></p><ol start='' ><li><span>為方便觀察，請將視覺投影轉成</span><code>Orthographic</code><span>(在右上角的指向圖標上，按滑鼠右鍵，就能設定)</span></li><li><span>轉到側視圖</span></li><li><span>從側視圖就可以清楚觀察到，前擋板好像有點擋住了紅外線射出的路徑</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 174604.png" alt="Screenshot 2022-03-14 174604" style="width:45%;" /><img src="Screenshot 2022-03-14 174649.png" alt="Screenshot 2022-03-14 174649" style="width:45%;" /></p><ol start='' ><li><span>再轉到45度角觀察開槽的左右是否足夠</span></li><li><span>按一按45度sensor的平面，按下方第二個鍵名叫</span><code>look at</code><span>，就能對正這個點選的平面</span></li><li><span>跟據目測，槽的長度似乎足夠</span></li></ol><p>&nbsp;</p><p><img src="Screenshot 2022-03-14 174830.png" alt="Screenshot 2022-03-14 174830" style="width:45%;" /><img src="Screenshot 2022-03-14 175839.png" alt="Screenshot 2022-03-14 175839" style="width:45%;" /></p><p><img src="Screenshot 2022-03-14 175813.png" alt="Screenshot 2022-03-14 175813" style="width:45%;" /></p><ol start='' ><li><span>在零件樹或時間軸上，找到前擋板原來的sketch, 將它修改一下，上面距離15mm, 下面距離7mm</span></li><li><span>重新再觀察一下，今次似乎可以了</span></li></ol><h2 id='step-7-功課'><span>Step 7: 功課</span></h2><p><img src="Screenshot 2022-03-14 181113.png" alt="Screenshot 2022-03-14 181113" style="width:60%;" /></p><p><span>現在這個模型是有問題的:</span></p><ol><li><span>Arduino安裝問題: 如果安裝motor shield和sensor shield後，會撞到前擋板, 要將Arduino移後</span></li><li><span>20度擋板: 可以增長一點，盡量貼地才能發揮鏟的效果，之後亦要貼上薄一點的金屬或膠片來做第三層鏟</span></li><li><span>對地sensor明顯還有移前空間: 對地sensor距離牛眼輪越前越好，可以早一點知道前方是場外而停車</span></li><li><span>對敵sensor: 可以移前一點，那麼前擋板就不用開槽開這麼大，但要注意移動後前擋板會否有阻礙</span></li><li><span>電池開關無處安放: 下圖是電池開關的尺寸，我沒有設計其位置，你需要想辦法安裝，由於鋰電池本身電線較短，開關不能安裝在頂層上，要用3D打印或另外加一塊與地面垂直的膠板去安裝</span>
+      <img src="Screenshot 2022-03-14 154059.png" alt="Screenshot 2022-03-14 154059" style="zoom:60%;" /></li></ol><p>&nbsp;</p><p>&nbsp;</p></div></div>
+
+    </div>
+    <!-- End page content ============================================================================================================ -->
+
+
+
+
+        <!-- Sidebar/menu -->
+        <nav class="w3-sidebar w3-blue w3-collapse w3-display-position w3-large w3-padding" style="top:43px; z-index:9;width:300px;font-weight:bold;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" id="mySidebar"><br>
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+            <div class="w3-container">
+                <h3 class="w3-padding-36"><b>LCM STUDIO</b></h3>
+                <hr>
+            </div>
+            <object name="sideBarMenu" width="100%" height="500px" type="text/html" data="../sideBarMenu.html"> </object>
+        </nav>
+
+        <!-- Top menu Navbar -->
+        <object name="topBar"
+                style="position:fixed; top:0px; z-index:10;"
+                width="100%" height="43px"
+                type="text/html"
+                data="../../topBar.html">
+        </object>
+
+        <!-- Top menu on small screens -->
+        <header class="w3-container w3-top w3-hide-large w3-black w3-large w3-padding" style="z-index:11;">
+            <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">☰</a>
+            <span>LCM STUDIO</span>
+        </header>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+        <!-- W3.CSS Container -->
+        <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:0px;padding-right:58px">
+            <p class="w3-right">Powered by
+                <a  href="https://lokchonmou.github.io/"
+                    target="_blank"
+                    class="w3-hover-opacity">
+                    LOK CHON MOU
+                </a>
+            </p>
+        </div>
+
+        <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+    </script>
+
+    </body>
+    </html>
