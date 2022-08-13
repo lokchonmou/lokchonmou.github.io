@@ -19,7 +19,7 @@ var winner = 0;
 var winnerScore = 9999;
 
 function preload(){
-	img = loadImage("line guide-01.svg");
+	img = loadImage("data/line guide-01.svg");
 }
 
 function setup() {
