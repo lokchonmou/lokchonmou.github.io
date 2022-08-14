@@ -276,8 +276,7 @@ function saveEvent(){
 
 function loadEvent(){
 	fileSelectButton = createFileInput(handleFile);
-	fileSelectButton.position(0, height - 25);
-	autoDelCheckbox.position(0, height-50);
+	fileSelectButton.position(200, height - 25);
 }
 
 function handleFile(file) {
@@ -300,7 +299,6 @@ function handleFile(file) {
 			robotNoCounter++;
 		}
 		updateLocalParams(currentID);
-		autoDelCheckbox.position(0, height-20);
 		fileSelectButton.remove();
 	}
 }

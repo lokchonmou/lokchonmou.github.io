@@ -130,6 +130,8 @@ class Robot{
         // this.x = -R*sin(radians(this.theta)) + R*sin(dtheta+radians(this.theta)) + this.x;
         // this.y =  R*cos(radians(this.theta)) - R*cos(dtheta+radians(this.theta)) + this.y;
         this.theta += degrees(dtheta);
+        if (this.theta > 360) this.theta -= 360;
+        if (this.theta < -360) this.theta += 360;
         this.x += dx;
         this.y += dy;
     }
