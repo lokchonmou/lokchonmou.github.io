@@ -1,13 +1,13 @@
 var img;
-let robots=[];
-var GUIs=[];
+let robots = [];
+var GUIs = [];
 let resetButton, leftButton, rightButton, addCarButton, delCarButton, fpsSlider, saveButton, loadButton;
 let fileSelectButton;
 let autoDelCheckbox;
 
-var currentID=0;
+var currentID = 0;
 var robotNoCounter = 0;
-var FPS=30;
+var FPS = 30;
 let RobotsStore;
 var isAutoDelCar = true;
 
@@ -24,7 +24,7 @@ var Kd;
 var winner = 0;
 var winnerScore = 9999;
 
-function preload(){
+function preload() {
 	img = loadImage("data/line guide-01.svg");
 }
 
@@ -34,7 +34,7 @@ function setup() {
 	frameRate(FPS);
 
 	//Create the first 4 robots////////////////////////////////////////////////
-	for (var i=0; i < 4; i++){
+	for (var i = 0; i < 4; i++) {
 		robots.push(new Robot(robotNoCounter, 210, 61, -90));
 		robotNoCounter++;
 	}
@@ -52,7 +52,7 @@ function setup() {
 	robots[3].Kp = 2.35;
 	robots[3].Kd = 3.45;
 
-	for (var i=0; i < robots.length; i++) {
+	for (var i = 0; i < robots.length; i++) {
 		updateLocalParams(i);
 		createGUI(i);
 	}
@@ -66,7 +66,7 @@ function setup() {
 	saveButton.mousePressed(saveEvent);
 
 	loadButton = createButton('LOAD');
-	loadButton.position(width-50, height - 25);
+	loadButton.position(width - 50, height - 25);
 	loadButton.size(50, 25);
 	loadButton.mousePressed(loadEvent);
 
@@ -82,18 +82,18 @@ function setup() {
 	leftButton.mousePressed(leftEvent);
 
 	rightButton = createButton('→');
-	rightButton.position(width-25, height - 75);
+	rightButton.position(width - 25, height - 75);
 	rightButton.size(25, 25);
 	rightButton.mousePressed(rightEvent);
 
 	addCarButton = createButton('+');
-	addCarButton.position(width-75, height - 75);
-	addCarButton.size(25,25);
+	addCarButton.position(width - 75, height - 75);
+	addCarButton.size(25, 25);
 	addCarButton.mousePressed(addCarEvent);
 
 	delCarButton = createButton('−');
-	delCarButton.position(width-50, height - 75);
-	delCarButton.size(25,25);
+	delCarButton.position(width - 50, height - 75);
+	delCarButton.size(25, 25);
 	delCarButton.mousePressed(delCarEvent);
 
 	fpsSlider = createSlider(1, 120, 30);
@@ -102,13 +102,13 @@ function setup() {
 
 	autoDelCheckbox = createCheckbox('Auto delete car', true);
 	autoDelCheckbox.changed(autoDelCheckedEvent);
-	autoDelCheckbox.position(0, height-20);
+	autoDelCheckbox.position(0, height - 20);
 	autoDelCheckbox.style("font-size", "12px");
 
 }
 
-function createGUI(i){
-	GUIs[i] = createGui('Robot'+str(robots[i].id)).setPosition(600,0);
+function createGUI(i) {
+	GUIs[i] = createGui('Robot' + str(robots[i].id)).setPosition(600, 0);
 	sliderRange(8, 50, 1);
 	GUIs[i].addGlobals('robotWidth');
 	sliderRange(3, 21, 2);
@@ -136,16 +136,16 @@ function draw() {
 	//update the robots////////////////////////////////////////////////////////
 	updateParams(currentID);
 
-	for (var i=0; i < robots.length; i++){
+	for (var i = 0; i < robots.length; i++) {
 		robots[i].update();
 		if (i == currentID) GUIs[i].show();
 		else GUIs[i].hide();
 	}
 
 	// if any car run outside the field, delete it//////////////////////////////
-	if (isAutoDelCar){
-		for (var i=0; i < robots.length; i++){
-			if (robots[i].x > width || robots[i].x < 0|| robots[i].y > height || robots[i].y < 0){
+	if (isAutoDelCar) {
+		for (var i = 0; i < robots.length; i++) {
+			if (robots[i].isDead) {
 				currentID = i;
 				delCarEvent();
 				break;
@@ -154,42 +154,42 @@ function draw() {
 	}
 
 	//draw the start line///////////////////////////////////////////////////////
-	fill(127,127,255,127);
+	fill(127, 127, 255, 127);
 	noStroke();
 	rectMode(CORNER);
-	rect(200,0, 10, 110);
+	rect(200, 0, 10, 110);
 
 	//draw the fps text/////////////////////////////////////////////////////////
 	fill(0);
 	textAlign(LEFT, TOP);
-	text("fps: "+nf(frameRate(),3,1)+'/'+FPS, 0, 0);
+	text("fps: " + nf(frameRate(), 3, 1) + '/' + FPS, 0, 0);
 
 	//draw the stroke of field/////////////////////////////////////////////////
 	noFill();
 	stroke(0);
 	strokeWeight(.5);
-	rect(0,0,600,600);
+	rect(0, 0, 600, 600);
 
 	//draw the robots, it should be do after all robot sensor is read//////////
-	for (var i=0; i < robots.length; i++) robots[i].show();
+	for (var i = 0; i < robots.length; i++) robots[i].show();
 
 	//Circle out the winner////////////////////////////////////////////////////
-	for (var i=0; i < robots.length; i++){
-		if (robots[i].score > 2){
-			if (robots[i].score < winnerScore){
+	for (var i = 0; i < robots.length; i++) {
+		if (robots[i].score > 2) {
+			if (robots[i].score < winnerScore) {
 				winnerScore = robots[i].score;
 				winner = i;
 			}
 		}
 	}
 	fill(255, 255, 0, 70);
-	ellipse(robots[winner].x, robots[winner].y, 60,60);
+	ellipse(robots[winner].x, robots[winner].y, 60, 60);
 
 	//Circle out the current car////////////////////////////////////////////////
 	noFill();
 	strokeWeight(2);
 	stroke('#FF0000');
-	ellipse(robots[currentID].x, robots[currentID].y, 60,60);
+	ellipse(robots[currentID].x, robots[currentID].y, 60, 60);
 
 }
 
@@ -204,8 +204,8 @@ function updateLocalParams(i) {
 	Kd = robots[i].Kd;
 }
 
-function resetPosition(){
-	for (var i=0; i < robots.length; i++){
+function resetPosition() {
+	for (var i = 0; i < robots.length; i++) {
 		robots[i].x = 210;
 		robots[i].y = 61;
 		robots[i].theta = -90;
@@ -218,7 +218,7 @@ function resetPosition(){
 	winnerScore = 9999;
 }
 
-function updateParams(i){
+function updateParams(i) {
 	robots[i].robotWidth = robotWidth;
 	robots[i].sensorNo = sensorNo;
 	robots[i].sensor_distance = sensor_distance;
@@ -229,73 +229,73 @@ function updateParams(i){
 	robots[i].Kd = Kd;
 }
 
-function leftEvent(){
+function leftEvent() {
 	currentID--;
-	if (currentID < 0) currentID = robots.length-1;
+	if (currentID < 0) currentID = robots.length - 1;
 	updateLocalParams(currentID);
 }
 
-function rightEvent(){
+function rightEvent() {
 	currentID++;
-	if (currentID > robots.length-1) currentID = 0;
+	if (currentID > robots.length - 1) currentID = 0;
 	updateLocalParams(currentID);
 }
 
-function addCarEvent(){
+function addCarEvent() {
 	robots.push(new Robot(robotNoCounter, 210, 61, -90));
 	robotNoCounter++;
-	robots[robots.length-1].robotWidth = int(random(8, 50));
-	robots[robots.length-1].sensorNo = floor(random(5, 9)/2)*2+1;
-	robots[robots.length-1].sensor_distance = int(random(20, 70));
-	robots[robots.length-1].sensor_width = int(random(4,10));
-	robots[robots.length-1].maxVel = random(5.,7.);
-	robots[robots.length-1].maxAccel = .5;
-	robots[robots.length-1].Kp = random(0, 5);
-	robots[robots.length-1].Kd = random(0, 5);
+	robots[robots.length - 1].robotWidth = int(random(8, 50));
+	robots[robots.length - 1].sensorNo = floor(random(5, 9) / 2) * 2 + 1;
+	robots[robots.length - 1].sensor_distance = int(random(20, 70));
+	robots[robots.length - 1].sensor_width = int(random(4, 10));
+	robots[robots.length - 1].maxVel = random(5., 7.);
+	robots[robots.length - 1].maxAccel = .5;
+	robots[robots.length - 1].Kp = random(0, 5);
+	robots[robots.length - 1].Kd = random(0, 5);
 
-	updateLocalParams(robots.length-1);
-	createGUI(robots.length-1);
+	updateLocalParams(robots.length - 1);
+	createGUI(robots.length - 1);
 	updateLocalParams(currentID);
 }
 
-function delCarEvent(){
+function delCarEvent() {
 	if (robots.length > 1) robots.splice(currentID, 1);
-	if (GUIs.length > 1)	{
+	if (GUIs.length > 1) {
 		GUIs[currentID].hide();
 		GUIs.splice(currentID, 1);
 	}
-	if (currentID >= robots.length) currentID = robots.length-1;
+	if (currentID >= robots.length) currentID = robots.length - 1;
 	updateLocalParams(currentID);
 	winner = 0;
 	winnerScore = 9999;
 }
 
-function saveEvent(){
+function saveEvent() {
 	saveJSON(robots, 'RobotsStore');
 }
 
-function loadEvent(){
+function loadEvent() {
 	fileSelectButton = createFileInput(handleFile);
 	fileSelectButton.position(200, height - 25);
 }
 
 function handleFile(file) {
-	if (file.type === 'application' && file.subtype === 'json'){
+	if (file.type === 'application' && file.subtype === 'json') {
 		RobotsStore = file.data;
 		print(RobotsStore);
 
-		for (var i=0; i < RobotsStore.length; i++) {
+		for (var i = 0; i < RobotsStore.length; i++) {
 			robots.push(new Robot(robotNoCounter, 210, 61, -90));
-			robots[robots.length-1].robotWidth = RobotsStore[i].robotWidth;
-			robots[robots.length-1].sensorNo = RobotsStore[i].sensorNo;
-			robots[robots.length-1].sensor_distance = RobotsStore[i].sensor_distance;
-			robots[robots.length-1].sensor_width = RobotsStore[i].sensor_width;
-			robots[robots.length-1].maxAccel = RobotsStore[i].maxAccel;
-			robots[robots.length-1].maxVel = RobotsStore[i].maxVel;
-			robots[robots.length-1].Kp = RobotsStore[i].Kp;
-			robots[robots.length-1].Kd = RobotsStore[i].Kd;
-			updateLocalParams(robots.length-1);
-			createGUI(robots.length-1);
+			robots[robots.length - 1].robotWidth = RobotsStore[i].robotWidth;
+			robots[robots.length - 1].sensorNo = RobotsStore[i].sensorNo;
+			robots[robots.length - 1].sensor_distance = RobotsStore[i].sensor_distance;
+			robots[robots.length - 1].sensor_width = RobotsStore[i].sensor_width;
+			robots[robots.length - 1].maxAccel = RobotsStore[i].maxAccel;
+			robots[robots.length - 1].maxVel = RobotsStore[i].maxVel;
+			robots[robots.length - 1].Kp = RobotsStore[i].Kp;
+			robots[robots.length - 1].Kd = RobotsStore[i].Kd;
+			updateLocalParams(robots.length - 1);
+			createGUI(robots.length - 1);
 			robotNoCounter++;
 		}
 		updateLocalParams(currentID);
@@ -303,6 +303,6 @@ function handleFile(file) {
 	}
 }
 
-function autoDelCheckedEvent(){
+function autoDelCheckedEvent() {
 	isAutoDelCar = !isAutoDelCar;
 }
