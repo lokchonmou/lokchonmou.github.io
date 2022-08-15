@@ -1,3 +1,4 @@
+
 class Robot {
 
     robotWidth = 30;        //default 30
@@ -24,7 +25,13 @@ class Robot {
     score = 0;
 
     GUI;
-
+    /**
+     * 
+     * @param {number} _id 
+     * @param {number} _x 
+     * @param {number} _y 
+     * @param {number} _theta 
+     */
     constructor(_id, _x, _y, _theta) {
         this.id = _id;
         this.x = _x;
@@ -41,9 +48,10 @@ class Robot {
         this.score = 0;
 
     }
-
+    /**
+     * 
+     */
     updateSensor() {
-
         var avg = 0, sum = 0;
         var online = false;
         var sensor_position_x = 0;
@@ -89,12 +97,18 @@ class Robot {
             this.drift = this.lastDrift;
         }
     }
-
+    /**
+     * 
+     * @param {number} _Kp 
+     * @param {number} _Kd 
+     */
     setPD(_Kp, _Kd) {
         this.Kp = _Kp;
         this.Kd = _Kd;
     }
-
+    /**
+     * 
+     */
     PID() {
         // PID controller////////////////////////////////
         this.error = this.drift / 1000. - (this.sensorNo - 1) / 2.;
@@ -112,7 +126,9 @@ class Robot {
             this.desiredVr = this.maxVel;
         }
     }
-
+    /**
+     * 
+     */
     drive() {
         this.desiredVl = constrain(this.desiredVl, -this.maxVel, this.maxVel);
         this.desiredVr = constrain(this.desiredVr, -this.maxVel, this.maxVel);
@@ -135,7 +151,9 @@ class Robot {
         this.x += dx;
         this.y += dy;
     }
-
+    /**
+     * 
+     */
     show() {
         var sensor_position_x = 0;
         var sensor_position_y = 0;
@@ -195,7 +213,9 @@ class Robot {
 
 
     }
-
+    /**
+     * 
+     */
     oneLoop() {
         if (this.x >= 0 && this.x <= 210 && this.y <= 110) {
             if (!this.enterTimerZone) {
@@ -208,7 +228,9 @@ class Robot {
         else this.enterTimerZone = false;
 
     }
-
+    /**
+     * 
+     */
     update() {
         if (!this.isDead) {
             this.updateSensor();
