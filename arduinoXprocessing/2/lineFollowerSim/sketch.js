@@ -40,14 +40,14 @@ function setup() {
 	}
 
 	robots[1].sensorNo = 5;
-	robots[1].sensor_distance = 30;
+	robots[1].sensor_distance = 100;
 
-	robots[2].sensor_distance = 80;
+	robots[2].sensor_distance = 266;
 
-	robots[3].robotWidth = 30;
+	robots[3].robotWidth = 100.;
 	robots[3].sensorNo = 9;
-	robots[3].sensor_distance = 52;
-	robots[3].sensor_width = 4;
+	robots[3].sensor_distance = 174;
+	robots[3].sensor_width = 13.;
 	robots[3].maxVel = 8.5;
 	robots[3].Kp = 2.35;
 	robots[3].Kd = 3.45;
@@ -69,13 +69,13 @@ function setup() {
  */
 function createGUI(i) {
 	GUIs[i] = createGui('Robot' + str(robots[i].id)).setPosition(600, 0);
-	sliderRange(8, 50, 1);
+	sliderRange(24, 200, 1);
 	GUIs[i].addGlobals('robotWidth');
 	sliderRange(3, 21, 2);
 	GUIs[i].addGlobals('sensorNo');
-	sliderRange(10, 100, 1);
+	sliderRange(30, 300, 1);
 	GUIs[i].addGlobals('sensor_distance');
-	sliderRange(1, 10, 1);
+	sliderRange(3, 30, 1);
 	GUIs[i].addGlobals('sensor_width');
 	sliderRange(0.1, 10, 0.1);
 	GUIs[i].addGlobals('maxAccel', 'maxVel');
@@ -179,10 +179,10 @@ function rightEvent() {
 function addCarEvent() {
 	robots.push(new Robot(robotNoCounter, 210, 61, -90));
 	robotNoCounter++;
-	robots[robots.length - 1].robotWidth = int(random(8, 50));
+	robots[robots.length - 1].robotWidth = random(24, 200);
 	robots[robots.length - 1].sensorNo = floor(random(5, 9) / 2) * 2 + 1;
-	robots[robots.length - 1].sensor_distance = int(random(20, 70));
-	robots[robots.length - 1].sensor_width = int(random(4, 10));
+	robots[robots.length - 1].sensor_distance = random(30, 300);
+	robots[robots.length - 1].sensor_width = random(3, 30);
 	robots[robots.length - 1].maxVel = random(5., 7.);
 	robots[robots.length - 1].maxAccel = .5;
 	robots[robots.length - 1].Kp = random(0, 5);

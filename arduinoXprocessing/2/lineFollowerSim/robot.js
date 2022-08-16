@@ -1,16 +1,16 @@
 
 class Robot {
 
-    robotWidth = 30;        //default 30
-    sensorNo = 7;           //default 7
-    sensor_distance = 40;   //default 40
-    sensor_width = 5;       //default 5
-    maxAccel = .5;          //default .5  代表有跣軚, 0是完全跣軚不會行走, max是maxVel
-    maxVel = 7.;            //default 7.
+    robotWidth = 100;        //unit: mm
+    sensorNo = 7;
+    sensor_distance = 133.3;  //unit: mm
+    sensor_width = 16.       //unit: mm
+    maxAccel = .5;          // .5  代表有跣軚, 0是完全跣軚不會行走, max是maxVel
+    maxVel = 7.;            // 7.
     Kp = 2.1;
     Kd = 1.2;                 //Core PID
 
-    sensorSize = 4;
+    sensorSize = 4;         //unit is pixel, not in mm
     id = 0;                 //the ID of the current car
     state = [];             //the state of the sensor array, true is on black line, false is on white bg
     vr = 0.; vl = 0.;           //velocity of the left and right wheel
@@ -64,8 +64,8 @@ class Robot {
 
         for (var i = 0; i < this.sensorNo; i++) {
             _theta = radians(this.theta);
-            thisSensorX = this.sensor_distance * sin(this.sensor_width * (i - floor(this.sensorNo / 2)) / this.sensor_distance);
-            thisSensorY = this.sensor_distance * cos(this.sensor_width * (i - floor(this.sensorNo / 2)) / this.sensor_distance);
+            thisSensorX = this.sensor_distance * 0.3 * sin(this.sensor_width * 0.3 * (i - floor(this.sensorNo / 2)) / (this.sensor_distance * 0.3));
+            thisSensorY = this.sensor_distance * 0.3 * cos(this.sensor_width * 0.3 * (i - floor(this.sensorNo / 2)) / (this.sensor_distance * 0.3));
             sensor_position_x = this.x + thisSensorX * cos(_theta) + thisSensorY * sin(_theta);
             sensor_position_y = this.y + thisSensorX * sin(_theta) - thisSensorY * cos(_theta);
 
@@ -139,8 +139,8 @@ class Robot {
         this.vl = constrain(this.vl, -this.maxVel, this.maxVel);
         this.vr = constrain(this.vr, -this.maxVel, this.maxVel);
 
-        // var R = -this.robotWidth*(this.vl+this.vr)/(2*(this.vr-this.vl));
-        var dtheta = -(this.vr - this.vl) / this.robotWidth;
+        // var R = -this.robotWidthh0.3vl+this.vr)/(2*(this.vr-this.vl));
+        var dtheta = -(this.vr - this.vl) / (this.robotWidth * 0.3);
         var dx = (this.vr + this.vl) / 2 * sin(radians(this.theta));
         var dy = -(this.vr + this.vl) / 2 * cos(radians(this.theta));
         // this.x = -R*sin(radians(this.theta)) + R*sin(dtheta+radians(this.theta)) + this.x;
@@ -171,16 +171,16 @@ class Robot {
             //draw the body of car
             fill('#325AA8');
             rectMode(CORNER);
-            rect(-this.robotWidth / 2., -20.0, this.robotWidth, 30.);
+            rect(-this.robotWidth * 0.3 / 2., -20.0, this.robotWidth * 0.3, 30.);
             //draw the two wheels
             fill('#f2511f');
             rectMode(CENTER);
-            rect(-this.robotWidth / 2 - this.wheelWidth / 2, 0, this.wheelWidth, 20);
-            rect(this.robotWidth / 2 + this.wheelWidth / 2, 0, this.wheelWidth, 20);
+            rect(-this.robotWidth * 0.3 / 2 - this.wheelWidth / 2, 0, this.wheelWidth, 20);
+            rect(this.robotWidth * 0.3 / 2 + this.wheelWidth / 2, 0, this.wheelWidth, 20);
             //draw the center line of car
             stroke('#FF00FF');
             strokeWeight(.5);
-            line(-this.robotWidth / 2. - this.wheelWidth - 10, 0, this.robotWidth / 2 + this.wheelWidth / 2 + 10, 0);
+            line(-this.robotWidth * 0.3 / 2. - this.wheelWidth - 10, 0, this.robotWidth * 0.3 / 2 + this.wheelWidth / 2 + 10, 0);
             line(0, -30, 0, 15);
             //print the id of car on the top
             fill(255); noStroke();
@@ -195,8 +195,8 @@ class Robot {
 
         for (var i = 0; i < this.sensorNo; i++) {
             _theta = radians(this.theta);
-            thisSensorX = this.sensor_distance * sin(this.sensor_width * (i - floor(this.sensorNo / 2)) / this.sensor_distance);
-            thisSensorY = this.sensor_distance * cos(this.sensor_width * (i - floor(this.sensorNo / 2)) / this.sensor_distance);
+            thisSensorX = this.sensor_distance * 0.3 * sin(this.sensor_width * 0.3 * (i - floor(this.sensorNo / 2)) / (this.sensor_distance * 0.3));
+            thisSensorY = this.sensor_distance * 0.3 * cos(this.sensor_width * 0.3 * (i - floor(this.sensorNo / 2)) / (this.sensor_distance * 0.3));
             sensor_position_x = this.x + thisSensorX * cos(_theta) + thisSensorY * sin(_theta);
             sensor_position_y = this.y + thisSensorX * sin(_theta) - thisSensorY * cos(_theta);
             // draw the sensor array of car

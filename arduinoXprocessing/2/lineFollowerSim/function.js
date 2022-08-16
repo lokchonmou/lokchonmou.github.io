@@ -3,7 +3,7 @@
  * 
  * @param {nuumber} i 
  */
- function updateLocalParams(i) {
+function updateLocalParams(i) {
 	robotWidth = robots[i].robotWidth;
 	sensorNo = robots[i].sensorNo;
 	sensor_distance = robots[i].sensor_distance;
