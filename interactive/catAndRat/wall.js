@@ -5,8 +5,10 @@ class wall {
 	}
 
 	show() {
-		stroke('#f4cd39');
+		stroke('#ffff88');
 		strokeWeight(10);
+		drawingContext.shadowBlur = 30;
+		drawingContext.shadowColor = '#ffffff';
 		line(this.P0.x, this.P0.y, this.P1.x, this.P1.y);
 	}
 

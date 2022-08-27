@@ -12,6 +12,7 @@ class Cat {
 	show() {
 		noStroke();
 		fill('#00FF00');
+		drawingContext.shadowBlur = 0;
 		if (this.velocity.mag() > this.maxVelocity / 2.) fill('#FF0000');
 		if (this.velocity.mag() > 3. * this.maxVelocity / 4.) fill('#8700c6');
 		ellipse(this.pos.x, this.pos.y, 15, 15);

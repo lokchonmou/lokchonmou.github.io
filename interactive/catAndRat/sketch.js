@@ -47,7 +47,7 @@ function lvUP(_lv) {
 	state = 0;
 	view = 150. + int(lv * 5);
 	rat.startTime = millis();
-	
+
 	for (let i = 0; i < 200; i++)  stars.push(new star('#830101'));
 	for (let i = 0; i < 200; i++)  stars.push(new star('#8a8a00'));
 	for (let i = 0; i < 100; i++)  stars.push(new star('#FFFFFF'));
@@ -139,11 +139,16 @@ class food {
 	show() {
 		if (this.visible) {
 			if (!this.isBlackhole) {
-				noStroke();
-				fill('#009BFF');
-				ellipse(this.pos.x, this.pos.y, 15, 15);
+				stroke('#ffffff');
+				fill('#ffffff99');
+				strokeWeight(4);
+				drawingContext.shadowBlur = 30;
+				drawingContext.shadowColor = '#ffffff';
+				rectMode(CENTER);
+				rect(this.pos.x, this.pos.y, 15, 15);
 			}
 			else {
+				drawingContext.shadowBlur = 30;
 				stroke('#ffffff');
 				fill('#000000');
 				ellipse(this.pos.x, this.pos.y, 30, 30);

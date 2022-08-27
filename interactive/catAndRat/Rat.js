@@ -18,6 +18,7 @@ class Rat {
 	show() {
 		noStroke();
 		fill('#FFFF00');
+		drawingContext.shadowBlur = 0;
 		ellipse(this.pos.x, this.pos.y, 15, 15);
 
 		// noFill();
@@ -26,6 +27,7 @@ class Rat {
 		// ellipse(this.pos.x, this.pos.y, view * 2, view * 2);
 
 		noStroke();
+		rectMode(CORNER);
 		fill('#FFFFFF33');
 		rect(width / 2 - 250, 10, 500, 20);
 		fill('#FF000033');
