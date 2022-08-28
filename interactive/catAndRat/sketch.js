@@ -52,8 +52,10 @@ function lvUP(_lv) {
 	for (let i = 0; i < 200; i++)  stars.push(new star('#8a8a00'));
 	for (let i = 0; i < 100; i++)  stars.push(new star('#FFFFFF'));
 
-	for (let i = 0; i < (15 + lv * 3); i++)
+	for (let i = 0; i < (15 + lv * 3); i++){
 		cats.push(new Cat(random(0, width), random(0, height)));
+		cats[i].maxVelocity += _lv;
+	}
 
 	for (let i = 0; i < (3 + int(lv / 2)); i++)
 		foods.push(new food(random(0, width), random(0, height), false));
