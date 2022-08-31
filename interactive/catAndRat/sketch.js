@@ -18,7 +18,7 @@ function preload() {
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
-	frameRate(120);
+	frameRate(45);
 
 	rat = new Rat(width / 2, height / 2);
 	startButton = createButton('START');
@@ -74,6 +74,7 @@ function lvUP(_lv) {
 
 
 function draw() {
+	
 	drawBackground();
 
 	for (const c of cats) {
