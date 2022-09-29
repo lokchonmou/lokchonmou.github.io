@@ -144,6 +144,7 @@ def draw():
     
     if ballPos.x >= beam.x - 25 and ballPos.x <= beam.x + 25 and ballPos.y >= height-15:
         ballVec.y *= -1
+        ballVec.x += mouseX - pmouseX ;
     
     ellipse(ballPos.x, ballPos.y, 20, 20)
     rect(beam.x, beam.y, 50, 10)
@@ -173,11 +174,12 @@ beam = PVector(mouseX, beam.y)
 
 if ballPos.x >= beam.x - 25 and ballPos.x <= beam.x + 25 and ballPos.y >= height-15:
     ballVec.y *= -1
+    ballVec.x += mouseX - pmouseX ;
     
 rect(beam.x, beam.y, 50, 10)
 ```
 
-在`draw()`中，每幀都指定`beam`的位置為`(width/2, height-15)`，跟上一次的Pong一樣，當球撞到板後，就反彈球。最後將`beam`畫出來。
+在`draw()`中，每幀都指定`beam`的位置為`(mouseX, height-15)`，跟上一次的Pong一樣，當球撞到板後，就反彈球。而今次我們最後將`beam`畫出來。
 
 ##美化一下更加像原版
 
@@ -248,3 +250,230 @@ rect(beam.x, beam.y, beamWidth, 10)
 ```
 
 最後將球和拍畫出來。顏色跟隨原版，沒有框線。
+
+## 製作磚頭
+
+```python
+ballPos = PVector()
+ballVec = PVector()
+
+beam = PVector()
+beamWidth = 100
+
+brickPos = []
+brickState = [] 
+brickWidth = 0
+brickHeight = 0
+brickColor = ["#C54846","#CE7238","#BB7C2F","#A29B27","#429143","#4350CC"]
+
+def setup():
+    global ballPos, ballVec, beam, brickPos, brickWidth, brickHeight
+    
+    size(800, 600)
+    
+    ballPos = PVector(width/2, height-20)
+    ballVec = PVector(random(-5,5), -1)
+    
+    beam = PVector(width/2, height-15)
+    rectMode(CENTER)
+    
+    brickWidth = width/16
+    brickHeight = 20
+    
+    for i in range(6):
+        elements = []
+        for j in range(16):
+            elements.append(PVector(j*brickWidth+brickWidth/2, i*brickHeight+50))
+        brickPos.append(elements)
+
+def draw():
+    global ballPos, ballVec, beam, brickPos, brickWidth, brickHeight
+    
+    background(30)
+    
+    ballPos = ballPos.add(ballVec)
+    beam = PVector(mouseX, beam.y)
+    
+    if (ballPos.x <= 0 or ballPos.x >= width):
+        ballVec.x *= -1
+    if ballPos.y <=0:
+        ballVec.y *= -1
+    
+    if ballPos.x >= beam.x - beamWidth/2 and ballPos.x <= beam.x + beamWidth/2 and ballPos.y >= height-15:
+        ballVec.y *= -1
+    
+    fill(198, 73, 75)
+    noStroke()
+    rect(ballPos.x, ballPos.y, 20, 20)
+    rect(beam.x, beam.y, beamWidth, 10)
+    
+    for i in range(6):
+        fill(brickColor[i])
+        for j in range(16):
+            rect(brickPos[i][j].x, brickPos[i][j].y, brickWidth, brickHeight)
+```
+
+<img src="image-20220926140951895.png" alt="image-20220926140951895" style="zoom:50%;" />
+
+```python
+brickPos = []
+brickState = [] 
+brickWidth = 0
+brickHeight = 0
+brickColor = ["#C54846","#CE7238","#BB7C2F","#A29B27","#429143","#4350CC"]
+```
+
+在`setup()`之前，宣告所有磚的位置、狀況(是出現還是消失)、寬度、長度和每一行磚的顏色。值得注意的是`brickPos`和`brickState`，由於有6x16塊磚，而每塊磚都有自己的狀態，所以我們不可能用6x16個不同命名的變數去裝起它們，這裡我們用一個list去裝起它們。甚麼是list，可以參考[這裡](https://www.w3schools.com/python/python_lists.asp)。
+
+
+
+```python
+brickWidth = width/16
+brickHeight = 20
+
+for i in range(6):
+	elements = []
+	for j in range(16):
+		elements.append(PVector(j*brickWidth+brickWidth/2, i*brickHeight+50))
+	brickPos.append(elements)
+```
+
+按著在`setup()`中，先定義每塊磚的長和寬。利用`for` 去重覆，每次更新每塊磚的位置。由於rectMode()是用CENTER，所以每塊磚的x座標要再加上半塊磚的距離。
+
+
+
+```python
+for i in range(6):
+	fill(brickColor[i])
+	for j in range(16):
+		rect(brickPos[i][j].x, brickPos[i][j].y, brickWidth, brickHeight)
+```
+
+最後在`draw()`中，將所有的磚畫出來。每行的磚都有自己的顏色，這時就要用之前事前已經用list存好的`brickColor[]`
+
+## 令磚頭消失
+
+```python
+ballPos = PVector()
+ballVec = PVector()
+
+beam = PVector()
+beamWidth = 100
+
+brickPos = []
+brickState = [] 
+brickWidth = 0
+brickHeight = 0
+brickColor = ["#C54846","#CE7238","#BB7C2F","#A29B27","#429143","#4350CC"]
+
+def setup():
+    global ballPos, ballVec, beam, brickPos, brickWidth, brickHeight, brickState
+    
+    size(800, 600)
+    
+    ballPos = PVector(width/2, height-20)
+    ballVec = PVector(random(-5,5), -1)
+    
+    beam = PVector(width/2, height-15)
+    rectMode(CENTER)
+    
+    brickWidth = width/16
+    brickHeight = 20
+    
+    for i in range(6):
+        elements = []
+        for j in range(16):
+            elements.append(PVector(j*brickWidth+brickWidth/2, i*brickHeight+50))
+        brickPos.append(elements)
+        
+    for i in range(6):
+        stateElements = []
+        for j in range(16):
+            stateElements.append(True)
+        brickState.append(stateElements)
+        
+def draw():
+    global ballPos, ballVec, beam, brickPos, brickWidth, brickHeight, brickState
+    
+    background(30)
+    
+    ballPos = ballPos.add(ballVec)
+    beam = PVector(mouseX, beam.y)
+    
+    if (ballPos.x <= 0 or ballPos.x >= width):
+        ballVec.x *= -1
+    if ballPos.y <=0:
+        ballVec.y *= -1
+    
+    if ballPos.x >= beam.x - beamWidth/2 and ballPos.x <= beam.x + beamWidth/2 and ballPos.y >= height-15:
+        ballVec.y *= -1
+    
+    fill(198, 73, 75)
+    noStroke()
+    rect(ballPos.x, ballPos.y, 20, 20)
+    rect(beam.x, beam.y, beamWidth, 10)
+    
+    for i in range(6):
+        fill(brickColor[i])
+        for j in range(16):
+            if isInBox(ballPos, brickPos[i][j]):
+                brickState[i][j] = False
+            if brickState[i][j]:
+                rect(brickPos[i][j].x, brickPos[i][j].y, brickWidth, brickHeight)
+                
+
+def isInBox(_ballPos, _brickPos):
+    x = _ballPos.x
+    y = _ballPos.y
+    bX = _brickPos.x
+    bY = _brickPos.y
+    w = brickWidth
+    h = brickHeight
+    
+    if x >= bX - w/2 and x <= bX + w/2 and y >= bY - h/2 and y <= bY + h/2:
+        return True
+```
+
+<img src="image-20220927091919614.png" alt="image-20220927091919614" style="zoom:50%;" />
+
+
+```
+for i in range(6):
+	stateElements = []
+	for j in range(16):
+		stateElements.append(True)
+	brickState.append(stateElements)
+```
+
+在`setup()`中，加入另一個for loop，初始化`brickState`變成6x16的2d list，並將全部內容都設為`True`。
+
+
+
+```python
+def isInBox(_ballPos, _brickPos):
+    x = _ballPos.x
+    y = _ballPos.y
+    bX = _brickPos.x
+    bY = _brickPos.y
+    w = brickWidth
+    h = brickHeight
+    
+    if x >= bX - w/2 and x <= bX + w/2 and y >= bY - h/2 and y <= bY + h/2:
+        return True
+```
+
+在`setup()`和`draw()`之外，加入第3個自定的函數(function)。這個函數(function)你可以隨意命名，不一定要跟我一樣，函數(function)有2個參數(parameter)，python不需要跟其他程式一樣事前定義參數(parameter)的數據格式，你導入的引數(Argument)格式是甚麼就是甚麼，一般為了方便驅分，參數的命名如果跟全域變數(global varaiable)很像的話，都會在名字前面加入`_`。
+
+
+
+```python
+for i in range(6):
+    fill(brickColor[i])
+    for j in range(16):
+        if isInBox(ballPos, brickPos[i][j]):
+            brickState[i][j] = False
+        if brickState[i][j]:
+            rect(brickPos[i][j].x, brickPos[i][j].y, brickWidth, brickHeight)
+```
+
+每次在繪畫磚塊之時，檢查一下球有否撞過磚塊，如果有的話, 就將其狀態(`brickState`)設定為`False`，在繪畫時就不繪畫它。

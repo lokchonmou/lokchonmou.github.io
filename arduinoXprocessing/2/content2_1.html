@@ -1,42 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<title>LCM STUDIO</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
 .for-image #write { padding-left: 8px; padding-right: 8px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; }
-button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
 p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
 p { orphans: 4; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.8rem; }
@@ -48,17 +44,17 @@ h6 { font-size: 1rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
 a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px !important; }
-tr { break-inside: avoid; break-after: auto; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
-.CodeMirror-linenumber { }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -68,46 +64,51 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping pre { white-space: pre; }
 #write pre.ty-contain-cm { white-space: normal; }
 .CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
-.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
 #write .md-fences.mock-cm { white-space: pre-wrap; }
 .md-fences.md-fences-with-lineno { padding-left: 0px; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
 .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
 li { margin: 0px; position: relative; }
 blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
-  html.blink-to-pdf { font-size: 13px; }
-  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
 p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
 p > .md-image:only-child { display: inline-block; width: 100%; }
 #write .MathJax_Display { margin: 0.8em 0px 0px; }
 .md-math-block { width: 100%; }
 .md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
 [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
 .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
 .math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
 .md-toc-content::after, .md-toc::after { display: none; }
 .md-toc-item { display: block; color: rgb(65, 131, 196); }
@@ -128,34 +129,77 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 }
 a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
 .footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
-.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
-code { text-align: left; }
-a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
-.md-inline-math .MathJax_SVG .noError { display: none !important; }
-.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
-.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
-.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
-.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
-.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
-.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
-.MathJax_SVG * { transition: none; }
-.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
 [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom-width: 0px; }
+table tr th { border-bottom: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
 iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
-svg[id^="mermaidChart"] { line-height: 1em; }
-mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
-mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
 
 
 :root {
@@ -543,78 +587,13 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
-</style>
+</style><title>content2_1</title>
 </head>
-<body>
-
-    <!-- !PAGE CONTENT! ============================================================================================================= -->
-    <div class="w3-main" style="margin-left:300px;">
-        <div  id='write'  class = 'is-mac'><h1><a name="21-communication" class="md-header-anchor"></a><span>2.1 Communication</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#21-communication">2.1 Communication</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3"><a class="md-toc-inner" href="#字符">字符</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n7"><a class="md-toc-inner" href="#serial-vs-parallel傳輸">Serial VS. Parallel傳輸</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n11"><a class="md-toc-inner" href="#parallel">Parallel</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n15"><a class="md-toc-inner" href="#serial">Serial</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n21"><a class="md-toc-inner" href="#arduino常用傳輸">Arduino常用傳輸</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n22"><a class="md-toc-inner" href="#serial-uart">Serial UART</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n26"><a class="md-toc-inner" href="#i2c">I<sup>2</sup>C</a></span></p></div><h2><a name="字符" class="md-header-anchor"></a><span>字符</span></h2><p><span>要於兩部裝置(電腦、Arduino、微控制器等)傳輸資料，首先就要了解資料的格式和怎樣傳遞的。</span></p><p><span>你可能有聽過摩斯編碼，就是用dash和dot來編成不同的英字字母和符號。而到了電腦年代，則是使用ASCII碼來傳遞字符(當然也有不同的編碼，例如中文常用的是BIG5)。摩斯編碼用3 - 4個dash和dot組成字母，而ASCII碼則用固定8個</span><code>0</code><span>和</span><code>1</code><span>來表示。例如，</span><code>A</code><span>就是</span><code>0100 0001</code><span>，</span><code>a</code><span>就是</span><code>0110 0001</code><span>。</span></p><p><span>每個</span><code>0</code><span>或</span><code>1</code><span>稱之為bit，8 bits組合起來就是1 byte, 1024 bytes就是1 KB，1024 KB就是1 MB，如此類推。</span></p><h2><a name="serial-vs-parallel傳輸" class="md-header-anchor"></a><span>Serial VS. Parallel傳輸</span></h2><p><span>而在兩個裝置間傳遞這些資訊，大體可分為serial和parallel兩種方法。</span></p><p><img src="080309_1304_basicsofser17b6ba4ddc9c54f56b3c7537c57a857ae.png" referrerpolicy="no-referrer" alt="./080309_1304_basicsofser17b6ba4ddc9c54f56b3c7537c57a857ae"></p><p><img src="./%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-09-29%20%E4%B8%8B%E5%8D%8812.34.08.png" referrerpolicy="no-referrer" alt="螢幕快照 2015-09-29 下午12.34.08"></p><h3><a name="parallel" class="md-header-anchor"></a><span>Parallel</span></h3><p><span>Parallel傳輸就是接8條導線，在同一時間將8個bits傳輸過去，用5V代表</span><code>1</code><span>，用0V代表0``，90年代常用的printer port就是parallel傳輸。</span></p><p><img src="./usb-to-parallel-printer-port-adapter-cable-1-5m-p485-2518_zoom.jpg" alt="usb-to-parallel-printer-port-adapter-cable-1-5m-p485-2518_zoom" style="zoom:33%;" /></p><p><span>好處是結構簡單，不需要複雜的程式，例如用Arduino A的8隻腳同時使用</span><code>digitalWrite()</code><span>，用Arduino B的8隻腳同時使用</span><code>digitalRead()</code><span>，就能自己架接一個parallel傳輸。另一好處是傳遞速度快，同一時間傳輸8bits。但缺點是需要用上多條電線，難以減少和簡化插頭。</span></p><h3><a name="serial" class="md-header-anchor"></a><span>Serial</span></h3><p><span>隨著電腦的速度提升，serial傳輸速度不比parallel來得慢，現在裝置間傳輸資料(例如電腦接printer，滑鼠等)，都是使用serial傳輸(當然更多的是無線傳輸)。</span></p><p><img src="./01_WQS6ea5541bd8c94900aabfe6a191928766.gif" referrerpolicy="no-referrer" alt="01_WQS6ea5541bd8c94900aabfe6a191928766"></p><p><span>Serial就是將原本一次過傳遞的8個bits變成串流，逐個傳輸去另一個裝置。理論上要比parallel傳輸多用8倍時間。而且在裝置內容的結構上，需要在兩個裝置都加上buffer，用來暫存收到的串流，再逐個bit吐出來讀取。但好處是用的電線較少，插頭的結構可以簡單很多，相對損壞的機率也較低。常見的USB就是serial傳輸，還有這個年代已甚少用的RS232也是。</span></p><p><img src="RS-232.jpeg" alt="./RS-232" style="zoom:33%;" /></p><p><img src="DAE3E192-3C5F-48AC-8A7C1474D750F19E.jpg" alt="./DAE3E192-3C5F-48AC-8A7C1474D750F19E" style="zoom:67%;" /></p><h2><a name="arduino常用傳輸" class="md-header-anchor"></a><span>Arduino常用傳輸</span></h2><h3><a name="serial-uart" class="md-header-anchor"></a><span>Serial UART</span></h3><p><span>Arduino能用USB線來與電腦溝通，但用的是Serial port UART通訊。溝通時會佔用pin</span><code>0</code><span>為RX(receive接收)和pin </span><code>1</code><span>為TX(Transmit傳送)。也可以用</span><code>SoftwareSerial</code><span> library將其他腳位變成serial傳輸的腳位。</span></p><p><img width="40%" src="./serial%20communication.svg" alt="serial communication"/></p><p><span>Serial傳輸對比parallel傳輸雖然用少了接線，但如果要用Device A分別連接Device B和Device C的話，就要用2對連接線，如果Device A要一次過連接10個設備，就要10對接線。對於Arduino這類腳位不多的微控制器，擴展上比較麻煩。</span></p><h3><a name="i2c" class="md-header-anchor"></a><span>I</span><sup><span>2</span></sup><span>C</span></h3><p><span>I</span><sup><span>2</span></sup><span>C是另一種Arduino常見的傳輸格式。</span></p><p><img src="./IIC.svg" alt="IIC" width="55%;" /></p><p><span>I</span><sup><span>2</span></sup><span>C用兩條傳輸線</span><code>SCL</code><span>(clock)和</span><code>SDA</code><span>(data)來傳輸，分為master和slave，每個slave都有自己的終身編號，這個編號在一出廠時已固定，一般可以在datasheet裡找到。在傳輸時，只要先呼喚slave的終身編號，master就能與那個slave溝通，而其他slave雖然收到命令，但由於編號不同，不會作出回應。Slave的終身編號為7bits，所以，理論上，用I</span><sup><span>2</span></sup><span>C能夠並聯128個slave裝置(但有些位址保留了作特殊用途，所以實際只有112個)。這些裝置可能包括不同類型的sensor、LCD顯示器、ram記憶體等。</span></p></div>
-
-    </div>
-    <!-- End page content ============================================================================================================ -->
-
-
-
-
-        <!-- Sidebar/menu -->
-        <nav class="w3-sidebar w3-blue w3-collapse w3-display-position w3-large w3-padding" style="top:43px; z-index:9;width:300px;font-weight:bold;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" id="mySidebar"><br>
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-            <div class="w3-container">
-                <h3 class="w3-padding-36"><b>LCM STUDIO</b></h3>
-                <hr>
-            </div>
-            <object name="sideBarMenu" width="100%" height="500px" type="text/html" data="../sideBarMenu.html"> </object>
-        </nav>
-
-        <!-- Top menu Navbar -->
-        <object name="topBar"
-                style="position:fixed; top:0px; z-index:10;"
-                width="100%" height="43px"
-                type="text/html"
-                data="../../topBar.html">
-        </object>
-
-        <!-- Top menu on small screens -->
-        <header class="w3-container w3-top w3-hide-large w3-black w3-large w3-padding" style="z-index:11;">
-            <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">☰</a>
-            <span>LCM STUDIO</span>
-        </header>
-
-        <!-- Overlay effect when opening sidebar on small screens -->
-        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-        <!-- W3.CSS Container -->
-        <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:0px;padding-right:58px">
-            <p class="w3-right">Powered by
-                <a  href="https://lokchonmou.github.io/"
-                    target="_blank"
-                    class="w3-hover-opacity">
-                    LOK CHON MOU
-                </a>
-            </p>
-        </div>
-
-        <script>
-        // Script to open and close sidebar
-        function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
-            document.getElementById("myOverlay").style.display = "block";
-        }
-
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-            document.getElementById("myOverlay").style.display = "none";
-        }
-
-        // Modal Image Gallery
-        function onClick(element) {
-            document.getElementById("img01").src = element.src;
-            document.getElementById("modal01").style.display = "block";
-            var captionText = document.getElementById("caption");
-            captionText.innerHTML = element.alt;
-        }
-    </script>
-
-    </body>
-    </html>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=' first-line-indent'><h1 id='21-communication'><span>2.1 Communication</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#21-communication">2.1 Communication</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3"><a class="md-toc-inner" href="#字符">字符</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n7"><a class="md-toc-inner" href="#serial-vs-parallel傳輸">Serial VS. Parallel傳輸</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n11"><a class="md-toc-inner" href="#parallel">Parallel</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n15"><a class="md-toc-inner" href="#serial">Serial</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n21"><a class="md-toc-inner" href="#arduino常用傳輸">Arduino常用傳輸</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n22"><a class="md-toc-inner" href="#serial-uart">Serial UART</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n26"><a class="md-toc-inner" href="#i2c">I<sup>2</sup>C</a></span></p></div><h2 id='字符'><span>字符</span></h2><p><span>要於兩部裝置(電腦、Arduino、微控制器等)傳輸資料，首先就要了解資料的格式和怎樣傳遞的。</span></p><p><span>你可能有聽過摩斯編碼，就是用dash和dot來編成不同的英字字母和符號。而到了電腦年代，則是使用ASCII碼來傳遞字符(當然也有不同的編碼，例如中文常用的是BIG5)。摩斯編碼用3 - 4個dash和dot組成字母，而ASCII碼則用固定8個</span><code>0</code><span>和</span><code>1</code><span>來表示。例如，</span><code>A</code><span>就是</span><code>0100 0001</code><span>，</span><code>a</code><span>就是</span><code>0110 0001</code><span>。</span></p><p><span>每個</span><code>0</code><span>或</span><code>1</code><span>稱之為bit，8 bits組合起來就是1 byte, 1024 bytes就是1 KB，1024 KB就是1 MB，如此類推。</span></p><h2 id='serial-vs-parallel傳輸'><span>Serial VS. Parallel傳輸</span></h2><p><span>而在兩個裝置間傳遞這些資訊，大體可分為serial和parallel兩種方法。</span></p><p><img src="080309_1304_basicsofser17b6ba4ddc9c54f56b3c7537c57a857ae.png" referrerpolicy="no-referrer" alt="./080309_1304_basicsofser17b6ba4ddc9c54f56b3c7537c57a857ae"></p><p><img src="./%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-09-29%20%E4%B8%8B%E5%8D%8812.34.08.png" referrerpolicy="no-referrer" alt="螢幕快照 2015-09-29 下午12.34.08"></p><h3 id='parallel'><span>Parallel</span></h3><p><span>Parallel傳輸就是接8條導線，在同一時間將8個bits傳輸過去，用5V代表</span><code>1</code><span>，用0V代表0``，90年代常用的printer port就是parallel傳輸。</span></p><p><img src="./usb-to-parallel-printer-port-adapter-cable-1-5m-p485-2518_zoom.jpg" alt="usb-to-parallel-printer-port-adapter-cable-1-5m-p485-2518_zoom" style="zoom:33%;" /></p><p><span>好處是結構簡單，不需要複雜的程式，例如用Arduino A的8隻腳同時使用</span><code>digitalWrite()</code><span>，用Arduino B的8隻腳同時使用</span><code>digitalRead()</code><span>，就能自己架接一個parallel傳輸。另一好處是傳遞速度快，同一時間傳輸8bits。但缺點是需要用上多條電線，難以減少和簡化插頭。</span></p><h3 id='serial'><span>Serial</span></h3><p><span>隨著電腦的速度提升，serial傳輸速度不比parallel來得慢，現在裝置間傳輸資料(例如電腦接printer，滑鼠等)，都是使用serial傳輸(當然更多的是無線傳輸)。</span></p><p><img src="./01_WQS6ea5541bd8c94900aabfe6a191928766.gif" referrerpolicy="no-referrer" alt="01_WQS6ea5541bd8c94900aabfe6a191928766"></p><p><span>Serial就是將原本一次過傳遞的8個bits變成串流，逐個傳輸去另一個裝置。理論上要比parallel傳輸多用8倍時間。而且在裝置內容的結構上，需要在兩個裝置都加上buffer，用來暫存收到的串流，再逐個bit吐出來讀取。但好處是用的電線較少，插頭的結構可以簡單很多，相對損壞的機率也較低。常見的USB就是serial傳輸，還有這個年代已甚少用的RS232也是。</span></p><p><img src="RS-232.jpeg" alt="./RS-232" style="zoom:33%;" /></p><p><img src="DAE3E192-3C5F-48AC-8A7C1474D750F19E.jpg" alt="./DAE3E192-3C5F-48AC-8A7C1474D750F19E" style="zoom:67%;" /></p><h2 id='arduino常用傳輸'><span>Arduino常用傳輸</span></h2><h3 id='serial-uart'><span>Serial UART</span></h3><p><span>Arduino能用USB線來與電腦溝通，但用的是Serial port UART通訊。溝通時會佔用pin</span><code>0</code><span>為RX(receive接收)和pin </span><code>1</code><span>為TX(Transmit傳送)。也可以用</span><code>SoftwareSerial</code><span> library將其他腳位變成serial傳輸的腳位。</span></p><p><img width="40%" src="./serial%20communication.svg" alt="serial communication"/></p><p><span>Serial傳輸對比parallel傳輸雖然用少了接線，但如果要用Device A分別連接Device B和Device C的話，就要用2對連接線，如果Device A要一次過連接10個設備，就要10對接線。對於Arduino這類腳位不多的微控制器，擴展上比較麻煩。</span></p><h3 id='i2c'><span>I</span><sup><span>2</span></sup><span>C</span></h3><p><span>I</span><sup><span>2</span></sup><span>C是另一種Arduino常見的傳輸格式。</span></p><p><img src="./IIC.svg" alt="IIC" width="55%;" /></p><p><span>I</span><sup><span>2</span></sup><span>C用兩條傳輸線</span><code>SCL</code><span>(clock)和</span><code>SDA</code><span>(data)來傳輸，分為master和slave，每個slave都有自己的終身編號，這個編號在一出廠時已固定，一般可以在datasheet裡找到。在傳輸時，只要先呼喚slave的終身編號，master就能與那個slave溝通，而其他slave雖然收到命令，但由於編號不同，不會作出回應。Slave的終身編號為7bits，所以，理論上，用I</span><sup><span>2</span></sup><span>C能夠並聯128個slave裝置(但有些位址保留了作特殊用途，所以實際只有112個)。這些裝置可能包括不同類型的sensor、LCD顯示器、ram記憶體等。</span></p></div></div>
+<!-- Top menu Navbar -->
+<object name="topBar" style="position:fixed; top:0px; z-index:10;" width="100%" height="43px" type="text/html"
+    data="../../topBar.html">
+</object>
+</body>
+</html>

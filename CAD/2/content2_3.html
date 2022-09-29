@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<title>LCM STUDIO</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-
-<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
-.mac-os-11 { --title-bar-height: 28px; }
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
@@ -27,13 +22,11 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
 img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
-button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+button, input, select, textarea { color: inherit; font: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
@@ -51,17 +44,17 @@ h6 { font-size: 1rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
 a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
 figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
+thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
-.CodeMirror-linenumber { }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -71,16 +64,17 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping pre { white-space: pre; }
 #write pre.ty-contain-cm { white-space: normal; }
 .CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
 .md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
 #write .md-fences.mock-cm { white-space: pre-wrap; }
 .md-fences.md-fences-with-lineno { padding-left: 0px; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
 .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
@@ -92,7 +86,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
@@ -101,7 +95,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
 p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
 #write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
 p > .md-image:only-child { display: inline-block; width: 100%; }
@@ -114,7 +108,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
 .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
 .math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
 .md-toc-content::after, .md-toc::after { display: none; }
 .md-toc-item { display: block; color: rgb(65, 131, 196); }
@@ -135,22 +129,23 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 }
 a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
 .footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
-.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
-code { text-align: left; }
-a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
 [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom-width: 0px; }
+table tr th { border-bottom: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
 iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
-mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 .md-expand mark .md-meta { opacity: 0.3 !important; }
 mark .md-meta { color: rgb(0, 0, 0); }
@@ -160,14 +155,12 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .md-diagram-panel .messageText { stroke: none !important; }
 .md-diagram-panel .start-state { fill: var(--node-fill); }
 .md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
-.md-require-zoom-fix { height: auto; margin-top: 16px; margin-bottom: 16px; }
-.md-require-zoom-fix foreignObject { font-size: var(--mermaid-font-zoom); }
 .md-fences.md-fences-math { font-size: 1em; }
 .md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
-.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
 .typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
 .typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
-.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
 .typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
 @media screen and (max-width: 1024px) {
   .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
@@ -178,10 +171,10 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
-.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
-.outline-expander:hover::before { content: ''; }
+.outline-expander:hover::before { content: ""; }
 .outline-h1 > .outline-item { padding-left: 0px; }
 .outline-h2 > .outline-item { padding-left: 1em; }
 .outline-h3 > .outline-item { padding-left: 2em; }
@@ -191,21 +184,22 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
 .outline-label:hover { text-decoration: underline; }
 .outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
-.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
 .outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
-.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
 .outline-children { display: none; }
 .info-panel-tab-wrapper { display: none; }
 .outline-item-open > .outline-children { display: block; }
 .typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
-.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
 .typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
-.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
 .typora-export-collapse-outline .outline-children { display: none; }
 .typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
 .typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
 .typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 .md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
 
 
 :root {
@@ -593,229 +587,14 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
-mjx-container[jax="SVG"] {
-  direction: ltr;
-}
-
-mjx-container[jax="SVG"] > svg {
-  overflow: visible;
-  min-height: 1px;
-  min-width: 1px;
-}
-
-mjx-container[jax="SVG"] > svg a {
-  fill: blue;
-  stroke: blue;
-}
-
-mjx-assistive-mml {
-  position: absolute !important;
-  top: 0px;
-  left: 0px;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 1px 0px 0px 0px !important;
-  border: 0px !important;
-  display: block !important;
-  width: auto !important;
-  overflow: hidden !important;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-mjx-assistive-mml[display="block"] {
-  width: 100% !important;
-}
-
-mjx-container[jax="SVG"][display="true"] {
-  display: block;
-  text-align: center;
-  margin: 1em 0;
-}
-
-mjx-container[jax="SVG"][display="true"][width="full"] {
-  display: flex;
-}
-
-mjx-container[jax="SVG"][justify="left"] {
-  text-align: left;
-}
-
-mjx-container[jax="SVG"][justify="right"] {
-  text-align: right;
-}
-
-g[data-mml-node="merror"] > g {
-  fill: red;
-  stroke: red;
-}
-
-g[data-mml-node="merror"] > rect[data-background] {
-  fill: yellow;
-  stroke: none;
-}
-
-g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
-  stroke-dasharray: 140;
-}
-
-g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
-  stroke-linecap: round;
-  stroke-dasharray: 0,140;
-}
-
-g[data-mml-node="mtable"] > g > svg {
-  overflow: visible;
-}
-
-[jax="SVG"] mjx-tool {
-  display: inline-block;
-  position: relative;
-  width: 0;
-  height: 0;
-}
-
-[jax="SVG"] mjx-tool > mjx-tip {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-mjx-tool > mjx-tip {
-  display: inline-block;
-  padding: .2em;
-  border: 1px solid #888;
-  font-size: 70%;
-  background-color: #F8F8F8;
-  color: black;
-  box-shadow: 2px 2px 5px #AAAAAA;
-}
-
-g[data-mml-node="maction"][data-toggle] {
-  cursor: pointer;
-}
-
-mjx-status {
-  display: block;
-  position: fixed;
-  left: 1em;
-  bottom: 1em;
-  min-width: 25%;
-  padding: .2em .4em;
-  border: 1px solid #888;
-  font-size: 90%;
-  background-color: #F8F8F8;
-  color: black;
-}
-
-foreignObject[data-mjx-xml] {
-  font-family: initial;
-  line-height: normal;
-  overflow: visible;
-}
-
-mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
-  stroke-width: 3;
-}
-
-g[data-mml-node="xypic"] path {
-  stroke-width: inherit;
-}
-
-.MathJax g[data-mml-node="xypic"] path {
-  stroke-width: inherit;
-}
-mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
-							stroke-width: 0;
-						} :root {--mermaid-font-zoom:1em ;}  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
-
-</style>
-<body>
-
-
-    <!-- !PAGE CONTENT! ============================================================================================================= -->
-    <div class="w3-main" style="margin-left:300px;">
-        <div class='typora-export-content'>
-        <div id='write'  class=''><h1 id='23-walking-linkage-robot'><span>2.3 Walking linkage robot</span></h1><p><span>本節要繪製的，是下圖這一部四足連杆機械人。本節主要學習應用fusion360中的joint功能，應用不同的joint去模擬連杆機械人的效果。</span></p><p><img src="2222.gif" style="zoom:50%;" /></p><p>&nbsp;</p><p><strong><a href='walking_robot__tutor_Drawing_v4.pdf'><span>walking robot  tutor Drawing v4.pdf</span></a></strong></p><p>&nbsp;</p><iframe width="50%" height="500" src="https://www.youtube.com/embed/MEb5YBgFR4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><h2 id='檔案'><span>檔案</span></h2><p><span>本次會應用到的檔案(以下為step檔)，下載</span><strong><span>解壓</span></strong><span>後，在fusion左邊欄尋找&quot;upload&quot;鍵，就能上載到fuison中應用</span></p><p><a href='useful_robotics_component_step.zip'><span>useful robotics component step.zip</span></a></p><p><span>或者你可以在grabcad.com直接下載fusion360檔案(需要注冊登入)</span></p><p><a href='https://grabcad.com/library/tamiya-70093-3-speed-crank-axle-gearbox-kit-1'><span>https://grabcad.com/library/tamiya-70093-3-speed-crank-axle-gearbox-kit-1</span></a>
-        <a href='https://grabcad.com/library/tamiya-crank-1'><span>https://grabcad.com/library/tamiya-crank-1</span></a></p><p><img src="upload.gif" style="zoom:50%;" /></p><h2 id='step-1'><span>STEP 1</span></h2><p><span>首先，繪製底板，用&quot;s&quot;搜尋&quot;new component&quot;, 開一個新的component，名為&quot;base&quot;, 或者你自己喜歡的名字。並</span><strong><span>確保黑色小點在旁邊</span></strong><span>, 代表activate</span></p><p><img src="20210204150029.png"/></p><p><span>接著在xy平面(或水平面)， 開一個新的sketch，繪制如下:</span></p><p><img src="2%203%20Walking%20linkage%20robot%20f9bbafb4552c44eda98c4237cfd543fa.png"  style="zoom:33%;" /><span> </span><img src="20210204150627.png" style="zoom:33%;" /></p><p>&nbsp;</p><ol start='' ><li><span>先用&quot;s&quot;搜尋&quot;change parameter&quot;，開啟參數列表，定義一個新的參數叫&quot;thickness&quot;, 值為3mm，跟著用&quot;e&quot;，擠出</span><code>thickness</code><span> 的厚度</span></li></ol><p><img src="20210204153033.png" style="zoom:75%;" /></p><p><img src="20210204150710.png" style="zoom:33%;" /></p><h2 id='step-2'><span>STEP 2</span></h2><p><span>如果你是直接用fusion360的齒輪箱檔案(f3d或f3z檔)，齒輪箱只有一種規格</span></p><p><span>💡</span><em><span>如果你是用useful robotics components step 的step檔案，step檔案中有一個70093L和70093R的檔案，分別為左和右的齒輪箱，長軸並非對稱。</span></em></p><p><span>❗</span><strong><u><span>記得要用insert derive功能, 不要直接拖拉gearbox入去, 否則是不能修改的</span></u></strong></p><ol start='' ><li><span>利用&quot;s&quot;搜尋&quot;insert derive&quot;功能，將70093 gearbox插入衍生到此檔案中。</span></li><li><span>在70093的component上, 按mouse右鍵, 選擇rigid group</span></li></ol><p><img src="insert_derive.gif" style="zoom:33%;" /><span> </span><img src="rigid_group.gif" style="zoom:33%;" /></p><ol start='' ><li><span>確保小黑點在這個70093 gearbox旁。</span></li><li><span>用&quot;e&quot;將齒輪箱的軸適當地修短(或增長, 如果有需要)</span></li><li><span>再用&quot;j&quot;把齒輪箱組合到底板</span></li></ol><p><img src="20210205103611.png" style="zoom:33%;" /><span> </span><img src="20210205103646.png" style="zoom:33%;" /></p><p><img src="20210204150821.png" style="zoom:33%;"/></p><ol start='' ><li><span>重復，利用&quot;s&quot;搜尋&quot;derive&quot;功能，將另一個70093 gearbox插入衍生到此檔案中。</span></li><li><span>確保小黑點在新派入的70093旁</span></li><li><span>跟上面一樣，用&quot;e&quot;將齒輪箱的長軸適當修剪一下</span></li><li><span>用&quot;j&quot;組合到底板上</span></li></ol><p><span>💡</span><em><span>如果用step檔案，今次derive的是70093R</span></em></p><p><span>❗️</span><strong><u><span>記得要用derive功能來插入衍生，不要用copy &amp; paste，否則修改齒輪箱時，左右兩邊會同步喔!!!!</span></u></strong></p><p><img src="20210204150936.png" style="zoom:33%;" /></p><h2 id='step-3'><span>STEP 3</span></h2><p><span>接著:</span></p><ol start='' ><li><span>將小黑點退回最上層</span></li><li><span>開一個新的sheet metal component，名字叫&quot;L support&quot;或者你喜歡的名字，材料和厚度隨便選一個就可以，之後會修改</span></li><li><span>確認一下，sheet metal component的圖示跟普遍的component是不同的</span></li><li><span>確保小黑點在旁，activate這個component</span></li><li><span>在底板的上面，用&quot;new sketch&quot;開一個新的sketch</span></li><li><span>投影上面的兩個洞</span></li><li><span>在洞的中心點加上作圖線的中線</span></li><li><span>繪畫一個寬10mm的方型</span></li><li><span>可用中點或對稱限制，方型對稱於中線</span></li></ol><p><span>💡</span><em><span>可以在component的左方找到一個眼睛的icon，點選後可隱藏component方便操作</span></em></p><p><img src="20210204151001.png" style="zoom:33%;" /><span> </span><img src="20210204151116.png" style="zoom:33%;" /></p><p>&nbsp;</p><ol start='' ><li><span>在sheet metal的頁面中，找到edit rule的icon，在你選用的材料旁邊，會有一支筆的icon，點進去就能修改屬性，例如有厚度，摺的時候要預留多少延展長度等等</span></li><li><span>在sheet metal的頁面中，找到&quot;Flange&quot;的icon，或者用&quot;s&quot;來搜尋&quot;Flange&quot;</span></li><li><span>點選剛剛的方型，變成1個厚度2mm的金屬簿片</span></li></ol><p><span>❗️</span><strong><u><span>確保要用&quot;Flange&quot;製作金屬薄片，不要用&quot;e&quot; extrude擠出</span></u></strong></p><p><img src="20210204151605.png" style="zoom:50%;" /><span> </span><img src="20210204151406.png" style="zoom:50%;" /></p><p>&nbsp;</p><p><img src="20210204151132.png" style="zoom:33%;" /><span> </span><img src="20210204151201.png" style="zoom:33%;" /></p><p>&nbsp;</p><ol start='' ><li><span>繼續使用&quot;Flange&quot;，按下金屬片的邊緣，會自動出現bending功能，</span></li><li><span>bending的高度和位置分別可以設定位&quot;inside&quot;, &quot;outside&quot;和&quot;center&quot;三種，就是計算高度和摺疊的位置由那裡計起，你可以試試看有甚麼分別</span></li><li><span>今次凸出，高16mm(由outer face計起)，位置則由&quot;inside&quot;內側計起</span></li><li><span>重復，鋁片的另一邊也是16mm高</span></li></ol><p><img src="20210204151700.png" style="zoom:33%;" /><span> </span><img src="20210204151729.png" style="zoom:33%;" /></p><ol start='' ><li><span>繼續確保小黑點在&quot;L support&quot;旁邊</span></li><li><span>用&quot;s&quot;搜尋&quot;new sketch&quot;, 在凸起的鋁板表面開一個新的sketch</span></li><li><span>將其中一個齒輪箱顯示出來</span></li><li><span>用&quot;p&quot;投影長軸和鋁板</span></li><li><span>在鋁板劃一條中線和一個3mm的圓</span></li><li><span>用constraints的第一個icon &quot;horizontal and vertical&quot;，指定3mm圓的高度和長軸同高</span></li></ol><p><img src="20210204151900.png" style="zoom:33%;" /><span> </span><img src="20210204151819.png" style="zoom:33%;" /></p><ol start='' ><li><span>用&quot;e&quot; extrude，選擇3mm圓，到&quot;extent type&quot;用&quot;to object&quot;，將圓孔穿到鋁板的另一面</span></li><li><span>最後用&quot;f&quot; fillet修圓角，半徑隨意，一般2mm或3mm</span></li></ol><p><img src="20210204151932.png" style="zoom:33%;" /><span> </span><img src="20210204151950.png" style="zoom:33%;" /></p><ol start='' ><li><span>接著就可以將小黑點褪回最外層</span></li><li><span>用&quot;j&quot; 組合，將鋁板組合到底板</span></li></ol><p><img src="20210204152038.png" style="zoom:33%;" /></p><h2 id='step-4'><span>STEP 4</span></h2><ol start='' ><li><span>繼續確保小黑點在最外層</span></li><li><span>用&quot;s&quot;搜尋&quot;derive&quot;衍生插入&quot;tamiya crank&quot;曲柄的step檔或者f3d檔</span></li><li><span>插入之後將小黑點active到曲柄的旁邊，將其activate</span></li><li><span>在表面用&quot;new sketch&quot;開一個新的sketch</span></li><li><span>投影並繪製一條線，如圖</span></li></ol><p><span>💡</span><em><span>可善用component旁的小眼睛icon，適當地顯示和隱藏component，方便操作</span></em></p><p><img src="20210204152258.png" style="zoom:30%;" /><span> </span><img src="20210204152420.png" style="zoom:50%;" /></p><ol start='' ><li><span>繼續確保小黑點在tamiya crank曲柄的旁邊</span></li><li><span>用&quot;e&quot; extrude，將多餘的曲柄剪走，只留下最近的一個孔</span></li><li><span>接著就可以將小黑點褪回最外層</span></li><li><span>用&quot;j&quot; 組合，將曲柄組合到70093齒輪箱的長軸</span></li></ol><p><span style='font-size:20px;'>&#10071;</span><i><b><span>如果用的是f3d fusion360檔案, 由於齒輪箱內部是可以轉旋的, 所以用&quot;rigid&quot;即可</span></b></i></p><p><span style='font-size:20px;'>&#10071;</span><i><b><span>如果是用step檔案的話, joint的時候要到&quot;motion&quot;頁面，選用joint的類型為revolving joint</span></b></i></p><p><img src="20210204152500.png" style="zoom:50%;" /><span> </span><img src="20210204152553.png" style="zoom:50%;" /></p><h2 id='step-5'><span>STEP 5</span></h2><ol start='' ><li><span>確保小黑點在最上層</span></li><li><span>用ctrl-c/ctrl-v, 將tamiya crank複製多一個</span></li><li><span>用&quot;j&quot;組合到另一邊的齒輪箱長軸</span></li><li><span>記得方向要跟另一邊相差180度, 如果左方是向著後，這邊要向著前方</span></li></ol><p><span style='font-size:20px;'>&#128161;</span><i><em><span>如果零件是完全相同的話，可直接複製/貼上; 如果零件相似但需要有獨立修改，則要用derive衍派功能</span></em></i></p><p><span style='font-size:20px;'>&#128161;</span><i><em><span>同樣, 如果是用step檔的70093齒輪箱, joint的類型應為revolving joint</span></em></i></p><p><img src="20210204152703.png" style="zoom:50%;" /></p><h2 id='step-6'><span>STEP 6</span></h2><ol start='' ><li><span>確保小黑點在最上層</span></li><li><span>搜尋&quot;new component&quot;，開一個新的component叫&quot;legs&quot;，用來裝起左半邊的全部腳和連杆</span></li><li><span>確保小黑點在&quot;legs&quot;的旁邊，再開一個新的component叫&quot;leg1&quot;</span></li></ol><p><span>接下來的所有腳和連杆，請確保必須要在&quot;legs&quot;的下方，否則複製之時，全部的joint組合的關係都會散落，要重新組合</span></p><p><img src="20210204152803.png" style="zoom:100%;" /><span> </span><img src="20210204152839.png" style="zoom:100%;" /></p><h2 id='step-7'><span>STEP 7</span></h2><ol start='' ><li><span>Activate剛剛開的&quot;leg1&quot;，確保小黑點在旁</span></li><li><span>用&quot;s&quot;尋找&quot;new sketch&quot;, 在原點的xz平面開一個新的sketch(可先隱藏全部component)</span></li><li><span>跟著下圖的尺寸繪製</span></li><li><span>繪製之時，可以用&quot;s&quot;尋找&quot;change parameter&quot;, 將連杆的尺寸設為變數，之後只要一改這個變數就會全部更改</span></li></ol><p><img src="20210204153033%201.png" style="zoom:40%;" /><span> </span><img src="Untitled.png" style="zoom:33%;" /></p><p><img src="20210204152945.png" style="zoom:33%;" /></p><ol start='' ><li><span>擠出</span><code>thickness</code><span>的厚度</span></li><li><span>再用&quot;f&quot; fillet角度，半徑隨意，約2mm-3mm</span></li></ol><p><img src="20210204172005.png" style="zoom: 33%;" /><span> </span><img src="20210204172031.png" style="zoom:33%;" /></p><h2 id='step-8'><span>STEP 8</span></h2><ol start='' ><li><span>接下來，確保小黑點在&quot;legs&quot;的旁邊</span></li><li><span>用&quot;s&quot;搜尋&quot;new component&quot;，開一個新的component叫&quot;linkage1&quot;</span></li><li><span>activage這個&quot;linkage1&quot;，確保小黑點在旁，開一個新的sketch在xz平面上</span></li><li><span>繪畫一支連杆，長度用&quot;parameter&quot;來設定一個叫&quot;L3&quot;的變數，都時設定值為72mm</span></li><li><span>最後用&quot;e&quot;擠出</span><code>thickness</code><span>的厚度</span></li></ol><p><span style='font-size:20px;'>&#128161;</span><i><em><span>可以善用hide/show功能，暫時隱藏其他零件</span></em></i></p><p><img src="20210204172124.png" style="zoom:80%;" /><span> </span><img src="20210204172309.png" style="zoom:33%;" /></p><p><img src="20210204172419.png" style="zoom:33%;" /></p><h2 id='step-9'><span>STEP 9</span></h2><p><span>接下來開始複製和組裝左腳:</span></p><ol start='' ><li><p><span>首先將全部零件全部顯示出來方便操作</span></p></li><li><p><span>用&quot;j&quot;將&quot;linkage1&quot;組裝在鋁片上</span></p><ol start='' ><li><span>兩個joint的接口保留距離1mm, 如果是實物裝砌時，可以用1mm鐵墊片將其隔開，確保可以旋轉</span></li><li><span>大約將接口的角度旋轉25度，大約即可，方便後面的操作</span></li><li><span>去到&quot;motion&quot;的頁面，選用joint的類型為revolving joint</span></li><li><span>完成後，會發現這個joint的符號會出現在最上層</span></li><li><span>即使是在activage&quot;legs&quot;(小黑點在legs旁)時操作，這個joint也會在&quot;legs&quot;之外，之後複製&quot;legs&quot;時，並不會跟著複製</span></li></ol></li></ol><p><img src="20210204172904.png" style="zoom:33%;" /><span> </span><img src="20210204172546.png" style="zoom:33%;" /></p><h2 id='step-10'><span>STEP 10</span></h2><ol start='' ><li><span>接著用joint將&quot;leg1&quot;組合到曲柄上，offset 4mm, 這個offset不是4mm都可以, 因為之後要到&quot;motion&quot;頁面</span></li><li><span>到&quot;motion&quot;頁面選擇&quot;cylindrical&quot; joint, 這類型的joint有2個自由度, 一個是旋轉, 另一個是緣著旋轉軸移動，所以上面選的4mm offset只是參考，並沒有限制的</span></li><li><span>跟上面的rev7一樣，這個joint即使是在&quot;legs&quot; activate下做, joint也不是在&quot;legs&quot;底下的，因為曲柄並非在&quot;legs&quot;底下</span></li></ol><p><img src="20210204172749.png" style="zoom:33%;" /><span> </span><img src="20210204172824.png" style="zoom:33%;" /></p><p><img src="20210204172639.png" style="zoom:33%;" /></p><h2 id='step-11'><span>STEP 11</span></h2><ol start='' ><li><p><span>確保小黑點是在component &quot;legs&quot;旁</span></p></li><li><p><span>將&quot;leg1&quot;用joint組合到&quot;linkage1&quot;上</span></p><ol start='' ><li><span>joint接觸面距離1mm, 跟之前一樣，如果實際組裝時，可用1mm墊片隔離</span></li><li><span>到&quot;motion&quot;頁面選擇&quot;revo4lving joint&quot;</span></li></ol></li><li><p><span>完成後確認一下，這個joint是在component &quot;legs&quot;之下，之後複製才會跟著被複製</span></p></li></ol><p><span style='font-size:20px;'>&#128161;</span><span> </span><i><span>記著四連杆組合的秘決為: 3個joints 中, 2個revolve joints 1個cylindrical joint, 次序可以隨意, 這樣就不用計算offset的距離和thickness的厚度</span></i></p><p><img src="20210204173054.png" style="zoom:33%;" /><span> </span><img src="20210204173150.png" style="zoom:55%;" /></p><h2 id='step-12'><span>STEP 12</span></h2><ol start='' ><li><span>確保小黑點繼續在&quot;legs&quot;旁邊</span></li><li><span>將&quot;leg1&quot;和&quot;linkage1&quot;用ctrl-c/ctrl-v複製一份, 複製成leg1:2和linkage1:2, 如圖</span></li><li><span>確保兩隻腳兩條連杆都是在同一個component &quot;legs&quot;之下</span></li></ol><p><img src="20210204175259.png" style="zoom:33%;" /></p><h2 id='step-13'><span>STEP 13</span></h2><p><span>圖1:</span></p><ol start='' ><li><span>確保小黑點在&quot;legs&quot;旁</span></li><li><span>用&quot;joint&quot;將&quot;leg1:2&quot;組合到&quot;linkage1&quot;之上，offset 1mm間距</span></li><li><span>到&quot;motion&quot;頁面，joint的類型為&quot;revolving&quot; joint</span></li></ol><p><span>同樣地, 圖2</span></p><ol start='' ><li><span>將&quot;linkage1:2&quot;連接到&quot;leg1:2&quot;上</span></li><li><span>&quot;motion&quot; type為&quot;revolving&quot; joint</span></li><li><span>offset 1mm</span></li></ol><p><span>最後，圖3</span></p><ol start='' ><li><span>將&quot;linkage1:2&quot;的另一端，接合到&quot;leg1&quot;上</span></li><li><span>&quot;motion&quot; type為&quot;cylindrical&quot; joint</span></li><li><span>今次可以不用offset, 因為用cylindrical joint會自動因應剛才兩個offset而調整間隔</span></li></ol><p><img src="20210204175357.png" style="zoom:33%;" /><span> </span><img src="20210204175516.png" style="zoom:33%;" /></p><p><img src="20210204175643.png" style="zoom:33%;" /></p><h2 id='step-14'><span>STEP 14</span></h2><p><span>這樣，左腳部分就完成了，</span></p><ol start='' ><li><span>試著轉動齒輪箱，看看腳是否跟著動</span></li><li><span>試著調整leg和linkage的offset間距，由1mm改為0.5mm(或任意數值), 看看修改完之後會否有error警告彈出, 如果正確跟著步驟, 調整參數應該沒有error的</span></li></ol><p><img src="testing1.gif" alt="testing1.gif" style="zoom:50%;" /></p><h2 id='step-15'><span>STEP 15</span></h2><ol start='' ><li><span>把小黑點褪回到最上層</span></li><li><span>用ctrl-c/ctrl-v將整個component &quot;legs&quot;(即左腳)複製一份, 複製成legs1:2</span></li><li><span>可以在複製的同時移遠一點方便操作</span></li></ol><p><span>❗</span><strong><span>fusion360的鏡像功能是不能複製joint的關係的，所以如果要強求完全左右對稱, 則要全部重新joint一次</span></strong></p><p><img src="20210204180800.png" style="zoom:33%;" /></p><h2 id='step-16'><span>STEP 16</span></h2><ol start='' ><li><span>將最近右邊tamiya crank的linkage1:1用&quot;j&quot; joint到曲柄的孔上</span></li><li><span>&quot;motion&quot; type為&quot;revolving&quot; joint</span></li><li><span>offset 1mm</span></li></ol><p><img src="20210204180840.png" style="zoom:33%;" /><img src="20210204180951.png" style="zoom:33%;" /></p><h2 id='step-17'><span>STEP 17</span></h2><ol start='' ><li><span>最後將右邊的leg1:1, 和餘下的鋁支架L support的孔組合</span></li><li><span>&quot;motion&quot; type為&quot;cylindrical&quot; joint</span></li><li><span>今次可以不用offset, 因為用cylindrical joint會自動因應剛才兩個offset而調整間隔</span></li></ol><p><img src="20210204181140.png" style="zoom:33%;" /></p><h2 id='完成'><span>完成</span></h2><p><span>完成之後，</span></p><ol start='' ><li><span>模擬一下，試著轉動右邊的腳，看看是否可以模擬真實機械連杆轉動</span></li><li><span>試修改一下間隔offset的數值，看看有否出現error</span></li><li><span>pdf文件裏面有包含phase1和phase2的尺寸, 試著用&quot;change parameter&quot;去修改一下參數尺寸, 看看整個設計是否立即修改</span></li></ol></div></div>
-
-    </div>
-    <!-- End page content ============================================================================================================ -->
-
-
-
-
-    <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-blue w3-collapse w3-display-position w3-large w3-padding" style="top:43px; z-index:9;width:300px;font-weight:bold;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" id="mySidebar"><br>
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-        <div class="w3-container">
-            <h3 class="w3-padding-36"><b>LCM STUDIO</b></h3>
-            <hr>
-        </div>
-        <object name="sideBarMenu" width="100%" height="500px" type="text/html" data="../sideBarMenu.html"> </object>
-    </nav>
-
-    <!-- Top menu Navbar -->
-    <object name="topBar"
-            style="position:fixed; top:0px; z-index:10;"
-            width="100%" height="43px"
-            type="text/html"
-            data="../../topBar.html">
-    </object>
-
-    <!-- Top menu on small screens -->
-    <header class="w3-container w3-top w3-hide-large w3-black w3-large w3-padding" style="z-index:11;">
-        <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">☰</a>
-        <span>LCM STUDIO</span>
-    </header>
-
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-    <!-- W3.CSS Container -->
-    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:0px;padding-right:58px">
-        <p class="w3-right">Powered by
-            <a  href="https://lokchonmou.github.io/"
-                target="_blank"
-                class="w3-hover-opacity">
-                LOK CHON MOU
-            </a>
-        </p>
-    </div>
-
-    <script>
-    // Script to open and close sidebar
-    function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-    }
-
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-    }
-
-    // Modal Image Gallery
-    function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-    }
-</script>
-
+</style><title>content2_3</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=' first-line-indent'><h1 id='23-walking-linkage-robot'><span>2.3 Walking linkage robot</span></h1><p><span>本節要繪製的，是下圖這一部四足連杆機械人。本節主要學習應用fusion360中的joint功能，應用不同的joint去模擬連杆機械人的效果。</span></p><p><img src="2222.gif" style="zoom:50%;" /></p><p>&nbsp;</p><p><strong><a href='walking_robot__tutor_Drawing_v4.pdf'><span>walking robot  tutor Drawing v4.pdf</span></a></strong></p><p>&nbsp;</p><iframe width="50%" height="500" src="https://www.youtube.com/embed/MEb5YBgFR4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><h2 id='檔案'><span>檔案</span></h2><p><span>本次會應用到的檔案(以下為step檔)，下載</span><strong><span>解壓</span></strong><span>後，在fusion左邊欄尋找&quot;upload&quot;鍵，就能上載到fuison中應用</span></p><p><a href='useful_robotics_component_step.zip'><span>useful robotics component step.zip</span></a></p><p><span>或者你可以在grabcad.com直接下載fusion360檔案(需要注冊登入)</span></p><p><a href='https://grabcad.com/library/tamiya-70093-3-speed-crank-axle-gearbox-kit-1'><span>https://grabcad.com/library/tamiya-70093-3-speed-crank-axle-gearbox-kit-1</span></a>
+<a href='https://grabcad.com/library/tamiya-crank-1'><span>https://grabcad.com/library/tamiya-crank-1</span></a></p><p><img src="upload.gif" style="zoom:50%;" /></p><h2 id='step-1'><span>STEP 1</span></h2><p><span>首先，繪製底板，用&quot;s&quot;搜尋&quot;new component&quot;, 開一個新的component，名為&quot;base&quot;, 或者你自己喜歡的名字。並</span><strong><span>確保黑色小點在旁邊</span></strong><span>, 代表activate</span></p><p><img src="20210204150029.png"/></p><p><span>接著在xy平面(或水平面)， 開一個新的sketch，繪制如下:</span></p><p><img src="2%203%20Walking%20linkage%20robot%20f9bbafb4552c44eda98c4237cfd543fa.png"  style="zoom:33%;" /><span> </span><img src="20210204150627.png" style="zoom:33%;" /></p><p>&nbsp;</p><ol start='' ><li><span>先用&quot;s&quot;搜尋&quot;change parameter&quot;，開啟參數列表，定義一個新的參數叫&quot;thickness&quot;, 值為3mm，跟著用&quot;e&quot;，擠出</span><code>thickness</code><span> 的厚度</span></li></ol><p><img src="20210204153033.png" style="zoom:75%;" /></p><p><img src="20210204150710.png" style="zoom:33%;" /></p><h2 id='step-2'><span>STEP 2</span></h2><p><span>如果你是直接用fusion360的齒輪箱檔案(f3d或f3z檔)，齒輪箱只有一種規格</span></p><p><span>💡</span><em><span>如果你是用useful robotics components step 的step檔案，step檔案中有一個70093L和70093R的檔案，分別為左和右的齒輪箱，長軸並非對稱。</span></em></p><p><span>❗</span><strong><u><span>記得要用insert derive功能, 不要直接拖拉gearbox入去, 否則是不能修改的</span></u></strong></p><ol start='' ><li><span>利用&quot;s&quot;搜尋&quot;insert derive&quot;功能，將70093 gearbox插入衍生到此檔案中。</span></li><li><span>在70093的component上, 按mouse右鍵, 選擇rigid group</span></li></ol><p><img src="insert_derive.gif" style="zoom:33%;" /><span> </span><img src="rigid_group.gif" style="zoom:33%;" /></p><ol start='' ><li><span>確保小黑點在這個70093 gearbox旁。</span></li><li><span>用&quot;e&quot;將齒輪箱的軸適當地修短(或增長, 如果有需要)</span></li><li><span>再用&quot;j&quot;把齒輪箱組合到底板</span></li></ol><p><img src="20210205103611.png" style="zoom:33%;" /><span> </span><img src="20210205103646.png" style="zoom:33%;" /></p><p><img src="20210204150821.png" style="zoom:33%;"/></p><ol start='' ><li><span>重復，利用&quot;s&quot;搜尋&quot;derive&quot;功能，將另一個70093 gearbox插入衍生到此檔案中。</span></li><li><span>確保小黑點在新派入的70093旁</span></li><li><span>跟上面一樣，用&quot;e&quot;將齒輪箱的長軸適當修剪一下</span></li><li><span>用&quot;j&quot;組合到底板上</span></li></ol><p><span>💡</span><em><span>如果用step檔案，今次derive的是70093R</span></em></p><p><span>❗️</span><strong><u><span>記得要用derive功能來插入衍生，不要用copy &amp; paste，否則修改齒輪箱時，左右兩邊會同步喔!!!!</span></u></strong></p><p><img src="20210204150936.png" style="zoom:33%;" /></p><h2 id='step-3'><span>STEP 3</span></h2><p><span>接著:</span></p><ol start='' ><li><span>將小黑點退回最上層</span></li><li><span>開一個新的sheet metal component，名字叫&quot;L support&quot;或者你喜歡的名字，材料和厚度隨便選一個就可以，之後會修改</span></li><li><span>確認一下，sheet metal component的圖示跟普遍的component是不同的</span></li><li><span>確保小黑點在旁，activate這個component</span></li><li><span>在底板的上面，用&quot;new sketch&quot;開一個新的sketch</span></li><li><span>投影上面的兩個洞</span></li><li><span>在洞的中心點加上作圖線的中線</span></li><li><span>繪畫一個寬10mm的方型</span></li><li><span>可用中點或對稱限制，方型對稱於中線</span></li></ol><p><span>💡</span><em><span>可以在component的左方找到一個眼睛的icon，點選後可隱藏component方便操作</span></em></p><p><img src="20210204151001.png" style="zoom:33%;" /><span> </span><img src="20210204151116.png" style="zoom:33%;" /></p><p>&nbsp;</p><ol start='' ><li><span>在sheet metal的頁面中，找到edit rule的icon，在你選用的材料旁邊，會有一支筆的icon，點進去就能修改屬性，例如有厚度，摺的時候要預留多少延展長度等等</span></li><li><span>在sheet metal的頁面中，找到&quot;Flange&quot;的icon，或者用&quot;s&quot;來搜尋&quot;Flange&quot;</span></li><li><span>點選剛剛的方型，變成1個厚度2mm的金屬簿片</span></li></ol><p><span>❗️</span><strong><u><span>確保要用&quot;Flange&quot;製作金屬薄片，不要用&quot;e&quot; extrude擠出</span></u></strong></p><p><img src="20210204151605.png" style="zoom:50%;" /><span> </span><img src="20210204151406.png" style="zoom:50%;" /></p><p>&nbsp;</p><p><img src="20210204151132.png" style="zoom:33%;" /><span> </span><img src="20210204151201.png" style="zoom:33%;" /></p><p>&nbsp;</p><ol start='' ><li><span>繼續使用&quot;Flange&quot;，按下金屬片的邊緣，會自動出現bending功能，</span></li><li><span>bending的高度和位置分別可以設定位&quot;inside&quot;, &quot;outside&quot;和&quot;center&quot;三種，就是計算高度和摺疊的位置由那裡計起，你可以試試看有甚麼分別</span></li><li><span>今次凸出，高16mm(由outer face計起)，位置則由&quot;inside&quot;內側計起</span></li><li><span>重復，鋁片的另一邊也是16mm高</span></li></ol><p><img src="20210204151700.png" style="zoom:33%;" /><span> </span><img src="20210204151729.png" style="zoom:33%;" /></p><ol start='' ><li><span>繼續確保小黑點在&quot;L support&quot;旁邊</span></li><li><span>用&quot;s&quot;搜尋&quot;new sketch&quot;, 在凸起的鋁板表面開一個新的sketch</span></li><li><span>將其中一個齒輪箱顯示出來</span></li><li><span>用&quot;p&quot;投影長軸和鋁板</span></li><li><span>在鋁板劃一條中線和一個3mm的圓</span></li><li><span>用constraints的第一個icon &quot;horizontal and vertical&quot;，指定3mm圓的高度和長軸同高</span></li></ol><p><img src="20210204151900.png" style="zoom:33%;" /><span> </span><img src="20210204151819.png" style="zoom:33%;" /></p><ol start='' ><li><span>用&quot;e&quot; extrude，選擇3mm圓，到&quot;extent type&quot;用&quot;to object&quot;，將圓孔穿到鋁板的另一面</span></li><li><span>最後用&quot;f&quot; fillet修圓角，半徑隨意，一般2mm或3mm</span></li></ol><p><img src="20210204151932.png" style="zoom:33%;" /><span> </span><img src="20210204151950.png" style="zoom:33%;" /></p><ol start='' ><li><span>接著就可以將小黑點褪回最外層</span></li><li><span>用&quot;j&quot; 組合，將鋁板組合到底板</span></li></ol><p><img src="20210204152038.png" style="zoom:33%;" /></p><h2 id='step-4'><span>STEP 4</span></h2><ol start='' ><li><span>繼續確保小黑點在最外層</span></li><li><span>用&quot;s&quot;搜尋&quot;derive&quot;衍生插入&quot;tamiya crank&quot;曲柄的step檔或者f3d檔</span></li><li><span>插入之後將小黑點active到曲柄的旁邊，將其activate</span></li><li><span>在表面用&quot;new sketch&quot;開一個新的sketch</span></li><li><span>投影並繪製一條線，如圖</span></li></ol><p><span>💡</span><em><span>可善用component旁的小眼睛icon，適當地顯示和隱藏component，方便操作</span></em></p><p><img src="20210204152258.png" style="zoom:30%;" /><span> </span><img src="20210204152420.png" style="zoom:50%;" /></p><ol start='' ><li><span>繼續確保小黑點在tamiya crank曲柄的旁邊</span></li><li><span>用&quot;e&quot; extrude，將多餘的曲柄剪走，只留下最近的一個孔</span></li><li><span>接著就可以將小黑點褪回最外層</span></li><li><span>用&quot;j&quot; 組合，將曲柄組合到70093齒輪箱的長軸</span></li></ol><p><span style='font-size:20px;'>&#10071;</span><i><b><span>如果用的是f3d fusion360檔案, 由於齒輪箱內部是可以轉旋的, 所以用&quot;rigid&quot;即可</span></b></i></p><p><span style='font-size:20px;'>&#10071;</span><i><b><span>如果是用step檔案的話, joint的時候要到&quot;motion&quot;頁面，選用joint的類型為revolving joint</span></b></i></p><p><img src="20210204152500.png" style="zoom:50%;" /><span> </span><img src="20210204152553.png" style="zoom:50%;" /></p><h2 id='step-5'><span>STEP 5</span></h2><ol start='' ><li><span>確保小黑點在最上層</span></li><li><span>用ctrl-c/ctrl-v, 將tamiya crank複製多一個</span></li><li><span>用&quot;j&quot;組合到另一邊的齒輪箱長軸</span></li><li><span>記得方向要跟另一邊相差180度, 如果左方是向著後，這邊要向著前方</span></li></ol><p><span style='font-size:20px;'>&#128161;</span><i><em><span>如果零件是完全相同的話，可直接複製/貼上; 如果零件相似但需要有獨立修改，則要用derive衍派功能</span></em></i></p><p><span style='font-size:20px;'>&#128161;</span><i><em><span>同樣, 如果是用step檔的70093齒輪箱, joint的類型應為revolving joint</span></em></i></p><p><img src="20210204152703.png" style="zoom:50%;" /></p><h2 id='step-6'><span>STEP 6</span></h2><ol start='' ><li><span>確保小黑點在最上層</span></li><li><span>搜尋&quot;new component&quot;，開一個新的component叫&quot;legs&quot;，用來裝起左半邊的全部腳和連杆</span></li><li><span>確保小黑點在&quot;legs&quot;的旁邊，再開一個新的component叫&quot;leg1&quot;</span></li></ol><p><span>接下來的所有腳和連杆，請確保必須要在&quot;legs&quot;的下方，否則複製之時，全部的joint組合的關係都會散落，要重新組合</span></p><p><img src="20210204152803.png" style="zoom:100%;" /><span> </span><img src="20210204152839.png" style="zoom:100%;" /></p><h2 id='step-7'><span>STEP 7</span></h2><ol start='' ><li><span>Activate剛剛開的&quot;leg1&quot;，確保小黑點在旁</span></li><li><span>用&quot;s&quot;尋找&quot;new sketch&quot;, 在原點的xz平面開一個新的sketch(可先隱藏全部component)</span></li><li><span>跟著下圖的尺寸繪製</span></li><li><span>繪製之時，可以用&quot;s&quot;尋找&quot;change parameter&quot;, 將連杆的尺寸設為變數，之後只要一改這個變數就會全部更改</span></li></ol><p><img src="20210204153033%201.png" style="zoom:40%;" /><span> </span><img src="Untitled.png" style="zoom:33%;" /></p><p><img src="20210204152945.png" style="zoom:33%;" /></p><ol start='' ><li><span>擠出</span><code>thickness</code><span>的厚度</span></li><li><span>再用&quot;f&quot; fillet角度，半徑隨意，約2mm-3mm</span></li></ol><p><img src="20210204172005.png" style="zoom: 33%;" /><span> </span><img src="20210204172031.png" style="zoom:33%;" /></p><h2 id='step-8'><span>STEP 8</span></h2><ol start='' ><li><span>接下來，確保小黑點在&quot;legs&quot;的旁邊</span></li><li><span>用&quot;s&quot;搜尋&quot;new component&quot;，開一個新的component叫&quot;linkage1&quot;</span></li><li><span>activage這個&quot;linkage1&quot;，確保小黑點在旁，開一個新的sketch在xz平面上</span></li><li><span>繪畫一支連杆，長度用&quot;parameter&quot;來設定一個叫&quot;L3&quot;的變數，都時設定值為72mm</span></li><li><span>最後用&quot;e&quot;擠出</span><code>thickness</code><span>的厚度</span></li></ol><p><span style='font-size:20px;'>&#128161;</span><i><em><span>可以善用hide/show功能，暫時隱藏其他零件</span></em></i></p><p><img src="20210204172124.png" style="zoom:80%;" /><span> </span><img src="20210204172309.png" style="zoom:33%;" /></p><p><img src="20210204172419.png" style="zoom:33%;" /></p><h2 id='step-9'><span>STEP 9</span></h2><p><span>接下來開始複製和組裝左腳:</span></p><ol start='' ><li><p><span>首先將全部零件全部顯示出來方便操作</span></p></li><li><p><span>用&quot;j&quot;將&quot;linkage1&quot;組裝在鋁片上</span></p><ol start='' ><li><span>兩個joint的接口保留距離1mm, 如果是實物裝砌時，可以用1mm鐵墊片將其隔開，確保可以旋轉</span></li><li><span>大約將接口的角度旋轉25度，大約即可，方便後面的操作</span></li><li><span>去到&quot;motion&quot;的頁面，選用joint的類型為revolving joint</span></li><li><span>完成後，會發現這個joint的符號會出現在最上層</span></li><li><span>即使是在activage&quot;legs&quot;(小黑點在legs旁)時操作，這個joint也會在&quot;legs&quot;之外，之後複製&quot;legs&quot;時，並不會跟著複製</span></li></ol></li></ol><p><img src="20210204172904.png" style="zoom:33%;" /><span> </span><img src="20210204172546.png" style="zoom:33%;" /></p><h2 id='step-10'><span>STEP 10</span></h2><ol start='' ><li><span>接著用joint將&quot;leg1&quot;組合到曲柄上，offset 4mm, 這個offset不是4mm都可以, 因為之後要到&quot;motion&quot;頁面</span></li><li><span>到&quot;motion&quot;頁面選擇&quot;cylindrical&quot; joint, 這類型的joint有2個自由度, 一個是旋轉, 另一個是緣著旋轉軸移動，所以上面選的4mm offset只是參考，並沒有限制的</span></li><li><span>跟上面的rev7一樣，這個joint即使是在&quot;legs&quot; activate下做, joint也不是在&quot;legs&quot;底下的，因為曲柄並非在&quot;legs&quot;底下</span></li></ol><p><img src="20210204172749.png" style="zoom:33%;" /><span> </span><img src="20210204172824.png" style="zoom:33%;" /></p><p><img src="20210204172639.png" style="zoom:33%;" /></p><h2 id='step-11'><span>STEP 11</span></h2><ol start='' ><li><p><span>確保小黑點是在component &quot;legs&quot;旁</span></p></li><li><p><span>將&quot;leg1&quot;用joint組合到&quot;linkage1&quot;上</span></p><ol start='' ><li><span>joint接觸面距離1mm, 跟之前一樣，如果實際組裝時，可用1mm墊片隔離</span></li><li><span>到&quot;motion&quot;頁面選擇&quot;revo4lving joint&quot;</span></li></ol></li><li><p><span>完成後確認一下，這個joint是在component &quot;legs&quot;之下，之後複製才會跟著被複製</span></p></li></ol><p><span style='font-size:20px;'>&#128161;</span><span> </span><i><span>記著四連杆組合的秘決為: 3個joints 中, 2個revolve joints 1個cylindrical joint, 次序可以隨意, 這樣就不用計算offset的距離和thickness的厚度</span></i></p><p><img src="20210204173054.png" style="zoom:33%;" /><span> </span><img src="20210204173150.png" style="zoom:55%;" /></p><h2 id='step-12'><span>STEP 12</span></h2><ol start='' ><li><span>確保小黑點繼續在&quot;legs&quot;旁邊</span></li><li><span>將&quot;leg1&quot;和&quot;linkage1&quot;用ctrl-c/ctrl-v複製一份, 複製成leg1:2和linkage1:2, 如圖</span></li><li><span>確保兩隻腳兩條連杆都是在同一個component &quot;legs&quot;之下</span></li></ol><p><img src="20210204175259.png" style="zoom:33%;" /></p><h2 id='step-13'><span>STEP 13</span></h2><p><span>圖1:</span></p><ol start='' ><li><span>確保小黑點在&quot;legs&quot;旁</span></li><li><span>用&quot;joint&quot;將&quot;leg1:2&quot;組合到&quot;linkage1&quot;之上，offset 1mm間距</span></li><li><span>到&quot;motion&quot;頁面，joint的類型為&quot;revolving&quot; joint</span></li></ol><p><span>同樣地, 圖2</span></p><ol start='' ><li><span>將&quot;linkage1:2&quot;連接到&quot;leg1:2&quot;上</span></li><li><span>&quot;motion&quot; type為&quot;revolving&quot; joint</span></li><li><span>offset 1mm</span></li></ol><p><span>最後，圖3</span></p><ol start='' ><li><span>將&quot;linkage1:2&quot;的另一端，接合到&quot;leg1&quot;上</span></li><li><span>&quot;motion&quot; type為&quot;cylindrical&quot; joint</span></li><li><span>今次可以不用offset, 因為用cylindrical joint會自動因應剛才兩個offset而調整間隔</span></li></ol><p><img src="20210204175357.png" style="zoom:33%;" /><span> </span><img src="20210204175516.png" style="zoom:33%;" /></p><p><img src="20210204175643.png" style="zoom:33%;" /></p><h2 id='step-14'><span>STEP 14</span></h2><p><span>這樣，左腳部分就完成了，</span></p><ol start='' ><li><span>試著轉動齒輪箱，看看腳是否跟著動</span></li><li><span>試著調整leg和linkage的offset間距，由1mm改為0.5mm(或任意數值), 看看修改完之後會否有error警告彈出, 如果正確跟著步驟, 調整參數應該沒有error的</span></li></ol><p><img src="testing1.gif" alt="testing1.gif" style="zoom:50%;" /></p><h2 id='step-15'><span>STEP 15</span></h2><ol start='' ><li><span>把小黑點褪回到最上層</span></li><li><span>用ctrl-c/ctrl-v將整個component &quot;legs&quot;(即左腳)複製一份, 複製成legs1:2</span></li><li><span>可以在複製的同時移遠一點方便操作</span></li></ol><p><span>❗</span><strong><span>fusion360的鏡像功能是不能複製joint的關係的，所以如果要強求完全左右對稱, 則要全部重新joint一次</span></strong></p><p><img src="20210204180800.png" style="zoom:33%;" /></p><h2 id='step-16'><span>STEP 16</span></h2><ol start='' ><li><span>將最近右邊tamiya crank的linkage1:1用&quot;j&quot; joint到曲柄的孔上</span></li><li><span>&quot;motion&quot; type為&quot;revolving&quot; joint</span></li><li><span>offset 1mm</span></li></ol><p><img src="20210204180840.png" style="zoom:33%;" /><img src="20210204180951.png" style="zoom:33%;" /></p><h2 id='step-17'><span>STEP 17</span></h2><ol start='' ><li><span>最後將右邊的leg1:1, 和餘下的鋁支架L support的孔組合</span></li><li><span>&quot;motion&quot; type為&quot;cylindrical&quot; joint</span></li><li><span>今次可以不用offset, 因為用cylindrical joint會自動因應剛才兩個offset而調整間隔</span></li></ol><p><img src="20210204181140.png" style="zoom:33%;" /></p><h2 id='完成'><span>完成</span></h2><p><span>完成之後，</span></p><ol start='' ><li><span>模擬一下，試著轉動右邊的腳，看看是否可以模擬真實機械連杆轉動</span></li><li><span>試修改一下間隔offset的數值，看看有否出現error</span></li><li><span>pdf文件裏面有包含phase1和phase2的尺寸, 試著用&quot;change parameter&quot;去修改一下參數尺寸, 看看整個設計是否立即修改</span></li></ol></div></div>
+<!-- Top menu Navbar -->
+<object name="topBar" style="position:fixed; top:0px; z-index:10;" width="100%" height="43px" type="text/html"
+    data="../../topBar.html">
+</object>
 </body>
 </html>

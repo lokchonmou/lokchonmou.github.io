@@ -2,8 +2,6 @@
 
 Servo motor伺服馬達在機械人中佔一個很重要的地位。Servo motor並不會像一般馬達那樣連續旋轉，而是會依指令在0度到180度的範圍內轉動或停止。
 
-<iframe width="560px" height="315" src="https://www.youtube.com/embed/bu3SPwzcocU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ![螢幕快照 2015-04-03 下午05.00.00](./%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202015-04-03%20%E4%B8%8B%E5%8D%8805.00.00.png)
 
 Servo motor整合了控制電路，控制馬達的角度，整個反饋控制迴路(feedback control loop)藉由電位器(potentiometer)，即可變電阻，量度馬達的輸出角度，控制電路讀取電阻值後，便會依此數值來調整馬達的運轉方向和轉速，從而令馬達保持在指令的角度。
