@@ -6,8 +6,6 @@
 
 [TOC]
 
-
-
 ## 1.1 開始遊戲
 
 ```python
@@ -498,7 +496,7 @@ line(width/2, 10, width/2, height - 10)
 ```
 最後，在`draw()`的最底下，加上文字，用來顯示兩個分數。
 
-## 1.6 Restart the game
+## 1.6 重啟遊戲
 
 ```python
 ballX = 0
@@ -597,3 +595,167 @@ if key == 'R' or key == 'r':
 ```
 
 在按鍵當中，加入指令，如果按下`r`鍵的話，就重新執行一次`setup()`，將所有變數都變回預設值，這也是為甚麼我們經常多此一舉，明明一開始已宣告了一個變數，但又要在`setup()`中設定它的值多一次。
+
+## 1.7 同一時間操控多個按鍵(選項)
+
+*<u>這一節的內容會比較進階，內面的內容會涉及到**列表(list)**, **函數(function)**和**event**，建議你可以先看看第二節的內容再回來修改這一節的遊戲。</u>*
+
+當你自己一個人在測試時，你應該不太會發現這問題，但如果真的兩個人一起玩時，就會發現，當一個人在按按鍵，另一個玩家就會停下來。這是因為在processing.py的程式，在每次`draw()`執行時`key`只會有一個值，所以當一個按鍵按下時，另一個是不會有反應的。
+
+要解決這個問題，就需要有一個變數去紀錄低按鍵的變化。
+
+```python
+ballX = 0
+ballY = 0
+ballSpeedX = 0
+ballSpeedY = 0
+
+player1X = 0
+player1Y = 0
+
+player2X = 0
+player2Y = 0
+
+score1 = 0
+score2 = 0
+
+Keys = [False, False, False, False, False]
+
+def setup():
+    global ballX, ballY, ballSpeedX, ballSpeedY, player1X, player1Y,  player2X, player2Y, score1, score2
+    
+    size(800, 600)
+    ballX = width/2
+    ballY = height/2
+    ballSpeedX = -1
+    ballSpeedY = random(-2, 2)
+    
+    player1X = 10
+    player1Y = height/2
+    
+    player2X = width - 10
+    player2Y = height/2
+    
+    score1 = 0
+    score2 = 0
+    
+    
+def draw():
+    global ballX, ballY, ballSpeedX, ballSpeedY, player1X, player1Y, player2X, player2Y, score1, score2
+    
+    background(30)
+    ballX += ballSpeedX
+    ballY += ballSpeedY
+    
+    if ballY <= 0 or ballY >= height:
+        ballSpeedY *= -1
+    
+    if ballX <= 10 and ballY >= player1Y - 25 and ballY <= player1Y +25:
+        ballSpeedX *= -1
+    
+    if ballX >= width - 10 and ballY >= player2Y - 25 and ballY <= player2Y +25:
+        ballSpeedX *= -1
+        
+    if ballX <=0:
+        score2 += 1
+        ballX  = width/2
+        ballY = height/2
+        ballSpeedX = 1
+        ballSpeedY = random(2, -2)
+
+    if ballX >= width:
+        score1 += 1
+        ballX  = width/2
+        ballY = height/2
+        ballSpeedX = 1
+        ballSpeedY = random(2, -2)   
+    
+    ellipse(ballX, ballY, 15,15)
+    
+    if Keys[0] and player1Y > 0:
+        player1Y -=3
+    if Keys[1] and player1Y < height:
+        player1Y +=3
+    if Keys[2] and player2Y > 0:
+        player2Y -=3
+    if Keys[3] and player2Y < height:
+        player2Y +=3
+    if Keys[4]:
+        setup()
+  
+    rectMode(CENTER)
+    rect(player1X, player1Y, 10, 50)
+    rect(player2X, player2Y, 10, 50)
+    
+    textSize(60)
+    textAlign(CENTER, CENTER)
+    text(score1, width/4, 50)
+    text(score2, width*3/4, 50)
+    stroke(255)
+    line(width/2, 10, width/2, height - 10)
+        
+def setKey(input, state):
+    if input == 'W' or input == 'w':
+        Keys[0] = state
+    if input == 'S' or input == 's':
+        Keys[1] = state
+    if input == 'O' or input == 'o':
+        Keys[2] = state
+    if input == 'L' or input == 'l':
+        Keys[3] = state
+    if input == 'R' or input == 'r':
+        Keys[4] = state
+
+def keyPressed():
+  setKey(key, True)
+
+
+def keyReleased():
+  setKey(key, False)
+```
+
+
+
+```python
+Keys = [False, False, False, False, False]
+```
+
+在程式的最上方宣告變數中，開一個`Keys`的列表(list)變數。至於列表(list)是甚麼，可以參考[這裡](https://www.runoob.com/python/python-lists.html)。
+
+```python
+def setKey(input, state):
+    if input == 'W' or input == 'w':
+        Keys[0] = state
+    if input == 'S' or input == 's':
+        Keys[1] = state
+    if input == 'O' or input == 'o':
+        Keys[2] = state
+    if input == 'L' or input == 'l':
+        Keys[3] = state
+    if input == 'R' or input == 'r':
+        Keys[4] = state
+
+def keyPressed():
+  setKey(key, True)
+
+
+def keyReleased():
+  setKey(key, False)
+```
+
+在程式的最低下，新增3個函數。由於在`draw()`的內置變數`key`每次只會有一個值，所以我們新增一個函數(function)叫`setKey()`，當每次特定的按鍵(w, s, o, l, r)按下時，就將相對應的`Keys[]`內容轉成`True`，相反當按鍵釋放時就設為`False`。
+
+```python
+if Keys[0] and player1Y > 0:
+    player1Y -=3
+if Keys[1] and player1Y < height:
+	player1Y +=3
+if Keys[2] and player2Y > 0:
+	player2Y -=3
+if Keys[3] and player2Y < height:
+	player2Y +=3
+if Keys[4]:
+	setup()
+```
+
+最後在`draw()`中，將原本的按鍵部分，修改成剛剛設定的`Keys[]`列表，順便也加一些限制給它以免玩家的球拍會飛出畫面以外。
