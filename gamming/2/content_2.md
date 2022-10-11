@@ -6,7 +6,14 @@
 
 [TOC]
 
-## 繪畫一個會彈牆的球
+## 2.0 本章重點
+
+1. 向量(Vector)
+2. 列表(list)
+3. 函數(function)
+4. 邏輯布林運算
+
+## 2.1 繪畫一個會彈牆的球
 
 跟上一次一樣，我們先建立一個空間，畫一個會動的球，這個球在撞到左右兩邊的牆時會反彈。
 
@@ -44,11 +51,11 @@ def draw():
 
 <img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202022-09-24%20%E4%B8%8B%E5%8D%883.05.24.png" alt="螢幕截圖 2022-09-24 下午3.05.24" style="width:60%;" />
 
-###Vector(向量)
+###2.1.1 Vector(向量)
 
-上述的程式碼沒有甚麼問題，一切都可以運作起來，但你想想，如果是2d遊戲，每個球的座標會有兩個變數，如果是3d的遊戲，每個球的座標就會是3個變數；除了變數較多外，這些變數也不好運作。
+上述的程式碼沒有甚麼問題，一切都可以運作起來，但你想想，如果是2D遊戲，每個球的座標會有兩個變數，如果是3D的遊戲，每個球的座標就會是3個變數；除了變數較多外，這些變數也不好運作。
 
-這樣介紹一個很好用的數學工具叫Vector(向量)。詳細的數學方面的教學可看看[這裡](https://mathinsight.org/vector_introduction)。
+這裡介紹一個很好用的數學工具叫Vector(向量)。詳細的數學方面的教學可看看[這裡](https://mathinsight.org/vector_introduction)。
 
 ```python
 ballPos = PVector()
@@ -110,7 +117,7 @@ if ballPos.y <=0:
 
 如果要指定一個向量(vector)的獨立軸的值(例如x軸)，可以用這樣表示: `ballPos.x`。
 
-## 製作會反彈球的彈板
+## 2.2 製作會反彈球的彈板
 
 ```python
 ballPos = PVector()
@@ -179,7 +186,7 @@ rect(beam.x, beam.y, 50, 10)
 
 在`draw()`中，每幀都指定`beam`的位置為`(mouseX, height-15)`，跟上一次的Pong一樣，當球撞到板後，就反彈球。而今次我們最後將`beam`畫出來。
 
-##美化一下更加像原版
+##2.3 美化一下更加像原版
 
 ```python
 ballPos = PVector()
@@ -249,7 +256,7 @@ rect(beam.x, beam.y, beamWidth, 10)
 
 最後將球和拍畫出來。顏色跟隨原版，沒有框線。
 
-## 製作磚頭
+## 2.4 製作磚頭
 
 ```python
 ballPos = PVector()
@@ -349,7 +356,7 @@ for i in range(6):
 
 最後在`draw()`中，將所有的磚畫出來。每行的磚都有自己的顏色，這時就要用之前事前已經用list存好的`brickColor[]`
 
-## 令磚頭消失
+## 2.5 令磚頭消失
 
 ```python
 ballPos = PVector()
@@ -476,7 +483,7 @@ for i in range(6):
 
 每次在繪畫磚塊之時，檢查一下球有否撞過磚塊，如果有的話, 就將其狀態(`brickState`)設定為`False`，在繪畫時就不繪畫它。
 
-## 判斷贏或是輸
+## 2. 6 判斷贏或是輸
 
 ```python
 ballPos = PVector()
@@ -628,7 +635,7 @@ def runGame():
                 rect(brickPos[i][j].x, brickPos[i][j].y, brickWidth, brickHeight)
 ```
 
-首先開一個函數叫`runGame()`，將所有原本在`draw()`之中的內容都剪下貼上到這個函數之中。
+首先開一個函數叫`runGame()`，將所有原本在`draw()`之中的內容都剪下貼上到這個函數之中。留意一下，在這裡的第16行，被加入了一句`ballVec.x += random(-5,5)`，令到每次當球反彈時，不會根據物理原理跟隨法線反彈，而是會隨機加一點亂數，放便消除所有的磚，否則有一些磚可能要花十分多時間才會消除。
 
 
 
@@ -636,7 +643,7 @@ def runGame():
 gameOver = False
 ```
 
-開一個變數叫`gameOver`，在`setup()`中設定它為`False`。
+在程式最開始的宣告區，開一個變數叫`gameOver`，在`setup()`中設定它為`False`。
 
 
 
@@ -663,3 +670,37 @@ def checkIfLose():
 ```
 
 要檢查是否輸就很簡單，如果球飛出了畫面，就即是輸了，所以檢查`ballPos.y`，如果大於`height`的話即出了界，就判定其為輸。
+
+
+
+```python
+def checkIfWin():
+    global gameOver
+    
+    hasTrue = False
+    
+    for i in range(6):
+        for j in range(16):
+            hasTrue = hasTrue or brickState[i][j]
+    
+    if hasTrue == False:
+        gameOver = True
+        textSize(48)
+        textAlign(CENTER, CENTER)
+        text("YOU WIN", width/2, height/2)
+```
+
+要檢查是否贏就一點複雜，首先要參考一下下表:
+
+<img src="truth-table.png" alt="truth-table" style="width:80%;" />
+
+在邏輯運算中，`or` 的邏輯運算，**兩個輸入只要有一個是`True`，就會得出結果為`True`**。所以一開始我們設定一個叫`hasTrue`的變數，一開始的值是`False`，之後將所有的`brickState[][]`都和這個變數`or`一次，如果其中一個(例如是第2個)是`True`的話，那麼結果就會變成`True`，之後即使再`or`其他的`brickState[][]`，`brickState[][]`的狀態即使是`False`，之前的結果也已經轉成了`True`，所以再`or`也是`True`。除非全部的`brickState[][]`都是`False`，那麼跟`hasTrue`全部`or`一次的結果才會是`False`。(這是一個寫遊戲很常用的技巧，可以記一下，之後寫遊戲會經常用得著)
+
+## 2.7 考考你
+
+請自行為遊戲加入：
+
+1. 按下鍵盤的`r`鍵後會自動重啟這個遊戲；
+2. 加入生命值，如果出了界的話，不會立即gameover，而是會減少生命值，例如有3次機會，出界3次後少gameover。再將生命值用文字顯示在最上方正中，像原版一樣；
+3. 加入分數(score)，每當消除一塊磚就加1分，將分數顯示在遊戲左上角；
+4. 加入回合制，完成了一關之後，可以開始下一回合，下一回合的磚頭數量(例如行數加多一行)會有變化，每兩至三關球的速度會加速，消滅磚塊的分數也會跟據回合倍增變成第1關1分, 第2關2分等等。
