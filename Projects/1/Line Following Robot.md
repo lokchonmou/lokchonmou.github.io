@@ -164,7 +164,23 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 
 理論是有了，那怎麼將其用程式實行呢？首先要開一個**變數**，名字叫`input`，而格式是`float`。`float`跟之前的`byte`和`int`不同，後兩者只有整數，但`float`是浮點數，可以計算到小數。
 
-`sensor2number()`是一個函數，其用途是將上述的表格，用「暴力」的方法實現出來。比較特別的是，定義這個函數時，其前序不是`void`而是`float`，`void`是空的意思，就是說函數沒有任何輸出，而在定義函數時前序加入`float `，函數運算後就會傳回一個計算後的值，而函數之內也需要用`return`作為輸出的結果。輸入代碼後上傳，開啟序列埠監空視窗(Serial Monitor)，將機械人在黑線上偏移，就會見到相對的偏移值。
+`sensor2number()`是一個函數，其用途是將上述的表格，用「暴力」的方法實現出來。~~比較特別的是，定義這個函數時，其前序不是`void`而是`float`，`void`是空的意思，就是說函數沒有任何輸出，而在定義函數時前序加入`float `，函數運算後就會傳回一個計算後的值，而函數之內也需要用`return`作為輸出的結果。~~==用回傳的方法有一個問題，就是每次`answer`都會重設變成`0`，如果所有傳感器的case都不乎合的話，就會回傳`0`，令程式誤以為機械人在線的正中間沒有誤差。請用下面的程式碼代替。==輸入代碼後上傳，開啟序列埠監空視窗(Serial Monitor)，將機械人在黑線上偏移，就會見到相對的偏移值。
+
+```c++
+void sensor2number(){
+    if (state[0] == 0 && state[1] == 1 && state[2] == 1 && state[3] == 1 && state[4] == 1) input = 4.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 1 && state[3] == 1 && state[4] == 1) input = 3.0;
+    if (state[0] == 1 && state[1] == 0 && state[2] == 1 && state[3] == 1 && state[4] == 1) input = 2.0;
+    if (state[0] == 1 && state[1] == 0 && state[2] == 0 && state[3] == 1 && state[4] == 1) input = 1.0;
+    if (state[0] == 1 && state[1] == 1 && state[2] == 0 && state[3] == 1 && state[4] == 1) input = 0.0;
+    if (state[0] == 1 && state[1] == 1 && state[2] == 0 && state[3] == 0 && state[4] == 1) input = -1.0;
+    if (state[0] == 1 && state[1] == 1 && state[2] == 1 && state[3] == 0 && state[4] == 1) input = -2.0;
+    if (state[0] == 1 && state[1] == 1 && state[2] == 1 && state[3] == 0 && state[4] == 0) input = -3.0;
+    if (state[0] == 1 && state[1] == 1 && state[2] == 1 && state[3] == 1 && state[4] == 0) input = -4.0;
+}
+```
+
+
 
 ### Step 4 P controller
 
