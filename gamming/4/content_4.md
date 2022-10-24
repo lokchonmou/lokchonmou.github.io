@@ -608,8 +608,7 @@ def setup():
     birdPos = PVector(50, height/2)
     birdVec = PVector(0, 0)
 
-    if len(myPipe) > 0:
-        myPipe.clear()
+    myPipe = []
 
     myPipe.append(Pipe())
 
@@ -703,11 +702,10 @@ class Pipe(object):
 
 
 ```python
- if len(myPipe) > 0:
-        myPipe.clear()
+myPipe = []
 ```
 
-在`setup()`中新增了一句。當`myPipe`列表長度大於0(即有內容時)就清空列表。
+在`setup()`中新增了一句。每次初始化時，都將`myPipe`的內容清空變成空的列表。
 
 ```python
 def runGame():
@@ -742,10 +740,173 @@ def runGame():
     #=====================================
 ```
 
-在`runGame()`中，20-21行，暫時停止gameover功能方便debug，之後23-24行新增了當水管已經移出了畫面時，就在`myPipe`列表中移除當下這個物件。要注意的是，移除一定要在最後才執行，否則移除後下面繼續執行的都是針對下一個id)。
+**在`runGame()`中，20-21行，暫時停止gameover功能方便debug，**之後23-24行新增了當水管已經移出了畫面時，就在`myPipe`列表中移除當下這個物件。要注意的是，移除一定要在最後才執行，否則移除後下面繼續執行的都是針對下一個id)。
 
 之後就在每次`runGame()`中，將所有`myPipe`列表的內容都列印出來，在python中列印一件物件，只會列印其id，這個id是電腦儲存這個物件的暫存記憶體地址。這一段是用來debug的，測試後沒有問題就可以刪掉。
 
 ## 4.9 水管計分
 
-最後
+```python
+birdPos = PVector()  # 鳥的位置
+birdVec = PVector()  # 鳥的速度
+birdAccel = PVector(0, 0.3)  # 鳥的向下加速度
+
+panSpeed = 5
+
+myPipe = []
+
+GAMEOVER = False
+
+score = 0
+pipeCount = 0
+
+def setup():
+    global birdPos, birdVec, myPipe, GAMEOVER, score, pipeCount
+
+    size(800, 600)
+    frameRate(60)
+    birdPos = PVector(50, height/2)
+    birdVec = PVector(0, 0)
+
+    myPipe = []
+
+    myPipe.append(Pipe())
+
+    GAMEOVER = False
+
+    score = 0
+    pipeCount = 0
+
+
+def draw():
+    global GAMEOVER
+
+    if not GAMEOVER:
+        runGame()
+
+    else:
+        textSize(64)
+        textAlign(CENTER, CENTER)
+        fill(255, 255, 0)
+        text("GAME OVER", width/2, height/2)
+
+
+def keyPressed():
+    if (key == ' '):
+        birdVec.y = -8
+    if (key == 'R' or key == 'r'):
+        setup()
+
+
+def runGame():
+    global birdPos, birdVec, GAMEOVER, score
+
+    score += 1
+    if (score % 100 == 0):
+        myPipe.append(Pipe())
+
+    background("#70C6D5")
+
+    birdVec = birdVec.add(birdAccel)
+    birdPos = birdPos.add(birdVec)
+
+    fill("#D5BB06")
+    ellipse(birdPos.x, birdPos.y, 25, 25)
+
+    for p in myPipe:
+        p.update(birdPos)
+        p.show()
+
+        # if p.collide(birdPos) == True or birdPos.y > height:
+        #     GAMEOVER = True
+        
+        if (p.x < - p.w):
+            myPipe.remove(p)
+    
+    textSize(60)
+    fill(255, 255, 0)
+    textAlign(CENTER, CENTER)
+    text(pipeCount, width/2, 50)
+# =======================Pipe Object=======================================
+
+
+class Pipe(object):
+    x = 0
+    w = 80
+    h = 0
+    gap = 80
+    isPassed = False
+
+    def __init__(self):
+        self.x = width + self.w
+        self.h = random(100, height - 100)
+
+    def update(self, _birdPos):
+        global pipeCount
+        self.x -= panSpeed
+        if (self.isPassed == False and _birdPos.x > self.x+self.w):
+            self.isPassed = True
+            pipeCount += 1
+
+
+    def show(self):
+        fill(0, 204, 0)
+        rect(self.x, height - self.h, self.w, self.h)
+        rect(self.x, height - self.h - self.gap, self.w, -(height-self.h))
+
+    def collide(self, _birdPos):
+        if (_birdPos.x > self.x and _birdPos.x < self.x+self.w):
+            if (_birdPos.y > height - self.h or _birdPos.y < height - self.h - self.gap):
+                return True
+```
+
+<img src="bird5.gif" alt="bird5" style="zoom:50%;" />
+
+```python
+class Pipe(object):
+    x = 0
+    w = 80
+    h = 0
+    gap = 80
+    isPassed = False
+
+    def __init__(self):
+        self.x = width + self.w
+        self.h = random(100, height - 100)
+
+    def update(self, _birdPos):
+        global pipeCount
+        self.x -= panSpeed
+        if (self.isPassed == False and _birdPos.x > self.x+self.w):
+            self.isPassed = True
+            pipeCount += 1
+
+
+    def show(self):
+        fill(0, 204, 0)
+        rect(self.x, height - self.h, self.w, self.h)
+        rect(self.x, height - self.h - self.gap, self.w, -(height-self.h))
+
+    def collide(self, _birdPos):
+        if (_birdPos.x > self.x and _birdPos.x < self.x+self.w):
+            if (_birdPos.y > height - self.h or _birdPos.y < height - self.h - self.gap):
+                return True
+```
+
+在水管的class當中，加入一個變數`isPassed`，顧名思義是判斷鳥有否通過了水管。在`update()`中，加入，如果`isPassed`是`False`而且鳥的x位置大於水管的x位置加水管寬度，就將`isPassed`設成`True`並且`pipeCount`加一。
+
+這是一個編程常用的小技巧，如果你只想某段程式只執行一次，那就可以設定一個boolean變數，例如今次是`False`，在if的條件中，加入判斷這個變數，當變數是`False`時而且有其他你想要的特定條件，就執行你想要的內容，並且將這個變數設成`True`，那麼下次程式再執行時，由於這個變數已經是`True`了，就不會再執行。例如下面的例子：
+
+<img src="image-20221024095738208.png" alt="image-20221024095738208" style="zoom:67%;" />
+
+## 4.10 考考你
+
+```python
+# if p.collide(birdPos) == True or birdPos.y > height:
+#     GAMEOVER = True
+```
+
+現在你可以將`runGame()`中，原本暫停了的這兩句重新啟動，遊戲就可以運行了。
+
+1. 改變變數，遊戲一開始時，水管的縫隙寬一點容易玩一點，例如是`160`，但當通過的水管數量越來越多，例如每通過5條水管，水管的縫隙就越來越窄，每次減少`20`，直到縫隙只有`60`
+2. 將所有有關鳥的變數和函數都打包變成一個class，跟水管的做法一樣，之後有機會教教大家用神經網絡和遺傳演算法，自製一個AI去自動玩這個遊戲。不過第一步，你可以嘗試同一時間有2隻鳥在玩，player1按spacebar來控制，player2按ENTER鍵來控制。
