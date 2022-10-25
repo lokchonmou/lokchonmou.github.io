@@ -53,7 +53,7 @@ def show():
     ellipse(ballPos.x, ballPos.y, 20, 20)
 ```
 
-<img src="C:\Users\User\Documents\GitHub\lokchonmou.github.io\gamming\4\ball1.gif" alt="ball1" style="zoom:70%;" />
+<img src="ball1.gif" alt="ball1" style="zoom:70%;" />
 
 ##2. 用`for`製作多粒波子
 
@@ -94,7 +94,7 @@ def show():
         ellipse(ballPos[i].x, ballPos[i].y, 20, 20)
 ```
 
-<img src="C:\Users\User\Documents\GitHub\lokchonmou.github.io\gamming\4\ball2.gif" alt="ball2" style="zoom:70%;" />
+<img src="ball2.gif" alt="ball2" style="zoom:70%;" />
 
 ## 3. 用class方法歸納多粒波子
 
@@ -145,7 +145,7 @@ class Ball(object):
         ellipse(self.ballPos.x, self.ballPos.y, 20, 20)
 ```
 
-<img src="C:\Users\User\Documents\GitHub\lokchonmou.github.io\gamming\4\ball1.gif" alt="ball1" style="zoom:70%;" />
+<img src="ball1.gif" alt="ball1" style="zoom:70%;" />
 
 效果是跟上面一模一樣的，分別只在於程式用上class去做。
 
