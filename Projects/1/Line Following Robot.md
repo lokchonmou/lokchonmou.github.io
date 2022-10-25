@@ -205,9 +205,9 @@ $$
 
 ### Robot Simulator
 
-[Line Foloower Simulator](https://lokchonmou.github.io/interactive/lineFollowerSim/index.html)
+[Line Foloower Simulator](../../interactive/lineFollowerSim/index.html)
 
-<iframe width=100% height="650" src="https://lokchonmou.github.io/interactive/lineFollowerSim/index.html
+<iframe width=100% height="650" src="../../interactive/lineFollowerSim/index.html
 "></iframe>
 
 利用模擬器, 你可以見到，當$$K_p$$不夠大時，機械人修正的「力度」不夠，即使是曲率不大的彎也過不了；但當機械人的$$K_p$$值太大時，即使巡直線，也會不斷左右搖擺，令行車十分不穩家，也很容易會出界或會調頭。至於甚麼是適當的值，則跟機械人的大小、寬度、sensor的距離有關。
@@ -259,10 +259,11 @@ $$
 
 在程式上，只要簡單修改，就可以實現到D controller。如上面的數學式，你需要有一個變數儲存$$input_{n-1}$$，這裡命名為`last_input`，別外，$$K_d$$則名為`D_gain`，將**第30行**修改一下，變成上面數學式(5)，但可以不需要除以$$\Delta time$$，因$$\Delta time$$是常數，所以可以融合到$$K_d$$。之後在程式的最下面，加上`last_input = input;`，將今次的`input`儲存起來，之後要加入`delay()`作為上面數學式的$$\Delta time$$，這個$$\Delta time$$(`delay()`)不能太少，否則D controller的部分只會有極短時間有作用，加了等於沒有加。
 
-[Line Foloower Simulator](https://lokchonmou.github.io/interactive/lineFollowerSim/index.html)
+[Line Foloower Simulator](../../interactive/lineFollowerSim/index.html)
 
-<iframe width=100% height="650" src="https://lokchonmou.github.io/interactive/lineFollowerSim/index.html
+<iframe width=100% height="650" src="../../interactive/lineFollowerSim/index.html
 "></iframe>
+
 
 
 你可以用這個模擬器，試試看$$K_d$$對機械人的表現有甚麼影響。
