@@ -470,6 +470,8 @@ def isInBox(_ballPos, _brickPos):
 
 在`setup()`和`draw()`之外，加入第3個自定的函數(function)。這個函數(function)你可以隨意命名，不一定要跟我一樣，函數(function)有2個參數(parameter)，python不需要跟其他程式一樣事前定義參數(parameter)的數據格式，你導入的引數(Argument)格式是甚麼就是甚麼，一般為了方便驅分，參數的命名如果跟全域變數(global varaiable)很像的話，都會在名字前面加入`_`。
 
+<img src="exp1.svg" alt="exp1" style="zoom:300%;" />
+
 
 
 ```python
