@@ -134,7 +134,7 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 
 ![image-20220913092300720](image-20220913092300720.png)
 
-第6行`IR_sensor_pin[]`，顧名思意，就是插著IR sensor的腳位，我插的是8至12腳。\
+第6行`IR_sensor_pin[]`，顧名思意，就是插著IR sensor的腳位，我插的是8至12腳。
 
 而後面的`[]`，是陣列(array)的意思。等同於你自行複製5次，名叫`IR_sensor_pin_0`至`IR_sensor_pin_4`，你當然可以這樣做，但如果IR sensor的數量再增加，例如增加到13隻，那這麼多變數就會十分難管理。
 
@@ -146,7 +146,7 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 
 <img src="image-20220913100030708.png" alt="image-20220913100030708" style="zoom:50%;" />
 
-打開右上角的序列埠監空視窗(Serial Monitor)，確保右下角的bute rate和你`Serial.begin(115200)`所輸入的鮑率是一樣的。就會見到5個0。
+打開右上角的序列埠監空視窗(Serial Monitor)，確保右下角的鮑率(bute rate)和你`Serial.begin(115200)`所輸入的鮑率是一樣的。就會見到5個0。
 
 <img src="image-20220913103004470.png" alt="image-20220913103004470" style="zoom:50%;" />
 
