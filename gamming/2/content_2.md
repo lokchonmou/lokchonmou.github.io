@@ -4,7 +4,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Breakout2600.svg/1920px-Breakout2600.svg.png" alt="img" style="zoom:80%;" />
 
-<iframe src="../../interactive/Breakout/index.html" height= "600" width=100% title="PONG"></iframe>
+<iframe src="../../interactive/Breakout/index.html" height= "600" width=100% title="Breakout"></iframe>
 
 [TOC]
 
