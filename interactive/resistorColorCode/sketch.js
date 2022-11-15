@@ -12,7 +12,7 @@ let randomList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let score = 0;
 
 function setup() {
-	createCanvas(600, 600 * 1.3);
+	createCanvas(600, 600*1.3);
 
 	randomSeed();
 	drawNumber();
