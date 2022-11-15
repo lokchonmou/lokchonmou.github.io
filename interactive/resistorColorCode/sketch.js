@@ -53,7 +53,31 @@ function setup() {
 
 	rectMode(CENTER);
 	allTrue = false;
-	band1Event();
+	drawFrame();
+}
+
+function drawFrame(){
+	background(200);
+
+	noStroke();
+	fill(0);
+	textSize(60);
+	textAlign(CENTER, CENTER);
+	text(engineeringNotation(randomResistor), width / 2, width / 3);
+	fill('#FF0000');
+	text(score, width - 60, 60);
+	textSize(24);
+	textAlign(CENTER, TOP);
+	fill(0);
+	text("Band 1", width / 4 - width / 8, 2 * height / 3);
+	text("Band 2", 2 * width / 4 - width / 8, 2 * height / 3);
+	text("Band 3", 3 * width / 4 - width / 8, 2 * height / 3);
+	text("Band 4", 4 * width / 4 - width / 8, 2 * height / 3);
+	stroke(0);
+	strokeWeight(10);
+	fill('#e6bc98');
+	line(10, height / 2, width - 10, height / 2);
+	rect(width / 2, height / 2, width / 2, height / 5, 10, 10, 10, 10);
 }
 
 function drawNumber() {
