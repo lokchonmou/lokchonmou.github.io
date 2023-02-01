@@ -22,6 +22,7 @@ function setup() {
 	band1.position(width / 4 - 3 * width / 16, 2 * height / 3 + 50);
 	for (let i = 0; i < 10; i++) band1.option(colorCode[randomList[i]], randomList[i]);
 	//for (let i = 0; i < 10; i++) band1.option(colorCode[i], i);
+	band1.selected(' ');
 	band1.changed(band1Event);
 
 	randomList = shuffle(randomList);
