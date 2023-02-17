@@ -177,7 +177,7 @@
 
 <img src="image-20220530151640990.png" alt="image-20220530151640990" style="width:45%;" />
 
-<img src="image-20220530154626720.png" alt="image-20220530154626720"  />
+<img src="image-20220530154626720.png" alt="image-20220530154626720" style="zoom:67%;" />
 
 Hints:
 

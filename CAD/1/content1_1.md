@@ -10,7 +10,7 @@
 2. 例如現在你需要設計一部相撲機械人，那你的機械人可能牽涉到很多的零部件，那麼，開一個新的project就可以方便管理。
 3. 現在，試試開一個新的project，名為`first project`，或者好像我一般，叫`XXX's first project`
 
-<img src="fusion11.png" alt="fusion11" style="zoom:100%;" />
+<img src="fusion11.png" alt="fusion11" style="zoom: 50%;" />
 
 1. 進入project後，一樣可以開很多個不同的folder，用來分別管理，例如可以將所有的螺絲、絲母等cad圖放入一個folder，所有的馬達、齒輪放一個folder等等。
 2. 要記住，所有的fusion360檔案，都是存在自己的account下，可以下載*`*.f3d`檔來保存(教育版或付費個人版，免費版到期後不能下載f3d檔案)，或者如果圖檔包含其他很多零部件組合成的話, 下載的則會是`*.f3z`檔
@@ -48,4 +48,4 @@
 3. 左介面主要包含你在此設計中的所有零部件。每個零部件都可以設定主從關係，而每個2d sketch也一樣可以設定主從關係，所以最常見的是忘記設計該件立體件(body)是屬於哪一個零件，從而令到在做零件組合時發生問題
 4. 下面的是建圖歷史區，fusion360是特徵編輯軟件，會將會部的編輯紀錄都記下，如果要修改之前的參數，只需要在歷史中找到該編輯動作，雙擊就可以修改，對3d打印等尤為有幫助
 
-<img src="fusion16.png" alt="fusion16" style="zoom:100%;" />
+<img src="fusion16.png" alt="fusion16" style="zoom: 50%;" />
