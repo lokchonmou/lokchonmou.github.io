@@ -1,0 +1,12 @@
+class Spot(object):
+
+    def __init__(self, _i, _j, _w, _h):
+        self.i = _i
+        self.j = _j
+        self.w = _w
+        self.h = _h
+
+    def show(self, _color):
+        stroke(0)
+        fill(_color)
+        rect(self.i*width/20, self.j*height/20, self.w, self.h)

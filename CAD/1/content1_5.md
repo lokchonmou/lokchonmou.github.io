@@ -323,7 +323,7 @@ Loft 是其中一個常用的成型工具。對於常見的喉管連接工件，
 
 <img src="Inkedfusion51_LI.jpg" alt="Inkedfusion51_LI" style="zoom:55%;" />
 
-![_1](_1.png)
+![222_1](222_1.png)
 
 
 
