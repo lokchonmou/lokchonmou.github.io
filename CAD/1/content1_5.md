@@ -210,7 +210,14 @@ Loft 是其中一個常用的成型工具。對於常見的喉管連接工件，
 
 <img src="image-20220606103313365.png" alt="image-20220606103313365" style="zoom:80%;" />
 
-## 5. Revolve
+###練習題3
+
+下圖尺寸單位為: inch(吋)， 你可以在fusion360用keyword `unit`搜尋`change active units`指令，將單位修改為吋
+![fusion57](fusion57.png)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8TdObYcsQa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+
+##5. Revolve
 
 旋轉成型工具就有點似現實世界中的車床般，透過緣著一個軸旋轉一個profile成型。
 
