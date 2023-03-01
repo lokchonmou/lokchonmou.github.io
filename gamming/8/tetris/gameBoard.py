@@ -4,8 +4,9 @@ from block import *
 class GameBoard(object):
     
     def __init__(self, _gridSize):
+        self.shapeIndex = ['I', 'Z', 'S', 'J', 'L', 'T', 'O']
         self.grids = []
-        self.block = Block(3,0,'T', self.grids)
+        self.block = Block(3,0, self.shapeIndex[int(random(7))], self.grids)
         for x in range(10):
             tempGrids = []
             for y in range(20):
@@ -24,10 +25,10 @@ class GameBoard(object):
             self.clearGrid()
             self.block.goDown()
             
-            if self.block.isWall() or self.block.isBlocked(2):
+            if self.block.isWall(2) or self.block.isBlocked(2):
                 self.block.setType()
                 self.block.setLock()
-                self.block = Block(3,0,'T', self.grids)
+                self.block = Block(3,0,self.shapeIndex[int(random(7))], self.grids)
             
     def show(self):
         self.block.setType()

@@ -50,6 +50,10 @@
 
 <img src="fdahgjk1.gif" alt="fdahgjk1" style="zoom:50%;" />
 
+5. 最後重新將sketch2顯示出來，如題目一樣，將開孔穿到最底
+
+<img src="ex11.gif" alt="ex11" style="zoom:50%;" />
+
 ### 練習題2
 
 每個格的尺寸為10x10mm

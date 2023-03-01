@@ -37,14 +37,21 @@ class Block(object):
                 if _index in self.shape():
                     self.grid[self.x+j][self.y+i].name = self.type
 
-    def isWall(self):
+    def isWall(self, _direction):
         isWall = False
         for i in range(4):
             for j in range(4):
                 _index = i*4+j
                 if _index in self.shape():
-                    if i+self.y>=19 or self.x+j>=9 or self.x+j<=0:
-                        isWall = True
+                    if _direction == 2:
+                        if i+self.y>=19:
+                            isWall = True
+                    elif _direction == 3:
+                        if self.x+j<=0:
+                            isWall = True
+                    elif _direction == 1:
+                        if self.x+j>=9 :
+                            isWall = True
         return isWall
 
     def isBlocked(self, _direction):
@@ -65,13 +72,13 @@ class Block(object):
                     self.grid[self.x+j][self.y+i].isLock = True
                 
     def goDown(self):
-        if not self.isWall() and not self.isBlocked(2):
+        if not self.isWall(2) and not self.isBlocked(2):
             self.y += 1
 
     def goLeft(self):
-        if not self.isWall() and not self.isBlocked(3):
+        if not self.isWall(3) and not self.isBlocked(3):
             self.x -= 1
 
     def goRight(self):
-        if not self.isWall() and not self.isBlocked(1):
+        if not self.isWall(1) and not self.isBlocked(1):
             self.x += 1
