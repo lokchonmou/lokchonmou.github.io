@@ -31,9 +31,7 @@ class Spot(object):
             fill('#DDDD00')
         stroke(200)
         rect(self.x, self.y, self.w, self.h)
-        fill(255)
-        text(self.name, self.x+20, self.y+20)
-        text(self.isLock, self.x+20, self.y+30)
+        
 
     def addNeighbors(self, _grid):
         if self.j > 0:
