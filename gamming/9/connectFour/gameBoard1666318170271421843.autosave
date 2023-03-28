@@ -1,0 +1,36 @@
+from spot import *
+
+
+class GameBoard(object):
+
+    def __init__(self):
+        self.grids = []
+        for i in range(6):
+            temp = []
+            for j in range(7):
+                temp.append(Spot(i, j, width/7*(j+.5), height/6*(i+.5), ''))
+            self.grids.append(temp)
+
+        self.currentRow = 0
+        self.currentCol = 0
+        self.colHeight = [0, 0, 0, 0, 0, 0, 0]
+         
+
+    def display(self):
+        for i in range(6):
+            for j in range(7):
+                self.grids[i][j].display()
+
+    def swapPlayer(self):
+        if self.currentPlayer == 'R':
+            self.currentPlayer = 'Y'
+        elif self.currentPlayer == 'Y':
+            self.currentPlayer = 'R'
+
+    def trigger(self, i):
+        if self.colHeight[i] < 6:
+                self.colHeight[i] += 1
+                self.currentCol = i
+                self.currentRow = 6 - self.colHeight[i]
+                self.grids[self.currentRow][self.currentCol].value = self.currentPlayer
+                self.swapPlayer()

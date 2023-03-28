@@ -132,6 +132,10 @@ Fusion360跟AutoCAD/rhino等最大的分別，是它的特徵編輯性，情況�
 
 <img src="2dSketch8.gif" alt="2dSketch8" style="zoom:50%;" />
 
+12. 最後，用`s`搜尋`extrude`，或者直接用hotkey `e`或者`q`來叫出擠出命令，擠出10mm厚。
+
+<img src="image-20230328093927930.png" alt="image-20230328093927930" style="zoom:40%;" />
+
 
 
 ### 練習2
@@ -160,6 +164,9 @@ Fusion360跟AutoCAD/rhino等最大的分別，是它的特徵編輯性，情況�
 8. 最後就可以用hotkey `D`標示全部尺寸，確保每一條線都是黑色
 
 <img src="2dSketch14.gif" alt="2dSketch14" style="zoom:50%;" />
+
+9. 最後用`extrude`擠出`10mm`
+10. <img src="image-20230328094324369.png" alt="image-20230328094324369" style="zoom:40%;" />
 
 ### 練習3
 
@@ -191,33 +198,103 @@ Fusion360跟AutoCAD/rhino等最大的分別，是它的特徵編輯性，情況�
 
 <img src="2dSketch20.gif" alt="2dSketch20" style="zoom:50%;" />
 
-### 練習4 ~6
+11. 接著就可以擠出`10mm`
 
-以下3題用到`slot`, `Tangent(相切)`限制, `3-point arc`, `line`, `circle`
+<img src="image-20230328094729773.png" alt="image-20230328094729773" style="zoom:40%;" />
 
-<img src="image-20220308201351801.png" alt="image-20220308201351801" style="width:45%;" /><img src="image-20220308204627751.png" alt="image-20220308204627751" style="width:45%;" />
+### 練習4 
+
+以下3題用到, `Tangent(相切)`限制, `3-point arc`, `line`, `circle`
+
+<img src="image-20220308201351801.png" alt="image-20220308201351801" style="width:45%;" />
+
+<img src="image-20230328101818749.png" alt="image-20230328101818749" style="width:45%;" /><img src="image-20230328101845204.png" alt="image-20230328101845204" style="width:45%;" />
+
+###練習5
+
+
+
+<img src="image-20220308204627751.png" alt="image-20220308204627751" style="width:45%;" />
+
+<img src="image-20230328102541602.png" alt="image-20230328102541602" style="width:45%;" /><img src="image-20230328102605141.png" alt="image-20230328102605141" style="width:45%;" />
+
+###練習6
 
 <img src="image-20220308205155202.png" alt="image-20220308205155202" style="width:45%;" />
 
-### 練習7 ~ 9
+<img src="image-20230328102813137.png" alt="image-20230328102813137" style="width:45%;" /><img src="image-20230328102836635.png" alt="image-20230328102836635" style="width:45%;" />
+
+### 練習7
 
 以下3題用到 `Symmetry(對稱)`限制, `Tangent(相切)`限制, `center rectangle`, `3-point arc`, `line`, `circle`
-<img src="image-20220309110038369.png" alt="image-20220309110038369" style="width:45%;" /><img src="image-20220309102033227.png" alt="image-20220309102033227" style="width:45%;" />
+
+<img src="image-20220309110038369.png" alt="image-20220309110038369" style="width:45%;" />
+
+### 練習8
+
+<img src="image-20220309102033227.png" alt="image-20220309102033227" style="width:45%;" />
+
+首先全部用`center rectangle`去劃，再去擠出，不要刪掉本身的輔助線，否則所有關係就會切斷。
+
+<img src="image-20230328095210708.png" alt="image-20230328095210708" style="width:45%;" /><img src="image-20230328095239958.png" alt="image-20230328095239958" style="width:45%;" />
+
+### 練習9
 
 <img src="image-20220311122325621.png" alt="image-20220311122325621" style="width:45%;" />
 
-### 練習10~ 13
+這一條可以在2d sketch就已經劃`R10`的四分一圓，或者擠出後再用`fillet`指令修圓角
 
-以下幾題如有需要, 可以先劃圓和線, 再用`fillet `指令或`trim`指令去修圓和裁剪, 用法跟autoCAD 或 Rhinoceros是一樣的, 但小心`fillet `或`trim`後，會令線段的關係消息變回藍線, 這時候就要重新再指定關係
+<img src="image-20230328103051997.png" alt="image-20230328103051997" style="width:45%;" /><img src="image-20230328103124797.png" alt="image-20230328103124797" style="width:45%;" />
 
-<img src="image-20220308193820988.png" style="width:45%;" /><img src="image-20220309105129862.png" alt="image-20220309105129862" style="width:45%;" />
+### 練習10
 
-<img src="image-20220309182914898.png" alt="image-20220309105129862" style="width:45%;" /><img src="image-20220310122246576.png" alt="image-20220310122246576" style="width:45%;" />
+以下幾題如有需要，可以先劃圓和線，不需要在2d sketch中做trim和fillet，在立體中做，可大幅減少錯誤
+
+<img src="image-20220308193820988.png" style="width:45%;" /><img src="image-20230328100013625.png" alt="image-20230328100013625" style="width:45%;" />
+
+### 練習11
+
+<img src="image-20220309105129862.png" alt="image-20220309105129862" style="width:45%;" />
+
+==不要在2d sketch中用fillet去修圓角，否則所有的黑線會變回藍線==
+
+<img src="image-20230328100239034.png" alt="image-20230328100239034" style="width:45%;" /><img src="image-20230328100311706.png" alt="image-20230328100311706" style="width:45%;" />
 
 
 
-###練習14 ~ 15
+###練習12
 
-Harder problem. 這兩題用`trim`, `Offset`,配合`fillet`指令會最容易完成
+<img src="image-20220309182914898.png" alt="image-20220309105129862" style="width:45%;" />
 
-<img src="image-20220308203714210.png" alt="image-20220308203714210" style="width:45%;" /><img src="image-20220310124055307.png" alt="image-20220310124055307" style="width:45%;" />
+==不要在立體中用trim，否則黑色的關係線會掉失==
+
+<img src="image-20230328101258927.png" alt="image-20230328101258927" style="width:45%;" /><img src="image-20230328101421826.png" alt="image-20230328101421826" style="width:45%;" />
+
+###練習13
+
+<img src="image-20220310122246576.png" alt="image-20220310122246576" style="width:45%;" />
+
+你可以在2d sketch中用`3 point arc`來繪制4個弧去擠出，或者像我一樣，首先不理會4個弧，擠出後再用`fillet`去補。
+
+<img src="image-20230328113209685.png" alt="image-20230328113209685" style="width:45%;" /><img src="image-20230328113920796.png" alt="image-20230328113920796" style="width:45%;" />
+
+###練習14
+
+Harder problem. 這兩題在立體再fillet會容易後多。
+
+<img src="image-20220308203714210.png" alt="image-20220308203714210" style="width:45%;" />
+
+<img src="image-20230328114616781.png" alt="image-20230328114616781" style="width:45%;" /><img src="image-20230328114659569.png" alt="image-20230328114659569" style="width:45%;" />
+
+<img src="image-20230328114924108.png" alt="image-20230328114924108" style="width:45%;" /><img src="image-20230328115022317.png" alt="image-20230328115022317" style="width:45%;" />
+
+###練習15
+
+<img src="image-20220310124055307.png" alt="image-20220310124055307" style="width:45%;" />
+
+<img src="image-20230328115245008.png" alt="image-20230328115245008" style="width:45%;" /><img src="image-20230328115329604.png" alt="image-20230328115329604" style="width:45%;" />
+
+<img src="image-20230328115444080.png" alt="image-20230328115444080" style="width:45%;" /><img src="image-20230328115525667.png" alt="image-20230328115525667" style="width:45%;" />
+
+<img src="image-20230328115623826.png" alt="image-20230328115623826" style="width:70%;" />
+

@@ -1,0 +1,29 @@
+from spot import *
+
+
+class GameBoard(object):
+
+    def __init__(self):
+        self.grids = []
+        for i in range(6):
+            temp = []
+            for j in range(7):
+                temp.append(Spot(i, j, width/7*(j+.5), height/6*(i+.5), ''))
+            self.grids.append(temp)
+
+        self.currentRow = 0
+        self.currentCol = 0
+        self.colHeight = [0, 0, 0, 0, 0, 0, 0]
+        self.currentPlayer = 'R'
+
+    def display(self):
+        for i in range(6):
+            for j in range(7):
+                self.grids[i][j].display()
+
+    def animation(self):
+        for i in range(6 - self.colHeight[self.currentCol]):
+            self.currentRow += 1
+            print()
+            self.grids[self.currentCol][self.currentRow].value = self.currentPlayer
+            self.display()

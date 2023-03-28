@@ -167,17 +167,23 @@
 
 ## 3. 練習題
 
-下面的題目, 每個格為10x10mm
+###3.1 <img src="image-20230328124547865.png" alt="image-20230328124547865" style="zoom:67%;" />
 
-<img src="image-20220530150541546.png" alt="image-20220530150541546" style="width:45%;" /><img src="image-20220530150609997.png" alt="image-20220530150609997" style="width:45%;" />
+###3.2 <img src="image-20230328121150309.png" alt="image-20230328121150309" style="zoom: 67%;" />
 
-<img src="image-20220530150723707.png" alt="image-20220530150723707" style="width:45%;" /><img src="image-20220530150751115.png" alt="image-20220530150751115" style="width:45%;" />
+###3.3 <img src="image-20230328121346411.png" alt="image-20230328121346411" style="zoom:67%;" />
 
-<img src="image-20220530151438949.png" alt="image-20220530151438949" style="width:45%;" /><img src="image-20220530151557698.png" alt="image-20220530151557698" style="width:45%;" />
+###3.4 <img src="image-20230328121801169.png" alt="image-20230328121801169" style="zoom:75%;" />
 
-<img src="image-20220530151640990.png" alt="image-20220530151640990" style="width:45%;" />
+###3.5 <img src="image-20230328122225175.png" alt="image-20230328122225175" style="zoom:67%;" />
 
-<img src="image-20220530154626720.png" alt="image-20220530154626720" style="zoom:67%;" />
+### 3.6  <img src="image-20230328122726944.png" alt="image-20230328122726944" style="zoom:67%;" />
+
+### 3.7 <img src="image-20230328123754394.png" alt="image-20230328123754394" style="zoom:67%;" />
+
+###3.8 <img src="image-20230328125042180.png" alt="image-20230328125042180" style="zoom:67%;" />
+
+### 3.9 <img src="image-20220530154626720.png" alt="image-20220530154626720" style="zoom: 50%;" />
 
 Hints:
 
@@ -185,10 +191,10 @@ Hints:
 
 ![image-20220530155531093](image-20220530155531093.png)
 
-2.  圖則中的`Ø20 THRU ALL ⌵24X82º` 即直徑20mm的孔countersink(沉孔)82º, fusion360有個後簡單的鑽孔指令, 就是`holes`, hotkey `H`, 選取選左邊直邊作為reference, 距離32mm, 選取上面的水平邊為另一reference, 距離31mm, 深度(`Extents`)選`All`, `Hole Type` 選擇第三個沉孔`Countersink`, `Hole Tap Type`即孔是否要攻螺絲牙, 今次不用, 所以選第一個`Simple`, Drill Point就是鑽孔的尾端是平還是尖, 今次選哪一個都可以, 因為孔是完全穿的
+2.  圖則中的`Ø20 THRU ALL ⌵24X82º` 即直徑20mm的孔countersink(沉孔)82º, fusion360有個很簡單的鑽孔指令, 就是`holes`, hotkey `H`, 選取選左邊直邊作為reference, 距離32mm, 選取上面的水平邊為另一reference, 距離31mm, 深度(`Extents`)選`All`, `Hole Type` 選擇第三個沉孔`Countersink`, `Hole Tap Type`即孔是否要攻螺絲牙, 今次不用, 所以選第一個`Simple`, Drill Point就是鑽孔的尾端是平還是尖, 今次選哪一個都可以, 因為孔是完全穿的
 
-![image-20220601174113685](image-20220601174113685.png)
+<img src="image-20220601174113685.png" alt="image-20220601174113685" style="zoom: 50%;" />
 
 3. 其他的孔可以用sketch劃好後用extrude減去, 或用hole指令去完成都可以, 而修角則可用`chamfer` 指令去做, 最後用fillet來修圓角
 
-![image-20220530160228432](image-20220530160228432.png)
+<img src="image-20220530160228432.png" alt="image-20220530160228432" style="zoom:50%;" />
