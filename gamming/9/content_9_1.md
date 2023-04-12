@@ -53,7 +53,7 @@ def setup():
     exit()
 ```
 
-計算$F_{10}$只需要4毫秒，但計算$F_{20}$，時間不是其2倍的8毫秒，而是51毫秒。這是因為，要計算$F_{20}$，就要先計算$F_{19}$和$F_{18}$，要計算$F_{19}$和$F_{48}$，又要先計算$F_{18}$，$F_{17}$和$F_{16}$，如此類推，其實有很多重覆了的計算，會令程式以幾何級的時間遞增。
+計算$F_{10}$只需要4毫秒，但計算$F_{20}$，時間不是其2倍的8毫秒，而是51毫秒。這是因為，要計算$F_{20}$，就要先計算$F_{19}$和$F_{18}$，要計算$F_{19}$和$F_{18}$，又要先計算$F_{18}$，$F_{17}$和$F_{16}$，如此類推，其實有很多重覆了的計算，會令程式以幾何級的時間遞增。
 
 <img src="1svQ784qk1hvBE3iz7VGGgQ.jpeg" alt="Recursive Fibonnaci Method Explained | by Bennie van der Merwe | Launch  School | Medium" style="width:80%;" />
 
@@ -388,7 +388,7 @@ class aiBrain(object):
     def autoPlay(self):
         bestScore = float('-inf')
 
-        # //fill the available colume to an list
+        # fill the available colume to an list
         availableCol = []
         for j in range(7):
             if self.gameBoard.grids[0][j].value == '':
@@ -453,7 +453,11 @@ class aiBrain(object):
 
 下一步是`shuffle`即調亂整個列，如果分數是相同的話，則最後結果會有亂數，不會每次都是由左至右。
 
+之後每一個可能的落祺步，都加入一個叫`minimax()`的演算法去幫這一步計分，分數最大的步就是最佳答案，於是我們便落子這一步。但現階段我們的`minimax()`演算法暫時甚麼都沒有，全部回傳的分數都是`1`，我們先試一試這個思路是否行得通。
+
 ## 9.1.3 加入dummy AI
+
+`AIBrain.py`:
 
 ```python
 import copy
@@ -504,6 +508,51 @@ class aiBrain(object):
 ```
 
 <img src="image-20230322112211974.png" alt="image-20230322112211974" style="width:45%;" /><img src="image-20230322112240807.png" alt="image-20230322112240807" style="width:45%;" />
+
+
+
+在`AIBrain.py`中，
+
+```python
+    for move in availableCol:
+        possibleBoard = copy.deepcopy(self.gameBoard)
+        possibleBoard.trigger(move)
+        score = self.minimax(possibleBoard, 4, False)
+        print(move, score)
+        if (score > bestScore):
+            bestScore = score
+            bestMove = move
+        print(bestMove)
+    print('')
+    self.gameBoard.trigger(bestMove)
+```
+
+我們用`copy.deepcopy()`去將整個gameboard複製。Python和其他高級語言一樣，如果只用`=`去複製一個class的話，只會複製其id，之後修改這個class的話，被複製的和複製後的class都會改變，所以要用`copy.deepcopy()`去將整個gameboard完全複製。
+
+之後就將當前這一步落子到複製出來的`possibleBoard`，接著就將這個gameboard放到minimax演算法中提出最佳答案。
+
+```python
+    def minimax(self, _gameBoard, _depth, _isMaximizing):
+        winner = _gameBoard.checkWin()
+        if winner != None:
+            return self.score(winner)
+```
+
+上一步我們的minimax演算法只會回傳`1`分出來，甚麼功能也沒有的。這一步我們幫輸入的gameboard檢查一下有否贏、輸或打和，分別根據這3個情況打分如下:
+
+```python
+    def score(self, _winner):
+        if _winner == 'R':
+            return 10
+        elif _winner == 'Y':
+            return -10
+        elif _winner == 'O':
+            return 0
+```
+
+贏出的話就打`10`分，輸就是`-10`分，打和就是`0`分。
+
+由於設定了`bestScore`最開始時是負無限大，所以即使AI(黃色棋子)輸出的話是`-10`分，也依然大於負無限大，所以這個dummy AI都會落子，但只限於此。這個AI唯一的功能是如果下一步AI會贏，而玩家又沒有阻擋的話，AI就會懂得落子去贏出遊戲，但這個AI既不懂阻擋玩家，更不會佈局的。
 
 ## 9.1.4 加入minimax演算法
 
@@ -597,34 +646,138 @@ class aiBrain(object):
 
 <img src="image-20230322113445894.png" alt="image-20230322113445894" style="width:45%;" /><img src="image-20230322113533350.png" alt="image-20230322113533350" style="width:45%;" />
 
-即使`depth`再增加，AI都只會懂得幫自己提早抬轎，而不懂阻擋我。
+效果：即使`depth`再增加，AI都只會懂得幫自己提早抬轎，而不懂阻擋我。
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/trKjYdBASyQ?start=137" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+```python
+ def minimax(self, _gameBoard, _depth, _isMaximizing):
+        winner = _gameBoard.checkWin()
+        if winner != None or _depth == 0:
+            return self.score(winner)
+
+        if _isMaximizing:
+            bestScore = float('-inf')
+            # //fill the available colume to an list
+            availableCol = []
+            for j in range(7):
+                if _gameBoard.grids[0][j].value == '':
+                    availableCol.append(j)
+            # shuffle the list
+            random.shuffle(availableCol)
+
+            for move in availableCol:
+                possibleBoard = copy.deepcopy(_gameBoard)
+                possibleBoard.trigger(move)
+                score = self.minimax(possibleBoard, _depth - 1, False)
+                bestScore = max(score, bestScore)
+            return bestScore
+
+        else:
+            bestScore = float('inf')
+            # //fill the available colume to an list
+            availableCol = []
+            for j in range(7):
+                if _gameBoard.grids[0][j].value == '':
+                    availableCol.append(j)
+            # shuffle the list
+            random.shuffle(availableCol)
+
+            for move in availableCol:
+                possibleBoard = copy.deepcopy(_gameBoard)
+                possibleBoard.trigger(move)
+                score = self.minimax(possibleBoard, _depth - 1, True)
+                bestScore = min(score, bestScore)
+            return bestScore
+```
+
+Minimax演算法基本上就是將所有可能的落子造成一個tree diagram，而每一層的tree diagram，跟據玩家的交換，一層的分數需要最少化，下一層的分數需要最大化，如此類推，詳細可以看看上面的影片。
+
+
+
+```python
+ def minimax(self, _gameBoard, _depth, _isMaximizing):
+        winner = _gameBoard.checkWin()
+        if winner != None or _depth == 0:
+            return self.score(winner)
+```
+
+一開始，跟之前一樣，首先檢查有沒有贏、輸或打和，如果這一落子有的話，就可以即時回傳分數。另一個回傳跳出這個`minimax()`函數的情況是`depth==0`到底了，這樣回傳的話由於沒有贏家，會回傳`None`。
+
+```python
+if _isMaximizing:
+            bestScore = float('-inf')
+            # //fill the available colume to an list
+            availableCol = []
+            for j in range(7):
+                if _gameBoard.grids[0][j].value == '':
+                    availableCol.append(j)
+            # shuffle the list
+            random.shuffle(availableCol)
+
+            for move in availableCol:
+                possibleBoard = copy.deepcopy(_gameBoard)
+                possibleBoard.trigger(move)
+                score = self.minimax(possibleBoard, _depth - 1, False)
+                bestScore = max(score, bestScore)
+            return bestScore
+```
+
+之後這一段就跟上面非常相似了，如果是最大化的case，就將`bestScore`設定成負無限大，接著便deepcopy一個新的gameboard，將所有可能的步都試行一次，比較特別的是，這次` score = self.minimax(possibleBoard, _depth - 1, False)`minimax函數我們將函數輸入的`_depth`減1，函數最後的`False`是指`_isMaximizing`，所以如果這次`_isMaximizing`是`True`，那下一步就設定成`False`。
+
+```python
+ else:
+            bestScore = float('inf')
+            # //fill the available colume to an list
+            availableCol = []
+            for j in range(7):
+                if _gameBoard.grids[0][j].value == '':
+                    availableCol.append(j)
+            # shuffle the list
+            random.shuffle(availableCol)
+
+            for move in availableCol:
+                possibleBoard = copy.deepcopy(_gameBoard)
+                possibleBoard.trigger(move)
+                score = self.minimax(possibleBoard, _depth - 1, True)
+                bestScore = min(score, bestScore)
+            return bestScore
+```
+
+程式的下半部分基本上同，不同的是一開始的`bestScore`設定成正無限大，而`score = self.minimax(possibleBoard, _depth - 1, True)`也將最後的`_isMaximizing`部分設定成`True`。
+
+
+
+這裡`minimax()`函數入面包裹著`minimax()`函數，就是我們上面所說的 recursion 遞歸。雖然不是最快的方法，但在編程上會簡潔很多。
 
 ##9.1.5 令AI懂得阻擋我方
 
-```當當
+```python
 def autoPlay(self):
-        bestScore = float('inf')
-        bestMove = random.randint(0, 5)  # the range is a, b+1
+    bestScore = float('inf')
+    bestMove = random.randint(0, 5)  # the range is a, b+1
 
-        # //fill the available colume to an list
-        availableCol = []
-        for j in range(7):
-            if self.gameBoard.grids[0][j].value == '':
-                availableCol.append(j)
-        # shuffle the list
-        random.shuffle(availableCol)
+    # //fill the available colume to an list
+    availableCol = []
+    for j in range(7):
+        if self.gameBoard.grids[0][j].value == '':
+            availableCol.append(j)
+    # shuffle the list
+    random.shuffle(availableCol)
 
-        for move in availableCol:
-            possibleBoard = copy.deepcopy(self.gameBoard)
-            possibleBoard.trigger(move)
-            score = self.minimax(possibleBoard, 1, True)
-            print(move, score)
-            if (score < bestScore):
-                bestScore = score
-                bestMove = move
-            print(bestMove)
-        print('')
-        self.gameBoard.trigger(bestMove)
+    for move in availableCol:
+        possibleBoard = copy.deepcopy(self.gameBoard)
+        possibleBoard.trigger(move)
+        score = self.minimax(possibleBoard, 1, True)
+        print(move, score)
+        if (score < bestScore):
+            bestScore = score
+            bestMove = move
+        print(bestMove)
+    print('')
+    self.gameBoard.trigger(bestMove)
 ```
 
 當`depth = 1`:
@@ -640,6 +793,10 @@ def autoPlay(self):
 <img src="image-20230322120908615.png" alt="image-20230322120908615" style="width:45%;" /><img src="image-20230322120926617.png" alt="image-20230322120926617" style="width:45%;" />
 
 AI甚至懂得防止雙頭蛇，提早在第3欄(`i=2`)或第6欄(`i=6`)阻擋我。
+
+
+
+上一步的AI之所以不懂阻擋我方，原因是`bestScore`一開始是設定成負無限大，之後找出最大的`bestScore`來落子，但我們設定分數時，如果AI方贏的話，分數會是`-10`分，所以我們找`bestScore`和`bestMove`時，找的應該是最小的負數，而不是最大的正數。只要交換，就能正確地令AI懂得防守。
 
 ## 9.1.6 既能阻擋我方，又懂得贏
 
@@ -727,6 +884,10 @@ class aiBrain(object):
             return bestScore
 ```
 
+由於經過了`minimax()`函數後，如果沒有結果，也會回傳`-inf`，而在比較最少的時間，所有沒有特定結果的case都會全部變了做`-inf`，所以AI只懂得防守而不懂得進攻。要改良的話方法很簡單，只要將`minimax()`入面的`bestScore`設成`0`，之後在最後比較`bestScore`的部分，不做min或max，而是改用將所有結果累加。
+
+
+
 當`depth=1`，AI懂得去阻擋我贏
 
 <img src="image-20230322134814087.png" alt="image-20230322134814087" style="width:45%;" /><img src="image-20230322134842144.png" alt="image-20230322134842144" style="width:45%;" />
@@ -740,6 +901,8 @@ class aiBrain(object):
 <img src="image-20230322164841547.png" alt="image-20230322164841547" style="width:45%;" /><img src="image-20230322164856804.png" alt="image-20230322164856804" style="width:45%;" />
 
 原因是：上述演算法沒有考慮深度的優先，如果下最右手邊(`i=6`)，遊戲就會即時贏，所以分數只有`-10`，但如果下第三行(`i=2`)，由於遊戲未完，演算法會繼續往下兩步(`depth=3`)，所以會累加之後步的分數，所以反而會比即時贏的分數更少。
+
+普通的minimax演算法，分數是會繼承tree diagram下層的分數，再分min或max，但這樣的方法，如果下一步有即時出現贏或即時輸，它能有效的防守或進攻，但它卻不懂得需要佈局、或走某一步對之後的局面更有利的情況，這是因為minimax演算法缺乏了深度的資訊。例如，minimax對於兩步之後能贏或四步之後才能贏的case，都會給出同等的分數。而我們上面的演算法改了用累加分數，則會累加之後步數，搜尋深度越深分數就會越大。
 
 ## 9.1.7 令分數與`depth`成關係
 
@@ -838,5 +1001,5 @@ class aiBrain(object):
             return self.score(winner) * (10**_depth)
 ```
 
-將return的分數加了10的depth次方後，輸出分數就與深度成次方比，下一步會即時贏的話，`depth=3`就會是$-10\times10^3=10,000$分，就會比兩步後再贏多出一個等數級。只要加入這個少少改變，AI就會變得非常厲害，當`depth=2`時，已經會考慮之後的3步去防守和佈局進攻，如果`depth=3`時，就會考慮到之後的4步去防守和進攻，已經可以防守和佈置兩頭蛇了。
+要改善這情況，方法是將輸出分數跟深度掛勾。將return的分數加了10的depth次方後，輸出分數就與深度成次方比，下一步會即時贏的話，`depth=3`就會是$-10\times10^3=10,000$分，就會比兩步後再贏多出一個等數級。只要加入這個少少改變，AI就會變得非常厲害，當`depth=2`時，已經會考慮之後的3步去防守和佈局進攻，如果`depth=3`時，就會考慮到之後的4步去防守和進攻，已經可以防守和佈置兩頭蛇了。
 
