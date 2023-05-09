@@ -1,0 +1,602 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #000000;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* devanagari */
+/* latin-ext */
+/* latin */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "PT Serif", "Noto Serif TC";
+    color: rgb(10,10,10);
+    line-height: 1.6;
+    /* background-color: #e7e7e7; */
+}
+
+#write {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #2c98f0;
+    text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: 64px;
+    color: #eee;
+    background-color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h2 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: .3em;
+    font-size: 48px;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+h3 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+h5 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+h6 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    /* background-color: #e7e7e7; */
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #AAAAAA;
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    /* font-weight: bold;
+    border: 1px solid #333333;
+    border-bottom: 2px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+    background: #2c98f0; */
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #ffffff;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+code {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    /* background-color: #FFFFFF; */
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+    left: -1.5625rem;
+    top: .375rem;
+}
+#write>h4.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h5.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h6.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "PT Serif", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+
+</style><title>content3_2</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#32-繪製電路圖與佈線圖">3.2 繪製電路圖與佈線圖</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#start">Start</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#電路圖">電路圖</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#插入零件">插入零件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#連接零件">連接零件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#electrical-rule-checkerc">Electrical Rule Check(ERC)</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#佈線圖">佈線圖</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#準備工作">準備工作</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#將零件排好">將零件排好</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#自動佈線中將所有power線都變粗">自動佈線中將所有power線都變粗</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#design-rule設定">Design Rule設定</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#自動佈線">自動佈線</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#polygon">Polygon</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#design-rules-checkdrc">Design Rules Check(DRC)</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#練習1">練習1</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#佈線圖-2">佈線圖</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#附錄真正生產時design-rule設定">(附錄)真正生產時Design Rule設定</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=' first-line-indent'><h1 id='32-繪製電路圖與佈線圖'><span>3.2 繪製電路圖與佈線圖</span></h1><p><span>讓我們由一個最簡單的555調光器示範開始。</span></p><p><img src="image-20220111162553843.png" alt="image-20220111162553843" style="zoom:80%;" /></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#32-繪製電路圖與佈線圖">3.2 繪製電路圖與佈線圖</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n5"><a class="md-toc-inner" href="#start">Start</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n11"><a class="md-toc-inner" href="#電路圖">電路圖</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n17"><a class="md-toc-inner" href="#插入零件">插入零件</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n139"><a class="md-toc-inner" href="#連接零件">連接零件</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n149"><a class="md-toc-inner" href="#electrical-rule-checkerc">Electrical Rule Check(ERC)</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n152"><a class="md-toc-inner" href="#佈線圖">佈線圖</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n156"><a class="md-toc-inner" href="#準備工作">準備工作</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n163"><a class="md-toc-inner" href="#將零件排好">將零件排好</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n176"><a class="md-toc-inner" href="#自動佈線中將所有power線都變粗">自動佈線中將所有power線都變粗</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n190"><a class="md-toc-inner" href="#design-rule設定">Design Rule設定</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n198"><a class="md-toc-inner" href="#自動佈線">自動佈線</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n214"><a class="md-toc-inner" href="#polygon">Polygon</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n240"><a class="md-toc-inner" href="#design-rules-checkdrc">Design Rules Check(DRC)</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n246"><a class="md-toc-inner" href="#練習1">練習1</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n337"><a class="md-toc-inner" href="#佈線圖-2">佈線圖</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n363"><a class="md-toc-inner" href="#附錄真正生產時design-rule設定">(附錄)真正生產時Design Rule設定</a></span></p></div><h2 id='start'><span>Start</span></h2><p><img src="image-20230504110352603.png" alt="image-20230504110352603" style="zoom:50%;" /></p><p><span>開啟我們熟識的Fusion360軟件。在左上角的</span><code>file</code><span>中，開始一個新的</span><code>New Electronics Design</code><span>。</span></p><p><img src="image-20230504110455192.png" alt="image-20230504110455192" style="zoom:50%;" /></p><p><span>接著會去到管理頁面。一塊PCB板最基本可分為兩種檔案，分別為電路圖和實際樣貌的佈線圖，如果你有心機的話，可以再輸出成3D PCB板，配合Fusion 360去設計。</span></p><p><strong><span>首先按左上角，新增一個電路圖。</span></strong></p><h2 id='電路圖'><span>電路圖</span></h2><p><span>電路圖的介面長這樣。左邊的欄位是可以拖動的，不用時可以將它收起來，或者嫌太小太難看的話，可以將它拖出來放大。</span></p><p><img src="image-20230504110911198.png" alt="image-20230504110911198" style="zoom:60%;" /></p><p><span>首先，在上方的</span><code>Grid Setting</code><span>，將格線打開方便對位置。</span></p><div style="text-align: center">
+<img src="image-20230504110936424.png" alt="image-20230504110936424" style="zoom:67%;" />　　　　　<img src="image-20230504111036605.png" alt="image-20230504111036605" style="zoom:67%;" />   </div><h3 id='插入零件'><span>插入零件</span></h3><p><img src="image-20230505105044451.png" alt="image-20230505105044451"  /></p><p><span>在命令欄打</span><code>add</code><span>。</span></p><p><img src="image-20230505105220953.png" alt="image-20230505105220953" style="zoom: 67%;" /></p><p><span>今次我們要製作的電路為555定時閃爍器，所以第一步就是要找到</span><code>NE555</code><span>。但如果你直接在搜尋欄是找不到的，因為了節省空間，Fusion360是沒有安裝電子元件的library的，所以第一步首先是按</span><code>Open Library Manager</code><span>。</span></p><p><img src="image-20230505105306253.png" alt="image-20230505105306253" style="zoom: 60%;" /></p><p><code>NE555</code><span>有很多個library都有，今次選用</span><code>st-microelectronics</code><span>，找到這個library之後，點選</span><code>In Use</code><span>。</span></p><p><img src="image-20230505105332860.png" alt="image-20230505105332860" style="zoom: 67%;" /></p><p><span>之後就能在搜尋欄找到</span><code>NE555</code><span>。</span></p><p><img src="image-20230505105349761.png" alt="image-20230505105349761" style="zoom: 67%;" /></p><p><span>按下</span><code>OK</code><span>後，就可以在畫面放下</span><code>NE555</code><span>。</span></p><p><img src="image-20230505110146815.png" alt="image-20230505110146815" style="zoom: 67%;" /></p><p><span>之後就可以按照下表，將零件找出並放好。如果找到到零件的話，記得先搜尋相應的library，選取使用後才能找到。</span></p><figure class='table-figure'><table><thead><tr><th><span>Part</span></th><th><span>Value</span></th><th><span>Device</span></th><th><span>Package</span></th><th><span>Library</span></th></tr></thead><tbody><tr><td><span>C1</span></td><td><span>0.1uF</span></td><td><span>C-US025-025X050</span></td><td><span>C025-025X050</span></td><td><span>rcl</span></td></tr><tr><td><span>C2</span></td><td><span>10uF</span></td><td><span>CPOL-USE2.5-6</span></td><td><span>E2,5-6</span></td><td><span>rcl</span></td></tr><tr><td><span>C3</span></td><td><span>0.01uF</span></td><td><span>C-US025-025X050</span></td><td><span>C025-025X050</span></td><td><span>rcl</span></td></tr><tr><td><span>D1</span></td><td>&nbsp;</td><td><span>DIODE-D-2.5</span></td><td><span>D-2.5</span></td><td><span>diode</span></td></tr><tr><td><span>IC1</span></td><td><span>NE555</span></td><td><span>NE555</span></td><td><span>DIL-08</span></td><td><span>st-microelectronics</span></td></tr><tr><td><span>LED1</span></td><td>&nbsp;</td><td><span>LED3MM</span></td><td><span>LED3MM</span></td><td><span>led</span></td></tr><tr><td><span>Q1</span></td><td><span>TIP41C</span></td><td><span>TIP31C</span></td><td><span>TO220</span></td><td><span>transistor-npn</span></td></tr><tr><td><span>R1</span></td><td><span>4.7k</span></td><td><span>R-US_0207/2V</span></td><td><span>0207/2V</span></td><td><span>resistor</span></td></tr><tr><td><span>R2</span></td><td><span>100k var.</span></td><td><span>3RP/1610N</span></td><td><span>3RP/1610N</span></td><td><span>pot</span></td></tr><tr><td><span>R3</span></td><td><span>1k</span></td><td><span>R-US_0207/2V</span></td><td><span>0207/2V</span></td><td><span>resistor</span></td></tr><tr><td><span>S2</span></td><td><span>9077-2</span></td><td><span>9077-2</span></td><td><span>9077-2</span></td><td><span>switch-misc</span></td></tr><tr><td><span>VIN</span></td><td>&nbsp;</td><td><span>AK500/2</span></td><td><span>AK500/2</span></td><td><span>con-ptr500</span></td></tr><tr><td><span>+12V</span></td><td>&nbsp;</td><td><span>+12V</span></td><td>&nbsp;</td><td><span>supply1</span></td></tr><tr><td><span>GND</span></td><td>&nbsp;</td><td><span>GND</span></td><td>&nbsp;</td><td><span>supply1</span></td></tr></tbody></table></figure><ol start='' ><li><p><span>跟據手繪的線路圖，依次將需要用的零件在library中找出來放在繪圖區上</span></p></li><li><p><span>在放置的過程中</span></p><ol start='' ><li><p><span>可用</span><code>move</code><span>指令來移動零件</span><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup></p></li><li><p><span>在移動時按</span><em><span>滑鼠右鍵</span></em><span>則可以很方便地旋轉(或者直接用</span><code>rotate</code><span>指令都可以)</span></p></li><li><p><span>可用</span><code>copy</code><span>指令來複製零件。</span></p></li><li><p><span>可用</span><code>name</code><span>來為零件命名</span></p></li><li><p><span>用</span><code>value</code><span>來為零件設定值</span></p></li></ol></li></ol><p><img src="image-20230505135438156.png" alt="image-20230505135438156" style="zoom:67%;" /></p><h3 id='連接零件'><span>連接零件</span></h3><p><img src="image-20230505135211586.png" alt="image-20230505135211586" style="zoom:50%;" /></p><p><img src="image-20230505140021195.png" alt="image-20230505140021195" style="zoom:50%;" /></p><ol start='' ><li><p><span>可用</span><code>net</code><span>指令來為零件與零件之間接線</span></p></li><li><p><span>在用net指今的時候，可按</span><em><span>滑鼠右鍵</span></em><span>來改變接線的方向，你也可以在上方的工具列改變接線的形狀。</span></p></li><li><p><mark><span>如果接線有重疊，而又有需要連在一起的，記得用</span><code>junction</code><span>指令為其加入墨點以表示是連結的</span></mark></p></li></ol><h3 id='electrical-rule-checkerc'><span>Electrical Rule Check(ERC)</span></h3><p><img src="image-20230505140115294.png" alt="image-20230505140115294" style="zoom:50%;" /></p><p><strong><span>在命令列輸入指令</span><code>ERC</code></strong><span>。接著則要做ERC，檢查一下零件的接線有沒有問題，一般都只會見到有warnings，可以了解一下是甚麼原因，但如果見到有error的就一定要處理。常見的errors可能有: 忘記用</span><code>junction</code><span>將接線連接、接線沒有真的接到零件、忘記接線、接漏。而常見的warnings不外乎都是零件沒有值。如果不想下次再做ERC時再見到這些warnings，</span><strong><span>可以按</span><code>Approve</code><span>去接受這些warnings</span></strong><span>。</span></p><h2 id='佈線圖'><span>佈線圖</span></h2><p><img src="image-20230505152214391.png" referrerpolicy="no-referrer" alt="image-20230505152214391"></p><p><span>電路圖繪製好之後，就到電路板的佈線圖，這個部分和實物有直接關係，所以佈線時有些地方需要注意。</span></p><p><span>按下上方工具列有一個小小的白色/綠色icon，寫著</span><code>SWITCH</code><span>的icon。之後就會開啟多一個檔案。</span></p><h3 id='準備工作'><span>準備工作</span></h3><p><img src="image-20230505152306973.png" alt="image-20230505152306973" style="zoom:50%;" /></p><p><span>之後就會見到一個與之前差不多的介面，插入的零件已經放置在一旁，有幼細的綠色線，代表著剛才sch檔所繪製的電路接線。</span></p><p><img src="image-20230505152354464.png" alt="image-20230505152354464" style="zoom:50%;" /></p><p><span>先進行準備工作，第一個步驟是打開左上角icon的網格工具，或直接在命令列打</span><code>grid</code><span>。</span></p><p><span>Display選擇On，Size則選擇100mil，而下方的Alt則選擇50mill。如此，你在佈線圖上的所有移動和佈線距離都但鎖定在100mil的網格，而當你按下</span><em><span>鍵盤的Alt鍵</span></em><span>時，就會變成50mil的網格。</span></p><p><mark><span>100mil即為1/1000英寸，即2.54mm，是典型的面包板的間隔距離，也是一般通孔元件的標準間距，所以佈線圖單位通常都用mil而不用mm</span></mark></p><h3 id='將零件排好'><span>將零件排好</span></h3><p><img src="image-20230505152918634.png" alt="image-20230505152918634" style="zoom:50%;" /></p><ol start='' ><li><p><span>先移動最外層的綠色格，到差不多的大小</span></p></li><li><p><span>跟著就可以用</span><code>move</code><span>指令，將元件移動到合適位置</span></p></li><li><p><span>移動時可以用</span><em><span>滑鼠右鍵</span></em><span>旋轉，或者用</span><code>rotate</code><span>指令</span></p></li><li><p><span>移動時可以用</span><em><span>滑鼠中鍵</span></em><span>將元件反轉到板的下方，或者用</span><code>mirror</code><span>指令(不過今次所有零件我們都會放在頂層)</span></p></li><li><p><span>移動時要留意白色幼線的連接，留意零件的方向和排位，確保之後的連線盡可能短。</span></p></li></ol><h3 id='自動佈線中將所有power線都變粗'><span>自動佈線中將所有power線都變粗</span></h3><p><img src="image-20230505153227575.png" alt="image-20230505153227575" style="zoom:67%;" /></p><p><span>在命令列輸入</span><code>class</code><span>或在</span><code>RULES DRC/ERC</code><span>中找得到。</span></p><div style="text-align: CENTER"><img src="image-20230505153319361.png" alt="image-20230505153319361" style="zoom:50%;" />　　　　<img src="image-20230505153401995.png" alt="image-20230505153401995" style="zoom:50%;" /> </div><ol start='' ><li><p><span>在第一版按下</span><code>add</code><span>鍵，新增一個class，名稱叫</span><code>POWER</code><span>(或其他名稱都可以)。</span></p></li><li><p><span>將</span><code>GND</code><span>和</span><code>+12V</code><span>都加進這個class中</span></p></li><li><p><span>在第二版的</span><code>rules</code><span>中，將POWER的線寬強制轉做15mil</span></p></li><li><p><span>接下</span><code>ok</code></p></li></ol><p><span>這塊PCB板因空間十分充裕，所以所有power線都轉成15mil都沒有問題，但如果空間十分狹窄，用這個方法會將本來應該是信號線的</span><code>+12V</code><span>和</span><code>GND</code><span>都變寬(例如IC555的4腳雖然接著</span><code>+12V</code><span>，但並非power腳位)</span></p><h3 id='design-rule設定'><span>Design Rule設定</span></h3><p><img src="image-20230505153539540.png" alt="image-20230505153539540" style="zoom:50%;" /></p><p><span>先去到</span><code>RULES DRC/ERC</code><span>--&gt;</span><code>DRC</code><span>。</span></p><p><img src="image-20230505153621676.png" alt="image-20230505153621676" style="zoom: 67%;" /></p><p><span>到</span><code>distance</code><span>這一版設定焊盤、導線等與邊緣的距離，預設是</span><code>40mil</code><span>，但一般不用設得這麼大，設計</span><code>6mil</code><span>已經足夠(但今次這塊板空間這樣大，所以都沒有所謂)</span></p><p><img src="image-20230505153657929.png" alt="image-20230505153657929" style="zoom:67%;" /></p><p><span>再到</span><code>Masks</code><span>頁面，上面是決定阻焊綠油距離焊盤要多少緩衝。下面Limit就比較重要，用以決定大於多少的鑽孔不用蓋上阻焊綠油，一般我都會設定為3mm以上，如果設定是0mil的話，所有的通孔都不會蓋綠油，那在焊接時就會很容易不小心短路。</span></p><p><mark><strong><span>最後按下</span><code>Apply</code><span>。</span></strong></mark></p><h3 id='自動佈線'><span>自動佈線</span></h3><p><span>接下來只要全部自動佈線即可。</span></p><p><img src="image-20230505154108192.png" alt="image-20230505154108192" style="zoom: 67%;" /></p><p>&nbsp;</p><p><span>按下自動佈線的icon。</span></p><p><img src="image-20230505154132887.png" alt="image-20230505154132887" style="zoom: 67%;" /></p><p><span>之後就會彈出一個setup的精靈，1-16的意思是有多少層的板，Fusion360最高支持16層的夾板，會我們今次的板只有上下兩層，所以只有1的top和16的bottom需要佈線。按</span><code>continue</code><span>繼續</span></p><p><img src="image-20230505154207422.png" alt="image-20230505154207422" style="zoom: 67%;" /></p><p><span>如果手動佈了一點線，就會有一定的百分比已佈線，否則就會是0%已完成，按下</span><code>start</code><span>繼續。</span></p><p><img src="image-20230505154330371.png" alt="image-20230505154330371" style="zoom:67%;" /></p><p><span>等待電腦佈線計算，通常下面幾個會計算得比較快，最上的一個因為有經過最佳調教，所以會時間久一點，如無特別的話，用第一個結果就可以了。</span><mark><span>記得確保佈線是100%完成!!!</span></mark></p><p><img src="image-20230505154346849.png" alt="image-20230505154346849" style="zoom: 50%;" /></p><p><span>佈好之後就是這個樣子。</span></p><p><span>之後就會介紹其他必要的設定和怎樣輸出成gerber檔給代工公司生產。</span></p><p>&nbsp;</p><h2 id='polygon'><span>Polygon</span></h2><p><span>在準備輸出之前，首先要做polygon的動作。</span></p><p><span>因為PCB生產是用完整的覆銅板蝕走不要的地方造成電路，所以如果有很大面積需要蝕走，那泡在酸的時間就會增加，導致一些十分幼的信號線都有機會蝕走或變得十分脆弱，所以在做輸出檔之前，要先將整塊電路板鋪上一增polygon，將引線隔離出來，只需蝕走隔離的部分。</span></p><p><img src="image-20230506132901636.png" alt="image-20230506132901636" style="zoom:67%;" /><img src="image-20230506132953142.png" alt="image-20230506132953142" style="zoom:67%;" /></p><ol start='' ><li><p><span>先在左邊工具列按下polygon的按鍵，或者在命令列打</span><code>polygon</code><span>。</span></p></li><li><p><span>在上方工具列選擇</span><code>TOP</code></p></li><li><p><span>右方的工具列可以保留原值。</span></p></li></ol><p><img src="image-20230506133612584.png" alt="image-20230506133612584" style="zoom:50%;" /></p><p><img src="image-20230506133818564.png" alt="image-20230506133818564" style="zoom:50%;" /><span>　　　</span><img src="image-20230506133844922.png" alt="image-20230506133844922" style="zoom:67%;" /><span>　　　　</span></p><ol start='' ><li><p><span>緣著板邊畫出一個方形。</span></p></li><li><p><span>接合好polygon後會彈出一個視窗，問你polygon接去那個signal</span></p></li><li><p><span>留空就可以，按下</span><code>OK</code><span>。</span></p></li><li><p><span>一般的電路板都會將這些polygon signal選擇為正電源或負電源，以獲得最大線寬</span></p></li></ol><p><img src="image-20230506134110104.png" alt="image-20230506134110104" style="zoom:67%;" /></p><p>&nbsp;</p><p><img src="image-20230506170044332.png" alt="image-20230506170044332" style="zoom: 67%;" /><span>　　　</span><img src="image-20230506170121491.png" alt="image-20230506170121491" style="zoom:50%;" /></p><p><span>重覆上面的步驟，今次在底層用</span><code>polygon</code><span>鋪滿銅。</span></p><h2 id='design-rules-checkdrc'><span>Design Rules Check(DRC)</span></h2><p><span>跟ERC一樣，設計好的板記得記得要經過一次DRC，去檢查設計是否有出錯。</span></p><p><img src="image-20230506170505068.png" alt="image-20230506170505068" style="zoom:80%;" /></p><p><span>如果板是剛剛自動佈線完成，一般來說都應該是沒有錯誤的，此時不會有任何反應，否則就會出現error的視窗。</span></p><p><mark><span>大功告成。</span></mark></p><p>&nbsp;</p><h2 id='練習1'><span>練習1</span></h2><p><strong><span>555+4017 LED Roulette Circuit</span></strong><sup class='md-footnote'><a href='#dfref-footnote-1-1' name='ref-footnote-1-1'>1</a></sup></p><p><img src="image-20230506173627376.png" referrerpolicy="no-referrer" alt="image-20230506173627376"></p><p><span>以上練習題為一個555+4017的幸運輪盤，4017的16和8腳預設會隱藏起來，要對著4017按mouse右鍵--&gt;</span><code>invoke</code><span>，將8和16腳顯示出來。</span><code>R1</code><span>的值則可以根據</span><code>vcc</code><span>的電壓值由</span><code>330</code><span>至</span><code>1.5k</code><span>不等而其他的零件可以參考下表:</span></p><figure class='table-figure'><table><thead><tr><th><span>Part</span></th><th><span>Value</span></th><th><span>Device</span></th><th><span>Package</span></th><th><span>Library</span></th></tr></thead><tbody><tr><td><span>C1</span></td><td><span>1uF</span></td><td><span>CPOL-USE2-5</span></td><td><span>E2-5</span></td><td><span>rcl</span></td></tr><tr><td><span>C2</span></td><td><span>100n</span></td><td><span>C-US025-024X044</span></td><td><span>C025-024X044</span></td><td><span>rcl</span></td></tr><tr><td><span>IC3</span></td><td><span>LM555D</span></td><td><span>LM555D</span></td><td><span>SO08</span></td><td><span>linear</span></td></tr><tr><td><span>IC2</span></td><td><span>4017D</span></td><td><span>4017D</span></td><td><span>SO16</span></td><td><span>40xx</span></td></tr><tr><td><span>LEDs</span></td><td>&nbsp;</td><td><span>LED3MM</span></td><td><span>LED3MM</span></td><td><span>led</span></td></tr><tr><td><span>R1</span></td><td><span>560</span></td><td><span>R-US_0207/10</span></td><td><span>0207/10</span></td><td><span>rcl</span></td></tr><tr><td><span>R2</span></td><td><span>10K</span></td><td><span>R-US_0207/10</span></td><td><span>0207/10</span></td><td><span>rcl</span></td></tr><tr><td><span>R3</span></td><td><span>3.3M</span></td><td><span>R-US_0207/10</span></td><td><span>0207/10</span></td><td><span>rcl</span></td></tr><tr><td><span>R4</span></td><td><span>10M</span></td><td><span>R-US_0207/10</span></td><td><span>0207/10</span></td><td><span>rcl</span></td></tr><tr><td><span>R5</span></td><td><span>3.3M</span></td><td><span>R-US_0207/10</span></td><td><span>0207/10</span></td><td><span>rcl</span></td></tr><tr><td><span>S1</span></td><td>&nbsp;</td><td><span>10-XX</span></td><td><span>B3F-10XX</span></td><td><span>switch-omron</span></td></tr><tr><td><span>T1</span></td><td>&nbsp;</td><td><span>BC557A-PNP-TO92-EBC</span></td><td><span>TO92-EBC</span></td><td><span>transistor</span></td></tr><tr><td><span>X1</span></td><td>&nbsp;</td><td><span>AK500/2</span></td><td><span>AK500/2</span></td><td><span>con-ptr500</span></td></tr></tbody></table></figure><p><span>跟之前的步驟一樣做ERC的話，會有以下error, 是正常的，全部approve就可以了，如果有其他以外的error就真的是error了。</span></p><p><img src="image-20230506173832080.png" alt="image-20230506173832080" style="zoom:80%;" /></p><h3 id='佈線圖-2'><span>佈線圖</span></h3><p><span>這是一個555的抽獎燈線路，所以LED燈要佈成一個圓形，但如果手動佈的話很難確保是一個圓，這裡可以用到一個指令叫</span><code>arrange</code><span>。</span></p><ol start='' ><li><p><span>第一步首先將電路板的邊界設定成2000mil x 2000mil</span></p></li><li><p><span>之後一次過選取10粒LED</span></p></li><li><p><span>在命令列打上</span><code>arrange</code></p></li><li><p><span>這時會彈出一個視窗，選取圓形陣列，中心點打1000mil x 1000mil，超始角度為90度(即正上方)，半徑800mil</span></p></li></ol><p><img src="image-20230506174537496.png" alt="image-20230506174537496" style="zoom: 50%;" /></p><p><img src="image-20230506174744641.png" alt="image-20230506174744641" style="zoom: 50%;" /></p><ol start='' ><li><p><span>接著就可以隨意將其他零件擺放，只是要注意，電源應該放在最外面，而接鍵應該放在最中間。</span></p></li><li><p><span>記得參考之前的例子，設定</span><code>DRC</code><span>rules將</span><code>distance</code><span>設定成</span><code>6mil</code><span>, </span><code>masks</code><span>中的</span><code>limits</code><span>設定成</span><code>3mm</code></p></li><li><p><span>還有</span><code>class</code><span>中新增一個叫</span><code>Power</code><span>的class，線寬設定成</span><code>25mil</code><span>，將</span><code>VCC</code><span>, </span><code>GND</code><span>和</span><mark><span>R1與LED負極的接線</span></mark><span>也加到這個class中。</span></p></li><li><p><span>最後再加入polygon。</span></p></li></ol><p><img src="image-20230506181454057.png" alt="image-20230506181454057" style="width:45%;" /><img src="image-20230506181558377.png" alt="image-20230506181558377" style="width:45%;" /></p><p>&nbsp;</p><p><img src="image-20230506172020450.png" alt="image-20230506172020450" style="zoom:67%;" /><img src="image-20230506172128959.png" alt="image-20230506172128959" style="zoom: 80%;" /><span> </span><img src="image-20230506172202722.png" alt="image-20230506172202722" style="zoom:67%;" /></p><h2 id='附錄真正生產時design-rule設定'><span>(附錄)真正生產時Design Rule設定</span></h2><p><mark><span>記得到先設定好所有design rule再做自動佈線，佈線後再改design rule，要重自動佈線。</span></mark></p><p><span>接下來，就讓我們逐個Design Rules的設定去看看，有些設定是需要特別注意和有用的。</span></p><p>&nbsp;</p><p><img src="image-20230505154805469.png" alt="image-20230505154805469" style="zoom:67%;" /></p><p><span>由第二版說起，Layers: 設定板的層數和覆銅的厚度，1.37795mil(0.035mm)厚的覆銅，就是一般1oz/feet</span><sup><span>2</span></sup><span> 的覆銅板，fusion360預設是雙層板，上層和下層都是1oz/feet</span><sup><span>2</span></sup><span>的板，如果你有需要，你也可以用上面的icon去增加或減少層數。工業生產的電路板，可以去到16層板</span></p><p>&nbsp;</p><p><img src="image-20230505155117104.png" alt="image-20230505155117104" style="zoom:67%;" /></p><p><span>clearance: 很直觀的告訴你，是引線、焊盤、通孔等等之間的最少距離，6mil是一般PCB廠的最少距離，這個數不能再小了。</span></p><p>&nbsp;</p><p><img src="image-20230505160729961.png" alt="image-20230505160729961" style="zoom:67%;" /></p><p><span>distance: 這一版設定焊盤、導線等與邊緣的距離，預設是40mil，但一般不用設得這麼大，設計6mil已經足夠(但今次這塊板空間這樣大，所以都沒有所謂)</span></p><p>&nbsp;</p><p><img src="image-20230505160753215.png" alt="image-20230505160753215" style="zoom:67%;" /></p><p><span>size: 這個頁面主要決定線的寬度，同樣，6mil是一般的PCB廠最小的線寬</span></p><p>&nbsp;</p><p><img src="image-20230505160827873.png" alt="image-20230505160827873" style="zoom:67%;" /></p><p><span>Annular Ring: 決定pad焊盤的尺寸。一般預設的電容、電阻等零件，焊盤都不會很大，</span><mark><span>對焊功較差之人很容易會虛焊，可以在這裡將%調大一點，那度焊盤就會大些</span></mark><span>。</span></p><p>&nbsp;</p><p><img src="image-20230505160848746.png" alt="image-20230505160848746" style="zoom:67%;" /></p><p><span>Shapes: 決定smd焊盤的圓角尺寸，下面的pads選項，則是決定通孔元件焊盤的形狀，可以設定為圓形、方形和八角形，也可以選過Elongation %將長焊盤加長或縮短。</span></p><p>&nbsp;</p><p><img src="image-20230505160919432.png" alt="image-20230505160919432" style="zoom:67%;" /></p><p><span>Supply頁面: 決定隔熱層。如果PCB有用整面銅箔來作為信號(一般是正vcc或gnd)，那麼在焊接時，電烙鐵的熱會散走，導致很容易虛焊，所以一般都會有入隔熱層，但如果用整面銅箔的原因是導大電流的話，就要將隔熱層設成0mil。</span></p><p>&nbsp;</p><p><img src="image-20230505160942923.png" alt="image-20230505160942923" style="zoom:67%;" /></p><p><span>Masks頁面: 上面是決定阻焊綠油距離焊盤要多少緩衝。下面Limit就比較重要，用以決定大於多少的鑽孔不用蓋上阻焊綠油，</span><mark><span>一般我都會設定為3mm以上，如果設定是0mil的話，所有的通孔都不會蓋綠油，那在焊接時就會很容易不小心短路</span></mark><span>。</span></p><p>&nbsp;</p><p><img src="image-20230505161005034.png" alt="image-20230505161005034" style="zoom:67%;" /></p><p><span>最後一版設定是否檢討字型等等，因為values層都會加入pcb絲網層，所以可以加入檢查。</span></p><p><em><strong><mark><span>最後如果經常使用這個design rules的話，可以返回第一版將設定的規則儲存起來。</span></mark></strong></em></p><p>&nbsp;</p><div class='footnotes-area'  ><hr/>
+<div class='footnote-line'><span class='md-fn-count'>1</span> <span>用</span><code>group</code><span>指令圈起要群組移動的零件，再輸入</span><code>move</code><span>指令，最後對著highlight後的群組按mouse右鍵，就會找到</span><code>Group:move</code> <a name='dfref-footnote-1' href='#ref-footnote-1' title='回到文件' class='reversefootnote' >↩</a> <a name='dfref-footnote-1-1' href='#ref-footnote-1-1' title='回到文件' class='reversefootnote' >↩</a></div></div></div></div>
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><object name="topBar" style="position:fixed; top:0px; z-index:10;" width="100%" height="43px" type="text/html" data="../../topBar.html">
+        </object></body>
+</html>
