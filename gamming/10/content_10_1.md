@@ -2,6 +2,8 @@
 
 Wavefront 演算法是BFS(廣度優先搜索)演算法的其中一種，常見於2D網格地圖中用以找尋路徑。在wavefront算法中，隊列以源節點初始化，算法通過按照節點距離源節點的特定順序將相鄰節點添加到隊列中來進行進展。這創建了一個從源節點向外擴展的“wavefront”。
 
+<iframe src = "/interactive/wavefront/index.html" width = "100%" height = "650"></iframe>
+
 [toc]
 
 ##10.1.1 準備網格2D地圖
