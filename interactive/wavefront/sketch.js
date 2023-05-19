@@ -101,7 +101,7 @@ function findPath(_end, _current) {
 	let current = _current;
 
 	while (true) {
-		if (current.previous === undefined) break;
+		if (current.previous === null) break;
 		path.push(current.previous);
 		current = current.previous;
 	}
@@ -127,7 +127,6 @@ function stepForward() {
 	let loopSize = openSet.length;
 	for (let i = 0; i < loopSize; i++) {
 		let current = openSet[0];
-
 		let neighbors = current.neighbors;
 
 		for (let j = 0; j < neighbors.length; j++) {
@@ -140,13 +139,10 @@ function stepForward() {
 				noLoop();
 				return;
 			} else if (!closeSet.includes(neighbor) && !neighbor.wall && !openSet.includes(neighbor)) {
-				if (!diagonal) neighbor.score = current.score + 1;
-				else {
-					if (neighbor.i !== current.i && neighbor.j !== current.j) // diagonal
-						neighbor.score = current.score + sqrt(2);
-					else neighbor.score = current.score + 1;
-					neighbor.previous = current;
-				}
+				if (!diagonal)neighbor.score = current.score + 1;
+				else neighbor.score = current.score + sqrt(2);
+
+				neighbor.previous = current;
 				openSet.push(neighbor);
 			}
 		}
@@ -169,7 +165,7 @@ class Spot {
 		this.neighbors = [];
 		this.visited = false;
 		this.score = 0;
-		this.previous = undefined;
+		this.previous = null;
 	}
 
 	show(_color) {
