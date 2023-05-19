@@ -6,6 +6,7 @@ let closeSet = [];
 let path = [];
 let step = 0;
 let forwardButton, resetButton;
+let diagonalCheckBox, diagonal = false;
 
 function setup() {
 	createCanvas(600, 600);
@@ -24,11 +25,7 @@ function setup() {
 			grid[i][j] = new Spot(i, j);
 		}
 	}
-	for (let i = 0; i < cols; i++) {
-		for (let j = 0; j < rows; j++) {
-			grid[i][j].addNeighbors(grid);
-		}
-	}
+
 	start = grid[0][0];
 	end = grid[cols - 1][rows - 1];
 
@@ -38,7 +35,13 @@ function setup() {
 		}
 	}
 
-	end.score = 0;
+	for (let i = 0; i < cols; i++) {
+		for (let j = 0; j < rows; j++) {
+			grid[i][j].addNeighbors(grid);
+		}
+	}
+
+	start.score = 0;
 	openSet.push(start);
 
 	forwardButton = createButton("Next step");
@@ -48,6 +51,12 @@ function setup() {
 	resetButton = createButton("Reset");
 	resetButton.position(width + 10, 40);
 	resetButton.mousePressed(setup)
+
+	diagonalCheckBox = createCheckbox("Diagonal", diagonal);
+	diagonalCheckBox.position(width + 10, 70);
+	diagonalCheckBox.changed(() => {
+		diagonal = !diagonal;
+	});
 }
 
 function draw() {
@@ -92,27 +101,9 @@ function findPath(_end, _current) {
 	let current = _current;
 
 	while (true) {
-		let foundNext = false;
-		for (let i = 0; i < current.neighbors.length; i++) {
-			let neighbor = current.neighbors[i];
-			if (neighbor.score === current.score - 1 && !neighbor.wall) {
-				current = neighbor;
-				path.push(current);
-				foundNext = true;
-				break;
-			}
-		}
-
-		if (current === start) {
-			print("Path found");
-			break;
-		}
-
-		// If no next step is found, exit the loop to prevent infinite loop
-		if (!foundNext) {
-			print("Path not found");
-			break;
-		}
+		if (current.previous === undefined) break;
+		path.push(current.previous);
+		current = current.previous;
 	}
 
 }
@@ -148,11 +139,15 @@ function stepForward() {
 				findPath(end, current);
 				noLoop();
 				return;
-			} else if (!closeSet.includes(neighbor) && !neighbor.wall) {
-				neighbor.score = current.score + 1;
-				if (!openSet.includes(neighbor)) {
-					openSet.push(neighbor);
+			} else if (!closeSet.includes(neighbor) && !neighbor.wall && !openSet.includes(neighbor)) {
+				if (!diagonal) neighbor.score = current.score + 1;
+				else {
+					if (neighbor.i !== current.i && neighbor.j !== current.j) // diagonal
+						neighbor.score = current.score + sqrt(2);
+					else neighbor.score = current.score + 1;
+					neighbor.previous = current;
 				}
+				openSet.push(neighbor);
 			}
 		}
 
@@ -174,6 +169,7 @@ class Spot {
 		this.neighbors = [];
 		this.visited = false;
 		this.score = 0;
+		this.previous = undefined;
 	}
 
 	show(_color) {
@@ -187,7 +183,7 @@ class Spot {
 		rect(this.x, this.y, this.w, this.h);
 		if (openSet.includes(this) || closeSet.includes(this)) {
 			fill(0);
-			text(this.score, this.x, this.y);
+			text(nfc(this.score, 1), this.x, this.y);
 		}
 	}
 
@@ -197,19 +193,17 @@ class Spot {
 	}
 
 	addNeighbors(_spots) {
-		if (this.wall === false) {
-			if (this.j > 0 && _spots[this.i][this.j - 1].wall === false) {
-				this.neighbors.push(_spots[this.i][this.j - 1]);
-			}
-			if (this.i < cols - 1 && _spots[this.i + 1][this.j].wall === false) {
-				this.neighbors.push(_spots[this.i + 1][this.j]);
-			}
-			if (this.j < rows - 1 && _spots[this.i][this.j + 1].wall === false) {
-				this.neighbors.push(_spots[this.i][this.j + 1]);
-			}
-			if (this.i > 0 && _spots[this.i - 1][this.j].wall === false) {
-				this.neighbors.push(_spots[this.i - 1][this.j]);
-			}
+		if (this.wall) return;
+		const { i, j } = this;
+		if (j > 0 && !_spots[i][j - 1].wall) this.neighbors.push(_spots[i][j - 1]);
+		if (i < cols - 1 && !_spots[i + 1][j].wall) this.neighbors.push(_spots[i + 1][j]);
+		if (j < rows - 1 && !_spots[i][j + 1].wall) this.neighbors.push(_spots[i][j + 1]);
+		if (i > 0 && !_spots[i - 1][j].wall) this.neighbors.push(_spots[i - 1][j]);
+		if (diagonal) {
+			if (i > 0 && j > 0 && !_spots[i - 1][j - 1].wall) this.neighbors.push(_spots[i - 1][j - 1]);
+			if (i < cols - 1 && j > 0 && !_spots[i + 1][j - 1].wall) this.neighbors.push(_spots[i + 1][j - 1]);
+			if (i > 0 && j < rows - 1 && !_spots[i - 1][j + 1].wall) this.neighbors.push(_spots[i - 1][j + 1]);
+			if (i < cols - 1 && j < rows - 1 && !_spots[i + 1][j + 1].wall) this.neighbors.push(_spots[i + 1][j + 1]);
 		}
 	}
 

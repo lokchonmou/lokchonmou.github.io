@@ -2,11 +2,13 @@ const cols = rows = 10;
 let spots = [];
 let start, end, pathIsFound, path, openSet, closedSet;
 let forwardButton, resetButton;
+let diagonalCheckBox, diagonal = false;
 
 function setup() {
 	createCanvas(600, 600);
 	textAlign(CENTER, CENTER);
 	rectMode(CENTER);
+	displayDensity(pixelDensity());
 
 	path = [];
 	openSet = [start];
@@ -29,6 +31,11 @@ function setup() {
 			if (spots[i][j] != start && spots[i][j] != end) {
 				spots[i][j].addWall();
 			}
+		}
+	}
+
+	for (let i = 0; i < cols; i++) {
+		for (let j = 0; j < rows; j++) {
 			spots[i][j].addNeighbors(spots);
 		}
 	}
@@ -38,15 +45,22 @@ function setup() {
 	openSet = [start];
 	closedSet = [];
 	start.g = 0;
+	start.h = heuristic(start, end);
+	start.f	= start.g + start.h;
 
 	forwardButton = createButton('Next Step');
-	forwardButton.position(width+10, 10);
+	forwardButton.position(width + 10, 10);
 	forwardButton.mousePressed(stepForward);
 
 	resetButton = createButton('Reset');
-	resetButton.position(width+10, 40);
+	resetButton.position(width + 10, 40);
 	resetButton.mousePressed(setup);
 
+	diagonalCheckBox = createCheckbox('Diagonal', diagonal);
+	diagonalCheckBox.position(width + 10, 70);
+	diagonalCheckBox.changed(() => {
+		diagonal = !diagonal;
+	});
 }
 
 function draw() {
@@ -71,7 +85,8 @@ function draw() {
 }
 
 function heuristic(a, b) {
-	return abs(a.i - b.i) + abs(a.j - b.j);
+	if (!diagonal) return abs(a.i - b.i) + abs(a.j - b.j);
+	else return dist(a.i, a.j, b.i, b.j);
 }
 
 function removeFromArray(arr, elem) {
@@ -160,10 +175,10 @@ class Spot {
 		fill(0);
 		if (openSet.includes(this) || closedSet.includes(this)) {
 			textSize(10);
-			text("G:" + str(this.g), this.x - this.Width / 3, this.y - this.Height / 3);
-			text("H:" + str(this.h), this.x + this.Width / 3, this.y - this.Height / 3);
+			text("G:" + nfc(this.g, 0), this.x - this.Width / 3, this.y - this.Height / 3);
+			text("H:" + nfc(this.h, 1), this.x + this.Width / 3, this.y - this.Height / 3);
 			textSize(16);
-			text("F:" + str(this.f), this.x, this.y + this.Height / 3);
+			text("F:" + nfc(this.f, 1), this.x, this.y + this.Height / 3);
 		}
 	}
 
@@ -172,11 +187,20 @@ class Spot {
 	}
 
 	addNeighbors(spots) {
+		if (this.wall) return;
 		const { i, j } = this;
-		if (i > 0) this.neighbors.push(spots[i - 1][j]);
-		if (i < cols - 1) this.neighbors.push(spots[i + 1][j]);
-		if (j > 0) this.neighbors.push(spots[i][j - 1]);
-		if (j < rows - 1) this.neighbors.push(spots[i][j + 1]);
+		if (i > 0 && !spots[i - 1][j].wall) this.neighbors.push(spots[i - 1][j]);
+		if (i < cols - 1 && !spots[i + 1][j].wall) this.neighbors.push(spots[i + 1][j]);
+		if (j > 0 && !spots[i][j - 1].wall) this.neighbors.push(spots[i][j - 1]);
+		if (j < rows - 1 && !spots[i][j + 1].wall) this.neighbors.push(spots[i][j + 1]);
+
+		if (diagonal) {
+			if (i > 0 && j > 0 && !spots[i - 1][j - 1].wall) this.neighbors.push(spots[i - 1][j - 1]);
+			if (i < cols - 1 && j > 0 && !spots[i + 1][j - 1].wall) this.neighbors.push(spots[i + 1][j - 1]);
+			if (i > 0 && j < rows - 1 && !spots[i - 1][j + 1].wall) this.neighbors.push(spots[i - 1][j + 1]);
+			if (i < cols - 1 && j < rows - 1 && !spots[i + 1][j + 1].wall) this.neighbors.push(spots[i + 1][j + 1]);
+		}
+
 	}
 
 
