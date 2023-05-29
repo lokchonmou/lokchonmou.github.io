@@ -82,6 +82,11 @@ function draw() {
 	}
 	start.show('#00FFFF');
 	end.show('#FFFF00');
+	if (openSet.length > 0 && !pathIsFound) {
+		const lowestIndex = openSet.reduce((min, p, i) => (p.f < openSet[min].f ? i : min), 0);
+		const current = openSet[lowestIndex];
+		current.show('#00FF55');
+	}
 }
 
 function heuristic(a, b) {
