@@ -4,10 +4,12 @@
 
 ## New Sketch
 
-1. 首先在工具列上方點選`new sketch`的按鍵，或者用快速鍵`s`做搜尋，搜尋keyword `new sketch`
-2. 選擇要建立2d sketch的面，今次練習不同的2d約束，選哪一個面都沒有關係
-3. 之後就但見到介面有少許不同，變成2d專用的介面
-4. 我們在工具列由左至右逐個講解
+- [ ] 在工具列上方點選`new sketch`按鍵，或使用快速鍵`s`搜尋`new sketch`
+
+- [ ] 選擇要建立2d sketch的面，今次練習不同的2d約束，選哪一個面都沒有關係
+	- 之後就但見到介面有少許不同，變成2d專用的介面
+
+- 我們在工具列由左至右逐個講解
 
 <img src="fusion17.png" alt="fusion17" style="zoom:50%;" />
 
@@ -15,27 +17,34 @@
 
 ## Create工具
 
-1. 首先第一個是create工具列，跟autoCAD或者rhino相似，fusion360提供最常見的2d繪圖工具。
-2. 分別有線(line)、矩形(rectangle)、圓形(circle)、弧形(arc)、多邊形(polygon)、橢圓形(ellipse)、點(point)、文字(text)。
-3. 其他比較特別的，有slot(槽形工具)、Spline(控制點曲線)、Conic Curve(圓錐曲線)
-4. 快速創建的工具有: Mirror(鏡像)、Circular Pattern(圓形陣列)和Rectangular Pattern(矩形陣列)
+- 第一個是create工具列，提供最常用的2D繪圖工具，類似於AutoCAD或Rhino
+- 包括線(line)、矩形(rectangle)、圓形(circle)、弧形(arc)、多邊形(polygon)、橢圓形(ellipse)、點(point)、文字(text)
+- 其他特別的工具有slot(槽形工具)、Spline(控制點曲線)、Conic Curve(圓錐曲線)
+- 快速創建的工具有: Mirror(鏡像)、Circular Pattern(圓形陣列)和Rectangular Pattern(矩形陣列)
 	💡 ***使用這三個工具請慎用，fusion360不擅長2d sketch，如果太大量的話會直接死機，盡量變成3d圖之後再使用3d的mirror和pattern***
 
 <img src="13095459.png" alt="13095459"  />
 
-5. Project(投影)/ include: 將並非在這個sketch中的圖元投影在這個sketch中，而intercept就是將2d sketch的平面相交對應立體所得到的切面
+- Project(投影)/ include: 將並非在這個sketch中的圖元投影在這個sketch中，而intercept就是將2d sketch的平面相交對應立體所得到的切面
 
 <img src="fusion116.gif" alt="fusion116" style="width:45%;" /><img src="fusion117.gif" alt="fusion117" style="width:45%;" />
 
 ## 編修工具
 
-1. ❗***<u>不要</u>使用2d編修工具如fillet, chamfer, trim, scale, move/copy***:
-	1. fusion360等特徵編輯軟件不擅長2d 編輯，會十分容易死機
-	2. 所有2d編輯是沒有歷史的，之後要修改會非常麻煩
-	3. 一經2d編輯的話，本來的2d 約束關係很大可能就會消失
-2. Offset(偏移): 偏移點選的圖元，十分常用
+- ❗***<u>不要</u>使用2d編修工具如fillet, chamfer, trim, scale, move/copy***:
+
+	- fusion360等特徵編輯軟件不擅長2d 編輯，會十分容易死機
+
+	- 所有2d編輯是沒有歷史的，之後要修改會非常麻煩
+
+	- 一經2d編輯的話，本來的2d 約束關係很大可能就會消失
+
+- Offset(偏移): 偏移點選的圖元，十分常用
 	💡offset出來的圖元是不能再offset的，要點選元始圖元才能繼續offset
-3. Change Parameters: 設定變數，方便之後修改變數時可以一次過修改全部相對應的值。<u>這個功能會經常用到，例如設定螺絲的孔徑是3mm，但如果改用2mm螺絲，只需要在這個功能修改一下數值，所有的孔徑就會即時更新，非常好用。</u>
+
+- Change Parameters：設定變數，方便修改相關數值
+	- 可一次修改所有相對應的值
+	- 例如：設定螺絲孔徑為3mm，改用2mm螺絲時，只需在此修改一次，所有孔徑即時更新
 
 ![100935](100935.png)
 
@@ -56,8 +65,8 @@
 
 ## 特別提示
 
-💡 ***使用mirror和pattern時注意，fusion360不擅長2d sketch，如果太大量的話會直接死機，盡量變成3d圖之後再使用3d的mirror和pattern***
+- 💡 ***使用mirror和pattern時注意，fusion360不擅長2d sketch，如果太大量的話會直接死機，盡量變成3d圖之後再使用3d的mirror和pattern***
 
-💡 ***Fusion360所有的sketch都是有特徵的，所以你會發現甚少會使用copy & paste功能，如果真的有需要copy & paste，可開另一個sketch，再project之前的sketch去新的sketch***
+- 💡 ***Fusion360所有的sketch都是有特徵的，所以你會發現甚少會使用copy & paste功能，如果真的有需要copy & paste，可開另一個sketch，再project之前的sketch去新的sketch***
 
-❗ ***<u>不要</u>使用2d編修工具如fillet, chamfer, trim, scale, move/copy***
+- ❗ ***<u>不要</u>使用2d編修工具如fillet, chamfer, trim, scale, move/copy***

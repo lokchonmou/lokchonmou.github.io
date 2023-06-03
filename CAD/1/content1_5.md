@@ -90,49 +90,106 @@
 
 ![image-20220601102151547](image-20220601102151547.png)
 
-1. 在xy平面建立一個`new sketch`, 用`center rectangle`劃一個`130x80mm`的方形, 之後用   `extrude`擠出`50mm`高
+
+
+1. 劃一個立方體：
+	- 在xy平面建立一個`new sketch`
+	- 用`center rectangle`劃一個`130x80mm`的方形
+	- 之後用   `extrude`擠出`50mm`高
 
 <img src="image-20220601103016049.png" alt="image-20220601103016049" style="width:45%;" /><img src="image-20220601103051915.png" alt="image-20220601103051915" style="width:45%;" />
 
-2. 在方形的頂部建立一個`new sketch`, 用hotkey `R`劃一個`30x25mm`方形, 之後用   `extrude`減去`30mm`深
+
+
+2. 挖空一角：
+
+	- 在方形的頂部建立一個`new sketch`
+
+	-  用hotkey `R`劃一個`30x25mm`方形,
+
+	- 之後用   `extrude`減去`30mm`深
 
 <img src="image-20220601103301111.png" alt="image-20220601103301111" style="width:45%;" /><img src="image-20220601103343233.png" alt="image-20220601103343233" style="width:45%;" />
 
-3. 之後可以用`mirror`指令, 選擇`type`為`feature`, `objects`為剛剛的減去feature, `mirror plane`則選擇yz平面(如果因物件擋住了yz平面的話, 可以zoom遠一點或旋轉一下)
-4. 重覆`mirror`指今, 今次點選的`objects`為減去feature和剛剛的`mirror`指令, `mirror plane`則為xz平面
+
+
+3. 使用`mirror`指令：
+
+	- 選擇`type`為`feature`
+
+	- `objects`為剛剛的減去feature
+
+	- `mirror plane`選擇yz平面，如果物件擋住了yz平面，可以zoom遠一點或旋轉一下
+
+4. 重複`mirror`指令：
+
+	- 這次選擇的`objects`為減去feature和剛剛的`mirror`指令
+
+	- `mirror plane`選擇xz平面
 
 <img src="fdahgjk4.gif" alt="fdahgjk4" style="width:45%;" /><img src="fdahgjk5.gif" alt="fdahgjk5" style="width:45%;" />
 
-5. 用`hole`指令(hotkey `H`)開啟鑽孔工具, 點選右下角, 由於沒有事先開sketch來定點, 可以用`reference`來指定距離邊緣多少, 看看圖則, 分別為`15mm`和`12mm`, 
-5. hole的深度(`Extents`)選`All`, `Hole Type` 選擇中間的平底孔`Counterbore`, `Hole Tap Type`即孔是否要攻螺絲牙, 今次不用, 所以選第一個`Simple`, Drill Point就是鑽孔的尾端是平還是尖, 今次選哪一個都可以, 因為孔是完全穿的
-5. 看圖則, 孔的要求是`4 HOLES Ø8 THRU ALL ⌴Ø18 ↧3`, `Ø8 THRU ALL`即直徑8, 完全鑽穿, `⌴Ø18 ↧3` 即平底孔直徑18mm, 深度3mm
+5. 開啟`hole`指令（快捷鍵為`H`）：
+
+	- 點選右下角
+
+	- 使用`reference`指定距離邊緣的距離
+
+	- 根據圖樣，分別為`15mm`和`12mm`
+
+	- `hole`的深度(`Extents`)選擇`All`
+
+	- `Hole Type`選擇中間的平底孔`Counterbore`
+
+	- `Hole Tap Type`選擇第一個`Simple`
+
+	- `Drill Point`選擇任意一個，因為孔是完全穿的
+
+6. 根據圖樣，孔的要求是`4 HOLES Ø8 THRU ALL ⌴Ø18 ↧3`：
+
+	- `Ø8 THRU ALL`即直徑8、完全鑽穿
+
+	- `⌴Ø18 ↧3`即平底孔直徑18mm，深度3mm
 
 <img src="fdahgjk6.gif" alt="fdahgjk6" style="width:60%;" /><img src="image-20220601171701680.png" alt="image-20220601171701680" style="width:35%;" />
 
 
 
-8. 4個孔可以跟上面一樣mirror兩次來完成, 或用另一個指令`rectangular pattern`, 方形矩陣功能可以一次過複製多個功能, 而且用矩陣呈現
-8. `type`選`feature`, `objects`選擇剛剛的hole feature, `Directions `可以選初始向哪一邊, 我是選x軸, `Distance type`選`Spacing`, 兩個距離分別是100和56mm
+7. 4個孔可以使用`mirror`指令兩次完成，也可以使用`rectangular pattern`指令：
+	- `rectangular pattern`可以一次複製多個功能，並以矩陣形式呈現
+	- `type`選擇`feature`
+	- `objects`選擇剛剛的hole feature
+	- `Directions`可以選擇初始向哪一邊，例如選x軸
+	- `Distance type`選擇`Spacing`，兩個距離分別是100和56mm
 
 <img src="image-20220601173249910.png" alt="image-20220601173249910" style="width: 60%;" /><img src="image-20220601173315711.png" alt="image-20220601173315711" style="width:35%;" />
 
-10. 中間的圓孔可以用new sketch劃兩個半圓用擠出減去, 或簡單地用hole指令完成
+8. 中間的圓孔可以用new sketch劃兩個半圓用擠出減去
+	- 或簡單地用hole指令完成
 
-   <img src="image-20220601175838025.png" alt="image-20220601175838025" style="zoom:50%;" />
+<img src="image-20220601175838025.png" alt="image-20220601175838025" style="zoom:50%;" />
 
-11.  最後兩個螺絲孔, 都是用`holes`指令, 距離邊緣15mm, 在中線上, 即距離邊緣40mm, `hole type`選第一個`simple`, `hole tap type`選第三個`tapped`, 即個孔都是攻牙, 所以`Thread Offset`選第一個, `Drill Point`選尖尾的, 圖則上是M12x1.5即M12螺絲, 絲距為1.5mm, 最後選`Modeled`就可以見到模型有螺絲紋
+9. 最後兩個螺絲孔可以使用`holes`指令完成：
+	- 距離邊緣15mm與40mm
+	- `hole type`選擇第一個`simple`
+	- `hole tap type`選擇第三個`tapped`，即孔都是攻牙
+	- `Thread Offset`選擇第一個
+	- `Drill Point`選擇尖尾的
+	- 圖樣上是M12x1.5即M12螺絲，絲距為1.5mm
+	- 最後選擇`Modeled`，就可以看到模型有螺絲紋了
 
 <img src="image-20220601180411189.png" alt="image-20220601180411189" style="zoom:50%;" />
 
-12.  接著緣著yz平面, mirror這個螺絲孔, `Compute Option`要用`Optimized`才會將螺絲孔一次過mirror
+10. 接著緣著yz平面, mirror這個螺絲孔
+	-  `Compute Option`要用`Optimized`才會將螺絲孔一次過mirror
 
 <img src="image-20220601182653305.png" alt="image-20220601182653305" style="zoom:80%;" />
 
-13. 在前面建立`new sketch`, 用`extrude`減去
+11. 在前面建立`new sketch`，用`extrude`減去
 
-    <img src="image-20220601181302659.png" alt="image-20220601181302659" style="width: 60%;" /><img src="image-20220601181342549.png" alt="image-20220601181342549" style="width: 35%;" />
+<img src="image-20220601181302659.png" alt="image-20220601181302659" style="width: 60%;" /><img src="image-20220601181342549.png" alt="image-20220601181342549" style="width: 35%;" />
 
-14. 最後選取需要做fillet的邊, 修圓角2mm
+12. 最後選取需要做fillet的邊, 修圓角2mm
 
 <img src="image-20220601181813753.png" alt="image-20220601181813753" style="width:45%;" /><img src="image-20220601181850640.png" alt="image-20220601181850640" style="width:45%;" />
 
@@ -165,9 +222,11 @@ Hints:
 
 ## 4. Loft
 
-Loft 是其中一個常用的成型工具。對於常見的喉管連接工件，因喉管有不同尺寸，有圓有方，如果製作一個連接器，就需要劃一個上下圓上方的立體，如果用一般手則去劃會非常麻煩，但常見的CAD圖軟件都有一個叫loft的功能，將不同造型的面連接。
-
-如下圖例子，loft可以直接將兩個面相接，也可以指定一條需要穿過的中心線。
+- `Loft`是常用的成型工具之一
+- 對於常見的喉管連接工件，因喉管有不同尺寸，有圓有方，如果要製作一個連接器，需要劃一個上下圓上方的立體
+- 如果使用一般手繪畫，會非常麻煩
+- 但是常見的CAD圖軟件都有一個叫做`Loft`的功能，可以將不同造型的面連接
+- 可以直接將兩個面相接，也可以指定一條需要穿過的中心線
 
 <img src="fusion58.gif" alt="fusion58" style="zoom:33%;" />
 
@@ -231,21 +290,32 @@ Loft 是其中一個常用的成型工具。對於常見的喉管連接工件，
 
 ###練習題1
 
-3D 打印軸承。
-
-軸承為眾多機械零件中十分重要的一環, 但由於軸承的尺寸是固定的, 在設計製作時必須首先考量軸承的尺寸才能決定創作物的尺寸, 而且軸承尺寸越大, 價錢就會幾何級數上升。對於一些精度和轉速都不高的應用場合, 可考慮使用現成的Ø4.5 的不繡鋼珠自製3D 打印軸承。
+- 軸承是眾多機械零件中十分重要的一環
+- 軸承的尺寸是固定的，在設計製作時必須首先考量軸承的尺寸才能決定創作物的尺寸
+- 軸承尺寸越大，價錢就會幾何級數上升
+- 對於一些精度和轉速都不高的應用場合，可以考慮使用現成的Ø4.5的不銹鋼珠自製3D打印軸承
 
 <img src="image-20220606110454114.png" alt="image-20220606110454114" style="zoom:80%;" />
 
 
-1. 首先在正面(我的是xz平面)建立一個`new sketch`, 跟據圖則建立一個`6x6 center rectangle`, 邊緣距離原點20mm(因軸承內徑為40mm, 半徑則為20mm), 一個`Ø4.8 cirlce`, 之後就可以補上中心線, 建立兩條對稱線留空0.5mm空隙
-1. 用`revolve`指令緣z軸轉360度建立實體(如果見到一個藍色和一個橙色的revolve指令, ==***<u>選擇藍色的, 藍色才是實體</u>***==, 橙色的revolve只會建立一個曲面)
+1. 首先在正面(xz平面)上建立一個`new sketch`
+	- 根據圖樣建立一個`6x6 center rectangle`
+	- 邊緣距離原點20mm，因為軸承內徑為40mm，半徑為20mm
+	- 建立一個`Ø4.8 circle`
+	- 補上中心線
+	- 建立兩條對稱線，留空0.5mm空隙
+1. 使用`revolve`指令繞z軸轉360度建立實體
+	- 如果出現一個藍色和一個橙色的`revolve`指令，**<u>*==選擇藍色的，因為藍色才是實體==*</u>**
+	- 橙色的`revolve`只會建立一個曲面
 
 <img src="image-20220606111438238.png" alt="image-20220606111438238" style="width:45%;" /><img src="image-20220606111511423.png" alt="image-20220606111511423" style="width:45%;" />
 
 
 
-3. 在xy平面建立`new sketch`, 用hotkey `p`投影兩條邊變成兩個點, 之後補一條中線, 就可以劃一個Ø4.8的圓
+3. 在xy平面建立一個`new sketch`
+	- 使用快捷鍵`p`投影兩條邊變成兩個點
+	- 補一條中心線
+	- 劃一個Ø4.8的圓
 4. 用擠出工具減去上面的孔
 
 <img src="image-20220606112340758.png" alt="image-20220606112340758" style="width:45%;" /><img src="image-20220606112408298.png" alt="image-20220606112408298" style="width:45%;" />
