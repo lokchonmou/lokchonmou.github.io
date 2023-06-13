@@ -14,6 +14,8 @@
 
 ##檔案
 
+==今次用到的70093L和70093R你應該已經上載了，這步驟可以省去==
+
 本次會應用到的檔案(以下為step檔)，下載**解壓**後，在fusion左邊欄尋找"upload"鍵，就能上載到fuison中應用
 
 [useful robotics component step.zip](useful_robotics_component_step.zip)
@@ -28,298 +30,344 @@
 
 ##STEP 1
 
-首先，繪製底板，用"s"搜尋"new component", 開一個新的component，名為"base", 或者你自己喜歡的名字。並**確保黑色小點在旁邊**, 代表activate
+- 開啟新的 component，命名為 `base`
+- 確保旁邊有一個黑色小點，表示激活狀態
+- 這是為了製作底板，請跟隨以下步驟：
+	1. 用快捷鍵`s`搜尋 `new component`
+	2. 開啟新的 component
+	3. 命名為 "base"
+	4. **確保旁邊有黑色小點表示激活狀態**
 
 <img src="20210204150029.png"/>
 
-接著在xy平面(或水平面)， 開一個新的sketch，繪制如下:
+- 接著在xy平面(或水平面)， 開一個新的sketch，繪制如下:
 
-<img src="2%203%20Walking%20linkage%20robot%20f9bbafb4552c44eda98c4237cfd543fa.png"  style="zoom:33%;" /> <img src="20210204150627.png" style="zoom:33%;" />
+<img src="2%203%20Walking%20linkage%20robot%20f9bbafb4552c44eda98c4237cfd543fa.png"  style="width:45%;" /> <img src="20210204150627.png" style="width:45%;" />
 
 
 
-1. 先用"s"搜尋"change parameter"，開啟參數列表，定義一個新的參數叫"thickness", 值為3mm，跟著用"e"，擠出`thickness` 的厚度
+- 使用 `s` 搜尋 `change parameter`
+- 開啟參數列表
+- 定義一個新的參數，名為 `thickness`，值為 `3mm`
+- 使用 `e` 指令，擠出 `thickness` 參數的厚度
 
-<img src="20210204153033.png" style="zoom:75%;" />
-
-<img src="20210204150710.png" style="zoom:33%;" />
+<img src="20210204153033.png" style="width:45%;" /><img src="20210204150710.png" style="width:45%;" />
 
 ##STEP 2
 
-如果你是直接用fusion360的齒輪箱檔案(f3d或f3z檔)，齒輪箱只有一種規格
+- 使用快捷鍵 `s` 指令搜尋 `insert derive` 功能
+- 將 70093L gearbox 插入衍生到此檔案中
 
-💡*如果你是用useful robotics components step 的step檔案，step檔案中有一個70093L和70093R的檔案，分別為左和右的齒輪箱，長軸並非對稱。*
+- 選擇 70093L 的 component
+
+- 按右鍵，在選單中選擇 `rigid group`
 
 ❗**<u>記得要用insert derive功能, 不要直接拖拉gearbox入去, 否則是不能修改的</u>**
 
-1. 利用"s"搜尋"insert derive"功能，將70093 gearbox插入衍生到此檔案中。
-2. 在70093的component上, 按mouse右鍵, 選擇rigid group
+<img src="insert_derive.gif" style="width:45%;" /> <img src="rigid_group.gif" style="width:45%;" />
 
-<img src="insert_derive.gif" style="zoom:33%;" /> <img src="rigid_group.gif" style="zoom:33%;" />
+- 確保小黑點在這個70093L gearbox旁。
 
-1. 確保小黑點在這個70093 gearbox旁。
-2. 用"e"將齒輪箱的軸適當地修短(或增長, 如果有需要)
-3. 再用"j"把齒輪箱組合到底板
+- 用`e`將齒輪箱的軸適當地修短(或增長, 如果有需要)
 
-<img src="20210205103611.png" style="zoom:33%;" /> <img src="20210205103646.png" style="zoom:33%;" />
+- 再用快捷鍵`j`把齒輪箱組合到底板
 
-<img src="20210204150821.png" style="zoom:33%;"/>
+<img src="20210205103611.png" style="width:45%;" /> <img src="20210205103646.png" style="width:45%;" />
 
-1. 重復，利用"s"搜尋"derive"功能，將另一個70093 gearbox插入衍生到此檔案中。
-2. 確保小黑點在新派入的70093旁
-3. 跟上面一樣，用"e"將齒輪箱的長軸適當修剪一下
-4. 用"j"組合到底板上
+<img src="20210204150821.png" style="width:45%;"/>
 
-💡*如果用step檔案，今次derive的是70093R*
+- 再次使用快捷鍵`s` 指令搜尋 `insert derive` 功能
+
+- 將另一個 70093 gearbox 插入衍生到此檔案中，**確保小黑點在新派入的 70093 旁邊**
+
+- 使用 快捷鍵`e`擠出 指令，適當修剪齒輪箱的長軸
+
+- 使用快捷鍵 `j` 指令，將齒輪箱組合到底板上
 
 ❗️**<u>記得要用derive功能來插入衍生，不要用copy & paste，否則修改齒輪箱時，左右兩邊會同步喔!!!!</u>**
 
-<img src="20210204150936.png" style="zoom:33%;" />
+<img src="20210204150936.png" style="width:45%;" />
 
 ##STEP 3
 
-接著:
+- **<u>將小黑點移回最上層</u>**
 
-1. 將小黑點退回最上層
-2. 開一個新的sheet metal component，名字叫"L support"或者你喜歡的名字，材料和厚度隨便選一個就可以，之後會修改
-3. 確認一下，sheet metal component的圖示跟普遍的component是不同的
-4. 確保小黑點在旁，activate這個component
-5. 在底板的上面，用"new sketch"開一個新的sketch
-6. 投影上面的兩個洞
-7. 在洞的中心點加上作圖線的中線
-8. 繪畫一個寬10mm的方型
-9. 可用中點或對稱限制，方型對稱於中線
+- 開啟一個新的 sheet metal component，命名為 `L support`，選擇一個材料和厚度
 
-💡*可以在component的左方找到一個眼睛的icon，點選後可隱藏component方便操作*
+	- 開啟`new component`時有選項是`standard`或`Sheet Metal`
 
-<img src="20210204151001.png" style="zoom:33%;" /> <img src="20210204151116.png" style="zoom:33%;" />
+	- 確認 sheet metal component 的圖示與普通 component 不同
 
+- **<u>確保旁邊有一個小黑點，表示激活狀態</u>**
 
+- 在底板上方使用快捷鍵`s` 搜尋`new sketch` ，在底板表面創建一個新的草圖
 
-1. 在sheet metal的頁面中，找到edit rule的icon，在你選用的材料旁邊，會有一支筆的icon，點進去就能修改屬性，例如有厚度，摺的時候要預留多少延展長度等等
-2. 在sheet metal的頁面中，找到"Flange"的icon，或者用"s"來搜尋"Flange"
-3. 點選剛剛的方型，變成1個厚度2mm的金屬簿片
+- 為洞的中心點繪製中心線
 
-❗️**<u>確保要用"Flange"製作金屬薄片，不要用"e" extrude擠出</u>**
+- 繪製一個寬度為 10mm 的長方形
 
-<img src="20210204151605.png" style="zoom:50%;" /> <img src="20210204151406.png" style="zoom:50%;" />
+- 使用中點或對稱約束，確保正方形相對於中心線對稱
+
+	💡*提示: 可以點擊 component 左側的眼睛圖示，隱藏 component 以方便操作*
+
+<img src="image-20230605095618049.png" alt="image-20230605095618049" style="zoom:80%;" />
+
+<img src="20210204151001.png" style="width:45%;" /> <img src="20210204151116.png" style="width:45%;" />
 
 
 
-<img src="20210204151132.png" style="zoom:33%;" /> <img src="20210204151201.png" style="zoom:33%;" />
+- 在 sheet metal 頁面中，點擊 `edit rule"`圖示，在所選材料旁邊會出現一支筆的圖示，點擊進去即可修改屬性，例如厚度、摺疊時預留的延伸長度等等
+- 在 sheet metal 頁面中，點擊 `Flange` 圖示，或使用快捷鍵 `s`搜尋 `Flange`
+- 選擇剛才繪製的方形，製作一個厚度為 2mm 的金屬薄片
+
+❗️**<u>請注意，製作金屬薄片時需要使用 `Flange`指令，請勿使用 `e` extrude 指令</u>**
+
+<img src="20210204151605.png" style="width:45%;" /> <img src="20210204151406.png" style="width:45%;" />
+
+<img src="20210204151132.png" style="width:45%;" /> <img src="20210204151201.png" style="width:45%;" />
 
 
 
-1. 繼續使用"Flange"，按下金屬片的邊緣，會自動出現bending功能，
-2. bending的高度和位置分別可以設定位"inside", "outside"和"center"三種，就是計算高度和摺疊的位置由那裡計起，你可以試試看有甚麼分別
-3. 今次凸出，高16mm(由outer face計起)，位置則由"inside"內側計起
-4. 重復，鋁片的另一邊也是16mm高
+- 使用 `Flange`指令，點擊金屬片的邊緣，即可自動出現 `bending `功能
+	- Bending 的高度和位置(`Bend Position`)可以分別設定為 `inside`、`outside` 和 `center` 三種，決定高度和摺疊位置的計算方式不同，可以嘗試看看有什麼不同
+- 設定凸出高度`Height Datum`為 `16mm`，`Bend Position`為 `inside` 內側計起
+- 重複以上步驟，製作另一側高度也為 `16mm` 的鋁片(如下圖)
 
-<img src="20210204151700.png" style="zoom:33%;" /> <img src="20210204151729.png" style="zoom:33%;" />
+<img src="20210204151700.png" style="width:45%;" /> <img src="20210204151729.png" style="width:45%;" />
 
-1. 繼續確保小黑點在"L support"旁邊
-2. 用"s"搜尋"new sketch", 在凸起的鋁板表面開一個新的sketch
-3. 將其中一個齒輪箱顯示出來
-4. 用"p"投影長軸和鋁板
-5. 在鋁板劃一條中線和一個3mm的圓
-6. 用constraints的第一個icon "horizontal and vertical"，指定3mm圓的高度和長軸同高
+- **保旁`L support`邊有一個小黑點，表示激活狀態**
+- 使用 快捷鍵`s` 搜尋指令 `new sketch`，在凸起的鋁板表面開一個新的草圖(如下圖)
+- 將其中一個齒輪箱顯示出來
+- 使用快捷鍵 `p` 投影長軸的圓
+	- 這一步是為了確保開出來的孔跟長軸同一個高度
+- 在鋁板上劃一條中線和一個直徑為 3mm 的圓形
+- 使用 `constraints `中的第一個圖示 `horizontal and vertical`，確保 3mm 圓形的高度與長軸同高
 
-<img src="20210204151900.png" style="zoom:33%;" /> <img src="20210204151819.png" style="zoom:33%;" />
+<img src="20210204151900.png" style="width:45%;" /> <img src="20210204151819.png" style="width:45%;" />
 
-1. 用"e" extrude，選擇3mm圓，到"extent type"用"to object"，將圓孔穿到鋁板的另一面
-2. 最後用"f" fillet修圓角，半徑隨意，一般2mm或3mm
 
-<img src="20210204151932.png" style="zoom:33%;" /> <img src="20210204151950.png" style="zoom:33%;" />
 
-1. 接著就可以將小黑點褪回最外層
-2. 用"j" 組合，將鋁板組合到底板
+- 使用 快捷鍵`e`使用 `extrude `指令，選擇剛才所劃 3mm 圓形，到 `extent type` 使用 `to object`，將圓孔穿透到鋁板的另一面
+- 最後使用快捷鍵`f` 使用`fillet `指令，修剪圓角，半徑選擇3mm 即可
 
-<img src="20210204152038.png" style="zoom:33%;" />
+<img src="20210204151932.png" style="width:45%;" /> <img src="20210204151950.png" style="width:45%;" />
+
+
+
+- **<u>將小黑點移回最外層</u>**
+- 使用快捷鍵 `j`使用`joint` 指令，將鋁板組合到底板上
+
+<img src="20210204152038.png" style="width:45%;" />
 
 ##STEP 4
 
-1. 繼續確保小黑點在最外層
-2. 用"s"搜尋"derive"衍生插入"tamiya crank"曲柄的step檔或者f3d檔
-3. 插入之後將小黑點active到曲柄的旁邊，將其activate
-4. 在表面用"new sketch"開一個新的sketch
-5. 投影並繪製一條線，如圖
+- **<u>確保小黑點在最外層</u>**
+- 使用快捷鍵 `s` 指令搜尋 `insert derive`，插入 `tamiya crank` 曲柄的 step 檔或 f3d 檔
+- 插入後，將**<u>小黑點移動到曲柄的旁邊，並激活它</u>**
+- 在曲柄表面使用 `new sketch`創建一個新的草圖
+- 投影並繪製一條線，如下圖所示
 
-💡*可善用component旁的小眼睛icon，適當地顯示和隱藏component，方便操作*
+💡*提示: 可以使用 component 旁的小眼睛圖示，適當地顯示和隱藏 component，方便操作*
 
-<img src="20210204152258.png" style="zoom:30%;" /> <img src="20210204152420.png" style="zoom:50%;" />
+<img src="20210204152258.png" style="width:45%;" /> <img src="20210204152420.png" style="width:45%;" />
 
 
-1. 繼續確保小黑點在tamiya crank曲柄的旁邊
-2. 用"e" extrude，將多餘的曲柄剪走，只留下最近的一個孔
-3. 接著就可以將小黑點褪回最外層
-4. 用"j" 組合，將曲柄組合到70093齒輪箱的長軸
 
-<span style='font-size:20px;'>&#10071;</span><i><b>如果用的是f3d fusion360檔案, 由於齒輪箱內部是可以轉旋的, 所以用"rigid"即可</b></i>
+- **<u>確保小黑點在 `tamiya crank`曲柄的旁邊</u>**
+- 使用快捷鍵 `e` `extrude` 指令，將多餘的曲柄部分剪除，只留下最近的一個孔
+- **<u>將小黑點移回最外層</u>**
+- 使用快捷鍵 `j` `joint`指令，將曲柄組合到齒輪箱的長軸上
 
-<span style='font-size:20px;'>&#10071;</span><i><b>如果是用step檔案的話, joint的時候要到"motion"頁面，選用joint的類型為revolving joint</b></i>
+❗<i><b>如果使用的是 f3d Fusion 360 檔案，由於齒輪箱內部可以旋轉，因此可以使用 "rigid" 聯結方式</b></i>
+
+❗<i><b>如果使用的是 step 檔案，聯結時需要到 "motion" 頁面，選擇旋轉聯結的類型為 revolving joint</b></i>
 
 <img src="20210204152500.png" style="zoom:50%;" /> <img src="20210204152553.png" style="zoom:50%;" />
 
 ##STEP 5
 
-1. 確保小黑點在最上層
-2. 用ctrl-c/ctrl-v, 將tamiya crank複製多一個
-3. 用"j"組合到另一邊的齒輪箱長軸
-4. 記得方向要跟另一邊相差180度, 如果左方是向著後，這邊要向著前方
+- **<u>確保小黑點在最上層</u>**
 
-<span style='font-size:20px;'>&#128161;</span><i>*如果零件是完全相同的話，可直接複製/貼上; 如果零件相似但需要有獨立修改，則要用derive衍派功能*</i>
+- 使用 `Ctrl-C`/`Ctrl-V` 指令，將 `tamiya crank`複製一份
 
-<span style='font-size:20px;'>&#128161;</span><i>*同樣, 如果是用step檔的70093齒輪箱, joint的類型應為revolving joint*</i>
+- 使用快捷鍵 `j` `joint`指令，將複製的曲柄組合到另一邊的齒輪箱長軸上
 
-<img src="20210204152703.png" style="zoom:50%;" />
+- 記得方向要與另一邊相差 180 度，如果左邊是向後，這邊則要向前方
+
+	&#128161;<i>*如果零件完全相同，可直接複製/貼上；如果零件相似但需要獨立修改，則需使用衍派(`insert derive`)功能*</i>
+
+	&#128161;<i>*同樣地，如果使用的是 step 檔案的 70093 齒輪箱，joint的類型應為 revolving joint*</i>
+
+<img src="20210204152703.png" style="width:45%;" />
 
 ##STEP 6
 
-1. 確保小黑點在最上層
-2. 搜尋"new component"，開一個新的component叫"legs"，用來裝起左半邊的全部腳和連杆
-3. 確保小黑點在"legs"的旁邊，再開一個新的component叫"leg1"
+- **<u>確保小黑點在最上層</u>**
+- 使用 `new component` 指令，創建一個名為 `legs"`的新組件，用於裝配左半邊的所有腳和連桿
+- **<u>確保小黑點在 `legs` 旁邊</u>**，再次使用 `new component`指令，創建一個名為 `leg1` 的新組件
 
-接下來的所有腳和連杆，請確保必須要在"legs"的下方，否則複製之時，全部的joint組合的關係都會散落，要重新組合
+***❗接下來所有的腳和連桿，都必須確保位於 `legs"`組件的下方，否則在複製時，所有聯結的關係都會散開，需要重新組合***
 
-<img src="20210204152803.png" style="zoom:100%;" /> <img src="20210204152839.png" style="zoom:100%;" />
+<img src="20210204152803.png" style="width:45%;" /> <img src="20210204152839.png" style="width:45%;" />
 
 ##STEP 7
 
-1. Activate剛剛開的"leg1"，確保小黑點在旁
-2. 用"s"尋找"new sketch", 在原點的xz平面開一個新的sketch(可先隱藏全部component)
-3. 跟著下圖的尺寸繪製
-4. 繪製之時，可以用"s"尋找"change parameter", 將連杆的尺寸設為變數，之後只要一改這個變數就會全部更改
+- 確保小黑點在`leg1`旁邊
+- 先隱藏除`leg1`外的**所有**組件
+- 使用快捷鍵`s` ，尋找 `new sketch`指令，在原點的 XZ 平面上創建一個新的草圖
+- 根據下圖所示的尺寸繪製草圖
+- 在繪製時，可以使用快捷鍵 `s` 尋找指令 `change parameter`，將連桿的尺寸設置為變數，之後只需修改該變數即可更新所有相關尺寸
 
-<img src="20210204153033%201.png" style="zoom:40%;" /> <img src="Untitled.png" style="zoom:33%;" />
+<img src="20210204153033%201.png" style="width:45%;" /> <img src="Untitled.png" style="width:45%;" />
 
-<img src="20210204152945.png" style="zoom:33%;" />
+<img src="20210204152945.png" style="width:45%;" />
 
-1. 擠出`thickness`的厚度
-2. 再用"f" fillet角度，半徑隨意，約2mm-3mm
 
-<img src="20210204172005.png" style="zoom: 33%;" /> <img src="20210204172031.png" style="zoom:33%;" />
+
+- 使用快捷鍵`e` `extrude`指令，擠出 "thickness" 的厚度
+- 再使用 快捷鍵`f` `fillet` 指令，添加圓角，半徑約`3mm`
+
+<img src="20210204172005.png" style="width: 45%;" /> <img src="20210204172031.png" style="width:45%;" />
 
 ##STEP 8
 
-1. 接下來，確保小黑點在"legs"的旁邊
-2. 用"s"搜尋"new component"，開一個新的component叫"linkage1"
-3. activage這個"linkage1"，確保小黑點在旁，開一個新的sketch在xz平面上
-4. 繪畫一支連杆，長度用"parameter"來設定一個叫"L3"的變數，都時設定值為72mm
-5. 最後用"e"擠出`thickness`的厚度
+- 接下來，**<u>褪回小黑點在`legs`的旁邊</u>**
+- 使用 快捷鍵`s` 搜尋 `new component`，創建一個名為 `linkage1` 的新組件
+- 先隱藏除`linkage1`外的**所有**組件
+- **<u>確保小黑點在`linkage1`旁邊</u>**，並在 XZ 平面上創建一個新的草圖
+- 繪製一個連桿，使用 `change parameter`指令設置一個名為 `L3` 的變數來定義長度，設置值為 `72mm`
+	- 如果上一步已一次過設定好，這一步可以省卻
+- 最後使用 快捷鍵`e` `extrude`指令擠出 `thickness`"的厚度
 
-<span style='font-size:20px;'>&#128161;</span><i>*可以善用hide/show功能，暫時隱藏其他零件*</i>
+<img src="20210204172124.png" style="width:30%;" /> <img src="20210204172309.png" style="width:60%;" />
 
-<img src="20210204172124.png" style="zoom:80%;" /> <img src="20210204172309.png" style="zoom:33%;" />
-
-<img src="20210204172419.png" style="zoom:33%;" />
+<img src="20210204172419.png" style="width:55%;" />
 
 ##STEP 9
 
-接下來開始複製和組裝左腳:
+接下來開始複製和組裝左腳：
 
-1. 首先將全部零件全部顯示出來方便操作
-2. 用"j"將"linkage1"組裝在鋁片上
-    1. 兩個joint的接口保留距離1mm, 如果是實物裝砌時，可以用1mm鐵墊片將其隔開，確保可以旋轉
-    2. 大約將接口的角度旋轉25度，大約即可，方便後面的操作
-    3. 去到"motion"的頁面，選用joint的類型為revolving joint
-    4. 完成後，會發現這個joint的符號會出現在最上層
-    5. 即使是在activage"legs"(小黑點在legs旁)時操作，這個joint也會在"legs"之外，之後複製"legs"時，並不會跟著複製
+- 首先將所有零件顯示出來，方便操作。
 
-<img src="20210204172904.png" style="zoom:33%;" /> <img src="20210204172546.png" style="zoom:33%;" />
+- 使用快捷鍵`j` `joint` 指令，將 `linkage1` 組件組裝到鋁片上。
+
+	- 兩個 joint 的接口保留 `1mm `的距離，如果是實物裝配時，可以使用 1mm 的鐵墊片將其隔開，確保可以旋轉。
+
+	- 大約將接口的角度旋轉 25 度，方便後續操作。
+
+	- 前往 `motion`頁面，選擇 `revolving joint` 作為聯結的類型。
+
+- 完成後，可以發現這個 joint 的符號會出現在最上層。
+
+	- 即使在啟用 `legs`組件時（小黑點在旁邊），這個 joint 也會在 `legs`之外，因此在複製 `legs`時不會跟著複製。
+
+<img src="20210204172904.png" style="width:45%;" /> <img src="20210204172546.png" style="width:45%;" />
 
 ##STEP 10
 
-1. 接著用joint將"leg1"組合到曲柄上，offset 4mm, 這個offset不是4mm都可以, 因為之後要到"motion"頁面
-2. 到"motion"頁面選擇"cylindrical" joint, 這類型的joint有2個自由度, 一個是旋轉, 另一個是緣著旋轉軸移動，所以上面選的4mm offset只是參考，並沒有限制的
-3. 跟上面的rev7一樣，這個joint即使是在"legs" activate下做, joint也不是在"legs"底下的，因為曲柄並非在"legs"底下
+- 使用快捷鍵`j`  將 `leg1` 組件組裝到曲柄上
+	- 偏移 4mm
+	- 這個偏移量不一定需要是 4mm，因為之後需要在 `motion`頁面進行設置
+- 在 `motion`頁面，選擇 `cylindrical joint`
+	- 這種 joint 有兩個自由度，一個是旋轉，另一個是沿著旋轉軸移動，因此上面選擇的 4mm 偏移量只是參考，沒有實際限制
+- 跟上面的 `revolving joint` 一樣，即使在啟用 `legs` 組件時，這個 joint 也不會在 `legs` 底下，因為曲柄不在 `legs`底下。
 
-<img src="20210204172749.png" style="zoom:33%;" /> <img src="20210204172824.png" style="zoom:33%;" />
+<img src="20210204172749.png" style="width:45%;" /> <img src="20210204172824.png" style="width:45%;" />
 
-<img src="20210204172639.png" style="zoom:33%;" />
+<img src="20210204172639.png" style="width:45%;" />
 
 ##STEP 11
 
-1. 確保小黑點是在component "legs"旁
-2. 將"leg1"用joint組合到"linkage1"上
-    1. joint接觸面距離1mm, 跟之前一樣，如果實際組裝時，可用1mm墊片隔離
-    2. 到"motion"頁面選擇"revo4lving joint"
-3. 完成後確認一下，這個joint是在component "legs"之下，之後複製才會跟著被複製
+- **<u>確保小黑點在 `legs` 組件旁邊</u>**
+- 使用快捷鍵`j` `joint `將 `leg1` 組件組合到 `linkage1`"上
+	1. joint 接觸面距離為 1mm，跟之前一樣，如果在實際組裝時，可以使用 1mm 的墊片隔離
+	2. 在 `motion` 頁面上選擇 `revolving joint`
+- 完成後，確認這個 joint 在 `legs`組件之下，這樣在複製時才會跟著被複製
 
-<span style='font-size:20px;'>&#128161;</span> <i>記著四連杆組合的秘決為: 3個joints 中, 2個revolve joints 1個cylindrical joint, 次序可以隨意, 這樣就不用計算offset的距離和thickness的厚度</i>
+<span style='font-size:20px;'>&#128161;</span> <i>記住四連桿組裝的秘訣是：在三個 joint 中，有 2 個 revolving joint 和 1 個 cylindrical joint，次序可以隨意，這樣就不用計算偏移量和厚度。</i>
 
-<img src="20210204173054.png" style="zoom:33%;" /> <img src="20210204173150.png" style="zoom:55%;" />
+<img src="20210204173054.png" style="width:45%;" /> <img src="20210204173150.png" style="width:45%;" />
 
 ##STEP 12
 
-1. 確保小黑點繼續在"legs"旁邊
-2. 將"leg1"和"linkage1"用ctrl-c/ctrl-v複製一份, 複製成leg1:2和linkage1:2, 如圖
-3. 確保兩隻腳兩條連杆都是在同一個component "legs"之下
+- **<u>確保小黑點繼續在 `legs` 組件旁邊</u>**
+- 使用 `Ctrl+C`/`Ctrl+V `將 `leg1` 和 `linkage1` 複製一份，複製成 `leg1:2` 和 `linkage1:2`，如下圖所示
+- 確保兩隻腳和兩條連桿都在同一個 `legs` 組件之下
 
-<img src="20210204175259.png" style="zoom:33%;" />
+<img src="20210204175259.png" style="width:45%;" />
 
 ##STEP 13
 
 圖1:
 
-1. 確保小黑點在"legs"旁
-2. 用"joint"將"leg1:2"組合到"linkage1"之上，offset 1mm間距
-3. 到"motion"頁面，joint的類型為"revolving" joint
+- **<u>確保小黑點在 `legs` 旁邊</u>**
 
-同樣地, 圖2
+- 使用 joint 將 `leg1:2` 組件組合到 `linkage1` 上，偏移` 1mm`
 
-1. 將"linkage1:2"連接到"leg1:2"上
-2. "motion" type為"revolving" joint
-3. offset 1mm
+- 在 `motion` 頁面上選擇 `revolving joint`
 
-最後，圖3
+同樣地，圖2：
 
-1. 將"linkage1:2"的另一端，接合到"leg1"上
-2. "motion" type為"cylindrical" joint
-3. 今次可以不用offset, 因為用cylindrical joint會自動因應剛才兩個offset而調整間隔
+- 將 `linkage1:2` 組件連接到 `leg1:2` 上
 
-<img src="20210204175357.png" style="zoom:33%;" /> <img src="20210204175516.png" style="zoom:33%;" />
+- 在 `motion` 頁面上選擇 `revolving joint`，偏移 `1mm`
 
-<img src="20210204175643.png" style="zoom:33%;" />
+最後，圖3：
+
+- 將 `linkage1:2`的另一端連接到 `leg1` 上
+
+- 在 `motion`頁面上選擇 `cylindrical joint`
+
+- 這次可以不用偏移，因為使用 `cylindrical joint` 會自動調整間隔，以適應前面兩個偏移量
+
+<img src="20210204175357.png" style="width:45%;" /> <img src="20210204175516.png" style="width:45%;" />
+
+<img src="20210204175643.png" style="width:45%;" />
 
 ##STEP 14
 
-這樣，左腳部分就完成了，
+好的，左腳部分完成了。
 
-1. 試著轉動齒輪箱，看看腳是否跟著動
-2. 試著調整leg和linkage的offset間距，由1mm改為0.5mm(或任意數值), 看看修改完之後會否有error警告彈出, 如果正確跟著步驟, 調整參數應該沒有error的
+- 請試著轉動齒輪箱，看看腳是否跟著動
 
-<img src="testing1.gif" alt="testing1.gif" style="zoom:50%;" />
+- 試著調整 `leg` 和 `linkage `的偏移量，由 `1mm` 改為 `0.5mm`（或任何數值），看看修改後是否會出現錯誤警告
+	- 如果按照步驟進行，調整參數應該不會出現錯誤
+
+<img src="testing1.gif" alt="testing1.gif" style="width:50%;" />
 
 ##STEP 15
 
-1. 把小黑點褪回到最上層
-2. 用ctrl-c/ctrl-v將整個component "legs"(即左腳)複製一份, 複製成legs1:2
-3. 可以在複製的同時移遠一點方便操作
+- **<u>將小黑點移回最上層</u>**
+- 使用 `Ctrl+C`/`Ctrl+V` 將整個 `legs`組件（即左腳）複製一份，複製成 `legs1:2`
+- 可以將複製的組件移開一點，以方便操作
 
-❗**fusion360的鏡像功能是不能複製joint的關係的，所以如果要強求完全左右對稱, 則要全部重新joint一次**
+❗ **Fusion 360 的鏡像功能無法複製 joint，因此如果要完全左右對稱，則需要重新建立所有的 joint**
 
-<img src="20210204180800.png" style="zoom:33%;" />
+<img src="20210204180800.png" style="width:50%;" />
 
 ##STEP 16
 
-1. 將最近右邊tamiya crank的linkage1:1用"j" joint到曲柄的孔上
-2. "motion" type為"revolving" joint
-3. offset 1mm
+- 使用 快捷鍵`j` 將最靠近右側 Tamiya 曲柄的 `linkage1:1` 組件組合到曲柄孔上
+- 在 `motion`頁面上選擇 `revolving joint`
+- 偏移 `1mm`
 
-<img src="20210204180840.png" style="zoom:33%;" /><img src="20210204180951.png" style="zoom:33%;" />
+<img src="20210204180840.png" style="width:45%;" /><img src="20210204180951.png" style="width:45%;" />
 
 ##STEP 17
 
-1. 最後將右邊的leg1:1, 和餘下的鋁支架L support的孔組合
-2. "motion" type為"cylindrical" joint
-3. 今次可以不用offset, 因為用cylindrical joint會自動因應剛才兩個offset而調整間隔
+- 最後將右側的 `leg1:1`和剩下的鋁支架 `L support` 的孔組合
+- 在 `motion`"頁面上選擇 `cylindrical joint`
+- 這次可以不用偏移，因為使用 `cylindrical joint `會自動調整間隔，以適應前面兩個偏移量。
 
-<img src="20210204181140.png" style="zoom:33%;" />
+<img src="20210204181140.png" style="width:45%;" />
 
 ##完成
 
 完成之後，
 
-1. 模擬一下，試著轉動右邊的腳，看看是否可以模擬真實機械連杆轉動
-2. 試修改一下間隔offset的數值，看看有否出現error
-3. pdf文件裏面有包含phase1和phase2的尺寸, 試著用"change parameter"去修改一下參數尺寸, 看看整個設計是否立即修改
+- 請模擬一下，試著轉動右側的腳，看看是否可以模擬真實機械連桿轉動。
+
+- 試著修改一下偏移量的數值，看看是否會出現錯誤。
+
+- PDF 文件包含 Phase 1 和 Phase 2 的尺寸，請使用 `Change Parameter` 更改一下參數尺寸，看看整個設計是否會立即修改
+

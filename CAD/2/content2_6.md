@@ -2,21 +2,20 @@
 
 本節是介紹如何去組裝一隻相撲機械人。做好後效果如下:
 
-<img src="Screenshot 2022-03-14 174220.png" alt="Screenshot 2022-03-14 174220" style="zoom:80%;" />
+![image-20230612111644775](image-20230612111644775.png)
 
 [TOC]
 
 ## Step 1: 準備工作/檔案
 
-本次會應用到的檔案(以下為step檔)，下載**解壓**後，在fusion左邊欄尋找"upload"鍵，就能上載到fusion中應用
+- 下載本次所用到的零件zip檔
+- ***解壓縮***
+- 於Fusion左邊欄點擊`upload`鍵
+- 將解壓後的檔案拖動到`Drag and Drop Here`，或按`Select Files`找到路徑上傳
 
-[SumoComponent.zip](SumoComponent.zip)
-
-首先，一般在"下載(Download)"就能找到剛下載回來的檔案，檔案為壓縮檔，按滑鼠右鍵解壓
+<div style="font-size: 16px; text-align: CENTER; background: #FFFF00"><a href="SumoComponent.zip">SumoComponent.zip</a></div>
 
 <img src="image-20230417102737030.png" alt="image-20230417102737030" style="zoom:80%;" />
-
-將解壓後的檔案拖動到"Drag and Drop Here"，或按"Select Files"找到路徑上傳。
 
 <img src="image-20230417103121527.png" alt="image-20230417103121527" style="width:45%;" /><img src="image-20230417103138530.png" alt="image-20230417103138530" style="width:45%;" />
 
@@ -26,133 +25,228 @@
 
 <img src="Screenshot 2022-03-14 142246.png" alt="Screenshot 2022-03-14 142246" style="width:45%;" /> <img src="Screenshot 2022-03-14 142311.png" alt="Screenshot 2022-03-14 142311" style="width:45%;" />
 
-1. 開始一個新的設計
-2. 開一個new component
-2. 名字叫`bottom`
+- 開始一個新的設計
+- 開一個new component
+- 名字叫`bottom`
 
 
 
 <img src="Screenshot 2022-03-14 142341-16472534115661.png" alt="Screenshot 2022-03-14 142341" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 142411-16472534165382.png" alt="Screenshot 2022-03-14 142411" style="width:45%;" />
 
-1. 確保小黑點在bottom這個component旁邊
-2. 開一個`new sketch`
+- 確保小黑點在bottom這個component旁邊
+- 開一個`new sketch`
+- 下圖是我們底板的圖則
+	- 我會一步一步教你繪畫，熟練後就要靠自己了
 
-![](image-20230417114339124.png)
-
-1. 底盤尺寸可參考上面的圖
-2. <u>*尺寸不用完全一樣一模, 尤其是機械人的長和寬, 畫好後之後可以修改的*</u>
-
-<img src="Screenshot 2022-03-14 143148.png" alt="Screenshot 2022-03-14 143148" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 143228.png" alt="Screenshot 2022-03-14 143228" style="WIDTH:45%;" />
-
-1. 搜尋`change parameters`
-2. 開一個新的變數叫`thickness`, 值為`3mm`
+<img src="image-20230606110748944.png" alt="image-20230606110748944" style="zoom:67%;" />
 
 
 
-<img src="image-20230417104400594.png" alt="image-20230417104400594" style="width:45%;" /><img src="image-20230417104433997.png" alt="image-20230417104433997" style="width:45%;" />
+- 先用快捷鍵`r`，隨意繪劃一個長方形
+- 用快捷鍵`l`，繪劃一條垂直中線
+- 在工具列上方找到`Coincident`![coincident icon](constraint-coincident.png)重合限制
+	- 將中線釘在原點上
 
-1. 將底板擠出`thickness`的厚度
-2. 習慣地將擠出好的板做fillet, 實物切割出來時才不會割手
+<img src="image-20230606101746797.png" alt="image-20230606101746797" style="width:45%;" /><img src="image-20230606101837636.png" alt="image-20230606101837636" style="width:45%;" />
 
 
+
+- 使用快捷鍵`s`搜尋`change parameters`
+
+- 在右上方找到`User Parameter`鍵
+
+- 在`Add User Parameter`介面中，填寫以下資訊：
+
+	- `Name`: 變數名字，只能為英文字母，不能有空格
+	- `Unit`: 單位，例如`mm`、`cm`等，若無單位可忽略此欄位
+	- `Expression`: 設定的值，例如`10`、`15`等，也可以使用公式，例如`10*2.54`表示10英吋轉換成公分
+	- `Comment`: 注解，可以忽略
+
+- 根據圖4的內容，開設`thickness`、`carLength`、`carWidth`、`gearBoxLength`、`gearBoxWidth`、`ballCastorLength`6個參數
+
+<img src="Screenshot 2022-03-14 143148.png" alt="Screenshot 2022-03-14 143148" style="WIDTH:45%;" /><img src="image-20230606102804131.png" alt="image-20230606102804131" style="width:45%;" />
+
+<img src="Screenshot 2022-03-14 143228.png" alt="Screenshot 2022-03-14 143228" style="WIDTH:45%;" /><img src="image-20230606103019568.png" alt="image-20230606103019568" style="width:45%;" />
+
+
+
+- 圖一：
+	- 將長方形的長和寬分別設為`carLength`和`carWidth`
+	- 長方形的底到原點距離返為`gearBoxLength`
+	- 確保所有草稿線都是黑色，表示完全定義
+- 圖二：
+	- 由原點劃一條水平作圖線到長方形邊(用快捷鍵`x`可以將實線變成作圖線)
+	- 在作圖線隨意位置劃一個`center rectangle`和兩個圓
+- 圖三：
+	- 在剛才的`center rectangle`，劃一條垂直中線
+	- 用上方工具列的限制工具，選用`equal` ![equal icon](constraint-equal.png)將兩個圓設成相等，用`Symmetry`![symmetry icon](constraint-symmetry.png)設定與中線對稱
+	- 標記相圖3的尺寸，最左手邊標記成`gearBoxWidth`，方便之後調試參數
+- 圖四:
+	- 用快捷鍵`s`搜尋`mirror`，對圖3所劃內容鏡像到右手邊
+
+<img src="image-20230606103859258.png" alt="image-20230606103859258" style="width:45%;" /><img src="image-20230606102015921.png" alt="image-20230606102015921" style="width:45%;" />
+
+<img src="image-20230606104218744.png" alt="image-20230606104218744" style="width:45%;" /><img src="image-20230606102217970.png" alt="image-20230606102217970" style="width:45%;" />
+
+
+
+- 在圖的上方，緣中線繪劃以下圖形
+- 記得善用限制工具`equal` ![equal icon](constraint-equal.png)和`Symmetry`![symmetry icon](constraint-symmetry.png)
+
+<img src="image-20230606110706663.png" alt="image-20230606110706663" style="zoom:67%;" />
+
+
+
+- 完後後褪出2D草圖
+- 用快捷鍵`e`擠出`thickness`的厚度
+- 用快捷鍵`f`將四個角修成3mm半徑的圓角，這樣實物切割出來時才不會割手
+
+<img src="image-20230606110845455.png" alt="image-20230606110845455" style="width:45%;" /><img src="image-20230606110929998.png" alt="image-20230606110929998" style="width:45%;" />
+
+
+
+最後，在零件樹按滑鼠右鍵，選擇`Ground`，設定底板為Ground後，拖動底板就不會動，所有的joint都以底板為基礎
 
 <img src="Screenshot 2022-03-14 143856.png" alt="Screenshot 2022-03-14 143856" style="zoom:60%;" />
 
-最後，在零件樹按滑鼠右鍵，按下`Ground`，`Ground`後拖動底板就不會動，所有的joint都以底板為準。
+### 插入底盤零件
+
+- **<u>將小黑點退回最上層</u>**
+- 在左手邊找到預備步驟時所上傳的零件
+- 將零件之一的「牛眼輪」拖入當前的圖則畫面中
+- 用快捷鍵`j`，組合「牛眼輪」和底盤
+
+
+<div style="text-align: CENTER"><img src="Screenshot 2022-03-14 143522-16472540795493.png" alt="Screenshot 2022-03-14 143522" style="width:33%;" /><img src="image-20230606105710270.png" alt="image-20230606105710270" style="width:33%;" />
+</div>
+<img src="image-20230606105803816.png" alt="image-20230606105803816" style="width: 45%;" /><img src="image-20230606111054277.png" alt="image-20230606111054277" style="width:45%;" />
 
 
 
-###插入底盤零件
+- 拖曳零件中的`70093L`至當前畫面
+- 點選左邊的零件樹中的`70093L`並按下滑鼠右鍵
+- 選擇`剛體群組(Rigid Group)`，這樣在拖曳齒輪箱時就不會整個散開
+- 最後用快捷鍵`j`將齒輪箱和底板連接
 
-<img src="Screenshot 2022-03-14 143522-16472540795493.png" alt="Screenshot 2022-03-14 143522" style="width:45%;" /><img src="image-20230417104551719.png" alt="image-20230417104551719" style="width:45%;" />
+<img src="image-20230606111259719.png" alt="image-20230606111259719" style="width:45%;" /><img src="image-20230606111328707.png" alt="image-20230606111328707" style="width:50%;" />
 
-<img src="image-20230417104708846.png" alt="image-20230417104708846" style="zoom:80%;" />
-
-
-1. ==將小黑點褪回第一層==
-2. 將`Components_model_Ball_caster_DFRobot` 拖入當前檔案中
-3. 按`ok`
-4. 用hotkey `J`，將牛眼輪連接到底板
-
-<img src="image-20230417105001761.png" alt="image-20230417105001761" style="zoom:70%;" />
+<img src="image-20230606111406545.png" alt="image-20230606111406545" style="width:45%;" />
 
 
 
+- 同樣地，將`70093R`和`tamiya 56mm sport tire`拖動到當前畫面中
+- 用零件樹對著剛拖放入來的組件按滑鼠右鍵
+- 用`Rigid Group`將零件剛性組合
+- 最後用快捷鍵`j`將它們組合到底板上
+	- `tamiya 56mm sport tire`組合時，要對著齒輪箱六角軸的中心，再偏移`15mm`
+	- 在進行`joint`時，去到`motion`頁面，選擇類型為` revolving joint`
 
+<img src="image-20230606111457653.png" alt="image-20230606111457653" style="width:50%;" />
 
-<img src="image-20230417105136837.png" alt="image-20230417105136837" style="width:45%;" /><img src="Screenshot 2022-03-14 144205.png" alt="Screenshot 2022-03-14 144205" style="width:45%;" />
-
-1. 其他零件都一樣:
-   1. 先拖到當前畫面，接`ok`;
-   2. 再做`Rigid Group`
-   3. 最後用hotkey `J` 組裝到相對的位置
-2. ***<u>在組裝56mm Sport Tires時，可以將連軸器插入六角軸15mm</u>***
+<img src="Screenshot 2022-03-14 144205.png" alt="Screenshot 2022-03-14 144205" style="width:45%;" /><img src="image-20230606111542122.png" alt="image-20230606111542122" style="width:45%;" />
 
 
 ## Step 3: 繪製和組裝小車第二層板
 
-###繪畫小車底板
+### 繪畫小車頂板
 
-<img src="Screenshot 2022-03-14 144408.png" alt="Screenshot 2022-03-14 144408" style="width:80%;" />
+- **<u>將小黑點退回最外層</u>**
+- 開一個新組件，用快捷鍵`s`搜尋`new component`或按下上方工具列的圖示
+- 命名為`top`
 
-1. ==將小黑點褪回第一層==
-2. 開一個new component
-3. 名字叫`top`
-
-
-
-<img src="image-20230417105353761.png" alt="image-20230417105353761" style="width:45%;" /><img src="image-20230417105441502.png" alt="image-20230417105441502" style="zoom:45%;" />
-
-1. ==確保小黑點在新的`top` component旁==
-2. 按下`offset plane`
-3. 在小車的底板表面，offset `40mm`(工場的六角柱只有20mm和8mm兩種，如果是這兩個數字以外，可以組合起來，或直接轉用3d打印墊高)
+<img src="image-20230606111715644.png" alt="image-20230606111715644" style="width:50%;" />
 
 
 
-<img src="Screenshot 2022-03-14 144517.png" alt="Screenshot 2022-03-14 144517" style="width:45%;" /><img src="Screenshot 2022-03-14 144547.png" alt="Screenshot 2022-03-14 144547" style="width:45%;" />
+- **<u>將小黑點放到新的 `top` 元件旁邊</u>**
+- 點擊 `offset plane` 按鈕
+	- 或用快捷鍵`s`搜尋`offset plane`
+- 在小車的底板表面上，定一個偏移 `40mm` 的平面
+	- 工場只提供 `20mm` 和 `8mm` 兩種六角柱子，如果需要其他高度，可以組合使用或使用 3D 列印墊高
 
-1. 在新開的offset plane上按下`new sketch`
-2. 用hotkey `p`或直接搜尋`project`，投影底板到這個面上
-
-
-
-<img src="Screenshot 2022-03-14 144839.png" alt="Screenshot 2022-03-14 144839" style="width:45%;" /><img src="Screenshot 2022-03-14 144920.png" alt="Screenshot 2022-03-14 144920" style="width:45%;" /><img src="Screenshot 2022-03-14 145010.png" alt="Screenshot 2022-03-14 145010" style="zoom:45%;" />
-
-1. 跟據上圖先繪畫頂板的安裝孔和頂板的輪廓(尺寸之後可以按需要修改)
-2. 擠出`thickness`的厚度
-3. 順手將擠出後的尖角做fillet
-
-###插入Arduino UNO
-
-<img src="Screenshot 2022-03-14 145403.png" alt="Screenshot 2022-03-14 145403" style="zoom:45%;" />
-
-1. 繼續確保小黑點在top的component旁
-2. 在top的上面的面，開一個`new sketch`
+<img src="image-20230606111904068.png" alt="image-20230606111904068" style="width:45%;" /><img src="image-20230606112000008.png" alt="image-20230606112000008" style="width:45%;" />
 
 
 
-<img src="Screenshot 2022-03-14 145653.png" alt="Screenshot 2022-03-14 145653" style="width:45%;" /><img src="Screenshot 2022-03-14 145849.png" alt="Screenshot 2022-03-14 145849" style="WIDTH:45%;" /><img src="Screenshot 2022-03-14 145923.png" alt="Screenshot 2022-03-14 145923" style="width:45%;" />
+- 在新的 `offset plane` 上點擊 `new sketch`。
+- 使用快捷鍵 `p` 或者搜尋 `project`，將底板投影到這個面上
 
-1. 接下來，要將Arduino安裝在頂板上，所以要跟據Arduino UNO來開孔
-2. Arduino UNO的第四個孔因太近零件，所以不安裝也沒有關係
-3. 之後就可以將3個圓穿孔
-
-
-
-<img src="Screenshot 2022-03-14 145957.png" alt="Screenshot 2022-03-14 145957" style="width:45%;" /><img src="Screenshot 2022-03-14 150031.png" alt="Screenshot 2022-03-14 150031" style="width:45%;" />
-
-1. 打開零件樹，找到`top`的`Sketch1`
-2. 將四旁邊的頂板安裝孔profile選取並一路穿孔到底板
+<img src="image-20230606112102805.png" alt="image-20230606112102805" style="width:45%;" /><img src="image-20230606112303689.png" alt="image-20230606112303689" style="width:45%;" />
 
 
 
-<img src="Screenshot 2022-03-14 150119.png" alt="Screenshot 2022-03-14 150119" style="width:45%;" /><img src="Screenshot 2022-03-14 150148.png" alt="Screenshot 2022-03-14 150148" style="width:45%;" /><img src="Screenshot 2022-03-14 150247.png" alt="Screenshot 2022-03-14 150247" style="width:45%;" />
+- 圖一：
+	- 在左側零件樹中，點擊眼睛圖示，隱藏除了 `top` 以外的其他零件
+	- 畫一條水平線，然後使用快捷鍵 `d`，將水平線與底線的距離設置為 `60mm`
+- 圖二：
+	- 選擇安裝齒輪箱的 4 個圖形和 2 個方形
+	- 使用快捷鍵 `x` 將它們變成作圖線
+	- 畫一個任意形狀的長方形
+- 圖三：
+	- 將剛才畫的長方形使用快捷鍵 `x` 變成作圖線
+	- 用快捷鍵 `d` 標示尺寸，每個邊距離外框 `5mm`
+	- 在四個角上畫上 `3mm` 的圓
+		- 使用限制工具 `equal`![equal icon](constraint-equal.png)（等長)的工具，只需要標示一個圓，其他使用 `equal` ![equal icon](constraint-equal.png)工具指定相等就可以
+- 圖四：
+	- 使用快捷鍵 `e` 將其擠出到設置的 `thickness` 厚度
+- 圖五：
+	- 使用快捷鍵 `f` 將頂板剩餘的兩個尖角修成 `3mm` 半徑的圓
 
-1. 將Arduino UNO拖入當前檔案中
-2. 在零件樹找到它，按滑鼠右鍵，點選`Rigid Group`，將整個UNO板變成一個group
-3. 將UNO用hotkey `J` 組合到頂板上，==記得要保持3mm間距，實際用螺絲安裝時請記得加墊圈，否則電線腳會壓斷==
+<img src="image-20230606112450050.png" alt="image-20230606112450050" style="width:45%;" /><img src="image-20230606112545691.png" alt="image-20230606112545691" style="width:45%;" />
+
+<img src="image-20230606112723830.png" alt="image-20230606112723830" style="width:45%;" /><img src="image-20230606112812734.png" alt="image-20230606112812734" style="width:45%;" />
+
+<img src="image-20230606113047174.png" alt="image-20230606113047174" style="width:45%;" />
+
+### 插入Arduino UNO
+
+- 確認小黑點仍在 `top` 的元件旁邊。
+- 在 `top` 上面的平面上，開啟一個新的草圖
+- 用快捷鍵`s`搜尋`change parameter`，設定兩個新的參數，分別為`unoX`和`unoY`，用來設定Arduino UNO板的相對位置
+
+<img src="Screenshot 2022-03-14 145403.png" alt="Screenshot 2022-03-14 145403" style="zoom:45%;" /><img src="image-20230606114115703.png" alt="image-20230606114115703" style="width:45%;" />
+
+
+
+- 圖一為Arduino UNO板孔距的尺寸
+	- 由於頂板上的零件距離 Arduino UNO 的第四個孔太近，因此不需要開孔
+	- UNO的設計單位是英吋，所以轉成毫米並非整數
+- 圖二：根據圖一中 Arduino UNO 板的尺寸，在頂板上畫上三個直徑為 `3mm` 的圓
+	- 使用限制工具 `equal`![equal icon](constraint-equal.png)（等長)的工具，只需要標示一個圓，其他使用 `equal` ![equal icon](constraint-equal.png)工具指定相等就可以
+	- 輸入`unoX`和`unoY`參數，設定Arduino UNO板距離頂板的左側和底側尺寸
+- 圖三：使用快捷鍵 `e`，將剛才畫的三個圓從頂板上減去
+
+<img src="Screenshot 2022-03-14 145653.png" alt="Screenshot 2022-03-14 145653" style="width:35%;" /><img src="image-20230606114208144.png" alt="image-20230606114208144" style="width:45%;" />
+
+<img src="Screenshot 2022-03-14 145923.png" alt="Screenshot 2022-03-14 145923" style="width:45%;" />
+
+
+
+- 在零件樹中找到 `top` 零件，點擊三角形圖示打開零件樹，將隱藏了的 `sketch4` 顯示
+- 選擇草圖上的四個直徑為 `3mm` 的圓，使用快捷鍵 `e`，將它們貫穿到底板上，為底板開四個孔
+
+<img src="image-20230606114442833.png" alt="image-20230606114442833" style="zoom: 50%;" />
+
+
+
+- 將 `Arduino UNO` 板從庫存中拖入當前畫面
+- 在零件樹中找到 `Arduino UNO` 零件，按下滑鼠右鍵，並選擇 `Rigid Group`
+- 使用快捷鍵 `j` 將 `Arduino UNO` 板固定在頂板上，並將其偏移 `20mm`
+
+<img src="Screenshot 2022-03-14 150119.png" alt="Screenshot 2022-03-14 150119" style="width:55%;" /><img src="Screenshot 2022-03-14 150148.png" alt="Screenshot 2022-03-14 150148" style="width:35%;" />
+
+<img src="image-20230607132946406.png" alt="image-20230607132946406" style="width:45%;" />
 
 ### 按入六角柱
+
+- 圖一：
+	- **<u>將小黑點移動到最上層</u>**
+	- 使用快捷鍵 `s` 搜索 `new component`，開啟一個名為 `double hex` 的新元件
+- 圖二：
+	- **<u>確保小黑點在剛才新開的 `double hex` 元件旁</u>**
+	- 庫存中拖入 `hex spacer M3x20`，並使用 `ctrl+c`/`ctrl+v` 複製一份
+- 圖三：
+	- 使用快捷鍵 `j` 將兩個六角柱組合在一起
 
 <img src="Screenshot 2022-03-14 150401.png" alt="Screenshot 2022-03-14 150401" style="WIDTH:55%;" /><img src="Screenshot 2022-03-14 150504.png" alt="Screenshot 2022-03-14 150504" style="WIDTH:35%;" />
 
@@ -160,96 +254,135 @@
 
 
 
-1. ==將小黑點褪回最上層==
-2. 開一個新的component叫`double hex`
-3. 確保小黑點在新開的component中
-4. 將六角柱hex spacer M3x20拖入當前文件中(可以連續拖兩次或拖完一次後複製貼上)
-5. 最後就可以用hotkey `J` 將兩個六角柱接上
-
-
+- `joint `設定完成後，將**<u>小黑點移回最上層</u>**
+- 複製 `double hex` 元件三份
+- 使用快捷鍵 `J`，將這四個元件組合到小車底盤上
 
 <img src="Screenshot 2022-03-14 150654.png" alt="Screenshot 2022-03-14 150654" style="WIDTH:35%;" /><img src="image-20230417111522425.png" alt="image-20230417111522425" style="width:55%;" />
 
-1. ==joint好後，將小黑點褪回最上層==
-2. 將component `double hex`複製貼上四份
-3. 之後就可以用hotkey `J` 組合到小車底盤上
 
 
+- 圖一：
 
-<img src="image-20230417111706329.png" alt="image-20230417111706329" style="zoom:80%;" />
+	- **<u>確保小黑點在最上層</u>**
+	- 打開其中一個 `double hex` 元件，選擇其中一個 `hex spacer M3X20`
 
-1. 最後，將頂板同樣用hotkey `J` 組合到其中一支六角柱上
-2. 拖動一下現全的模型的零件，全部不能拖動就是正常了。
+- 圖二：使用`ctrl+c`/`ctrl+v`複製三份
+
+- 圖三：使用快捷鍵 `j`，將這三個六角柱組裝到 Arduino UNO 板上
+
+	<img src="image-20230607133230591.png" alt="image-20230607133230591" style="width:30%;" /><img src="image-20230607133156532.png" alt="image-20230607133156532" style="width:30%;" /><img src="image-20230607133644765.png" alt="image-20230607133644765" style="width: 38%;" />
+
+**組裝完成後，請確認所有零件已經固定，不會移動，可輕輕拖動零件確認**
 
 ## Step 4: 安裝sensor、電池
 
-###為底盤開孔
+### 為底盤開孔
 
-<img src="image-20230417112724991.png" alt="image-20230417112724991" style="width:33%;" /><img src="Screenshot 2022-03-14 151404.png" alt="Screenshot 2022-03-14 151404" style="width:33%;" />
+- 接下來，我們會為小車安裝電池組和邊緣傳感器
+- 使用快捷鍵`s`搜尋`change parameter`，新增三個參數`sensorX`、`sensorY`和`batteryY`，分別用來指定邊緣傳感器和電池組的位置
 
-上面為需要安裝在底盤的電池盒和對地下的跌落感測，接下來我們要為底盤加孔來放置sensor和電池。
+<div style="text-align: CENTER"><img src="image-20230607134343084.png" alt="image-20230607134343084" style="width:33%;" /><img src="Screenshot 2022-03-14 151404.png" alt="Screenshot 2022-03-14 151404" style="width:30%;" /></div>
 
-
-
-<img src="image-20230417112156133.png" alt="image-20230417112156133" style="width:45%;" /><img src="Screenshot 2022-03-14 151830.png" alt="Screenshot 2022-03-14 151830" style="width:35%;" />
-
-1. ==先將小黑點放到component `bottom `的旁邊==
-2. 在小車底盤的表面開一個new sketch
-3. 首先繪製對地面的跌落感測安裝孔
-4. sensor會放在車的底部，所以只要開安裝孔就可以，但要另外加一個孔來穿電線，所以才會有另一個8x8mm的方形
-5. ==上面10和18的尺寸是隨便定的，之後你需要修改，見最後一章==
+<img src="image-20230607134746583.png" alt="image-20230607134746583" style="width:50%;" />
 
 
 
-<img src="image-20230417112907136.png" alt="image-20230417112907136" style="width:40%;" /><img src="image-20230417113031357.png" alt="image-20230417113031357" style="width:55%;" />
+- 圖一：
 
-1. 之後就可以劃中心線，將sensor安裝孔鏡像到右邊，另外再劃上電池安裝的電池架
-2. 之後點選剛劃的圓和方，為底盤開孔
+	- **<u>將小黑點放到``bottom` 旁邊</u>**
+
+	- 在小車底盤表面開啟一個新的草圖
+	- 對`bottom`外的組件隱藏
+
+- 圖二：
+	- 繪製對地面的邊緣感測器安裝孔
+	- 需要額外加一個槽來穿電線，因此劃一個`8x8mm`的方形
+	- 安裝孔距離底板頂部和底板邊緣分別為參數`sensorX`和`sensorY`
+- 圖三：
+	- 在底板繪製一條中線
+	- 將剛才第二步所繪製的圖形鏡像到另一邊
+
+<img src="image-20230417112156133.png" alt="image-20230417112156133" style="width:45%;" /><img src="image-20230607134932021.png" alt="image-20230607134932021" style="width:28%;" />
+
+
+
+<img src="image-20230607135138592.png" alt="image-20230607135138592" style="width:45%;" />
+
+
+
+- 在中線上，使用快捷鍵`s`搜尋指令`center rectangle`劃一個長方形
+- 在隨意位置劃一條水平線，使用幾何限制`Midpoint`![midpoint icon](constraint-midpoint.png)指定水平線到長方形的中心點
+- 在水平線兩端劃兩個直徑為`3mm`的圓
+	- 使用幾何限制 `equal`![equal icon](constraint-equal.png)（等長)工具，只需要標示一個圓即可
+- 將長方形的底部和底板的底邊距離標注為參數`batteryY`
+- 最後將剛才所劃的圖形，使用快捷鍵`e`從底板中減去
+
+<img src="image-20230607140634450.png" alt="image-20230607140634450" style="width:45%;" /><img src="image-20230607140731737.png" alt="image-20230607140731737" style="width:45%;" />
 
 
 
 ### 插入和安裝底盤sensor和電池架
 
-<img src="image-20230417113208098.png" alt="image-20230417113208098" style="width:70%;" />
+- 圖一：
+	- 在零件庫中拖曳兩個邊緣感測器`Line Sensor`和電池組`Battery Shell`
+	- 記得拖曳後，在零件樹中，對這三個組件分別按滑鼠右鍵，選擇`Rigid Group`，這樣一旦移動或連接，就不會散開
+- 圖二：
+	- 使用快捷鍵 `J`，將邊緣感測器組合到底盤上
+		- 注意感測器45度倒角的方向應該安裝向著小車的前方
+		- 將感測器向下偏移`3mm`。實際安裝時，需要使用3mm的墊圈將感測器抬高，以避免壓彎電線腳。
+- 圖三：
+	- 安裝好兩個邊緣感測器後，可以安裝電池架
+	- 全部組合完成後，可以在左邊的零件樹按下「眼睛」圖示，將全部零件顯示
+	- 圖三是安裝好的效果
 
-1. 將兩個Line Sensor(拖兩次或者拖完一次後複製貼上)和電池架Battery holder拖到當前畫面
-2. 記得拖動後，在零件樹中，為這三個Components按滑鼠右鍵，==各自做`Rigid Group`==，否則一移動或joint後，line sensor就會散開
+<img src="image-20230608082854964.png" alt="image-20230608082854964" style="width:45%;" /><img src="image-20230608083303465.png" alt="image-20230608083303465" style="width:45%;" />
+
+<img src="image-20230608083537152.png" alt="image-20230608083537152" style="width:45%;" />
 
 
-
-<img src="image-20230417113343336.png" alt="image-20230417113343336" style="width:45%;" /><img src="image-20230417113532053.png" alt="image-20230417113532053" style="width:45%;" />
-
-1. 將line sensor用hotkey `J `組合到盤底，sensor PCB有45度角的為小車前方，==記得將sensor向下offset 3mm，實際安裝時也要用3mm墊圈將sensor墊高，否則一上緊螺絲，電線腳就會壓彎==
-2. 安裝好兩邊跌落sensor後就可以安裝電池架
 
 ### 為頂板開孔和安裝sensor
 
-<img src="Screenshot 2022-03-14 154808.png" alt="Screenshot 2022-03-14 154808" style="width:35%;" />
+- 接下來，安裝尋找敵人的紅外線傳感器
+- 用快捷鍵`s`搜尋`change parameter`，新增兩個參數`IRSensorX`和`IRSensorY`，用來指定紅外線傳感器的位置
 
-1. 頂板要安裝的sensor為上方的sensor，由於頂板上層已安裝Arduino UNO，所以sensor要安裝在頂板的下方
-
-
-
-<img src="image-20230417113646040.png" alt="image-20230417113646040" style="width:45%;" /><img src="image-20230417113901906.png" alt="image-20230417113901906" style="width:50%;" />
-
-1. 將小黑點按到component `top`的旁邊
-2. 在頂板的底面開一個new sketch
-3. 按照右圖的尺寸繪畫3個孔，之後穿孔，==尺寸是暫定的，到最後全機組合好後會按需要修改==
+<div style="text-align: CENTER"><img src="Screenshot 2022-03-14 154808.png" alt="Screenshot 2022-03-14 154808" style="width:30%;" /><img src="image-20230608095813295.png" alt="image-20230608095813295" style="width:50%;" /></div>
 
 
 
-<img src="Screenshot 2022-03-14 155922.png" alt="Screenshot 2022-03-14 155922" style="width:45%;" /><img src="Screenshot 2022-03-14 160003.png" alt="Screenshot 2022-03-14 160003" style="width:45%;" />
+- 圖一：
+	- **<u>小黑點移動到零件`top` 旁邊</u>**
+	- 在頂板的表面，使用 `create new sketch` 創建一個新的草圖
+	- 隱藏頂板上的 Arduino UNO 板和三條六角柱，以方便操作
 
-1. 穿孔後，==將小黑點褪回最上層==
-2. 將`IR Sensor(FC51)`拖到當前文件，可以拖三次或複製貼上，需要三隻sensor
+- 圖二：
+	- 在頂板上劃一條中線，使用快捷鍵 `x` 將其轉換成作圖線
+	- 隨意繪製一個直徑為 `3mm` 的圓
+	- 將其與頂板左側和底部的距離分別設置為 `IRSensorX` 和 `IRSensorY`
+	- 使用指令 `mirror` 鏡像到另一側
+	- 在中線上繪製一個圓，使用幾何限制 `Horizontal/Vertical` ![horizontal/vertical icon](constraint-horiz-vert.png)將其與另外兩個圓對齊，使用 `Equal` ![horizontal/vertical icon](constraint-horiz-vert.png)指令使三個圓的尺寸相同
+	- 最後將這三個圓用快捷鍵`e`從頂板中減去
+
+
+<img src="image-20230608095453257.png" alt="image-20230608095453257" style="width:45%;" /><img src="image-20230608100112602.png" alt="image-20230608100112602" style="width:45%;" />
 
 
 
-<img src="image-20230417114121027.png" alt="image-20230417114121027" style="zoom:60%;" />
+- 圖一、二：
+	- **<u>將小黑點移動到最上層</u>**
+	- 隱藏頂板 `top` 以外的零件，以方便操作
+	- 從零件庫中拖曳三個 `IR Sensor (FC51)` 到畫面中
+- 圖三：
+	- 使用快捷鍵 `J`，將三個  `IR Sensor (FC51)`  感測器組合到頂板
+	- 左右兩側的感測器應該向左右45度指向
+	- *記得將感測器向上偏移`3mm`，實際安裝時，需要使用3mm的墊圈將感測器抬高，以避免壓彎電線腳*
 
-1. 將3隻FC51 sensor用hotkey `J` 組合到頂板的底層
-2. sensor左右兩隻不是向正前方，左f邊sensor指向右邊45度，右邊sensor指向左邊45度
-3. ==sensor記得要offset 3mm距離==，實際安裝時也要加3mm墊圈，否則電線腳會被壓彎
+<img src="image-20230608100830730.png" alt="image-20230608100830730" style="width:45%;" /><img src="Screenshot 2022-03-14 160003.png" alt="Screenshot 2022-03-14 160003" style="width:45%;" />
+
+<img src="image-20230608101146942.png" alt="image-20230608101146942" style="width:45%;" />
+
+
 
 ## Step 5: 製作前擋板和鏟
 
@@ -257,212 +390,219 @@
 
 ###製作3D打印支架
 
+- **<u>將小黑點移動到最上層</u>**
+- 使用快捷鍵`s`搜尋`new component`，新建一個名為`triangle`的元件
+- 將`triangle`和`bottom`以外的零件隱藏
+- 確認小黑點在新建的元件旁邊，然後在`YZ`平面上新建一個草圖
 
-
-<img src="Screenshot 2022-03-14 160850.png" alt="Screenshot 2022-03-14 160850" style="width:55%;" /><img src="Screenshot 2022-03-14 160940.png" alt="Screenshot 2022-03-14 160940" style="width:40%;" />
-
-1. ==先將小黑點褪回最上一層==
-2. 開一個新的component，名字叫`triangle`
-3. 確保小黑點在新開的component旁，開一個new sketch，***位置點選世界的YZ平面***就可以
-
-
-
-<img src="image-20230417115108275.png" alt="image-20230417115108275" style="width:45%;" /><img src="Screenshot 2022-03-14 161852.png" alt="Screenshot 2022-03-14 161852" style="width:45%;" />
-
-<img src="Screenshot 2022-03-14 173501.png" alt="Screenshot 2022-03-14 173501" style="width:25%;" />
-
-1. ***投影***(`Project`)頂板和底板的前端兩條線
-2. 就可以跟著右圖的尺寸去定三角形支架
-3. ***尺寸是暫定的，之後你可以跟據需要自行修改，例如我這個高30mm，已經有點擋到了上面偵測敵人的sensor，所以我後來改矮了變左成25mm***
+<img src="image-20230608101812150.png" alt="image-20230608101812150" style="width:45%;" /><img src="image-20230608101955683.png" alt="image-20230608101955683" style="width:45%;" />
 
 
 
-<img src="image-20230417115310372.png" alt="image-20230417115310372" style="width:45%;" />
+- 使用快捷鍵`p`投影底板的頂端
+- 按照圖二的尺寸設計三角形支架
+- 用快捷鍵`e`擠出
+	- `Direction`選擇`Symmetric`
+	- `Measurement`選擇兩邊的總長度
+	- 擠出厚度為`10mm`
 
-1. 之後就可以用hotkey `E` 擠出
-2. 選用了`Symmetric`，擠出厚度為`10mm`
-3. 之後就可以到斜面開一個new sketch
+<img src="image-20230608102058607.png" alt="image-20230608102058607" style="width:45%;" /><img src="image-20230608102350934.png" alt="image-20230608102350934" style="width:45%;" />
 
-
-
-<img src="Screenshot 2022-03-14 162037.png" alt="Screenshot 2022-03-14 162037" style="width:45%;" /><img src="Screenshot 2022-03-14 162124.png" alt="Screenshot 2022-03-14 162124" style="width:45%;" />
-
-<img src="Screenshot 2022-03-14 162150.png" alt="Screenshot 2022-03-14 162150" style="width:60%;" />
-
-<img src="Screenshot 2022-03-14 162206.png" alt="Screenshot 2022-03-14 162206" style="width:30%;" /><img src="Screenshot 2022-03-14 162307.png" alt="Screenshot 2022-03-14 162307" style="width:30%;" /><img src="Screenshot 2022-03-14 162328.png" alt="Screenshot 2022-03-14 162328" style="width:30%;" />
-
-1. 在斜面開一個孔用來安裝前方的鏟，孔徑用3mm就可以，因3D打印出來尺寸會小一點，開3mm孔用自攻3mm螺絲安裝就剛剛好
-2. 開兩個孔就最好，但因位置有限，所以我只開了一個
-3. 跟著上面的45度斜面也一樣，開一個new sketch再開兩個孔，用來安裝檔板
+<img src="image-20230608102504334.png" alt="image-20230608102504334" style="width:45%;" />
 
 
 
-<img src="Screenshot 2022-03-14 165745.png" alt="Screenshot 2022-03-14 165745" style="width:35%;" /><img src="Screenshot 2022-03-14 165801.png" alt="Screenshot 2022-03-14 165801" style="width:55%;" />
+- 確認小黑點在`triangle`旁邊
+- 隱藏除了`triangle`以外的其他元件
+- 點選30度的斜面，使用快捷鍵`s`搜尋`new sketch`開一個新的草圖
+- 劃一條中線，然後繪製兩個直徑為`3mm`的圓，尺寸參考圖二
+- 使用快捷鍵`e`，減去深度為`10mm`
 
-1. 最後三角支架的底部也要開孔，用來安裝在底板上
-2. ***如果你不跟我的尺寸，有修改過尺寸，記得三個面都開孔後，觀察一下幾個孔會否重疊了，否則安裝螺絲時螺絲會撞在一起***
+<img src="image-20230612095122448.png" alt="image-20230612095122448" style="width:45%;" /><img src="image-20230612095312862.png" alt="image-20230612095312862" style="width:45%;" />
+
+<img src="image-20230612095354125.png" alt="image-20230612095354125" style="width:45%;" />
+
+
+
+- 重複上述步驟，在45度的斜面上開啟新的草圖
+- 畫出兩條中線，在表面上繪製兩個直徑為`3mm`的圓，尺寸參考圖一
+- 使用快捷鍵`e`，向下減去深度為`10mm`
+
+<img src="image-20230612095542989.png" alt="image-20230612095542989" style="width:45%;" /><img src="image-20230612095637236.png" alt="image-20230612095637236" style="width:45%;" />
+
+
+
+- 這個三角架要安裝在底板上，因此底部需要開孔
+- 在`triangle`底部開啟一個新的草圖
+- 畫出一條中線，在底部繪製兩個直徑為`3mm`的圓
+- 由圖三可見，由於另外兩個面已經有螺絲孔，因此底部的圓需要向後移動一點，以免與其他穿孔相撞
+
+<img src="image-20230612100237460.png" alt="image-20230612100237460" style="width:45%;" /><img src="image-20230612100316645.png" alt="image-20230612100316645" style="width:45%;" />
+
+<img src="image-20230612100419807.png" alt="image-20230612100419807" style="width:45%;" />
+
+
 
 ### 安裝三角支架到底板
 
-<img src="image-20230417115725353.png" alt="image-20230417115725353" style="width:45%;" /><img src="Screenshot 2022-03-14 165445.png" alt="Screenshot 2022-03-14 165445" style="width:45%;" />
+- 在零件樹中找到`bottom`底板，點擊「眼睛」圖示，重新顯示
 
-1. ==將小黑點按到bottom旁邊==，我們要為底板開孔去安裝三角支架
-2. 在底板表面開一個new sketch
+- 把小黑點移動到`bottom`旁邊
 
+- 在底板表面上開啟一個新的草圖
 
-
-<img src="image-20230417115921232.png" alt="image-20230417115921232" style="width:50%;" /><img src="image-20230417120102930.png" alt="image-20230417120102930" style="width:45%;" />
-
-<img src="image-20230417120203178.png" alt="image-20230417120203178" style="width:45%;" />
-
-1. 用hotkey `P` project投影三角支架的底部到這個sketch當中(**你要先隱藏`bottom`，才能選得到三角支架的底部**)
-2. 劃兩條水平線作圖線，用midpoint約束穿過三角支架底的兩個孔
-3. 在兩旁距離70mm處各開兩個圓
-4. 將4個孔鑽孔底板
+	<img src="image-20230612100510083.png" alt="image-20230612100510083" style="width:45%;" /><img src="image-20230612100644024.png" alt="image-20230612100644024" style="width:45%;" />
 
 
 
-<img src="image-20230417120353963.png" alt="image-20230417120353963" style="width:45%;" /><img src="image-20230417120446848.png" alt="image-20230417120446848" style="width:50%;" />
+- 用快捷鍵`s`搜尋`change parameter`
+- 新增兩個參數`triangleX`和`triangleY`，用來設定三角支架的位置
 
-1. ==將小黑點褪回最上層==
-2. 將`triangle ` component 複製多一份
-3. 就可以分別用hotkey `J` 組合到底板
-4. <u>***如果你不按我的尺寸，或之後有所修改的話，請記得認真檢查一下三角支架有否撞到齒輪箱或電池架***</u>
-5. <u>***安裝三角支架到底盤前，請先將馬達接線和測試一下是否運作正常，否則安裝後三角支架會阻礙將馬達拆出來接線和維修***</u>
+<img src="image-20230613134513356.png" alt="image-20230613134513356" style="width:45%;" />
+
+
+
+- 在底板的草圖上劃一條中線
+- 畫兩條任意的水平線
+	- 指定水平線高度為`triangleY`和`10mm`
+- 在這兩條水平線上畫兩個圓
+	- 指定其中一個直徑為`3mm`
+	- 使用幾何限制工具`equal`![equal icon](constraint-equal.png)使兩個圓相等
+	- 使用幾何限制工具`Horizontal/Vertical` ![horizontal/vertical icon](constraint-horiz-vert.png)將其與另一個圓垂直對齊
+	- 用`mirror`指令將這兩個圓鏡像到另一側
+- 最後使用快捷鍵`e`，從底板上減去這四個圓
+
+<img src="image-20230613134643619.png" alt="image-20230613134643619" style="width:45%;" /><img src="image-20230612102956370.png" alt="image-20230612102956370" style="width:45%;" />
+
+
+
+- **將小黑點退回最上層**
+- 用`ctrl+c`/`ctrl+v`複製`triangle`一份
+- 使用快捷鍵`j`，將其分別組合到底板上
+
+<img src="image-20230612101234261.png" alt="image-20230612101234261" style="width:45%;" /><img src="image-20230612103154273.png" alt="image-20230612103154273" style="width:45%;" />
+
+
 
 ### 繪製鏟和前擋板
 
-<img src="Screenshot 2022-03-14 170847.png" alt="Screenshot 2022-03-14 170847" style="width:45%;" /><img src="Screenshot 2022-03-14 170916.png" alt="Screenshot 2022-03-14 170916" style="width:45%;" />
+- **<u>確保小黑點移回最上層</u>**
+- 開啟一個新元件，並命名為`front plane`
+- 在三角形支架的30度斜面（左邊或右邊都可以）開啟一個新的草圖
 
-1. 確保小黑點褪回到最上層
-2. 開一個new component，名叫`front plane`
-3. 在三角支架20度的面(左邊或右邊都可以)開一個new sketch
-
-
-
-<img src="Screenshot 2022-03-14 170944.png" alt="Screenshot 2022-03-14 170944" style="width:45%;" /><img src="Screenshot 2022-03-14 171601.png" alt="Screenshot 2022-03-14 171601" style="width:45%;" />
-
-<img src="Screenshot 2022-03-14 171617.png" alt="Screenshot 2022-03-14 171617" style="width:45%;" />
-
-1. 用hotkey `P` project投影兩邊的三角支架
-2. 繪劃一條中心作圖線，劃一個長方形，長方形的頂邊要穿過20度長方到的頂邊
-3. 之後就可以擠出厚度`thickness`
+<img src="image-20230612103344352.png" alt="image-20230612103344352" style="width:45%;" /><img src="image-20230612103612573.png" alt="image-20230612103612573" style="width:45%;" />
 
 
 
-<img src="Screenshot 2022-03-14 171708.png" alt="Screenshot 2022-03-14 171708" style="width:45%;" /><img src="Screenshot 2022-03-14 171823.png" alt="Screenshot 2022-03-14 171823" style="width:45%;" />
+- 使用快捷鍵`p`，投影兩側的三角支架
+- 穿過原點畫出一條中心線，在這個面上繪製一個長方形，使其頂部通過30度斜面的頂部
+- 然後使用快捷鍵`e`，擠出厚度為`thickness`
+
+<img src="image-20230612103706799.png" alt="image-20230612103706799" style="width:45%;" /><img src="Screenshot 2023-06-12 103848.png" alt="Screenshot 2023-06-12 103848" style="width:45%;" />
+
+<img src="image-20230612104247196.png" alt="image-20230612104247196" style="width:50%;" />
 
 
 
-<img src="Screenshot 2022-03-14 172106.png" alt="Screenshot 2022-03-14 172106" style="width:45%;" />
+- 圖一：在45度斜面上開啟一個新的草圖
+- 圖二：投影兩側的45度斜面和**前方鏟板的頂部邊緣**到這個草圖中
+- 圖三：
+	- 繪製一個長方形，一邊為剛才的投影線，寬為`70mm`
+	- 再使用`e`快捷鍵擠出厚度為`thickness`
+- 圖四：
+	- 將視角轉到側視圖，**<u>觀察並確保兩塊板並沒有重疊相撞</u>**
+	- 之後可以使用快捷鍵`j`將鏟和擋板組合到三角支架上
+		- 因為鏟和擋板都是同一個元件的兩個實體，所以在拖動時這兩塊板會一起拖動，這是正常的
+		- 我沒有示範組裝過程的截圖，請您自行完成
 
-1. 之後45度擋板也一樣，先在隨便一邊的45度斜面開一個new sketch
-2. 將兩邊45度的斜面和***前鏟板的頂邊***投影到這個sketch中
-3. 之後就可以劃一個長旁形再擠出
+<img src="image-20230612104347794.png" alt="image-20230612104347794" style="width:45%;" /><img src="Screenshot 2022-03-14 171823.png" alt="Screenshot 2022-03-14 171823" style="width:45%;" />
+
+<img src="Screenshot 2022-03-14 172106.png" alt="Screenshot 2022-03-14 172106" style="width:45%;" /><img src="Screenshot 2022-03-14 172642.png" alt="Screenshot 2022-03-14 172642" style="width:45%;" />
 
 
-
-<img src="Screenshot 2022-03-14 172642.png" alt="Screenshot 2022-03-14 172642" style="zoom:70%;" />
-
-1. ***完成後觀察一下，在側視圖看，兩塊板應該是剛剛好沒有相撞的***
-
-2. 之後就可以將鏟和擋板用hotkey J 組合到三角支架上
-
-3. (我沒有cap圖展示joint的過程，請自行完成，因鏟和支架都是同一個component的兩個body，所以拖動時兩塊板會一起拖動是正常的)
-
-	
 
 ### 為前擋板開孔，讓偵敵紅外線sensor能穿過
 
-==如果不想做這步，可以直接跳到 [為前擋板開孔](#為前擋板開孔)==
+- 圖一：
+	- 確認小黑點在`front plane`旁邊
+	- 打開零件樹的箭頭，將前檔板隱藏
+- 圖二：
+	- 選擇指向前方的紅外線傳感器的平面，並在上面開啟一個新的草圖
+	- 在紅外線傳感器的LED和接收器的兩個圓的中心之間，繪製一個直徑`15mm`圓形
 
-<img src="Screenshot 2022-03-14 172759.png" alt="Screenshot 2022-03-14 172759" style="width:60%;" /><img src="Screenshot 2022-03-14 172914.png" alt="Screenshot 2022-03-14 172914" style="width:30%;" />
-
-1. 確保將小黑點選到component `front plane`
-2. 點選在其中一邊45度的sensor的平面，開一個new sketch
-3. 在sensor的LED和接收器的兩個圓中間為圓心，劃一個直徑15mm的圓
-
-
-
-<img src="Screenshot 2022-03-14 173008.png" alt="Screenshot 2022-03-14 173008" style="width:45%;" />
-
-1. 將這個圓擠出一個`new body`，距離隨意，只要長過底盤就可以
-2. ***但記得要設定`taper angle`，這個角度會在擠出時使擠出的面積越來越大，至於為何是5度，就要視乎你用的sensor的發散角，我這次是跟據經驗設定的，如果你用其他的sensor，就要看看datasheet***
+<img src="image-20230612110101604.png" alt="image-20230612110101604" style="width:45%;" /><img src="image-20230612110314805.png" alt="image-20230612110314805" style="width:45%;" />
 
 
 
-<img src="Screenshot 2022-03-14 173101.png" alt="Screenshot 2022-03-14 173101" style="width:45%;" /><img src="Screenshot 2022-03-14 173137.png" alt="Screenshot 2022-03-14 173137" style="width:45%;" />
+- 使用快捷鍵`e`擠出工具，將這個圓形擠出一個新的實體，距離可以隨意設定，只要比底盤長即可
+- 擠出時，在工具列的`taper angle`選擇`5 deg`
+	- 使得擠出的面積越來越大
+	- 錐度角的設定應該要根據你所使用的傳感器的發散角度來決定
+	- 我使用的是5度的錐度角，這是基於我過去的經驗設定的
 
-<img src="Screenshot 2022-03-14 173247.png" alt="Screenshot 2022-03-14 173247" style="width:45%;" />
+<img src="image-20230612110644767.png" alt="image-20230612110644767" style="width:50%;" />
 
-1. 擠出後，繼續確保小黑點在`front plane`旁
-2. 在45度斜面的表面開一個new sketch
-3. 按hotkey `S`，搜尋`intersect`，顧名思義就是相交的意思，這個指令可以將另一個body相交到這個sketch plane的輪廓勾出來
+ 
+
+- 圖一：
+	- 繼續確保小黑點在`front plane`旁邊
+	- 將前擋板顯示出來（`front plane`-->`body5`）
+	- 在前擋板表面開啟一個新的草圖
+- 圖二、三：
+	- 使用快捷鍵`s`搜索`intersect`命令
+	- 這個命令用於獲取所選實體與當前平面的相交線
+
+<img src="image-20230612110947501.png" alt="image-20230612110947501" style="width:45%;" /><img src="image-20230612111124576.png" alt="image-20230612111124576" style="width:45%;" />
+
+<img src="image-20230612111159449.png" alt="image-20230612111159449" style="width:45%;" />
 
 
 
 ###為前擋板開孔
 
-<img src="image-20230417121035132.png" alt="image-20230417121035132" style="width:50%;" /><img src="Screenshot 2022-03-14 173902.png" alt="Screenshot 2022-03-14 173902" style="width:45%;" />
+- 根據這個橢圓形的中心點，我們可以知道傳感器射出的紅外線會落在前擋板的哪個位置
+- 在相對的位置開槽，才不會阻礙紅外線的發射和接收
+- 以橢圖圖心，繪劃一個`35x35mm`的正方形
+- 使用快捷鍵`e`擠出工具將其減去，完成開槽
 
-1. 跟據這個橢圓形的中心點，就可以知道sensor射出來，該在那開槽才不會阻礙紅外線發射接收
-2. 劃一個對稱的長方形，==尺寸是暫定的，你可按需要修改==
-3. 之後就可以將其開槽
-
-
-
-<img src="Screenshot 2022-03-14 174220-16474953744691.png" alt="Screenshot 2022-03-14 174220" style="width:80%;" />
-
- <font size="+2" style="color:red">恭喜，大致已完成設計!!!!!!看看你的設計是否和我的設計差不多，會否有地方有error或會相撞</font>
-
-## Step 6: 微調
-
-<img src="Screenshot 2022-03-14 174259.png" alt="Screenshot 2022-03-14 174259" style="width:45%;" /><img src="image-20230417125148118.png" alt="image-20230417125148118" style="width:50%;" />
-
-1. ==將小黑點褪回最上層==
-2. 搜尋`Section Analysis`
-3. 選取世界座標的YZ平面(或你機械人的側面平面)
-4. 將機械人割開一半方便觀察
+<img src="image-20230612111329919.png" alt="image-20230612111329919" style="width:45%;" /><img src="image-20230612111412222.png" alt="image-20230612111412222" style="width:45%;" />
 
 
 
-<img src="Screenshot 2022-03-14 174454.png" alt="Screenshot 2022-03-14 174454" style="width:45%;" /><img src="Screenshot 2022-03-14 174410.png" alt="Screenshot 2022-03-14 174410" style="width:45%;" />
+<div style=" color:red">恭喜，設計應該已經大致完成了。為了確保設計沒有錯誤或會相撞的問題：<ul><li>拖動每個零件，以確定它們正確地組裝在一起</li><li>使用Fusion 360的<code>interference</code>指令，可以自動計算模型是否有干擾（即相撞）的問題</li></ul></div>
 
-1. 為方便觀察，請將視覺投影轉成`Orthographic`(在右上角的指向圖標上，按滑鼠右鍵，就能設定)
-2. 轉到側視圖
-3. 從側視圖就可以清楚觀察到，前擋板會否擋住了紅外線射出的路徑
+<img src="image-20230612111644775.png" alt="image-20230612111644775" style="zoom:50%;" />
 
+## Step 6: 微調功課
 
+- **<u>請確保將小黑點移回最上層</u>**
+- 使用快捷鍵`s`搜尋`Section Analysis`指令
+- 選擇世界座標系下的YZ平面（或您的機械人的側面平面）
+- 使用截面工具將機械人切成兩半，以方便觀察
 
-<img src="Screenshot 2022-03-14 174604.png" alt="Screenshot 2022-03-14 174604" style="width:45%;" /><img src="Screenshot 2022-03-14 174649.png" alt="Screenshot 2022-03-14 174649" style="width:45%;" />
-
-1. 再轉到45度角觀察開槽的左右是否足夠
-2. 按一按45度sensor的平面，按下方第二個鍵名叫`look at`，就能對正這個點選的平面
-3. 跟據目測，槽的長度似乎足夠
-
-##Step 7: 功課
-
-<img src="image-20230417130325256.png" alt="image-20230417130325256" style="zoom:67%;" />
+<img src="image-20230612112227922.png" alt="image-20230612112227922" style="width:45%;" /><img src="image-20230612112346334.png" alt="image-20230612112346334" style="width:45%;" />
 
 
 
-現在這個模型是有問題的:
+這個模型存在以下問題：
 
-1. Arduino安裝問題: 如果安裝motor shield和sensor shield後，會撞到前擋板, 要將Arduino移後
+1. 30度的擋板需要增長，以便更好地發揮鏟的效果。此外，需要添加一層薄金屬或膠片令其更貼地
 
-2. 20度擋板: 可以增長一點，盡量貼地才能發揮鏟的效果，之後亦要貼上薄一點的金屬或膠片來做第三層鏟
+2. 對地的邊緣傳感器（`Line Sensor`）需要更靠前，以便更早地檢測到前方是否為場外，並停車
 
-3. 對地sensor明顯還有移前空間: 對地sensor距離牛眼輪越前越好，可以早一點知道前方是場外而停車
+3. 三角支架需要移後，或將小車的長度縮減，如果不移後，30度的鏟加長後，整車就會超過200mm，==會犯規不能作賽==
 
-4. 對敵sensor: 可以移前一點，那麼前擋板就不用開槽開這麼大，而且可以見到，對敵sensor的接線快與開關相撞
+4. 對敵紅外線傳感器需要往前移
+	- 這樣前擋板就不需要開那麼大的槽
+	
+	- 而且能紅外線傳感器的檢測距離有限，越前越能提早感測到敵人
+	
+		
 
-	<img src="image-20230417133847985.png" alt="image-20230417133847985" style="zoom:50%;" /><img src="image-20230417134017195.png" alt="image-20230417134017195" style="width:45%;" />
+- **<u>可以用快捷鍵`s`搜尋`change parameter`，上述所提到需要修改的尺寸，事前都已設定成參數，只要修改參數，相關的零件位置就會改變。</u>**
+- **<u>==輸出生產前，使用Fusion 360的<code>interference</code>指令，計算模型是否有干擾（即相撞）的問題==</u>**
 
-5. 牛眼輪跟主輪不是同一高度，車會有1.6度的傾斜，牛眼輪移前可將傾斜角度減，但車出界時的牛眼輪就會更快出界。
-
-6. 車的總長超過200mm，一是將車改短，一是將電池移前一點
-
-<img src="image-20230417130546723.png" alt="image-20230417130546723" style="zoom:67%;" />
+<img src="Screenshot 2023-06-12 112851.png" alt="Screenshot 2023-06-12 112851" style="zoom:50%;" />
 
 
 

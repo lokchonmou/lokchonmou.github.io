@@ -10,29 +10,34 @@ Processing是一個開源的程式語言，同時也是一個程式語言集成�
 
 <img src="image-20220922115957536.png" alt="image-20220922115957536" style="zoom:67%;" />
 
-Processing語言其實是java語言，但針對圖形圖像的語法進行簡化，非常方便繪畫一些能跟使用者互動的簡單圖形，對編程藝術表達，編寫小遊戲都十分合適。
 
-Processing除了java版本(這合本機電腦運行)，也有：JavaScript版本(專門適合於製作網頁版本)，Android版(顧名思意就是專門用於Android系統)和Python版本，甚至有Ruby語言版本。
 
-由於Processing是java語言，所以Python版本其實是用Jython將你寫的python語言編譯成java語言再運行的。好消息是：基乎所有2.x版本的python指令，都能在Processing python版本中運行，例如複數(complex number)、排列(Permutation )和組合(Combination)，或其他不依賴C語言的模組。可惜的是，python常用的numpy，scipy等工程模組，由於都是用C語言運行，所以processing python版本並不支援。
+
+
+- Processing是java語言，針對圖形圖像語法簡化
+- 適合編程藝術表達和編寫小遊戲
+- 有java、JavaScript、Android、Python和Ruby版本
+- Python版本用Jython編譯成java語言運行
+- 2.x版本的指令大多能在Processing python版本中運行
+- 不支援用C語言運行的numpy和scipy等工程模組
 
 ## Processing下載和資訊
 
-你可以到這裡下載和得到更多資訊。
-
-> https://py.processing.org/
-
-這裡也有完整的教程，教你怎麼下載processing，下載python模組，以至一此常用的指令教程和資訊，我們這個網站沒有很基礎的下載、座標、指令和語法使用的教程，如果你對寫遊戲時的processing指令和卜語法有疑問，都可以在這個網站中得到答案。
+- 可至https://py.processing.org/下載和獲取更多資訊
+- 網站內有完整教程，包括下載processing、下載python模組、常用指令等
+- 網站也提供寫遊戲時的processing指令和語法使用的教程
+- 如有疑問，都可以在網站中找到答案
 
 > https://py.processing.org/tutorials/
->
-> <img src="image-20220922122736282.png" alt="image-20220922122736282" style="zoom:67%;" />
+
+<img src="image-20220922122736282.png" alt="image-20220922122736282" style="zoom:67%;" />
 
 ## Getting started with processing.py (書本介紹)
 
-Getting started with processing系列是一套三本的processing編程教學系列，分別為processing, p5.js和processing.py，內容幾乎都是一樣的，但就著三種語言，在語法上有所不同，也有一些該語法獨有的功能。
-
-這個系列的書是我見過最好的編程入門書本，深入淺出一步一步教授基礎語法和功能，配合processing本身方便繪圖和互動的功能，使用者能深入淺出地學習編程語法。建議在開始學習本網站內容前，先行閱讀一下這系列的書，令你對編程有所了解。
+- 這是一個processing編程教學系列，包括三本書：processing、p5.js和processing.py。
+- 這三本書的內容基本相同，但在語法和功能方面有所不同。
+- 這個系列的書籍是很好的編程入門書籍，深入淺出地介紹了基礎語法和功能，並與processing的繪圖和互動功能配合使用。
+- 建議在開始學習本網站內容前，先閱讀這個系列的書籍，以對編程有所了解。
 
 ![Maker Faire | Getting Started with Processing.py](coverimg.png)
 

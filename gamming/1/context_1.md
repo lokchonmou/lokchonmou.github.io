@@ -26,9 +26,19 @@ def draw():
 
 <img src="image-20220919151923194.png" alt="image-20220919151923194" style="zoom: 50%;" />
 
-Processing.py的程式碼，內置已經有兩個函數，分別為`setup()`和`draw()`，顧名思義，`setup()` 只會在程式執行時執行一次，而`draw()`則有點像arduino的`loop()`，會不斷重覆。而程式中`width`和`height`是關鍵字，對應就是`size()`中的長和寬。
 
-下一步，就要令中間的球移動。
+
+- Processing.py程式碼內置兩個函數
+	- `setup()`
+		- 只會在程式執行時執行一次
+		- 通常用來初始化程式
+	- `draw()`
+		- 類似Arduino中的`loop()`
+		- 會不斷重複執行
+		- 通常用來實現動畫和互動等功能
+	- `width`和`height`是關鍵字
+		- 對應`size()`中的長和寬
+- 下一步，就要令中間的球移動
 
 ##1.2 令球移動
 
@@ -67,7 +77,7 @@ ballSpeedX=0
 ballSpeedY=0
 ```
 
-1創建4個變數，分別為`ballX`, `ballY`, `ballSpeedX`和`ballSpeedY`。對應的是球的x和y座標，球的x和y的速度。之後在`setup()`中預設球的位置和初速。(之所以不在一開始宣告就設定它們的值，而是在`setup()`中，是因為之後restart game時會方便很多)
+創建4個變數，分別為`ballX`, `ballY`, `ballSpeedX`和`ballSpeedY`。對應的是球的x和y座標，球的x和y的速度。之後在`setup()`中預設球的位置和初速。(之所以不在一開始宣告就設定它們的值，而是在`setup()`中，是因為之後restart game時會方便很多)
 
 
 
