@@ -18,8 +18,8 @@ class Spot {
 
 	display(_color) {
 		if (this.isWall) {
-			fill('#999999');
-			stroke('#999999');
+			fill('#AAAAAA');
+			stroke('#AAAAAA');
 		}
 		else {
 			stroke(_color);

@@ -41,4 +41,3 @@ class Snake(object):
         else:
             self.reward = False
             return False
-

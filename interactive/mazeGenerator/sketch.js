@@ -36,11 +36,12 @@ function setup() {
 	stepButton.position(610, 70);
 	stepButton.mousePressed(AStarStepFroward);
 
-	sizeSlider = createSlider(10, 100, 20, 10);
+	sizeSlider = createSlider(10, 100, 30, 10);
 	sizeSlider.position(610, 100);
 
 	reset();
 
+	// saveCanvas('maze', 'png');
 
 }
 
@@ -71,7 +72,6 @@ function draw() {
 	// 	const current = openSet[lowestIndex];
 	// 	current.display('#00FF55');
 	// }
-
 }
 
 function reset() {
@@ -135,8 +135,8 @@ function reset() {
 			spots[i][j].display('#FFFFFF');
 		}
 	}
-	start.display('#00FFFF');
-	end.display('#FFFF00');
+	// start.display('#00FFFF');
+	// end.display('#FFFF00');
 	
 }
 

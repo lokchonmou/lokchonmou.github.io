@@ -8,7 +8,7 @@ apples = []
 def setup():
     global grids, snake, currentSpot, snake, apples
     size(600,600)
-    frameRate(10)
+    frameRate(60)
     
     grids = []
 
