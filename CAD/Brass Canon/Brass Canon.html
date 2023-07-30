@@ -1,0 +1,601 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #000000;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* devanagari */
+/* latin-ext */
+/* latin */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "PT Serif", "Noto Serif TC";
+    color: rgb(10,10,10);
+    line-height: 1.6;
+    /* background-color: #e7e7e7; */
+}
+
+#write {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #2c98f0;
+    text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: 64px;
+    color: #eee;
+    background-color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h2 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: .3em;
+    font-size: 48px;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+h3 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+h5 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+h6 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    /* background-color: #e7e7e7; */
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #AAAAAA;
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    /* font-weight: bold;
+    border: 1px solid #333333;
+    border-bottom: 2px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+    background: #2c98f0; */
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #ffffff;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+code {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    /* background-color: #FFFFFF; */
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+    left: -1.5625rem;
+    top: .375rem;
+}
+#write>h4.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h5.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h6.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "PT Serif", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Brass Canon</title>
+</head>
+<body class='typora-export typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#brass-canon">Brass Canon</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-1">Step 1</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-2">Step 2</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-3">Step 3</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-4">Step 4</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-5">Step 5</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-6">Step 6</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='brass-canon'><span>Brass Canon</span></h1><p><span>本節要繪製的是傳統的大炮，雖然由於課程時間和機器限制，無法像以往一樣使用車床和銑床製作此大炮。但我們將教大家如何繪製此大炮，不僅是為了傳承這種情懷，同時也讓同學們日後能夠運用 CNC 機器製作此大炮。</span></p><p><img src="1111.gif" alt="1111.gif" style="width:50%;"/></p><p><strong><a href='brass_cannon_Drawing_v52.pdf'><span>brass cannon Drawing v52.pdf</span></a></strong></p><iframe width=50% height="500" src="https://www.youtube.com/embed/Udv2dhx0yJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><h2 id='step-1'><span>Step 1</span></h2><ul><li><p><span>首先在首頁利用指令</span><code>new component</code><span>開一個新的組件，名為 </span><code>cannon body</code></p></li><li><p><span>確保啟用此 component，</span><strong><u><span>小黑點在旁邊</span></u></strong></p></li><li><p><span>用指令</span><code>new sketch</code><span>開啟一個新的草圖，根據圖形前半部分繪製三個長方形和一個圓形</span></p></li><li><p><span>使用快捷鍵</span><code>s</code><span> 搜尋 </span><code>Change Parameter</code><span>，創建一個新的變數，名為 </span><code>stepSize</code><span>，內容為 </span><code>1.5mm</code><span>，以便後續修改</span></p></li><li><p><span>使用快捷鍵</span><code>s</code><span> 搜尋 </span><code>Revolve</code><span>，</span><strong><span>選擇上半部分</span></strong><span>，使用 X 軸旋轉 360 度</span></p></li></ul><p><span>❗ </span><strong><u><span>Fusion 360 等特徵編輯軟件並不擅長處理 2D 圖形。如果同一個 2D 圖形內容太多，關係式太多，因尺寸和關係互相依賴，會令電腦極慢甚至死機。</span></u></strong></p><p><span>💡 </span><em><span>你也可以不完全按照我的步驟，一次性繪製多個圖形，但請記得不要太多。</span></em></p><p><img src="Untitled 0.png" alt="Untitled 0.png" style="width:45%;" /><span> </span><img src="Untitled%201.png" alt="Untitled%201.png" style="width:45%;" /><span> </span></p><p><img src="Untitled%202.png" alt="Untitled%202.png" style="width:35%;" /><span> </span><img src="Untitled%203.png" alt="Untitled%203.png" style="width:45%;" /></p><ul><li><p><span>下一步，進入 </span><code>cannon body</code><span>&quot;這個 component，用指令</span><code>new sketch</code><span>開啟一個新的草圖</span></p></li><li><p><span>使用 快捷鍵</span><code>P</code><span> 投影之前的 body 到此草圖中，根據圖形尺寸繼續繪製</span></p></li><li><p><span>使用 </span><code>Revolve</code><span>，選擇 X 軸旋轉 360 度</span></p></li></ul><p><img src="Untitled%201.png" alt="Untitled%201.png" style="width:50%;" /></p><p><img src="Untitled%204.png" alt="Untitled%204.png" style="width:45%;" /><span> </span><img src="Untitled%205.png" alt="Untitled%205.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>使用快捷鍵</span><code>s</code><span> 搜尋 </span><code>Change Parameter</code><span>，創建一個新的變數，名為 </span><code>cannonBodyHole</code><span>，內容為 8mm</span></p></li></ul><p><img src="Untitled%206.png" alt="Untitled%206.png" style="width:45%;" /><span> </span><img src="Untitled%207.png" alt="Untitled%207.png" style="width:45%;" />
+<img src="Untitled%208.png" alt="Untitled%208.png" style="width:45%;" /><span> </span><img src="Untitled%209.png" alt="Untitled%209.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>繼續根據 PDF 的尺寸繪製。</span></p></li><li><p><span>弧可以使用指令 </span><code>3 Point Arc</code><span> 來繪製，只需要指定起始點、終點和半徑即可</span></p></li></ul><p><img src="Untitled%206.png" alt="Untitled%206.png" style="width:45%;" /><span> </span></p><p><img src="Untitled%2010.png" alt="Untitled%2010.png" style="width:45%;" /><span> </span><img src="Untitled%2011.png" alt="Untitled%2011.png" style="width:45%;" /></p><h2 id='step-2'><span>Step 2</span></h2><ul><li><p><span>開啟一個新的 component，名為 </span><code>pin</code><span>，並確保啟用此 component(</span><strong><u><span>小黑點在旁邊</span></u></strong><span>)</span></p></li><li><p><span>用指令</span><code>new sketch</code><span>開啟一個新的草圖</span></p><ul><li><p><span>按一下前一個component</span><code>cannon body</code><span>旁的三角形</span></p></li><li><p><span>按一下</span><code>sketch</code><span>旁的眼睛圖示，將隱藏的草圖顯示出來</span></p></li><li><p><span>按一下</span><code>body</code><span>旁的眼睛圖示，將大炮暫時隱藏起來</span></p></li><li><p><span>使用快捷鍵 </span><code>P</code><span> 投影之前大炮身草圖的圓，如下圖3所示</span></p></li><li><p><strong><u><em><span>記得要投影原始的草圖，投影 body 的話是沒有中心點的</span></em></u></strong></p></li></ul></li><li><p><span>用</span><code>change parameter</code><span>創建一個新的參數，名為 </span><code>baseWidth</code><span>，內容為 </span><code>21mm</code></p></li><li><p><span>使用快捷鍵 </span><code>e</code><span> 擠出，</span><strong><code>direction</code><span>選擇</span><code>symmetric</code></strong><span>，長度為 </span><code>baseWidth</code></p></li></ul><p><img src="Untitled%2012.png" alt="Untitled%2012.png" style="width:35%;" /><img src="Untitled%2013.png" alt="Untitled%2013.png" style="width:45%;" /></p><p><img src="Untitled%2014.png" alt="Untitled%2014.png" style="width:45%;" /><img src="Untitled%2015.png" alt="Untitled%2015.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>用</span><code>change parameter</code><span>創建一個新的參數，名為 </span><code>braceHole</code><span>，內容為 </span><code>6mm</code></p></li><li><p><span>在圓形的一側開啟一個新的草圖，繪製一個圓形</span></p></li><li><p><span>用快捷鍵</span><code>e</code><span>擠出長度 </span><code>8.5mm</code></p></li><li><p><span>使用鏡像功能(</span><code>mirror</code><span>)鏡像剛才擠出的特徵，鏡像平面為世界 XZ 平面，見下圖3。</span></p></li><li><p><span>最後，使用快捷鍵</span><code>j</code><span>聯接將 </span><code>pin</code><span>和 </span><code>cannon body</code><span>組合起來，類形使用</span><code>revoling joint</code></p></li></ul><p><img src="Untitled%2013.png" alt="Untitled%2013.png" style="zoom:33%;" /></p><p><img src="Untitled%2016.png" alt="Untitled%2016.png" style="width:45%;" /><img src="Untitled%2017.png" alt="Untitled%2017.png" style="width:45%;" /></p><h2 id='step-3'><span>Step 3</span></h2><ul><li><p><span>用快捷鍵</span><code>s</code><span>搜尋</span><code>new component</code><span>開啟一個新的component，名為 </span><code>brace</code></p></li><li><p><span>確</span><strong><u><span>保小黑點在旁邊</span></u></strong><span>已經啟用此 component</span></p></li><li><p><span>在 </span><code>pin</code><span> 的最邊緣，用快捷鍵</span><code>s</code><span>搜尋</span><code>new sketch</code><span>開啟一個新的草圖，見下圖</span></p></li><li><p><span>投影圓形，並根據圖則繪製整個固定架</span></p></li></ul><p><img src="Untitled%2018.png" alt="Untitled%2018.png" style="width:35%;" /><img src="Untitled%2019.png" alt="Untitled%2019.png" style="width:45%;" /></p><p><img src="Untitled%2020.png" alt="Untitled%2020.png" style="width:45%;" /></p><ul><li><p><span>使用快捷鍵</span><code>e</code><span> 擠出 </span><code>8mm</code></p></li><li><p><span>使用快捷鍵</span><code>f</code><span>  修整圓角</span></p></li><li><p><span>在底部根據圖則繪製一個點，距離邊緣 20mm，見下圖2</span></p></li><li><p><span>使用快捷鍵</span><code>s</code><span>搜尋 </span><code>Hole</code><span>，根據圖則選擇孔的類型為非沉孔，孔的螺紋為有螺紋，其他選項見下圖3</span></p></li><li><p><span>孔的深度和直徑在 Fusion 360 中也是十分清楚地標明的，選擇深度為 8mm，寬度為 M4 螺絲，如下圖3</span></p></li></ul><p><img src="Untitled%2021.png" alt="Untitled%2021.png" style="width:45%;" /><img src="Untitled%2022.png" alt="Untitled%2022.png" style="width:45%;" /></p><p><img src="Untitled%2023.png" alt="Untitled%2023.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>之後就可以</span><strong><u><span>將小黑點移回到最上層</span></u></strong><span>，用</span><code>Ctrl+C</code><span>/</span><code>Ctrl+V</code><span>複製貼上多一個 </span><code>brace</code></p></li><li><p><span>使用快捷鍵</span><code>j</code><span>將其與 </span><code>pin</code><span> 進行聯接，在</span><code>motion</code><span>頁面選擇</span><code>revolving joint</code></p><ul><li><p><code>Brace</code><span>的厚度為8mm，而</span><code>pin</code><span>凸出為8.5mm，故有0.5mm凸出來是正常的</span></p></li></ul></li></ul><p><img src="Untitled%2024.png" alt="Untitled%2024.png" style="width: 45%;" /><img src="Untitled%2025.png" alt="Untitled%2025.png" style="width:45%;" /></p><h2 id='step-4'><span>Step 4</span></h2><ul><li><p><span>下一步是繪製大炮的底座</span></p></li><li><p><strong><u><span>將小黑點移回到最上層</span></u></strong><span>，開啟一個新的 component，名為 </span><code>base</code></p></li><li><p><strong><u><span>確保小黑點在</span><code>base</code><span>旁</span></u></strong><span>，在 XY 平面或者 </span><code>brace</code><span>component 的底部添加一個新草圖，見下圖2</span></p></li><li><p><span>根據圖則繪製，圓角可以暫時不用劃，但因為中間的半徑為 4.5mm 的圓與上下偏移 8mm 的線形成不到單一直線，不能使用</span><code>fillet</code><span>功能，因此需要在 2D 草圖中使用 TTR 完成，見圖2</span></p></li></ul><p><img src="Untitled%2026.png" alt="Untitled%2026.png" style="width:45%;" /><img src="Untitled%2027.png" alt="Untitled%2027.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>跟著依次擠出和修圓便完成了</span></p></li><li><p><span>完成後，使用快捷鍵</span><code>j</code><span>將底座和其中一個 </span><code>brace</code><span>&quot;進行聯接，</span><code>motion</code><span>頁面使用</span><code>rigid joint</code></p></li></ul><p><img src="cannon2.gif" alt="cannon2.gif" style="width:45%;" /></p><h2 id='step-5'><span>Step 5</span></h2><ul><li><p><strong><u><span>將小黑點移回到最上層</span></u></strong><span>，用快捷鍵</span><code>s</code><span>開啟一個新的 component，名為 </span><code>spinder</code></p></li><li><p><span>在 XY 平面或者 </span><code>base</code><span> component 的底部添加一個新草圖</span></p></li><li><p><span>快捷鍵</span><code>p</code><span>投影兩個 </span><code>4mm</code><span>孔，並繪製一個對稱的 </span><code>40mm x 7.8mm</code><span> 方形，如下圖1所示</span></p></li><li><p><span>使用對稱擠出</span><code>7.8mm</code><span>，如下圖3</span></p><ul><li><p><span>如果使用對稱方式，之後繪製旁邊的圓形會較容易</span></p></li></ul></li><li><p><span>之後就可以繪製和擠出 </span><code>12.5mm</code><span> 和 </span><code>7.8mm</code><span> 的圓形，如下圖4和5</span></p></li></ul><p><img src="Untitled%2028.png" alt="Untitled%2028.png" style="width:45%;" /><img src="Untitled%2029.png" alt="Untitled%2029.png" style="width:45%;" /></p><p><img src="Untitled%2030.png" alt="Untitled%2030.png" style="width:45%;" /><img src="Untitled%2031.png" alt="Untitled%2031.png" style="width:45%;" /></p><p><img src="Untitled%2032.png" alt="Untitled%2032.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>快捷鍵</span><code>s</code><span>搜尋 </span><code>new sketch</code><span> 指令，在最外的平面開啟一個新草圖</span></p></li><li><p><span>只需要投影或者繪製一個點就可以，如圖2所示</span></p></li><li><p><span>用快捷鍵</span><code>s</code><span>搜尋 </span><code>Hole</code><span> 指令，增加一個沉孔螺紋的鑽孔，如圖3所示</span></p></li><li><p><span>將幾個擠出和鑽孔特徵使用鏡像功能鏡像，鏡像面為世界 XZ 平面，如圖4所示</span></p></li><li><p><span>完成後，就可以使用快捷鍵</span><code>j</code><span>連接到之前繪製的零件上，如下圖5</span></p><ul><li><p><code>motion</code><span>頁面使用</span><code>rigid joint</code></p></li></ul></li></ul><p><img src="Untitled%2028.png" alt="Untitled%2028.png" style="width:45%;" /><img src="Untitled%2033.png" alt="Untitled%2033.png" style="width:45%;" /></p><p><img src="Untitled%2034.png" alt="Untitled%2034.png" style="width:45%;" /><img src="Untitled%2035.png" alt="Untitled%2035.png" style="width:45%;" /></p><p><img src="Untitled%2036.png" alt="Untitled%2036.png" style="width:45%;" /></p><h2 id='step-6'><span>Step 6</span></h2><ul><li><p><strong><u><span>將小黑點移回到最上層</span></u></strong><span>，開啟一個新的 component，名為 </span><code>wheel</code><span>。</span></p></li><li><p><strong><u><span>確保小黑點在這個 </span><code>wheel</code><span> 的 component旁</span></u></strong></p></li><li><p><span>開啟一個新的草圖，並投影 </span><code>spinder</code><span> component 的中點，如圖2</span></p></li><li><p><span>在中點上繪製 </span><code>8mm</code><span>、</span><code>13mm</code><span>、</span><code>54mm</code><span>和 </span><code>64mm</code><span>四個圓形</span></p><ul><li><p><span>不</span><em><span>要直接投影 </span><code>spinder</code><span>&quot;的圓形，因為它的尺寸是 </span><code>7.8mm</code><span>而不是 </span><code>8mm</code></em></p></li></ul></li></ul><p><img src="Untitled%2037.png" alt="Untitled%2037.png" style="width:45%;" /><img src="Untitled%2038.png" alt="Untitled%2038.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>如 PDF 圖則所示，擠出 </span><code>8mm</code><span>和 </span><code>6mm</code></p><ul><li><p><em><span>在擠出時，</span><code>direction</code><span>選擇</span><code>Symmetric</code><span>，如下圖1、圖2所示，方便之後操作</span></em></p></li></ul></li></ul><p><img src="Untitled%2039.png" alt="Untitled%2039.png" style="width:45%;" /><img src="Untitled%2040.png" alt="Untitled%2040.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>如 PDF 圖則所示，在輪子上繪製單一份的挖孔，如圖1</span></p></li><li><p><span>擠出之後，就可以使用快捷鍵</span><code>s</code><span>搜尋指令</span><code>Circular Pattern</code><span>進行旋轉陣列，如圖2</span></p></li></ul><p><img src="Untitled%2041.png" alt="Untitled%2041.png" style="width:45%;" /><img src="Untitled%2042.png" alt="Untitled%2042.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>後一個步驟是將輪子複製貼上，並使用指令</span><code>joint</code><span>組合在一起</span></p><ul><li><p><code>motion</code><span>使用</span><code>revolving joint</code><span> </span></p></li></ul></li></ul><p><img src="1111%201.gif" alt="1111%201.gif" style="zoom:50%;" /></p><div style="text-align: center;"><h2>完成!!!!!</h2></div><p>&nbsp;</p></div></div>
+
+<script>(function (){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><object name="topBar" style="position:fixed; top:0px; z-index:10;" width="100%" height="43px" type="text/html" data="../../topBar.html">
+    </object></body>
+</html>

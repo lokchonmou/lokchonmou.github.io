@@ -1,0 +1,600 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #000000;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* devanagari */
+/* latin-ext */
+/* latin */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "PT Serif", "Noto Serif TC";
+    color: rgb(10,10,10);
+    line-height: 1.6;
+    /* background-color: #e7e7e7; */
+}
+
+#write {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #2c98f0;
+    text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: 64px;
+    color: #eee;
+    background-color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h2 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: .3em;
+    font-size: 48px;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+h3 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+h5 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+h6 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    /* background-color: #e7e7e7; */
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #AAAAAA;
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    /* font-weight: bold;
+    border: 1px solid #333333;
+    border-bottom: 2px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+    background: #2c98f0; */
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #ffffff;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+code {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    /* background-color: #FFFFFF; */
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+    left: -1.5625rem;
+    top: .375rem;
+}
+#write>h4.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h5.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h6.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "PT Serif", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Walking linkage robot</title>
+</head>
+<body class='typora-export typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#walking-linkage-robot">Walking linkage robot</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#檔案">檔案</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-1">STEP 1</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-2">STEP 2</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-3">STEP 3</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-4">STEP 4</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-5">STEP 5</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-6">STEP 6</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-7">STEP 7</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-8">STEP 8</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-9">STEP 9</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-10">STEP 10</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-11">STEP 11</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-12">STEP 12</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-13">STEP 13</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-14">STEP 14</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-15">STEP 15</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-16">STEP 16</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#step-17">STEP 17</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#完成">完成</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='walking-linkage-robot'><span>Walking linkage robot</span></h1><p><span>本節要繪製的，是下圖這一部四足連杆機械人。本節主要學習應用fusion360中的joint功能，應用不同的joint去模擬連杆機械人的效果。</span></p><p><img src="2222.gif" style="zoom:50%;" /></p><p>&nbsp;</p><p><strong><a href='walking_robot__tutor_Drawing_v4.pdf'><span>walking robot  tutor Drawing v4.pdf</span></a></strong></p><p>&nbsp;</p><iframe width=50% height="500" src="https://www.youtube.com/embed/MEb5YBgFR4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><h2 id='檔案'><span>檔案</span></h2><p><mark><span>今次用到的70093L和70093R你應該已經上載了，這步驟可以省去</span></mark></p><p><span>本次會應用到的檔案(以下為step檔)，下載</span><strong><span>解壓</span></strong><span>後，在fusion左邊欄尋找&quot;upload&quot;鍵，就能上載到fuison中應用</span></p><p><a href='useful_robotics_component_step.zip'><span>useful robotics component step.zip</span></a></p><p><span>或者你可以在grabcad.com直接下載fusion360檔案(需要注冊登入)</span></p><p><a href='https://grabcad.com/library/tamiya-70093-3-speed-crank-axle-gearbox-kit-1'><span>https://grabcad.com/library/tamiya-70093-3-speed-crank-axle-gearbox-kit-1</span></a></p><p><a href='https://grabcad.com/library/tamiya-crank-1'><span>https://grabcad.com/library/tamiya-crank-1</span></a></p><p><img src="upload.gif" style="zoom:50%;" /></p><h2 id='step-1'><span>STEP 1</span></h2><ul><li><p><span>開啟新的 component，命名為 </span><code>base</code></p></li><li><p><span>確保旁邊有一個黑色小點，表示激活狀態</span></p></li><li><p><span>這是為了製作底板，請跟隨以下步驟：</span></p><ol start='' ><li><p><span>用快捷鍵</span><code>s</code><span>搜尋 </span><code>new component</code></p></li><li><p><span>開啟新的 component</span></p></li><li><p><span>命名為 &quot;base&quot;</span></p></li><li><p><strong><span>確保旁邊有黑色小點表示激活狀態</span></strong></p></li></ol></li></ul><p><img src="20210204150029.png"/></p><ul><li><p><span>接著在xy平面(或水平面)， 開一個新的sketch，繪制如下:</span></p></li></ul><p><img src="2%203%20Walking%20linkage%20robot%20f9bbafb4552c44eda98c4237cfd543fa.png"  style="width:45%;" /><span> </span><img src="20210204150627.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>使用 </span><code>s</code><span> 搜尋 </span><code>change parameter</code></p></li><li><p><span>開啟參數列表</span></p></li><li><p><span>定義一個新的參數，名為 </span><code>thickness</code><span>，值為 </span><code>3mm</code></p></li><li><p><span>使用 </span><code>e</code><span> 指令，擠出 </span><code>thickness</code><span> 參數的厚度</span></p></li></ul><p><img src="20210204153033.png" style="width:45%;" /><img src="20210204150710.png" style="width:45%;" /></p><h2 id='step-2'><span>STEP 2</span></h2><ul><li><p><span>使用快捷鍵 </span><code>s</code><span> 指令搜尋 </span><code>insert derive</code><span> 功能</span></p></li><li><p><span>將 70093L gearbox 插入衍生到此檔案中</span></p></li><li><p><span>選擇 70093L 的 component</span></p></li><li><p><span>按右鍵，在選單中選擇 </span><code>rigid group</code></p></li></ul><p><span>❗</span><strong><u><span>記得要用insert derive功能, 不要直接拖拉gearbox入去, 否則是不能修改的</span></u></strong></p><p><img src="insert_derive.gif" style="width:45%;" /><span> </span><img src="rigid_group.gif" style="width:45%;" /></p><ul><li><p><span>確保小黑點在這個70093L gearbox旁。</span></p></li><li><p><span>用</span><code>e</code><span>將齒輪箱的軸適當地修短(或增長, 如果有需要)</span></p></li><li><p><span>再用快捷鍵</span><code>j</code><span>把齒輪箱組合到底板</span></p></li></ul><p><img src="20210205103611.png" style="width:45%;" /><span> </span><img src="20210205103646.png" style="width:45%;" /></p><p><img src="20210204150821.png" style="width:45%;"/></p><ul><li><p><span>再次使用快捷鍵</span><code>s</code><span> 指令搜尋 </span><code>insert derive</code><span> 功能</span></p></li><li><p><span>將另一個 70093 gearbox 插入衍生到此檔案中，</span><strong><span>確保小黑點在新派入的 70093 旁邊</span></strong></p></li><li><p><span>使用 快捷鍵</span><code>e</code><span>擠出 指令，適當修剪齒輪箱的長軸</span></p></li><li><p><span>使用快捷鍵 </span><code>j</code><span> 指令，將齒輪箱組合到底板上</span></p></li></ul><p><span>❗️</span><strong><u><span>記得要用derive功能來插入衍生，不要用copy &amp; paste，否則修改齒輪箱時，左右兩邊會同步喔!!!!</span></u></strong></p><p><img src="20210204150936.png" style="width:45%;" /></p><h2 id='step-3'><span>STEP 3</span></h2><ul><li><p><strong><u><span>將小黑點移回最上層</span></u></strong></p></li><li><p><span>開啟一個新的 sheet metal component，命名為 </span><code>L support</code><span>，選擇一個材料和厚度</span></p><ul><li><p><span>開啟</span><code>new component</code><span>時有選項是</span><code>standard</code><span>或</span><code>Sheet Metal</code></p></li><li><p><span>確認 sheet metal component 的圖示與普通 component 不同</span></p></li></ul></li><li><p><strong><u><span>確保旁邊有一個小黑點，表示激活狀態</span></u></strong></p></li><li><p><span>在底板上方使用快捷鍵</span><code>s</code><span> 搜尋</span><code>new sketch</code><span> ，在底板表面創建一個新的草圖</span></p></li><li><p><span>為洞的中心點繪製中心線</span></p></li><li><p><span>繪製一個寬度為 10mm 的長方形</span></p></li><li><p><span>使用中點或對稱約束，確保正方形相對於中心線對稱</span></p><p><span>💡</span><em><span>提示: 可以點擊 component 左側的眼睛圖示，隱藏 component 以方便操作</span></em></p></li></ul><p><img src="image-20230605095618049.png" alt="image-20230605095618049" style="zoom:80%;" /></p><p><img src="20210204151001.png" style="width:45%;" /><span> </span><img src="20210204151116.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>在 sheet metal 頁面中，點擊 </span><code>edit rule&quot;</code><span>圖示，在所選材料旁邊會出現一支筆的圖示，點擊進去即可修改屬性，例如厚度、摺疊時預留的延伸長度等等</span></p></li><li><p><span>在 sheet metal 頁面中，點擊 </span><code>Flange</code><span> 圖示，或使用快捷鍵 </span><code>s</code><span>搜尋 </span><code>Flange</code></p></li><li><p><span>選擇剛才繪製的方形，製作一個厚度為 2mm 的金屬薄片</span></p></li></ul><p><span>❗️</span><strong><u><span>請注意，製作金屬薄片時需要使用 </span><code>Flange</code><span>指令，請勿使用 </span><code>e</code><span> extrude 指令</span></u></strong></p><p><img src="20210204151605.png" style="width:45%;" /><span> </span><img src="20210204151406.png" style="width:45%;" /></p><p><img src="20210204151132.png" style="width:45%;" /><span> </span><img src="20210204151201.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>使用 </span><code>Flange</code><span>指令，點擊金屬片的邊緣，即可自動出現 </span><code>bending</code><span>功能</span></p><ul><li><p><span>Bending 的高度和位置(</span><code>Bend Position</code><span>)可以分別設定為 </span><code>inside</code><span>、</span><code>outside</code><span> 和 </span><code>center</code><span> 三種，決定高度和摺疊位置的計算方式不同，可以嘗試看看有什麼不同</span></p></li></ul></li><li><p><span>設定凸出高度</span><code>Height Datum</code><span>為 </span><code>16mm</code><span>，</span><code>Bend Position</code><span>為 </span><code>inside</code><span> 內側計起</span></p></li><li><p><span>重複以上步驟，製作另一側高度也為 </span><code>16mm</code><span> 的鋁片(如下圖)</span></p></li></ul><p><img src="20210204151700.png" style="width:45%;" /><span> </span><img src="20210204151729.png" style="width:45%;" /></p><ul><li><p><strong><span>保旁</span><code>L support</code><span>邊有一個小黑點，表示激活狀態</span></strong></p></li><li><p><span>使用 快捷鍵</span><code>s</code><span> 搜尋指令 </span><code>new sketch</code><span>，在凸起的鋁板表面開一個新的草圖(如下圖)</span></p></li><li><p><span>將其中一個齒輪箱顯示出來</span></p></li><li><p><span>使用快捷鍵 </span><code>p</code><span> 投影長軸的圓</span></p><ul><li><p><span>這一步是為了確保開出來的孔跟長軸同一個高度</span></p></li></ul></li><li><p><span>在鋁板上劃一條中線和一個直徑為 3mm 的圓形</span></p></li><li><p><span>使用 </span><code>constraints</code><span>中的第一個圖示 </span><code>horizontal and vertical</code><span>，確保 3mm 圓形的高度與長軸同高</span></p></li></ul><p><img src="20210204151900.png" style="width:45%;" /><span> </span><img src="20210204151819.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>使用 快捷鍵</span><code>e</code><span>使用 </span><code>extrude</code><span>指令，選擇剛才所劃 3mm 圓形，到 </span><code>extent type</code><span> 使用 </span><code>to object</code><span>，將圓孔穿透到鋁板的另一面</span></p></li><li><p><span>最後使用快捷鍵</span><code>f</code><span> 使用</span><code>fillet</code><span>指令，修剪圓角，半徑選擇3mm 即可</span></p></li></ul><p><img src="20210204151932.png" style="width:45%;" /><span> </span><img src="20210204151950.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><strong><u><span>將小黑點移回最外層</span></u></strong></p></li><li><p><span>使用快捷鍵 </span><code>j</code><span>使用</span><code>joint</code><span> 指令，將鋁板組合到底板上</span></p></li></ul><p><img src="20210204152038.png" style="width:45%;" /></p><h2 id='step-4'><span>STEP 4</span></h2><ul><li><p><strong><u><span>確保小黑點在最外層</span></u></strong></p></li><li><p><span>使用快捷鍵 </span><code>s</code><span> 指令搜尋 </span><code>insert derive</code><span>，插入 </span><code>tamiya crank</code><span> 曲柄的 step 檔或 f3d 檔</span></p></li><li><p><span>插入後，將</span><strong><u><span>小黑點移動到曲柄的旁邊，並激活它</span></u></strong></p></li><li><p><span>在曲柄表面使用 </span><code>new sketch</code><span>創建一個新的草圖</span></p></li><li><p><span>投影並繪製一條線，如下圖所示</span></p></li></ul><p><span>💡</span><em><span>提示: 可以使用 component 旁的小眼睛圖示，適當地顯示和隱藏 component，方便操作</span></em></p><p><img src="20210204152258.png" style="width:45%;" /><span> </span><img src="20210204152420.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><strong><u><span>確保小黑點在 </span><code>tamiya crank</code><span>曲柄的旁邊</span></u></strong></p></li><li><p><span>使用快捷鍵 </span><code>e</code><span> </span><code>extrude</code><span> 指令，將多餘的曲柄部分剪除，只留下最近的一個孔</span></p></li><li><p><strong><u><span>將小黑點移回最外層</span></u></strong></p></li><li><p><span>使用快捷鍵 </span><code>j</code><span> </span><code>joint</code><span>指令，將曲柄組合到齒輪箱的長軸上</span></p></li></ul><p><span>❗</span><i><b><span>如果使用的是 f3d Fusion 360 檔案，由於齒輪箱內部可以旋轉，因此可以使用 &quot;rigid&quot; 聯結方式</span></b></i></p><p><span>❗</span><i><b><span>如果使用的是 step 檔案，聯結時需要到 &quot;motion&quot; 頁面，選擇旋轉聯結的類型為 revolving joint</span></b></i></p><p><img src="20210204152500.png" style="zoom:50%;" /><span> </span><img src="20210204152553.png" style="zoom:50%;" /></p><h2 id='step-5'><span>STEP 5</span></h2><ul><li><p><strong><u><span>確保小黑點在最上層</span></u></strong></p></li><li><p><span>使用 </span><code>Ctrl-C</code><span>/</span><code>Ctrl-V</code><span> 指令，將 </span><code>tamiya crank</code><span>複製一份</span></p></li><li><p><span>使用快捷鍵 </span><code>j</code><span> </span><code>joint</code><span>指令，將複製的曲柄組合到另一邊的齒輪箱長軸上</span></p></li><li><p><span>記得方向要與另一邊相差 180 度，如果左邊是向後，這邊則要向前方</span></p><p>&#128161;<i><em><span>如果零件完全相同，可直接複製/貼上；如果零件相似但需要獨立修改，則需使用衍派(</span><code>insert derive</code><span>)功能</span></em></i></p><p>&#128161;<i><em><span>同樣地，如果使用的是 step 檔案的 70093 齒輪箱，joint的類型應為 revolving joint</span></em></i></p></li></ul><p><img src="20210204152703.png" style="width:45%;" /></p><h2 id='step-6'><span>STEP 6</span></h2><ul><li><p><strong><u><span>確保小黑點在最上層</span></u></strong></p></li><li><p><span>使用 </span><code>new component</code><span> 指令，創建一個名為 </span><code>legs&quot;</code><span>的新組件，用於裝配左半邊的所有腳和連桿</span></p></li><li><p><strong><u><span>確保小黑點在 </span><code>legs</code><span> 旁邊</span></u></strong><span>，再次使用 </span><code>new component</code><span>指令，創建一個名為 </span><code>leg1</code><span> 的新組件</span></p></li></ul><p><em><strong><span>❗接下來所有的腳和連桿，都必須確保位於 </span><code>legs&quot;</code><span>組件的下方，否則在複製時，所有聯結的關係都會散開，需要重新組合</span></strong></em></p><p><img src="20210204152803.png" style="width:45%;" /><span> </span><img src="20210204152839.png" style="width:45%;" /></p><h2 id='step-7'><span>STEP 7</span></h2><ul><li><p><span>確保小黑點在</span><code>leg1</code><span>旁邊</span></p></li><li><p><span>先隱藏除</span><code>leg1</code><span>外的</span><strong><span>所有</span></strong><span>組件</span></p></li><li><p><span>使用快捷鍵</span><code>s</code><span> ，尋找 </span><code>new sketch</code><span>指令，在原點的 XZ 平面上創建一個新的草圖</span></p></li><li><p><span>根據下圖所示的尺寸繪製草圖</span></p></li><li><p><span>在繪製時，可以使用快捷鍵 </span><code>s</code><span> 尋找指令 </span><code>change parameter</code><span>，將連桿的尺寸設置為變數，之後只需修改該變數即可更新所有相關尺寸</span></p></li></ul><p><img src="20210204153033%201.png" style="width:45%;" /><span> </span><img src="Untitled.png" style="width:45%;" /></p><p><img src="20210204152945.png" style="width:45%;" /></p><p>&nbsp;</p><ul><li><p><span>使用快捷鍵</span><code>e</code><span> </span><code>extrude</code><span>指令，擠出 &quot;thickness&quot; 的厚度</span></p></li><li><p><span>再使用 快捷鍵</span><code>f</code><span> </span><code>fillet</code><span> 指令，添加圓角，半徑約</span><code>3mm</code></p></li></ul><p><img src="20210204172005.png" style="width: 45%;" /><span> </span><img src="20210204172031.png" style="width:45%;" /></p><h2 id='step-8'><span>STEP 8</span></h2><ul><li><p><span>接下來，</span><strong><u><span>褪回小黑點在</span><code>legs</code><span>的旁邊</span></u></strong></p></li><li><p><span>使用 快捷鍵</span><code>s</code><span> 搜尋 </span><code>new component</code><span>，創建一個名為 </span><code>linkage1</code><span> 的新組件</span></p></li><li><p><span>先隱藏除</span><code>linkage1</code><span>外的</span><strong><span>所有</span></strong><span>組件</span></p></li><li><p><strong><u><span>確保小黑點在</span><code>linkage1</code><span>旁邊</span></u></strong><span>，並在 XZ 平面上創建一個新的草圖</span></p></li><li><p><span>繪製一個連桿，使用 </span><code>change parameter</code><span>指令設置一個名為 </span><code>L3</code><span> 的變數來定義長度，設置值為 </span><code>72mm</code></p><ul><li><p><span>如果上一步已一次過設定好，這一步可以省卻</span></p></li></ul></li><li><p><span>最後使用 快捷鍵</span><code>e</code><span> </span><code>extrude</code><span>指令擠出 </span><code>thickness</code><span>&quot;的厚度</span></p></li></ul><p><img src="20210204172124.png" style="width:30%;" /><span> </span><img src="20210204172309.png" style="width:60%;" /></p><p><img src="20210204172419.png" style="width:55%;" /></p><h2 id='step-9'><span>STEP 9</span></h2><p><span>接下來開始複製和組裝左腳：</span></p><ul><li><p><span>首先將所有零件顯示出來，方便操作。</span></p></li><li><p><span>使用快捷鍵</span><code>j</code><span> </span><code>joint</code><span> 指令，將 </span><code>linkage1</code><span> 組件組裝到鋁片上。</span></p><ul><li><p><span>兩個 joint 的接口保留 </span><code>1mm</code><span>的距離，如果是實物裝配時，可以使用 1mm 的鐵墊片將其隔開，確保可以旋轉。</span></p></li><li><p><span>大約將接口的角度旋轉 25 度，方便後續操作。</span></p></li><li><p><span>前往 </span><code>motion</code><span>頁面，選擇 </span><code>revolving joint</code><span> 作為聯結的類型。</span></p></li></ul></li><li><p><span>完成後，可以發現這個 joint 的符號會出現在最上層。</span></p><ul><li><p><span>即使在啟用 </span><code>legs</code><span>組件時（小黑點在旁邊），這個 joint 也會在 </span><code>legs</code><span>之外，因此在複製 </span><code>legs</code><span>時不會跟著複製。</span></p></li></ul></li></ul><p><img src="20210204172904.png" style="width:45%;" /><span> </span><img src="20210204172546.png" style="width:45%;" /></p><h2 id='step-10'><span>STEP 10</span></h2><ul><li><p><span>使用快捷鍵</span><code>j</code><span>  將 </span><code>leg1</code><span> 組件組裝到曲柄上</span></p><ul><li><p><span>偏移 4mm</span></p></li><li><p><span>這個偏移量不一定需要是 4mm，因為之後需要在 </span><code>motion</code><span>頁面進行設置</span></p></li></ul></li><li><p><span>在 </span><code>motion</code><span>頁面，選擇 </span><code>cylindrical joint</code></p><ul><li><p><span>這種 joint 有兩個自由度，一個是旋轉，另一個是沿著旋轉軸移動，因此上面選擇的 4mm 偏移量只是參考，沒有實際限制</span></p></li></ul></li><li><p><span>跟上面的 </span><code>revolving joint</code><span> 一樣，即使在啟用 </span><code>legs</code><span> 組件時，這個 joint 也不會在 </span><code>legs</code><span> 底下，因為曲柄不在 </span><code>legs</code><span>底下。</span></p></li></ul><p><img src="20210204172749.png" style="width:45%;" /><span> </span><img src="20210204172824.png" style="width:45%;" /></p><p><img src="20210204172639.png" style="width:45%;" /></p><h2 id='step-11'><span>STEP 11</span></h2><ul><li><p><strong><u><span>確保小黑點在 </span><code>legs</code><span> 組件旁邊</span></u></strong></p></li><li><p><span>使用快捷鍵</span><code>j</code><span> </span><code>joint</code><span>將 </span><code>leg1</code><span> 組件組合到 </span><code>linkage1</code><span>&quot;上</span></p><ol start='' ><li><p><span>joint 接觸面距離為 1mm，跟之前一樣，如果在實際組裝時，可以使用 1mm 的墊片隔離</span></p></li><li><p><span>在 </span><code>motion</code><span> 頁面上選擇 </span><code>revolving joint</code></p></li></ol></li><li><p><span>完成後，確認這個 joint 在 </span><code>legs</code><span>組件之下，這樣在複製時才會跟著被複製</span></p></li></ul><p><span style='font-size:20px;'>&#128161;</span><span> </span><i><span>記住四連桿組裝的秘訣是：在三個 joint 中，有 2 個 revolving joint 和 1 個 cylindrical joint，次序可以隨意，這樣就不用計算偏移量和厚度。</span></i></p><p><img src="20210204173054.png" style="width:45%;" /><span> </span><img src="20210204173150.png" style="width:45%;" /></p><h2 id='step-12'><span>STEP 12</span></h2><ul><li><p><strong><u><span>確保小黑點繼續在 </span><code>legs</code><span> 組件旁邊</span></u></strong></p></li><li><p><span>使用 </span><code>Ctrl+C</code><span>/</span><code>Ctrl+V</code><span>將 </span><code>leg1</code><span> 和 </span><code>linkage1</code><span> 複製一份，複製成 </span><code>leg1:2</code><span> 和 </span><code>linkage1:2</code><span>，如下圖所示</span></p></li><li><p><span>確保兩隻腳和兩條連桿都在同一個 </span><code>legs</code><span> 組件之下</span></p></li></ul><p><img src="20210204175259.png" style="width:45%;" /></p><h2 id='step-13'><span>STEP 13</span></h2><p><span>圖1:</span></p><ul><li><p><strong><u><span>確保小黑點在 </span><code>legs</code><span> 旁邊</span></u></strong></p></li><li><p><span>使用 joint 將 </span><code>leg1:2</code><span> 組件組合到 </span><code>linkage1</code><span> 上，偏移</span><code>1mm</code></p></li><li><p><span>在 </span><code>motion</code><span> 頁面上選擇 </span><code>revolving joint</code></p></li></ul><p><span>同樣地，圖2：</span></p><ul><li><p><span>將 </span><code>linkage1:2</code><span> 組件連接到 </span><code>leg1:2</code><span> 上</span></p></li><li><p><span>在 </span><code>motion</code><span> 頁面上選擇 </span><code>revolving joint</code><span>，偏移 </span><code>1mm</code></p></li></ul><p><span>最後，圖3：</span></p><ul><li><p><span>將 </span><code>linkage1:2</code><span>的另一端連接到 </span><code>leg1</code><span> 上</span></p></li><li><p><span>在 </span><code>motion</code><span>頁面上選擇 </span><code>cylindrical joint</code></p></li><li><p><span>這次可以不用偏移，因為使用 </span><code>cylindrical joint</code><span> 會自動調整間隔，以適應前面兩個偏移量</span></p></li></ul><p><img src="20210204175357.png" style="width:45%;" /><span> </span><img src="20210204175516.png" style="width:45%;" /></p><p><img src="20210204175643.png" style="width:45%;" /></p><h2 id='step-14'><span>STEP 14</span></h2><p><span>好的，左腳部分完成了。</span></p><ul><li><p><span>請試著轉動齒輪箱，看看腳是否跟著動</span></p></li><li><p><span>試著調整 </span><code>leg</code><span> 和 </span><code>linkage</code><span>的偏移量，由 </span><code>1mm</code><span> 改為 </span><code>0.5mm</code><span>（或任何數值），看看修改後是否會出現錯誤警告</span></p><ul><li><p><span>如果按照步驟進行，調整參數應該不會出現錯誤</span></p></li></ul></li></ul><p><img src="testing1.gif" alt="testing1.gif" style="width:50%;" /></p><h2 id='step-15'><span>STEP 15</span></h2><ul><li><p><strong><u><span>將小黑點移回最上層</span></u></strong></p></li><li><p><span>使用 </span><code>Ctrl+C</code><span>/</span><code>Ctrl+V</code><span> 將整個 </span><code>legs</code><span>組件（即左腳）複製一份，複製成 </span><code>legs1:2</code></p></li><li><p><span>可以將複製的組件移開一點，以方便操作</span></p></li></ul><p><span>❗ </span><strong><span>Fusion 360 的鏡像功能無法複製 joint，因此如果要完全左右對稱，則需要重新建立所有的 joint</span></strong></p><p><img src="20210204180800.png" style="width:50%;" /></p><h2 id='step-16'><span>STEP 16</span></h2><ul><li><p><span>使用 快捷鍵</span><code>j</code><span> 將最靠近右側 Tamiya 曲柄的 </span><code>linkage1:1</code><span> 組件組合到曲柄孔上</span></p></li><li><p><span>在 </span><code>motion</code><span>頁面上選擇 </span><code>revolving joint</code></p></li><li><p><span>偏移 </span><code>1mm</code></p></li></ul><p><img src="20210204180840.png" style="width:45%;" /><img src="20210204180951.png" style="width:45%;" /></p><h2 id='step-17'><span>STEP 17</span></h2><ul><li><p><span>最後將右側的 </span><code>leg1:1</code><span>和剩下的鋁支架 </span><code>L support</code><span> 的孔組合</span></p></li><li><p><span>在 </span><code>motion</code><span>&quot;頁面上選擇 </span><code>cylindrical joint</code></p></li><li><p><span>這次可以不用偏移，因為使用 </span><code>cylindrical joint</code><span>會自動調整間隔，以適應前面兩個偏移量。</span></p></li></ul><p><img src="20210204181140.png" style="width:45%;" /></p><h2 id='完成'><span>完成</span></h2><p><span>完成之後，</span></p><ul><li><p><span>請模擬一下，試著轉動右側的腳，看看是否可以模擬真實機械連桿轉動。</span></p></li><li><p><span>試著修改一下偏移量的數值，看看是否會出現錯誤。</span></p></li><li><p><span>PDF 文件包含 Phase 1 和 Phase 2 的尺寸，請使用 </span><code>Change Parameter</code><span> 更改一下參數尺寸，看看整個設計是否會立即修改</span></p></li></ul><p>&nbsp;</p></div></div>
+
+<script>(function (){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><object name="topBar" style="position:fixed; top:0px; z-index:10;" width="100%" height="43px" type="text/html" data="../../topBar.html">
+    </object></body>
+</html>
