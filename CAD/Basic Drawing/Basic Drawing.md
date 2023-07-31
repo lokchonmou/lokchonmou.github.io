@@ -6,8 +6,6 @@
 
 ## 1. Bracket
 
- [Bracket Drawing v6.pdf](Bracket Drawing v6.pdf) 
-
 <a href="image20210913110350355.png" target="_blank"><img src="image20210913110350355.png" style="zoom:75%;" /></a>
 
 ###Step 1
@@ -19,7 +17,7 @@
 
 ###Step 2
 
-1. 用`new sketch`在xz平面上建立一個新的2d sketch
+1. 用`new sketch`在xz平面上建立一個新的2D sketch
 
 <img src="fusion42.gif" alt="fusion42" style="zoom:50%;" />
 
@@ -28,7 +26,7 @@
 
 <img src="fusion43.png" alt="fusion43" style="zoom:50%;" />
 
-3. 利用2d約束，將長方形相切和固定，之後就可以繼續跟據尺寸劃餘下的部分
+3. 利用2D約束，將長方形相切和固定，之後就可以繼續跟據尺寸劃餘下的部分
 
 <img src="fusion44.gif" alt="fusion44" style="zoom:50%;" />
 
@@ -40,7 +38,7 @@
 
 ###Step 3
 
-1. 在右側的面建立一個2d sketch
+1. 在右側的面建立一個2D sketch
 
 <img src="fusion47.gif" alt="fusion47" style="zoom:50%;" />
 
@@ -48,11 +46,9 @@
 3. 中心線可以用hotkey `x` 來將實線轉換成作圖線
 4. 兩邊的斜角有兩種方法去劃:
 	1. 一是先劃好一邊，再用`mirror`
-	2. 另一個方法是隨意劃好兩邊的線，再用2d約束令其對稱
+	2. 另一個方法是隨意劃好兩邊的線，再用2D約束令其對稱
 
-<img src="fusion48.gif" alt="fusion48" style="zoom:50%;" />
-
-<img src="fusion49.gif" alt="fusion49" style="zoom:50%;" />
+<img src="fusion48.gif" alt="fusion48" style="width:45%;" /><img src="fusion49.gif" alt="fusion49" style="width:45%;" />
 
 5. 最後用hotkey `e` 選擇去切去的部分，用`to object`指定後面的面切去
 
@@ -93,9 +89,7 @@
 
 ## 2. Guide block
 
- [Guide block Drawing v3.pdf](Guide block Drawing v3.pdf) 
-
-<a href="fusion416.png" target="_blank"><img src="fusion416.png" style="zoom:75%;" /></a>
+ <a href="fusion416.png" target="_blank"><img src="fusion416.png" style="zoom:75%;" /></a>
 
 ### Step 1
 
@@ -167,23 +161,23 @@
 
 ## 3. 練習題
 
-###3.1 <img src="image-20230328124547865.png" alt="image-20230328124547865" style="zoom:67%;" />
+### 3.1 <img src="image-20230328124547865.png" alt="image-20230328124547865" style="zoom:67%; border: 3px solid #ccc;" />
 
-###3.2 <img src="image-20230328121150309.png" alt="image-20230328121150309" style="zoom: 67%;" />
+###3.2 <img src="image-20230328121150309.png" alt="image-20230328121150309" style="zoom: 67%; border: 3px solid #ccc;" />
 
-###3.3 <img src="image-20230328121346411.png" alt="image-20230328121346411" style="zoom:67%;" />
+###3.3 <img src="image-20230328121346411.png" alt="image-20230328121346411" style="zoom:67%; border: 3px solid #ccc;" />
 
-###3.4 <img src="image-20230328121801169.png" alt="image-20230328121801169" style="zoom:75%;" />
+###3.4 <img src="image-20230328121801169.png" alt="image-20230328121801169" style="zoom:75%; border: 3px solid #ccc;"  />
 
-###3.5 <img src="image-20230328122225175.png" alt="image-20230328122225175" style="zoom:67%;" />
+###3.5 <img src="image-20230328122225175.png" alt="image-20230328122225175" style="zoom:67%;border: 3px solid #ccc;" />
 
-### 3.6  <img src="image-20230328122726944.png" alt="image-20230328122726944" style="zoom:67%;" />
+### 3.6  <img src="image-20230328122726944.png" alt="image-20230328122726944" style="zoom:67%;border: 3px solid #ccc;" />
 
-### 3.7 <img src="image-20230328123754394.png" alt="image-20230328123754394" style="zoom:67%;" />
+### 3.7 <img src="image-20230328123754394.png" alt="image-20230328123754394" style="zoom:67%;border: 3px solid #ccc;" />
 
-###3.8 <img src="image-20230328125042180.png" alt="image-20230328125042180" style="zoom:67%;" />
+###3.8 <img src="image-20230328125042180.png" alt="image-20230328125042180" style="zoom:67%; border: 3px solid #ccc;" />
 
-### 3.9 <img src="image-20220530154626720.png" alt="image-20220530154626720" style="zoom: 50%;" />
+### 3.9 <img src="image-20220530154626720.png" alt="image-20220530154626720" style="zoom: 50%;border: 3px solid #ccc;" />
 
 Hints:
 
@@ -191,10 +185,24 @@ Hints:
 
 ![image-20220530155531093](image-20220530155531093.png)
 
-2.  圖則中的`Ø20 THRU ALL ⌵24X82º` 即直徑20mm的孔countersink(沉孔)82º, fusion360有個很簡單的鑽孔指令, 就是`holes`, hotkey `H`, 選取選左邊直邊作為reference, 距離32mm, 選取上面的水平邊為另一reference, 距離31mm, 深度(`Extents`)選`All`, `Hole Type` 選擇第三個沉孔`Countersink`, `Hole Tap Type`即孔是否要攻螺絲牙, 今次不用, 所以選第一個`Simple`, Drill Point就是鑽孔的尾端是平還是尖, 今次選哪一個都可以, 因為孔是完全穿的
+2.  圖則中的`Ø20 THRU ALL ⌵24X82º` 即直徑20mm的孔countersink(沉孔)82º，可以使用`holes`指令來創建孔:
+
+	- 使用快捷鍵`H`或者在菜單上找到`holes`指令
+
+	- 選擇孔的位置，選擇左邊的垂直邊作為參考，距離32mm，然後選擇上方的水平邊作為參考，距離31mm
+
+	- 在`hole type`中，選擇第三個選項，即沉孔`Countersink`，然後選擇孔的角度為82度
+
+	- 在`hole tap type`中，選擇第一個選項`Simple`，因為不需要攻螺絲牙
+
+	- 在`Drill Point`中，選擇任何一個選項都可以，因為這個孔是完全穿透的
 
 <img src="image-20220601174113685.png" alt="image-20220601174113685" style="zoom: 50%;" />
 
-3. 其他的孔可以用sketch劃好後用extrude減去, 或用hole指令去完成都可以, 而修角則可用`chamfer` 指令去做, 最後用fillet來修圓角
+3. 最後
+	- 使用sketch劃好要製作的孔，然後用extrude指令減去不需要的部分
+	- 或者使用hole指令來完成孔的製作
+	- 使用chamfer指令來修剪角落
+	- 使用fillet指令來修圓角
 
 <img src="image-20220530160228432.png" alt="image-20220530160228432" style="zoom:50%;" />

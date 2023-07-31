@@ -7,10 +7,9 @@
 ##Step 1 如何存/讀檔
 
 - 進入到fusion360之後，會見到左手邊會有一個9小格組成的符號，打開後會見到你所有的project。
-	- 例如現在你需要設計一部相撲機械人，那你的機械人可能牽涉到很多的零部件，那麼，開一個新的project就可以方便管理。
-
-- [ ] 進入Fusion360，點開左手邊的符號，看到project列表
-- [ ] 點選`New Project`，名為`first project`或`XXX's first project`
+  - 例如現在你需要設計一部相撲機械人，那你的機械人可能牽涉到很多的零部件，那麼，開一個新的project就可以方便管理。
+- 進入Fusion360，點開左手邊的符號，看到project列表
+- 點選`New Project`，名為`first project`或`XXX's first project`
 
 <img src="fusion11.png" alt="fusion11" style="zoom: 50%;" />
 
@@ -24,28 +23,30 @@
 ## Step 2 設定環境
 
 - **❗  介面記得要用英文版，如果是中文版的話，之後做快速搜尋時就要全部用中文搜尋，會比較麻煩**
-- [ ] **💡  轉英文版可以在右上角按下你的名字，選擇preferences，第一個選項就是語言**
+- **💡  轉英文版可以在右上角按下你的名字，選擇preferences，第一個選項就是語言**
 - 請記得以上提醒，並使用英文版介面，以方便使用Fusion360
 
 ------
 
 
 
-- [ ] 去到畫圖中下方，點選瑩幕般的符號
+- 去到畫圖中下方，點選瑩幕般的符號
 
-- [ ] 出現effects的選項，將所有effects關掉，電腦會更快
-	- 如果有獨立顯卡或高階電腦，可以試著開幾個effects，視覺效果更好
+- 出現effects的選項，將所有effects關掉，電腦會更快
+
+- 如果有獨立顯卡或高階電腦，可以試著開幾個effects，視覺效果更好
 
 ![fusion13](fusion13.png)
 
 
 
-- [ ] 按下旁邊的小格icon，可以開啟或關閉ground上的比例格
+- 按下旁邊的小格icon，可以開啟或關閉ground上的比例格
 
 ![fusion14](fusion14.png)
 
-- [ ] 在畫面右上角，對著小屋的icon，按下**mouse右鍵**
-- [ ] 設定視角模式，我個人喜歡使用最下面的`perspective with ortho faces`
+- 在畫面右上角，對著小屋的icon，按下**mouse右鍵**
+
+- 設定視角模式，我個人喜歡使用最下面的`perspective with ortho faces`
 	- 這樣平時是透視圖，近的物體比較大，遠的物體比較小；但當需要正、頂、側視圖時，會變回平行投影，方便查看尺寸
 
 ![fusion15](fusion15.png)

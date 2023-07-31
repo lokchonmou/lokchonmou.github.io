@@ -2,7 +2,7 @@
 
 本節是介紹如何去組裝一隻相撲機械人。做好後效果如下:
 
-![image-20230612111644775](image-20230612111644775.png)
+<img src="image-20230612111644775.png" alt="image-20230612111644775" style="zoom:80%;" />
 
 [TOC]
 
@@ -66,7 +66,7 @@
 
 <img src="Screenshot 2022-03-14 143148.png" alt="Screenshot 2022-03-14 143148" style="WIDTH:45%;" /><img src="image-20230606102804131.png" alt="image-20230606102804131" style="width:45%;" />
 
-<img src="Screenshot 2022-03-14 143228.png" alt="Screenshot 2022-03-14 143228" style="WIDTH:45%;" /><img src="image-20230606103019568.png" alt="image-20230606103019568" style="width:45%;" />
+<img src="Screenshot 2022-03-14 143228.png" alt="Screenshot 2022-03-14 143228" style="WIDTH:35%;" /><img src="image-20230606103019568.png" alt="image-20230606103019568" style="width:55%;" />
 
 
 

@@ -198,7 +198,9 @@ Fusion360特色：
 
 <img src="2dSketch17.gif" alt="2dSketch17" style="zoom:50%;" />
 
-7. 之後就可以用hotkey `D`標示全部尺寸, 今次部分尺寸要選點到點之間的距離標示<img src="2dSketch18.gif" alt="2dSketch18" style="zoom:50%;" />
+7. 之後就可以用hotkey `D`標示全部尺寸, 今次部分尺寸要選點到點之間的距離標示
+
+	<img src="2dSketch18.gif" alt="2dSketch18" style="zoom:50%;" />
 
 8. 之後用hotkey `S`搜尋`center rectangle`劃一個30x50的長方形, 長方形頂部距離最高點為20
 
@@ -267,7 +269,7 @@ Fusion360特色：
 
 <img src="image-20220309105129862.png" alt="image-20220309105129862" style="width:45%;" />
 
-==不要在2d sketch中用fillet去修圓角，否則所有的黑線會變回藍線==
+==不要在2D sketch中用fillet去修圓角，否則所有的黑線會變回藍線==
 
 <img src="image-20230328100239034.png" alt="image-20230328100239034" style="width:45%;" /><img src="image-20230328100311706.png" alt="image-20230328100311706" style="width:45%;" />
 
@@ -277,7 +279,7 @@ Fusion360特色：
 
 <img src="image-20220309182914898.png" alt="image-20220309105129862" style="width:45%;" />
 
-==不要在立體中用trim，否則黑色的關係線會掉失==
+==不要在2D sketch中用trim，否則黑色的關係線會掉失==
 
 <img src="image-20230328101258927.png" alt="image-20230328101258927" style="width:45%;" /><img src="image-20230328101421826.png" alt="image-20230328101421826" style="width:45%;" />
 
@@ -285,13 +287,14 @@ Fusion360特色：
 
 <img src="image-20220310122246576.png" alt="image-20220310122246576" style="width:45%;" />
 
-你可以在2d sketch中用`3 point arc`來繪制4個弧去擠出，或者像我一樣，首先不理會4個弧，擠出後再用`fillet`去補。
+- 你可以在2D sketch中用`3 point arc`來繪制4個弧去擠出
+- 或者像我一樣，首先不理會4個弧，擠出後再用`fillet`去補。
 
 <img src="image-20230328113209685.png" alt="image-20230328113209685" style="width:45%;" /><img src="image-20230328113920796.png" alt="image-20230328113920796" style="width:45%;" />
 
 ###練習14
 
-Harder problem. 這兩題在立體再fillet會容易後多。
+**Harder problem**. 這兩題在立體再fillet會容易後多。
 
 <img src="image-20220308203714210.png" alt="image-20220308203714210" style="width:45%;" />
 

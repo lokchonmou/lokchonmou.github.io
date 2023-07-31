@@ -4,9 +4,9 @@
 
 ## New Sketch
 
-- [ ] 在工具列上方點選`new sketch`按鍵，或使用快速鍵`s`搜尋`new sketch`
+- 在工具列上方點選`new sketch`按鍵，或使用快速鍵`s`搜尋`new sketch`
 
-- [ ] 選擇要建立2d sketch的面，今次練習不同的2d約束，選哪一個面都沒有關係
+- 選擇要建立2d sketch的面，今次練習不同的2d約束，選哪一個面都沒有關係
 	- 之後就但見到介面有少許不同，變成2d專用的介面
 
 - 我們在工具列由左至右逐個講解
@@ -69,4 +69,4 @@
 
 - 💡 ***Fusion360所有的sketch都是有特徵的，所以你會發現甚少會使用copy & paste功能，如果真的有需要copy & paste，可開另一個sketch，再project之前的sketch去新的sketch***
 
-- ❗ ***<u>不要</u>使用2d編修工具如fillet, chamfer, trim, scale, move/copy***
+- ❗ ==***<u>不要</u>使用2d編修工具如fillet, chamfer, trim, scale, move/copy***==

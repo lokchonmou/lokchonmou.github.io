@@ -26,7 +26,7 @@
 
 以下為方便大家，已把library都打包了，下載以下幾個檔就可:
 
-* [Arduino-clone](Arduino-clone.lbr) 
+* [Arduino-clone.lbr](Arduino-clone.lbr) 
 * [diy-modules.lbr](diy-modules.lbr) 
 
 ## 匯入元件庫

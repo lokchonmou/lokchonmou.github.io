@@ -1,6 +1,6 @@
 
 
-# 1.5 Advance 3D drawing
+# Advance 3D drawing
 
 如果你打開Fusion360上方的工具列，你會發現有很多各式各樣的工具，這些工具在繪圖時會非常有幫忙，本章會介紹幾個常用的工具。
 
@@ -20,11 +20,7 @@
 
 ###練習題1
 
-<img src="image-20220530162442507.png" alt="image-20220530162442507" style="zoom:75%;" />
-
-
-
-
+<img src="image-20220530162442507.png" alt="image-20220530162442507" style="zoom:75%; border: 3px solid #ccc;" />
 
 1. 首先在正視圖建立底座
 
@@ -36,21 +32,15 @@
 
 3. 用`Plane at angle`建立一個30度的面
 
-
-
 <img src="fdahgjk.gif" alt="fdahgjk" style="zoom:50%;" />
 
 4. 在這個面建立sketch, 繪畫後就可以用extrude擠出
 
-
-
 <img src="image-20220530161842815.png" alt="image-20220530161842815" style="zoom:50%;" />
-
-
 
 <img src="fdahgjk1.gif" alt="fdahgjk1" style="zoom:50%;" />
 
-5. 最後重新將sketch2顯示出來，如題目一樣，將開孔穿到最底
+5. 最後重新將`sketch2`顯示出來，如題目一樣，將開孔穿到最底
 
 <img src="ex11.gif" alt="ex11" style="zoom:50%;" />
 
@@ -80,15 +70,13 @@
 
 <img src="fdahgjk3.gif" alt="fdahgjk3" style="zoom:50%;" />
 
-
-
 ## 2. Mirror & Pattern
 
 對於重覆性高，但完全相同的動作, 可以用mirror和pattern來快速完成。
 
 ### 練習題1
 
-![image-20220601102151547](image-20220601102151547.png)
+<img src="image-20220601102151547.png" alt="image-20220601102151547" style="zoom:80%; border: 3px solid #ccc;" />
 
 
 
@@ -129,33 +117,34 @@
 
 <img src="fdahgjk4.gif" alt="fdahgjk4" style="width:45%;" /><img src="fdahgjk5.gif" alt="fdahgjk5" style="width:45%;" />
 
+
+
 5. 開啟`hole`指令（快捷鍵為`H`）：
+  - 點選右下角
 
-	- 點選右下角
+  - 使用`reference`指定距離邊緣的距離
 
-	- 使用`reference`指定距離邊緣的距離
+  - 根據圖則，分別為`15mm`和`12mm`
 
-	- 根據圖樣，分別為`15mm`和`12mm`
+  - `hole`的深度(`Extents`)選擇`All`
 
-	- `hole`的深度(`Extents`)選擇`All`
+  - `Hole Type`選擇中間的平底孔`Counterbore`
 
-	- `Hole Type`選擇中間的平底孔`Counterbore`
+  - `Hole Tap Type`選擇第一個`Simple`
 
-	- `Hole Tap Type`選擇第一個`Simple`
+  - `Drill Point`選擇任意一個，因為孔是完全穿的
 
-	- `Drill Point`選擇任意一個，因為孔是完全穿的
+6. 根據圖則，孔的要求是`4 HOLES Ø8 THRU ALL ⌴Ø18 ↧3`：
 
-6. 根據圖樣，孔的要求是`4 HOLES Ø8 THRU ALL ⌴Ø18 ↧3`：
+  - `Ø8 THRU ALL`即直徑8、完全鑽穿
 
-	- `Ø8 THRU ALL`即直徑8、完全鑽穿
-
-	- `⌴Ø18 ↧3`即平底孔直徑18mm，深度3mm
+  - `⌴Ø18 ↧3`即平底孔直徑18mm，深度3mm
 
 <img src="fdahgjk6.gif" alt="fdahgjk6" style="width:60%;" /><img src="image-20220601171701680.png" alt="image-20220601171701680" style="width:35%;" />
 
 
 
-7. 4個孔可以使用`mirror`指令兩次完成，也可以使用`rectangular pattern`指令：
+7. 4個孔可以`rectangular pattern`指令：
 	- `rectangular pattern`可以一次複製多個功能，並以矩陣形式呈現
 	- `type`選擇`feature`
 	- `objects`選擇剛剛的hole feature
@@ -164,30 +153,39 @@
 
 <img src="image-20220601173249910.png" alt="image-20220601173249910" style="width: 60%;" /><img src="image-20220601173315711.png" alt="image-20220601173315711" style="width:35%;" />
 
-8. 中間的圓孔可以用new sketch劃兩個半圓用擠出減去
-	- 或簡單地用hole指令完成
+
+
+8. 中間的圓孔可以用new sketch劃兩個半圓用擠出減去或簡單地用hole指令完成
 
 <img src="image-20220601175838025.png" alt="image-20220601175838025" style="zoom:50%;" />
 
+
+
 9. 最後兩個螺絲孔可以使用`holes`指令完成：
-	- 距離邊緣15mm與40mm
-	- `hole type`選擇第一個`simple`
-	- `hole tap type`選擇第三個`tapped`，即孔都是攻牙
-	- `Thread Offset`選擇第一個
-	- `Drill Point`選擇尖尾的
-	- 圖樣上是M12x1.5即M12螺絲，絲距為1.5mm
-	- 最後選擇`Modeled`，就可以看到模型有螺絲紋了
+  - 距離邊緣15mm與40mm
+  - `hole type`選擇第一個`simple`
+  - `hole tap type`選擇第三個`tapped`，即孔都是攻牙
+  - `Thread Offset`選擇第一個
+  - `Drill Point`選擇尖尾的
+  - 圖樣上是M12x1.5即M12螺絲，絲距為1.5mm
+  - 最後選擇`Modeled`，就可以看到模型有螺絲紋了
 
 <img src="image-20220601180411189.png" alt="image-20220601180411189" style="zoom:50%;" />
 
+
+
 10. 接著緣著yz平面, mirror這個螺絲孔
-	-  `Compute Option`要用`Optimized`才會將螺絲孔一次過mirror
+  -  `Compute Option`要用`Optimized`才會將螺絲孔一次過mirror
 
 <img src="image-20220601182653305.png" alt="image-20220601182653305" style="zoom:80%;" />
+
+
 
 11. 在前面建立`new sketch`，用`extrude`減去
 
 <img src="image-20220601181302659.png" alt="image-20220601181302659" style="width: 60%;" /><img src="image-20220601181342549.png" alt="image-20220601181342549" style="width: 35%;" />
+
+
 
 12. 最後選取需要做fillet的邊, 修圓角2mm
 
@@ -202,11 +200,11 @@ Shell為十分好用的薄殼功能，點選作為開口的面，指定厚度，
 
 試試完成下面的題目:
 
+
+
 ###練習題1
 
-
-
-![image-20220602115633509](image-20220602115633509.png)
+<img src="image-20220602115633509.png" alt="image-20220602115633509" style="zoom:80%; border: 3px solid #ccc;" />
 
 Hints: 
 
@@ -218,8 +216,6 @@ Hints:
 
 <img src="image-20220602120244112.png" alt="image-20220602120244112" style="width:45%;" /><img src="image-20220602120309330.png" alt="image-20220602120309330" style="width:45%;" />
 
-
-
 ## 4. Loft
 
 - `Loft`是常用的成型工具之一
@@ -230,11 +226,13 @@ Hints:
 
 <img src="fusion58.gif" alt="fusion58" style="zoom:33%;" />
 
-試試下面這兩題:
+試試下面這幾題:
+
+
 
 ### 練習題1
 
-<img src="image-20220602121449150.png" alt="image-20220602121449150" style="width:50%;" /><img src="image-20220602121522403.png" alt="image-20220602121522403" style="width:45%;" />
+<div style=" border: 3px solid #ccc;"><img src="image-20220602121449150.png" alt="image-20220602121449150" style="width:50%;" /><img src="image-20220602121522403.png" alt="image-20220602121522403" style="width:45%;" /></div>
 
 
 
@@ -271,7 +269,7 @@ Hints:
 
 ### 練習題2
 
-<img src="image-20220606103313365.png" alt="image-20220606103313365" style="zoom:80%;" />
+<img src="image-20220606103313365.png" alt="image-20220606103313365" style="zoom:80%; border: 3px solid #ccc;" />
 
 ###練習題3
 
@@ -295,7 +293,7 @@ Hints:
 - 軸承尺寸越大，價錢就會幾何級數上升
 - 對於一些精度和轉速都不高的應用場合，可以考慮使用現成的Ø4.5的不銹鋼珠自製3D打印軸承
 
-<img src="image-20220606110454114.png" alt="image-20220606110454114" style="zoom:80%;" />
+<img src="image-20220606110454114.png" alt="image-20220606110454114" style="zoom:80%; border: 3px solid #ccc;" />
 
 
 1. 首先在正面(xz平面)上建立一個`new sketch`
@@ -345,7 +343,7 @@ Hints:
 
 第二題則為常見於3d打印機的8mm直線軸承, 請自行完成。
 
-<img src="image-20220606113755190.png" alt="image-20220606113755190" style="zoom:60%;" /><img src="image-20220606113808241.png" alt="image-20220606113808241" style="width:40%;" />
+<div style = " border: 3px solid #ccc;"><img src="image-20220606113755190.png" alt="image-20220606113755190" style="width:50%;" /><img src="image-20220606113808241.png" alt="image-20220606113808241" style="width:40%;" /></div>
 
 ## 6. Sweep
 
@@ -355,7 +353,7 @@ Hints:
 
 ###練習題1
 
-![111_1](111_1.png)
+<img src="111_1.png" alt="111_1" style="zoom:80%; border: 3px solid #ccc;" />
 
 1. 首先在正面(xz平面)建立一個`new sketch`, 跟據圖則先劃管的中心線
 
@@ -404,17 +402,13 @@ Hints:
 
 <img src="Inkedfusion51_LI.jpg" alt="Inkedfusion51_LI" style="zoom:55%;" />
 
-![222_1](222_1.png)
-
-
+<img src="222_1.png" alt="222_1" style="zoom:80%; border: 3px solid #ccc;" />
 
 ## 7. 混合練習
 
 以下題混合幾個常用的造型工具。
 
 ### 練習題1
-
- [screwdriver Drawing v8.pdf](screwdriver Drawing v8.pdf) 
 
 <img src="fusion517.png" alt="fusion517" style="zoom:100%;" />
 

@@ -39,9 +39,12 @@
 - 這類鋁架的連接方式一般分為兩種
 	- 一種是三角形的連接件
 		- 三角形的好處是比較結實，對於大型的結構會比較受力
+		
 		- 但缺點是外露出來影響外觀
-			<img src="large-16548296110601.png" alt="Aluminium Corner Bracket 2028 | 3D CAD Model Library | GrabCAD" style="zoom:50%;" />
-			https://grabcad.com/library/aluminium-corner-bracket-2028-1
+		
+		  <img src="large-16548296110601.png" alt="Aluminium Corner Bracket 2028 | 3D CAD Model Library | GrabCAD" style="zoom:50%;" />
+		  https://grabcad.com/library/aluminium-corner-bracket-2028-1
+		
 	- 另一種是L型的連接件。L型連接件的用法是藏在槽入面, 不會外露出來。
 	<img src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/e39e8a2dd7aa325a263ab2e938b129bc/large.jpg" alt="L-joint (2020, 3030) | 3D CAD Model Library | GrabCAD" style="zoom:100%;" /><img src="large-16548296342264.jpeg" alt="L-joint (2020, 3030) | 3D CAD Model Library | GrabCAD" style="zoom:50%;" />
 	https://grabcad.com/library/l-joint-2020-3030-1
@@ -56,10 +59,6 @@
 	- 配合T型絲母固定。
 
 <img src="T-Type-M4-Nut-For-20X20-Aluminium-Profile-10-Pcs.png" alt="Buy T Type M4 Nut For 20X20 Aluminium Profile Online at Best Price" style="zoom:50%;" />
-
-
-
-
 
 ### 繪製鋁架(長)
 
