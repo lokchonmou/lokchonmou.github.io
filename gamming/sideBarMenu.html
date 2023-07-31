@@ -1,85 +1,158 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <title>十個遊戲學編程</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <style>
-        body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-        body {font-size:16px;}
-        ul{list-style-type: none; margin: 0px; padding-left: 80px; padding-bottom: 5px;}
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Poppins", sans-serif
+        }
+
+        body {
+            font-size: 16px;
+        }
+
+        ol {
+            list-style-type: none;
+            margin: 0px;
+            padding-left: 80px;
+            padding-bottom: 5px;
+            counter-reset: item;
+
+        }
+
+        ol>li {
+            display: table;
+            counter-increment: item;
+            /* margin-bottom: 0.6em; */
+        }
+
+        ol>li:before {
+            content: counters(item, ".") ". ";
+            display: table-cell;
+            /* padding-right: 0.6em; */
+        }
+
+        li ol>li {
+            margin: 0;
+        }
+
+        li ol>li:before {
+            content: counters(item, ".") " ";
+        }
     </style>
 </head>
 
 <body style="background-color:#2196F3 ;">
+
+
     <div class="w3-bar-block w3-blue" style="line-height: 1em; color: gray; font-size:18px; font-weight:bold;">
-        <a href="../index.html" target="_top" class="w3-bar-item w3-button w3-hover-white w3-round" style="text-decoration: none;">HOME</a>
-        <!-- <a href="./0/content0.html" target="_top" class="w3-bar-item w3-button w3-hover-white w3-round">Arduino X Processing</a> -->
+        <a href="../index.html" target="_top" class="w3-bar-item w3-button w3-hover-white w3-round"
+            style="text-decoration: none;">HOME</a>
 
-        <ul>
-            <li><a href="./0/context_0.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">0. Getting started with processing.py</a></li>
-            <li><a href="./1/context_1.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">1. Pong Game (1972)</a></li>
-            <li><a href="./2/content_2.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">2. Breakout (1978)</a></li>
-            <li><a href="./test1/TEST 1 Tic Tac Toe.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">==========Test 1. Tic Tac Toe==========</a></li>
+        <ol>
+            <li><a href="./Getting started with processingPy/Getting started with processingPy.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Getting started with Processing.py</a>
+            </li>
 
-            <li><a href="./3/content_3.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">3. Artillery game (1988)</a></li>
-            <li><a href="./4/content_4.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">4. Flappy Bird</a></li>
-            <ul>
-                <li><a href="./4/content_4_1.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">4.1 物件導向與class</a></li>
-            </ul>
-            <li><a href="./5/content_5.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">5. Asteroids (1979)</a></li>
-            <li><a href="./6/content_6.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">6. Spacewar!(1962)</a></li>
-            <li><a href="./7/content_7.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">7. Snake (1982)</a></li>
-            <li><a href="./8/content_8.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">8. Tetris (1984)</a></li>
-            <li><a href="./9/content_9.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">9. Connect Four (1977)</a></li>
-            <ul>
-                <li><a href="./9/content_9_1.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">9.1 Minimax 演算法</a></li>
-            </ul>
-            <li><div  class="w3-bar-item w3-button w3-hover-white w3-round">10. PAC-MAN (1980)</div></li>
-            <ul>
-                <li><a href="./10/content_10_1.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">10.1 洪水演算法(wavefront algorithm)</a></li>
-                <li><a href="./10/content_10_2.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">10.2 A* 演算法</a></li>
-                <li><a href="./10/content_10_3.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">10.3 迷宮生成演算法</a></li>
-            </ul>
-            <li><a href="./Appendix/Appendix 1 Artificial Intelligence.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">Appendix 1 Artificial Intelligence</a></li>
-            <li><div  class="w3-bar-item w3-button w3-hover-white w3-round">Appendix 2</div></li>
-            <ul>
-                <li><a href="./Appendix2/GUI Button.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">GUI Button</a></li>
-                <li><a href="./Appendix2/GUI Slider.html"   target="_blank"  class="w3-bar-item w3-button w3-hover-white w3-round">GUI Slider</a></li>
-            </ul>
-            <!-- <li><div  class="w3-bar-item w3-button w3-hover-white w3-round">1. Getting start with Fusion 360</li>
-                <ul >
-                    <li><a href="./1/content1_1.html"  target="_top"   class="w3-bar-item w3-button w3-hover-white w3-round">1.1 Fusion360基本設定</a></li>
-                    <li><a href="./1/content1_2.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">1.2 2D Sketch</a></li>
-                    <li><a href="./1/content1_3.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">1.3 2D constraints</a></li>
-                    <li><a href="./1/content1_4.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">1.4 Basic Drawing</a></li>
-                    <li><a href="./1/content1_5.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">1.5 Advance 3D drawing</a></li>
-                </ul>
-            </li> -->
-            <!-- <li><div  class="w3-bar-item w3-button w3-hover-white w3-round">2. CAD X Real World</li> -->
-                <!-- <ul> -->
-                    <!-- <li><a href="./2/content2_1.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">2.1 Simple Box</a></li>
-                    <li><a href="./2/content2_2.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">2.2 Advanced box</a></li>
-                    <li><a href="./2/content2_3.html"  target="_top" class="w3-bar-item w3-button w3-hover-white w3-round">2.3 Walking linkage robot</a></li>
-                    <li><a href="./2/content2_4.html"  target="_top" class="w3-bar-item w3-button w3-hover-white w3-round">2.4 Brass Cannon</a></li>
-                    <li><a href="./2/content2_5.html"  target="_top" class="w3-bar-item w3-button w3-hover-white w3-round">2.5 6 legs walking linkage robot</a></li>
-                    <li><a href="./2/content2_6.html"  target="_top" class="w3-bar-item w3-button w3-hover-white w3-round">2.6 Sumo Robot</a></li> -->
-                <!-- </ul> -->
-            <!-- <li><a href="./3/content3.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">3. Arduino X Processing</a></li>
-                <ul>
-                    <li><a href="./3/content3_1.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">3.1 Arduino -> Processing</a></li>
-                    <li><a href="./3/content3_2.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">3.2 Arduino digitalRead() -> Processing</a></li>
-                    <li><a href="./3/content3_3.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">3.3 Arduino analogRead() -> Processing</a></li>
-                </ul>
-            <li><div  class="w3-bar-item w3-button w3-hover-white w3-round">4. 附錄</li>
-                <ul>
-                    <li><a href="./4/content4_1.html"   target="_top"  class="w3-bar-item w3-button w3-hover-white w3-round">4.1 不同型態的Arduino</a></li>
-                </ul>  -->
-        </ul>
+            <li>
+                <a href="./Pong Game/Pong Game.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Pong (1972)</a>
+            </li>
+
+            <li>
+                <a href="./Breakout/Breakout.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Breakout (1978)</a>
+            </li>
+
+            <li>
+                <a href="./test1/TEST 1 Tic Tac Toe.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">===========Test1 Tic Tac Toa==============</a>
+            </li>
+
+            <li>
+                <a href="./Artillery game/Artillery game.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Artillery game (1988)</a>
+            </li>
+
+            <li>
+                <a href="./Flappy bird/Flappy bird.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Flappy Bird</a>
+                <ol>
+                    <li><a href="./Flappy bird/物件導向與class.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">物件導向與class</a></li>
+                </ol>
+            </li>
+
+            <li>
+                <a href="./Asteroids/Asteroids.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Asteroids (1979)</a>
+            </li>
+
+            <li>
+                <a href="./Spacewar/Spacewar.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Spacewar! (1962)</a>
+            </li>
+
+            <li>
+                <a href="./Snake/Snake.html" target="_blank" class="w3-bar-item w3-button w3-hover-white w3-round">Snake
+                    (1982)</a>
+            </li>
+
+            <li>
+                <a href="./Tetris/Tetris.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Tetris (1984)</a>
+            </li>
+
+            <li>
+                <a href="./ConnectFour/ConnectFour.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Connect Four (1977)</a>
+                <ol>
+                    <li><a href="./ConnectFour/Minimax 演算法.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">Minimax演算法</a></li>
+                </ol>
+            </li>
+
+            <li>
+                <div class="w3-bar-item w3-button w3-hover-white w3-round">PAC-MAN (1980)</div>
+                <ol>
+                    <li><a href="./Pacman/Wavefront algorithm.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">洪水演算法(wavefront algorithm)</a></li>
+                    <li><a href="./Pacman/AStar algorithm.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">A*演算法</a></li>
+                    <li><a href="./Pacman/Maze generation.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">迷宮生成演算法</a></li>
+                </ol>
+            </li>
+
+            <li>
+                <a href="./Appendix/Appendix 1 Artificial Intelligence.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">Appendix 1 Artificial Intelligence</a>
+            </li>
+
+            <li>
+                <div class="w3-bar-item w3-button w3-hover-white w3-round">Appendix 2</div>
+                <ol>
+                    <li><a href="./Appendix2/GUI Button.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">GUI Button</a></li>
+                    <li><a href="./Appendix2/GUI Slider.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">GUI Slider</a></li>
+                </ol>
+            </li>
+
+        </ol>>
 
     </div>
 
 
 
 </body>
+
 </html>
