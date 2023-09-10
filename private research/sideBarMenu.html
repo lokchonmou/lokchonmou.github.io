@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>其他研究筆記</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Poppins", sans-serif
+        }
+
+        body {
+            font-size: 16px;
+        }
+
+        ol {
+            list-style-type: none;
+            margin: 0px;
+            padding-left: 80px;
+            padding-bottom: 5px;
+            counter-reset: item;
+
+        }
+
+        ol>li {
+            display: table;
+            counter-increment: item;
+            /* margin-bottom: 0.6em; */
+        }
+
+        ol>li:before {
+            content: counters(item, ".") ". ";
+            display: table-cell;
+            /* padding-right: 0.6em; */
+        }
+
+        li ol>li {
+            margin: 0;
+        }
+
+        li ol>li:before {
+            content: counters(item, ".") " ";
+        }
+    </style>
+</head>
+
+<body style="background-color:#2196F3 ;">
+
+
+    <div class="w3-bar-block w3-blue" style="line-height: 1em; color: gray; font-size:18px; font-weight:bold;">
+        <a href="../index.html" target="_top" class="w3-bar-item w3-button w3-hover-white w3-round"
+            style="text-decoration: none;">HOME</a>
+
+        <ol>
+            <li><a href="./立體機動裝置研究/立體機動裝置研究.html" target="_blank"
+                    class="w3-bar-item w3-button w3-hover-white w3-round">立體機動裝置研究</a>
+            </li>
+
+          
+
+            <!-- <li>
+                <div class="w3-bar-item w3-button w3-hover-white w3-round">PAC-MAN (1980)</div>
+                <ol>
+                    <li><a href="./Pacman/Wavefront algorithm.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">洪水演算法(wavefront algorithm)</a></li>
+                    <li><a href="./Pacman/AStar algorithm.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">A*演算法</a></li>
+                    <li><a href="./Pacman/Maze generation.html" target="_blank"
+                            class="w3-bar-item w3-button w3-hover-white w3-round">迷宮生成演算法</a></li>
+                </ol>
+            </li> --> 
+
+        </ol>
+
+    </div>
+
+
+
+</body>
+
+</html>
