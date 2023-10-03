@@ -52,8 +52,6 @@ function setup() {
 	robots[3].Kp = 2.35;
 	robots[3].Kd = 3.45;
 
-	for (var i = 0; i < 50; i++) addCarEvent();
-
 	for (var i = 0; i < robots.length; i++) {
 		updateLocalParams(i);
 		createGUI(i);
