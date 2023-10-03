@@ -29,7 +29,7 @@ function GUI(){
 	addCarButton = createButton('+');
 	addCarButton.position(width - 75, height - 75);
 	addCarButton.size(25, 25);
-	addCarButton.mousePressed(addCarEvent);
+	addCarButton.mousePressed(addCarEvent50);
 
 	delCarButton = createButton('−');
 	delCarButton.position(width - 50, height - 75);

@@ -52,6 +52,8 @@ function setup() {
 	robots[3].Kp = 2.35;
 	robots[3].Kd = 3.45;
 
+	for (var i = 0; i < 50; i++) addCarEvent();
+
 	for (var i = 0; i < robots.length; i++) {
 		updateLocalParams(i);
 		createGUI(i);
@@ -59,7 +61,7 @@ function setup() {
 	updateLocalParams(0);
 
 	GUI();
-	
+
 
 }
 
@@ -191,6 +193,13 @@ function addCarEvent() {
 	updateLocalParams(robots.length - 1);
 	createGUI(robots.length - 1);
 	updateLocalParams(currentID);
+}
+
+/**
+ * 
+ */
+function addCarEvent50() {
+	for (var i = 0; i < 50; i++) addCarEvent();
 }
 
 /**
