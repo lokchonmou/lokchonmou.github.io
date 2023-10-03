@@ -96,9 +96,9 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 
 但每次控制馬達，都要打4句指令，是否覺得很麻煩呢?重覆的指令，而只改變變數的話，我們可以自定一個函數。
 
-在Arduino右上角，有一個向下的三角形，按下去，就會見到一個新增標籤的選項，之後下面就會多了一行，輸入新標籤的檔案名稱(`function`)，就會出多一個分頁。
+在Arduino右上角，有一個三個點的符號，按下去，就會見到一個新增標籤的選項，之後輸入新標籤的檔案名稱(`function`)，就會出多一個分頁。
 
-<img src="image-20220910154311553.png" alt="image-20220910154311553" style="zoom:40%;" />
+<img src="image-20230926085500403.png" alt="image-20230926085500403" style="width:45%;" /><img src="image-20230926085514646.png" alt="image-20230926085514646" style="width:35%;" />
 
 我們可以定義一個叫`motorControl()`的函數，函數有2個輸入，分別為左馬達的速度和右馬達的速度。
 
@@ -110,15 +110,15 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 
 利用這些指令，我們首先測試一下馬達的接線是否正確。例如下面的程式，兩邊馬達應為***左正轉***，***右正轉***，***兩邊一起正轉***，***兩邊一起停***。==(記得打開鋰電池開關，否則USB的電是不足以同時推動兩隻馬達)==
 
-
-
 ### Step 2 Test the IR sensors
 
 下一步，要測試一下對地的紅外線傳感器是否能正常運作。
 
 ==保留上一步的program==，`loop()`係面的可以全部刪去，紅圈為新增的部分。
 
-<img src="image-20220913092300720.png" alt="image-20220913092300720" style="width:80%;" />
+<img src="Screenshot 2023-09-26 092620.png" alt="Screenshot 2023-09-26 092620" style="width:45%;" /><img src="Screenshot 2023-09-26 092832.png" alt="Screenshot 2023-09-26 092832" style="width:45%;" />
+
+<img src="image-20230926094544562.png" alt="image-20230926094544562" style="zoom:50%;" />
 
 第6行`IR_sensor_pin[]`，顧名思意，就是插著IR sensor的腳位，我插的是8至12腳。
 
@@ -130,15 +130,11 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 
 所以新增的幾行代碼，就是用`digitalRead()`讀取對應的腳位後，儲存在`state[]`中，接著用`Serial.print()`將它顯示出來。
 
-<img src="image-20220913100030708.png" alt="image-20220913100030708" style="width:30%;" />
-
 打開右上角的序列埠監空視窗(Serial Monitor)，確保右下角的鮑率(bute rate)和你`Serial.begin(115200)`所輸入的鮑率是一樣的。就會見到5個0。
 
 <img src="image-20220913103004470.png" alt="image-20220913103004470" style="width:50%;" />
 
 將sensor放在黑線上面，白色能反射紅外線，sensor就會收到反射的光，就讀到`1`，而黑線因不能反射紅外線，所以就會讀到`0`。你可以將sensor陣列放在黑線上面，左右移動，確保sensor在黑線上面是`0`，在白色面上是`1`。
-
-
 
 ### Step 3 Sensors to input value
 
@@ -231,10 +227,9 @@ $$
 返回我們的D controller，如果只用P  controller的話，無論你怎樣去調，你都會發現：**如果直線調得很順滑，就會不夠力轉彎；如果夠力轉彎，直線就會不停左右搖擺**。這時候，就需要再加上D controller，在數學式上是：
 
 $$
-
 error_n = setpoint_n - input_n
  \\
- Output = K_d \times \frac{error_n - error_{n-1}}{\Delta time}
+ Output = K_d \times \frac{error_n - error_{n-1}}{\Delta time}
 $$
 將今次測到的誤差減去上一次的誤差，再除以時間差。如果仔細看，後面的分數，其實就是斜率($$\displaystyle slope = \frac{y_2-y_1}{x_2-x_1}$$)，跟之前一樣，由於我們機械人的置中位置就會讀到`0`，所以$$setpoint$$就是`0`。又由於$$K_d$$的值是我們自定的，無論正負也可以，所以可以簡化成：
 $$

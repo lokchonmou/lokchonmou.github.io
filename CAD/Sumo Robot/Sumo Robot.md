@@ -280,65 +280,86 @@
 ### 為底盤開孔
 
 - 接下來，我們會為小車安裝電池組和邊緣傳感器
+
 - 使用快捷鍵`s`搜尋`change parameter`，新增三個參數`sensorX`、`sensorY`和`batteryY`，分別用來指定邊緣傳感器和電池組的位置
 
-<div style="text-align: CENTER"><img src="image-20230607134343084.png" alt="image-20230607134343084" style="width:33%;" /><img src="Screenshot 2022-03-14 151404.png" alt="Screenshot 2022-03-14 151404" style="width:30%;" /></div>
+	
+
+<div style="text-align: CENTER"><img src="image-20230607134343084.png" alt="image-20230607134343084" style="width:33%;" /><img src="image-20230912094050541.png" alt="image-20230912094050541" style="width:30%;" /></div>
 
 <img src="image-20230607134746583.png" alt="image-20230607134746583" style="width:50%;" />
 
 
 
-- 圖一：
+- **<u>將小黑點放到`bottom` 旁邊</u>**
 
-	- **<u>將小黑點放到``bottom` 旁邊</u>**
+- 在小車底盤表面開啟一個新的草圖
+- 對`bottom`外的組件隱藏
 
-	- 在小車底盤表面開啟一個新的草圖
-	- 對`bottom`外的組件隱藏
-
-- 圖二：
-	- 繪製對地面的邊緣感測器安裝孔
-	- 需要額外加一個槽來穿電線，因此劃一個`8x8mm`的方形
-	- 安裝孔距離底板頂部和底板邊緣分別為參數`sensorX`和`sensorY`
-- 圖三：
-	- 在底板繪製一條中線
-	- 將剛才第二步所繪製的圖形鏡像到另一邊
-
-<img src="image-20230417112156133.png" alt="image-20230417112156133" style="width:45%;" /><img src="image-20230607134932021.png" alt="image-20230607134932021" style="width:28%;" />
+<img src="image-20230417112156133.png" alt="image-20230417112156133" style="width:45%;" />
 
 
+- 繪製對地面的邊緣感測器安裝孔
 
-<img src="image-20230607135138592.png" alt="image-20230607135138592" style="width:45%;" />
+- 安裝孔共有2個
+
+	- 下方安裝孔距離底板頂部和底板邊緣分別為參數`sensorX`和`sensorY`
+	- 上方安裝孔距離下方`11mm`
+
+- 在兩個安裝孔圓心劃一條作圖線，在<u>中點</u>劃一個`center rectangle`，尺寸為`11 x 5.5mm`
+
+- 需要加一個`center rectangle`方便調整電阻值，因此劃一個`8x8mm`的方形，距離下方安裝孔`8mm`
+
+- 最後為了走線，需要加一個`center rectangle`和一個圓孔。
+
+	<img src="image-20230912125415665.png" alt="image-20230912125415665" style="width:45%;" />
+
+
+- 在底板繪製一條中線
+- 將剛才第二步所繪製的圖形鏡像到另一邊
+
+<img src="image-20230912125757947.png" alt="image-20230912125757947" style="width:45%;" />
 
 
 
-- 在中線上，使用快捷鍵`s`搜尋指令`center rectangle`劃一個長方形
-- 在隨意位置劃一條水平線，使用幾何限制`Midpoint`![midpoint icon](constraint-midpoint.png)指定水平線到長方形的中心點
+- 在中線上，使用快捷鍵`s`搜尋指令`center rectangle`劃一個**<u>長方形</u>**
+- 在隨意位置劃一條**<u>水平線</u>**，使用幾何限制`Midpoint`![midpoint icon](constraint-midpoint.png)指定**<u>水平線</u>**到長方形的**<u>中心點</u>**(圖一紅圈)
 - 在水平線兩端劃兩個直徑為`3mm`的圓
 	- 使用幾何限制 `equal`![equal icon](constraint-equal.png)（等長)工具，只需要標示一個圓即可
-- 將長方形的底部和底板的底邊距離標注為參數`batteryY`
-- 最後將剛才所劃的圖形，使用快捷鍵`e`從底板中減去
+- 將長方形的底部和底板的底邊距離標注為參數`batteryY`(圖一紅圈)
+- 最後將剛才所劃的圖形，使用快捷鍵`e`從底板中減去(圖二)
 
-<img src="image-20230607140634450.png" alt="image-20230607140634450" style="width:45%;" /><img src="image-20230607140731737.png" alt="image-20230607140731737" style="width:45%;" />
+<img src="image-20230607140634450.png" alt="image-20230607140634450" style="width:45%;" /><img src="image-20230912125942013.png" alt="image-20230912125942013" style="width:45%;" />
 
 
 
 ### 插入和安裝底盤sensor和電池架
 
-- 圖一：
-	- 在零件庫中拖曳兩個邊緣感測器`Line Sensor`和電池組`Battery Shell`
-	- 記得拖曳後，在零件樹中，對這三個組件分別按滑鼠右鍵，選擇`Rigid Group`，這樣一旦移動或連接，就不會散開
-- 圖二：
-	- 使用快捷鍵 `J`，將邊緣感測器組合到底盤上
-		- 注意感測器45度倒角的方向應該安裝向著小車的前方
-		- 將感測器向下偏移`3mm`。實際安裝時，需要使用3mm的墊圈將感測器抬高，以避免壓彎電線腳。
-- 圖三：
-	- 安裝好兩個邊緣感測器後，可以安裝電池架
-	- 全部組合完成後，可以在左邊的零件樹按下「眼睛」圖示，將全部零件顯示
-	- 圖三是安裝好的效果
+- **<u>*將小黑點褪回最上層*</u>**
 
-<img src="image-20230608082854964.png" alt="image-20230608082854964" style="width:45%;" /><img src="image-20230608083303465.png" alt="image-20230608083303465" style="width:45%;" />
+	<img src="image-20230912105216484.png" alt="image-20230912105216484" style="zoom:80%;" />
 
-<img src="image-20230608083537152.png" alt="image-20230608083537152" style="width:45%;" />
+	
+
+- 在零件庫中拖曳兩個邊緣感測器`Line Sensor`和電池組`Battery Shell`
+
+  <img src="image-20230912130145641.png" alt="image-20230912130145641" style="width:65%;" />
+
+  
+
+- 使用快捷鍵 `J`，將邊緣感測器組合到底盤下方
+
+  <img src="image-20230912130359051.png" alt="image-20230912130359051" style="width:45%;" />
+
+  
+
+- 安裝好兩個邊緣感測器後，可以安裝電池架
+
+- 全部組合完成後，可以在左邊的零件樹按下「眼睛」圖示，將全部零件顯示
+
+- 下圖是安裝好的效果
+
+<img src="image-20230912130537577.png" alt="image-20230912130537577" style="width:45%;" />
 
 
 
@@ -380,9 +401,7 @@
 
 <img src="image-20230608100830730.png" alt="image-20230608100830730" style="width:45%;" /><img src="Screenshot 2022-03-14 160003.png" alt="Screenshot 2022-03-14 160003" style="width:45%;" />
 
-<img src="image-20230608101146942.png" alt="image-20230608101146942" style="width:45%;" />
-
-
+<img src="image-20230912130654751.png" alt="image-20230912130654751" style="width:50%;" />
 
 ## Step 5: 製作前擋板和鏟
 
@@ -599,7 +618,7 @@
 	
 		
 
-- **<u>可以用快捷鍵`s`搜尋`change parameter`，上述所提到需要修改的尺寸，事前都已設定成參數，只要修改參數，相關的零件位置就會改變。</u>**
+- ==**<u>可以用快捷鍵`s`搜尋`change parameter`，上述所提到需要修改的尺寸，事前都已設定成參數，只要修改參數，相關的零件位置就會改變。</u>**==
 - **<u>==輸出生產前，使用Fusion 360的<code>interference</code>指令，計算模型是否有干擾（即相撞）的問題==</u>**
 
 <img src="Screenshot 2023-06-12 112851.png" alt="Screenshot 2023-06-12 112851" style="zoom:50%;" />
