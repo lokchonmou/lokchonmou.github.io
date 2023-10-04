@@ -220,14 +220,14 @@ class Robot {
     /**
      * 
      */
-    oneLoop() {
+    oneLoop(liftTimeRefillSliderValue) {
         if (this.x < 200 || this.x > 213 || this.y < 0 || this.y > 104) {
             if (!this.enterTimerZone) {
                 this.timer = frameCount;
                 this.score = this.timer - this.last_timer;
                 this.enterTimerZone = true;
                 this.last_timer = this.timer;
-                if (this.liftTime >0) this.liftTime += 370;
+                if (this.liftTime >0) this.liftTime += liftTimeRefillSliderValue;
             }
         }
         else this.enterTimerZone = false;
@@ -236,12 +236,12 @@ class Robot {
     /**
      * 
      */
-    update() {
+    update(liftTimeRefillSliderValue) {
         if (!this.isDead) {
             this.updateSensor();
             this.PID();
             this.drive();
-            this.oneLoop();
+            this.oneLoop(liftTimeRefillSliderValue);
             this.liftTime -= 1;
 
             if (this.liftTime < 0) this.isDead = true;
