@@ -4,6 +4,7 @@ var GUIs = [];
 let resetButton, leftButton, rightButton, addCarButton, delCarButton, fpsSlider, saveButton, loadButton;
 let fileSelectButton;
 let autoDelCheckbox;
+let lifeTimeRefillSlider,liftTimeRefillSliderValue = 375;
 
 var currentID = 0;
 var robotNoCounter = 0;
@@ -59,7 +60,7 @@ function setup() {
 	updateLocalParams(0);
 
 	GUI();
-	
+
 
 }
 
@@ -97,7 +98,7 @@ function draw() {
 	updateParams(currentID);
 
 	for (var i = 0; i < robots.length; i++) {
-		robots[i].update();
+		robots[i].update(liftTimeRefillSliderValue);
 		if (i == currentID) GUIs[i].show();
 		else GUIs[i].hide();
 	}
@@ -123,6 +124,9 @@ function draw() {
 	fill(0);
 	textAlign(LEFT, TOP);
 	text("fps: " + nf(frameRate(), 3, 1) + '/' + FPS, 0, 0);
+
+	//draw the lift time text///////////////////////////////////////////////////
+	text("Life time refill: " + str(liftTimeRefillSliderValue), 0, height - 50);
 
 	//draw the stroke of field/////////////////////////////////////////////////
 	noFill();
@@ -196,6 +200,13 @@ function addCarEvent() {
 /**
  * 
  */
+function addCarEvent50() {
+	for (var i = 0; i < 50; i++) addCarEvent();
+}
+
+/**
+ * 
+ */
 function delCarEvent() {
 	if (robots.length > 1) robots.splice(currentID, 1);
 	if (GUIs.length > 1) {
@@ -256,4 +267,11 @@ function handleFile(file) {
  */
 function autoDelCheckedEvent() {
 	isAutoDelCar = !isAutoDelCar;
+}
+
+/**
+ * 
+ */
+function lifeTimeRefillSliderEvent(){
+	liftTimeRefillSliderValue = lifeTimeRefillSlider.value();
 }

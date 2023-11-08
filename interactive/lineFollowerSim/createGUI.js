@@ -29,7 +29,7 @@ function GUI(){
 	addCarButton = createButton('+');
 	addCarButton.position(width - 75, height - 75);
 	addCarButton.size(25, 25);
-	addCarButton.mousePressed(addCarEvent);
+	addCarButton.mousePressed(addCarEvent50);
 
 	delCarButton = createButton('−');
 	delCarButton.position(width - 50, height - 75);
@@ -44,4 +44,9 @@ function GUI(){
 	autoDelCheckbox.changed(autoDelCheckedEvent);
 	autoDelCheckbox.position(0, height - 20);
 	autoDelCheckbox.style("font-size", "12px");
+
+	lifeTimeRefillSlider = createSlider(320, 420, 375, 5);
+	lifeTimeRefillSlider.position(10, height - 40);
+	lifeTimeRefillSlider.style('width', '80px');
+	lifeTimeRefillSlider.changed(lifeTimeRefillSliderEvent);
 }
