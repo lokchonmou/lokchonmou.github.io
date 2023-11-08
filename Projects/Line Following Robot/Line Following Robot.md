@@ -94,7 +94,7 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 
 <img src="image-20220910151223248.png" alt="image-20220910151223248" style="zoom: 33%;" />
 
-但每次控制馬達，都要打4句指令，是否覺得很麻煩呢?重覆的指令，而只改變變數的話，我們可以自定一個函數。
+**但每次控制馬達，都要打4句指令，是否覺得很麻煩呢?重覆的指令，而只改變變數的話，我們可以自定一個函數。**
 
 在Arduino右上角，有一個三個點的符號，按下去，就會見到一個新增標籤的選項，之後輸入新標籤的檔案名稱(`function`)，就會出多一個分頁。
 
@@ -109,6 +109,8 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 <img src="image-20220910154705328.png" alt="image-20220910154705328" style="width: 80%;" />
 
 利用這些指令，我們首先測試一下馬達的接線是否正確。例如下面的程式，兩邊馬達應為***左正轉***，***右正轉***，***兩邊一起正轉***，***兩邊一起停***。==(記得打開鋰電池開關，否則USB的電是不足以同時推動兩隻馬達)==
+
+
 
 ### Step 2 Test the IR sensors
 
@@ -136,6 +138,12 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 
 將sensor放在黑線上面，白色能反射紅外線，sensor就會收到反射的光，就讀到`1`，而黑線因不能反射紅外線，所以就會讀到`0`。你可以將sensor陣列放在黑線上面，左右移動，確保sensor在黑線上面是`0`，在白色面上是`1`。
 
+**動動腦:**
+
+1. **我們的sensor有兩款，你要先試一試sensor在黑線上是`0`還是`1`，這將影響後面編程的部分**
+2. **我這裡只有5粒sensor，但如果你有7粒、9粒或更多，你應該要怎樣修改程式？**
+
+
 ### Step 3 Sensors to input value
 
 <img src="image-20220913103121107.png" alt="image-20220913103121107" style="width:25%;" />
@@ -149,6 +157,11 @@ For controlling a “dynamical systems”(for you, mostly is a analog value) to 
 理論是有了，那怎麼將其用程式實行呢？首先要開一個**變數**，名字叫`input`，而格式是`float`。`float`跟之前的`byte`和`int`不同，後兩者只有整數，但`float`是浮點數，可以計算到小數。
 
 `sensor2number()`是一個函數，其用途是將上述的表格，用「暴力」的方法實現出來。輸入代碼後上傳，開啟序列埠監控視窗(Serial Monitor)，將機械人在黑線上偏移，就會見到相對的偏移值。
+
+**動動腦:**
+
+1. **我們的sensor有兩款，如果你用的sensor在黑線上是`1`白線上是`0`，你應該要怎樣修改？**
+2. **我這裡只有5粒sensor，但如果你有7粒、9粒或更多，你應該要怎樣修改程式？**
 
 
 
@@ -255,4 +268,115 @@ $$
 
 
 你可以用這個模擬器，試試看$$K_d$$對機械人的表現有甚麼影響。
+
+## 附錄
+
+`main.ino`
+
+```c++
+byte E1 = 5; // Enable pin for Left Motor
+byte M1 = 4; // Control pin  for Left Motor
+byte M2 = 6; // Control pin  for Right Motor
+byte E2 = 7; // Enable pin for Right Motor
+
+byte IR_sensor_pin[] = {12, 11, 10, 9, 8, A0, A1};
+boolean state[] = {0, 0, 0, 0, 0, 0, 0};
+
+byte no_of_sensors = 7;
+
+float input, last_input, P_gain = 60.0, D_gain = 6.0, output, maxSpeed = 255;
+
+void setup(){
+	pinMode(M1, OUTPUT);
+	pinMode(M2, OUTPUT);
+
+	Serial.begin(115200);
+	for(int i = 0; i < no_of_sensors; i++)
+		pinMode(IR_sensor_pin[i], INPUT);
+	
+}
+
+void loop(){
+
+	/*
+	// test the motor, check the wiring
+	motorControl(255, 0);
+	delay(3000);
+	motorControl(0, 255);
+	delay(3000);
+	motorControl(255, 255);
+	delay(3000);
+	motorControl(0, 0);
+	delay(3000);
+	*/
+
+	// Read and store the sensors value
+	for(int i = 0; i < no_of_sensors; i++)
+		state[i] = digitalRead(IR_sensor_pin[i]);
+
+	printSensorValue();
+
+	sensor2number();
+	// Serial.println(input);
+
+	output = P_gain * input + D_gain * (input - last_input);
+	output = constrain(output, -2*maxSpeed, 2*maxSpeed);
+
+	if (input > 0) 	motorControl(maxSpeed - output, maxSpeed);
+	else			motorControl(maxSpeed, maxSpeed - abs(output));
+    
+	last_input = input;
+	delay(10);
+}
+```
+
+`function.ino`
+
+```c++
+void motorControl(int leftSpeed, int rightSpeed){
+    leftSpeed = constrain(leftSpeed, -255, 255);
+    if (leftSpeed < 0) digitalWrite(M1, LOW);
+    else digitalWrite(M1, HIGH);
+    analogWrite(E1, abs(leftSpeed));
+
+    rightSpeed = constrain(rightSpeed, -255, 255);
+    if (rightSpeed < 0) digitalWrite(M2, LOW);
+    else digitalWrite(M2, HIGH);
+    analogWrite(E2, abs(rightSpeed));
+}
+
+void printSensorValue(){
+    for (byte i = 0; i < no_of_sensors; i++)   
+        Serial.print(state[i]);
+    Serial.println();
+}
+
+void sensor2number(){
+    if (state[0] == 1 && state[1] == 0 && state[2] == 0 && state[3] == 0 && state[4] == 0 && state[5] == 0 && state[6] == 0) input = 6.0;
+    if (state[0] == 1 && state[1] == 1 && state[2] == 0 && state[3] == 0 && state[4] == 0 && state[5] == 0 && state[6] == 0) input = 5.0;
+    if (state[0] == 0 && state[1] == 1 && state[2] == 0 && state[3] == 0 && state[4] == 0 && state[5] == 0 && state[6] == 0) input = 4.0;
+    if (state[0] == 0 && state[1] == 1 && state[2] == 1 && state[3] == 0 && state[4] == 0 && state[5] == 0 && state[6] == 0) input = 3.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 1 && state[3] == 0 && state[4] == 0 && state[5] == 0 && state[6] == 0) input = 2.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 1 && state[3] == 1 && state[4] == 0 && state[5] == 0 && state[6] == 0) input = 1.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 0 && state[3] == 1 && state[4] == 0 && state[5] == 0 && state[6] == 0) input = 0.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 0 && state[3] == 1 && state[4] == 1 && state[5] == 0 && state[6] == 0) input = -1.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 0 && state[3] == 0 && state[4] == 1 && state[5] == 0 && state[6] == 0) input = -2.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 0 && state[3] == 0 && state[4] == 1 && state[5] == 1 && state[6] == 0) input = -3.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 0 && state[3] == 0 && state[4] == 0 && state[5] == 1 && state[6] == 0) input = -4.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 0 && state[3] == 0 && state[4] == 0 && state[5] == 1 && state[6] == 1) input = -5.0;
+    if (state[0] == 0 && state[1] == 0 && state[2] == 0 && state[3] == 0 && state[4] == 0 && state[5] == 0 && state[6] == 1) input = -6.0;
+
+    // float avg = 0, sum = 0;
+    // boolean onLine = false;
+
+    // for (byte i = 0; i < no_of_sensors; i++){
+    //     avg += i * state[i];
+    //     sum += state[i];
+    //     onLine = onLine || state[i];
+    // }
+    
+    // if (!onLine)    input = last_input;
+    // else            input = avg/sum - (no_of_sensors - 1) / 2.0;
+}
+```
 
