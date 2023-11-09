@@ -1,7 +1,8 @@
 byte E1 = 5; // Enable pin for Left Motor
 byte M1 = 4; // Control pin  for Left Motor
-byte M2 = 6; // Control pin  for Right Motor
-byte E2 = 7; // Enable pin for Right Motor
+byte E2 = 6;  // Enable pin for Right Motor
+byte M2 = 7; // Control pin  for Right Motor
+
 
 byte IR_sensor_pin[] = {12, 11, 10, 9, 8, A0, A1};
 boolean state[] = {0, 0, 0, 0, 0, 0, 0};
