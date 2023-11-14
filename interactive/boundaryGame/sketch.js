@@ -60,10 +60,10 @@ function runGame() {
   }
 
   // player
-  if (myKey[0]) player.y -= 5;  // up
-  if (myKey[1]) player.y += 5;  // down
-  if (myKey[2]) player.x -= 5;  // left
-  if (myKey[3]) player.x += 5;  // right
+  if (myKey[0] && player.y > 15) player.y -= 5;  // up
+  if (myKey[1] && player.y < height-15) player.y += 5;  // down
+  if (myKey[2] && player.x > 15) player.x -= 5;  // left
+  if (myKey[3] && player.x < width - 15) player.x += 5;  // right
 
 
   player.show();
