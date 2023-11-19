@@ -9,30 +9,84 @@ three.js 提供了一個廣泛的功能，可用於創建各種三維內容，�
 ## 安裝及準備
 
 - 開啟visual studio code
+
 - 開一個新的專案資料夾
+
 - 在vs code的Terminal[^1]輸入`npm init -y`
 	- `npm init -y` 命令用於初始化一個新的 Node.js 專案。它會在您當前目錄中創建一個 `package.json` 檔案，該檔案包含您的專案的資訊，例如名稱、版本、描述和依賴項。
-- 接著輸入` npm install parcel -g`安裝Parcel在全域，或`npm install parcel --save-dev`只安裝到您的 Node.js 專案中。
-	- `npm install parcel -g` 命令用於將 Parcel 包裝器作為全局依賴項安裝到您的系統中。
-		Parcel 是一個現代的、模塊化的、可擴展的 Web 應用程式打包器。它可以用於打包 HTML、CSS、JavaScript、TypeScript 和其他靜態資源。
-		安裝 Parcel 作為開發依賴項意味著您可以使用 Parcel 在開發環境中打包您的應用程式。這可以幫助您更快地開發和調試您的應用程式。
-	- **有權限限制而產生錯誤的話，需要輸入`sudo npm install parcel -g`**
-- 接著在專案資料夾新增`src/index.html`和`src/js/scripts.js`
-- 最後在terminal輸入`npm install three`
 
-[^1]: 在vs code中，按下`cmd+j`就會出現Terminal
+- 輸入`npm install vite`
 
-## 建立簡單場景
-
-###建立 WebGL 渲染器並將其添加到網頁中
+- 在專案資料夾建立一個`index.html`檔案
 
 - 在`index.html`中只要輸入`html`，選`html5`，就會出現html的基本預設
 
 - 將`title` 改為適當名字
 
-- 在`body`中新增`<script src = "js/scripts.js" type = "module"></script>`
+- 在`<body>`中，加係`<h1>My first three js test</h1>`
 
-- 新增`sytle`，將`margin`設為`0`
+- 開啟專案資料夾中的`package.json`，將`script`部分修改為：
+
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build"
+},
+```
+
+- 在terminal輸入`npm run`時，就會`run`上面這再個`script`
+
+- 在terminal輸入: `npm run dev`，這時就會運行`vite`
+
+- 這時會彈出一個localhost的地址，按`ctrl`按下這個地址就會開啟，你就會見到網頁內容
+
+### 測試`script.js`
+
+- 在專案資料夾建立一個`script.js`
+- 在內容加入以下內容測試:
+
+``` javascript
+console.log('Hello World')
+```
+
+- 在`index.html`中，在`<body>`加入`<script>`如下:
+
+``` html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Three Js</title>
+</head>
+<body>
+    <h1>My first three js test</h1>
+    <script src="./script.js" type="module"></script>
+</body>
+</html>
+```
+
+- 可以返回網頁，按`option + cmd + i`，就可以開啟開發人員工具，見到`Hello World`
+
+### 安裝`three.js`
+
+- 在terminal按下`ctrl + c`(即使macOS也是)
+
+- 輸入`npm install three`
+
+- 將`script.js`修改為:
+
+	```javascript
+	import * as THREE from 'three'
+	
+	console.log(THREE)
+	```
+
+- 儲存後就可以在網頁console見到內容，即匯入成功。
+
+## 建立簡單場景
+
+- 在`index.html`中新增`sytle`，將`margin`設為`0`
 
 	```html
 	<!DOCTYPE html>
@@ -40,7 +94,7 @@ three.js 提供了一個廣泛的功能，可用於創建各種三維內容，�
 	<head>
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Three.js Tutorial</title>
+	    <title>First Three Js</title>
 	    <style>
 	        body {
 	            margin: 0;
@@ -48,14 +102,14 @@ three.js 提供了一個廣泛的功能，可用於創建各種三維內容，�
 	    </style>
 	</head>
 	<body>
-	    <script src = "js/scripts.js" type = "module"></script>
+	    <script src="./script.js" type="module"></script>
 	</body>
 	</html>
 	```
 
 	
 
-- 返回`src/js/scripts.js`中
+- 返回`scripts.js`中
 
 	```javascript
 	import * as THREE from 'three';
@@ -68,11 +122,7 @@ three.js 提供了一個廣泛的功能，可用於創建各種三維內容，�
 	document.body.appendChild(renderer.domElement);
 	```
 
-
-
-- 在 Terminal輸入`parcel ./src/index.html`
-	- `parcel ./src/index.html` 是 Parcel 包裝器的命令，用於打包 `./src/index.html` 檔案
-- 這時就會出現類似`http://localhost:1234`的網址，在瀏覽器中開始就會出現一個空白的頁面，這是正常的，因還沒有任何物件
+- 在瀏覽器中開始就會出現一個空白的頁面，這是正常的，因還沒有任何物件
 
 ### 建立場景、相機並渲染場景
 
@@ -524,7 +574,7 @@ dat.gui是JavaScript庫，用於創建簡單的用戶界面，方便調整和控
 - 按下`CMD+J`開啟Terminal
 - 在Terminal 中按下`CTRL+C`(在mac境景下)停止Parcel
 - 輸入`npm install dat.gui`
-- 安裝好後再次輸入`parcel ./src/index.html`
+- 安裝好後再次輸入`npm rum dev`
 
 ```javascript
 import * as THREE from 'three';
@@ -933,3 +983,147 @@ directionalLight.castShadow = true;
 2. `plane.receiveShadow = true;`：這行程式碼設置了一個平面物體（例如地板）接收陰影。當其他物體投射陰影時，平面物體將能夠接收並顯示這些陰影。
 3. `sphere.castShadow = true;`：這行程式碼設置了一個球體物體（例如球）投射陰影。它告訴Three.js該物體需要在場景中產生陰影。
 4. `directionalLight.castShadow = true;`：這行程式碼設置了一個平行光源投射陰影。它告訴該平行光源需要在場景中產生陰影。這通常用於模擬太陽光，因為太陽光可以產生長距離的平行光線，從而產生物體的陰影效果。
+
+ 但如你所見，這個show有點奇怪，這是因為光源也是用carema
+
+###  使用shadowHelper和增長影子camera
+
+```javascript
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import * as dat from 'dat.gui';
+
+// 建立一個 WebGL 渲染器的程式碼, antialias 是抗鋸齒的意思
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+// 設定渲染器的尺寸
+renderer.setSize(window.innerWidth, window.innerHeight);
+// 設定渲染器的解析度
+renderer.setPixelRatio(window.devicePixelRatio);
+// 設定影子效果
+renderer.shadowMap.enabled = true;
+// 將 WebGL 渲染器的畫布元素添加到網頁的 body 元素中
+document.body.appendChild(renderer.domElement);
+
+// 建立一個場景
+const scene = new THREE.Scene();
+// 建立一個透視相機
+const camera = new THREE.PerspectiveCamera(
+    45, // 視野角度
+    window.innerWidth / window.innerHeight, //
+    0.1, // 視野最近距離
+    1000 // 視野最遠距離
+);
+
+// 建立一個輔助器
+const orbit = new OrbitControls(camera, renderer.domElement);
+
+// 建立三維坐標系輔助器
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
+// 改變相機的位置
+camera.position.set(-10, 30, 30);
+// 更新相機的控制器
+orbit.update();
+
+
+// 建立gui
+const gui = new dat.GUI();
+// 建立一個物件, 用來儲存控制項的資料
+const options = {
+    sphereColor: 0xffea00,
+    wireframe: false,
+    speed: 0.01
+};
+// 將控制項加入gui
+gui.addColor(options, 'sphereColor').onChange(function (value) {
+    sphere.material.color.set(value);
+});
+gui.add(options, 'wireframe').onChange(function (value) {
+    sphere.material.wireframe = value;
+});
+gui.add(options, 'speed', 0, 0.1);
+
+
+// 建立一個立方體
+const boxGeometry = new THREE.BoxGeometry();
+const boxMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+const box = new THREE.Mesh(boxGeometry, boxMaterial);
+scene.add(box);
+
+// 建立一個平面
+const planeGeometry = new THREE.PlaneGeometry(30, 30);
+const planeMaterial = new THREE.MeshStandardMaterial({
+    color: 0xcccccc, side: THREE.DoubleSide
+});
+const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+plane.receiveShadow = true;
+scene.add(plane);
+plane.rotation.x = -Math.PI / 2;
+
+// 建立網格, 30 是網格的大小, 20 是網格的分段數
+const gridHelper = new THREE.GridHelper(30, 20);
+scene.add(gridHelper);
+
+// 建立一個球體, 5 是球體的半徑, 30, 30 是球體的寬度分段數和高度分段數
+const sphereGeometry = new THREE.SphereGeometry(5, 30, 30);
+const sphereMaterial = new THREE.MeshStandardMaterial({
+    color: 0x0000FF, wireframe: false
+});
+const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+sphere.position.set(-10, 10, 0);
+sphere.castShadow = true;
+scene.add(sphere);
+
+// 建立環境光源, 0x333333 是光源的顏色
+const ambientLight = new THREE.AmbientLight(0x333333);
+scene.add(ambientLight);
+// 建立平行光源, 0.8 是光源的強度, 光源的強度是 0.0 ~ 1.0 的值
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+directionalLight.position.set(-30, 50, 0);
+directionalLight.castShadow = true;
+directionalLight.shadow.camera.bottom = -12;
+scene.add(directionalLight);
+
+// 建立平行光源助手, 其中的參數是平行光源對象, 5 是輔助線的長度
+const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight, 5);
+scene.add(directionalLightHelper);
+
+// 建立影子助手
+const dLightShadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
+scene.add(dLightShadowHelper);
+
+
+let step = 0;
+
+function animate(time) {
+    box.rotation.x = time / 1000;
+    box.rotation.y = time / 1000;
+
+    step += options.speed;
+    sphere.position.y = 10 * Math.abs(Math.sin(step));
+
+    // 將場景渲染到畫布元素上的函式
+    renderer.render(scene, camera);
+}
+renderer.setAnimationLoop(animate);
+```
+
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202023-11-19%20%E4%B8%8B%E5%8D%8810.20.05.png" alt="螢幕截圖 2023-11-19 下午10.20.05" style="width:50%;" />
+
+1. 在平行光源（Directional Light）的設定中，新增了一行程式碼 :
+
+```javascript
+directionalLight.shadow.camera.bottom = -12;
+```
+
+這行程式碼是設定平行光源的陰影攝影機的底部位置為-12。這樣可以調整陰影的投射範圍，使得陰影能夠更準確地投射在物體上。
+
+2.. 新增了一個影子助手（Shadow Helper），程式碼如下：
+
+```javascript
+const dLightShadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
+scene.add(dLightShadowHelper);
+```
+
+影子助手可以幫助我們視覺化陰影的投射範圍，對於調整陰影效果非常有幫助。這個助手會根據平行光源的陰影攝影機的設定來顯示一個可視化的框，這個框就代表了陰影的投射範圍。這樣我們就可以清楚地知道陰影會投射在哪裡，並且可以根據需要來調整陰影攝影機的設定。這對於調整場景的燈光和陰影效果非常有幫助。
+
