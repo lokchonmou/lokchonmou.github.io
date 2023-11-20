@@ -319,39 +319,39 @@ $$
 
 ## 附錄
 
-```matlab
-%% Nonlinear pendulum model
+由於Matlab是要付費的，已經很久沒有使用過Matlab了，所以改用現在較為流行又免費的Python來完成。
 
+```python
+import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
 
-%% 
-% Data of the problem.
-g= 9.81;% gravitational acceleration
-l= 12;% length of the pendulum (distance of the center of gravity from the suspension pivot)
+# Data of the problem.
+g = 9.81  # gravitational acceleration
+l = 12  # length of the pendulum (distance of the center of gravity from the suspension pivot)
 
+# The second order equation of motion (ODE) was converted to first order form.
+# This is the right hand side function. y[0] = angle, y[1] = angular velocity.
+def f(t, y):
+    return [y[1], -g/l*np.sin(y[0])]
 
-%% 
-% The second order equation of motion (ODE) was converted to first order
-% form.  This is the right hand side function. y(1) = angle, y(2) = angular
-% velocity.
-f=@(t,y) ( [y(2);-g/l*sin(y(1))]);
+thetadot0 = [-24/np.cos(np.pi/4)/12]  # initial angular velocity
 
-for thetadot0 = [-24/cos(pi/4)/12]
-    %%
-    %
-    Theta0=[pi/4;thetadot0]';% initial condition: hanging down, with nonzero initial velocity
-    
-%% 
-% This is a mechanical vibration system.  It makes sense to use the trapezoidal rule
-% integrator |ode23t|.
-    [t,sol] = ode23t(f, [0, 150000], Theta0,struct('InitialStep',   0.001));
-    plot(t,sol(:,1), 'linewidth', 2, 'color', 'red', 'marker', 'none'); hold on
-    plot(t,sol(:,2), 'linewidth', 2, 'color', 'blue', 'marker', 'none'); hold on
-    xlabel ('Time')
-    ylabel ('Solution')
-    title([' Initial angular velocity =' num2str(thetadot0)])
-    grid on
-    legend({'angle','angular velocity'})
-    hold off
-end
+for td0 in thetadot0:
+    Theta0 = [np.pi/4, td0]  # initial condition: hanging down, with nonzero initial velocity
+
+    # Solve the ODE
+    sol = solve_ivp(f, [0, 2], Theta0, method='RK45', t_eval=np.linspace(0, 2, 1000))
+
+    # Plot the solution
+    plt.figure()
+    plt.plot(sol.t, sol.y[0, :], linewidth=2, color='red', marker='none', label='angle')
+    plt.plot(sol.t, sol.y[1, :], linewidth=2, color='blue', marker='none', label='angular velocity')
+    plt.xlabel('Time')
+    plt.ylabel('Solution')
+    plt.title('Initial angular velocity = {}'.format(td0))
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 ```
 
