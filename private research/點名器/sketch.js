@@ -1,17 +1,17 @@
 var checkboxes = [];
 var topPadding = 10; // 設定 padding 值
-var leftPadding = 80; // 設定 padding 值
+var leftPadding = -50; // 設定 padding 值
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   displayDensity(pixelDensity);
-  leftPadding = windowWidth / 15;
+  leftPadding = 5;
   background(50);
   // add a title in middle
   fill(255);
-  textSize(48);
+  textSize(32);
   textAlign(CENTER);
-  text("點名器", width / 2, topPadding + 48);
+  text("點名器", width / 2, topPadding + 32);
   // create a 5x8 checkbox grid
   for (var i = 0; i < 5; i++) {
     for (var j = 0; j < 8; j++) {
@@ -21,7 +21,7 @@ function setup() {
         (windowHeight / 10) * (j + 1) + topPadding
       );
       checkboxes[checkboxes.length - 1].style("color", "red"); // 改變文字顏色
-      checkboxes[checkboxes.length - 1].style("font-size", "32px"); // 改變文字大小
+      checkboxes[checkboxes.length - 1].style("font-size", "24px"); // 改變文字大小
 
       // 當 checkbox 被選中或取消選中時，改變其顏色
       checkboxes[checkboxes.length - 1].changed(function () {
