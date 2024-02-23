@@ -210,11 +210,23 @@ Hints:
 
 <img src="image-20220602120548881.png" alt="image-20220602120548881" style="width:45%;" /><img src="image-20220602120046616.png" alt="image-20220602120046616" style="width: 45%;" />
 
+- 先建立一個底, 擠出
+
+
+
 <img src="image-20220602120115590.png" alt="image-20220602120115590" style="width:45%;" /><img src="image-20220602120128374.png" alt="image-20220602120128374" style="width:45%;" />
+
+- 劃一個圓柱體
+- 用`rectangular pattern`來同時製作8份
+
+
 
 <img src="fdahgjk7.gif" alt="fdahgjk7" style="width:45%;" />
 
 <img src="image-20220602120244112.png" alt="image-20220602120244112" style="width:45%;" /><img src="image-20220602120309330.png" alt="image-20220602120309330" style="width:45%;" />
+
+- 在底部開一個`new sketch`來劃
+- 記得這3個圓柱不是到lego的最底，有1.2mm的距離
 
 ## 4. Loft
 
@@ -297,7 +309,7 @@ Hints:
 
 
 1. 首先在正面(xz平面)上建立一個`new sketch`
-	- 根據圖樣建立一個`6x6 center rectangle`
+	- 根據圖樣，在==邊緣距離原點20mm位置==建立一個`6x6 center rectangle`
 	- 邊緣距離原點20mm，因為軸承內徑為40mm，半徑為20mm
 	- 建立一個`Ø4.8 circle`
 	- 補上中心線
@@ -311,10 +323,12 @@ Hints:
 
 
 3. 在xy平面建立一個`new sketch`
-	- 使用快捷鍵`p`投影兩條邊變成兩個點
-	- 補一條中心線
-	- 劃一個Ø4.8的圓
+  - 使用快捷鍵`p`投影兩條邊變成兩個點
+  - 補一條中心線
+  - 劃一個Ø4.8的圓
 4. 用擠出工具減去上面的孔
+
+<img src="image-20240223164414790.png" alt="image-20240223164414790" style="width:30%;" />
 
 <img src="image-20220606112340758.png" alt="image-20220606112340758" style="width:45%;" /><img src="image-20220606112408298.png" alt="image-20220606112408298" style="width:45%;" />
 
