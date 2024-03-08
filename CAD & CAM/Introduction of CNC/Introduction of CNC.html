@@ -1,0 +1,843 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #000000;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* devanagari */
+/* latin-ext */
+/* latin */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "PT Serif", "Noto Serif TC";
+    color: rgb(10,10,10);
+    line-height: 1.6;
+    /* background-color: #e7e7e7; */
+}
+
+#write {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #2c98f0;
+    text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: 64px;
+    color: #eee;
+    background-color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h2 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: .3em;
+    font-size: 48px;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+h3 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+h5 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+h6 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    /* background-color: #e7e7e7; */
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #AAAAAA;
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    /* font-weight: bold;
+    border: 1px solid #333333;
+    border-bottom: 2px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+    background: #2c98f0; */
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #ffffff;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+code {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    /* background-color: #FFFFFF; */
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+    left: -1.5625rem;
+    top: .375rem;
+}
+#write>h4.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h5.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h6.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "PT Serif", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>Introduction of CNC</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#introduction-of-cnc">Introduction of CNC</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-製造方法">1. 製造方法</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2d-cnc-線切割機">2D: CNC 線切割機</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2d-cnc-車床">2D: CNC 車床</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#25d-water-jet水切割">2.5D: water jet水切割</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#25d-laser-cutting-鐳射切割機">2.5D: laser cutting 鐳射切割機</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#25d-vinyl-cutter割字機">2.5D: Vinyl Cutter割字機</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3d4d5d-cnc銑床">3D、4D、5D: CNC銑床</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-g-code">2. G-code</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-主軸轉速spindle-speed進給feed與刀具cutting-tools">3. 主軸轉速(Spindle Speed)、進給(Feed)與刀具(Cutting tools)</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#31-主軸轉速spindle-speed">3.1 主軸轉速(Spindle Speed)</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#32-進給速度feed-rate">3.2 進給速度(Feed Rate)</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主軸轉速spindle-speed-vs-進給速度feed-rate">主軸轉速(Spindle Speed) vs. 進給速度(Feed Rate)</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#材料特性">材料特性</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#刀具特性">刀具特性</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#33-銑刀">3.3 銑刀</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#刀刃tool-flute">刀刃(Tool Flute)</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#球頭銑刀ball-end與平頭銑刀flat-end-tool">球頭銑刀(Ball end)與平頭銑刀(Flat end tool)</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#雕刻刀">雕刻刀</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#34-表面粗糙度surface-finish和尺寸精度dimensional-accuracy">3.4 表面粗糙度(Surface Finish)和尺寸精度(Dimensional accuracy)</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4-cad--cam">4. CAD &amp; CAM</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#41-甚麼是cam">4.1 甚麼是CAM?</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#42-cam與cad有甚麼關係">4.2 CAM與CAD有甚麼關係?</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#43-cam軟件的角色">4.3 CAM軟件的角色</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></div></div><div id='write'  class=' first-line-indent'><h1 id='introduction-of-cnc'><span>Introduction of CNC</span></h1><p><span>CNC代表計算機數控（Computer Numerical Control），它是一種自動化技術，用於控制機械工具和機器的操作。CNC技術通過使用電腦程序和數字指令，使機械工具能夠自動執行特定的操作和運動。這些指令告訴機械工具如何移動、切削和加工工件。</span></p><p><span>在CNC系統中，操作者使用電腦軟件來編寫和編程指令，然後將這些指令上傳到CNC機床。機床根據指令自動控制刀具的運動、轉速和進給速度(Feed Rate)，從而實現高精度和高效率的加工操作。</span></p><p><span>CNC技術廣泛應用於製造業，特別是在數控機床領域。它可以用於製造各種零件和產品，如金屬零件、塑料零件、木材零件等。CNC技術的優勢包括高精度、重複性好、生產效率高以及能夠實現複雜形狀和結構的加工。</span></p><p><span>CNC技術的應用還延伸到其他領域，如3D打印、雷射切割、電火花加工等。它在現代製造業中扮演著重要的角色，幫助企業提高生產效率和產品質量。</span></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#introduction-of-cnc">Introduction of CNC</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n7"><a class="md-toc-inner" href="#1-製造方法">1. 製造方法</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n10"><a class="md-toc-inner" href="#2d-cnc-線切割機">2D: CNC 線切割機</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n14"><a class="md-toc-inner" href="#2d-cnc-車床">2D: CNC 車床</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n18"><a class="md-toc-inner" href="#25d-water-jet水切割">2.5D: water jet水切割</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n21"><a class="md-toc-inner" href="#25d-laser-cutting-鐳射切割機">2.5D: laser cutting 鐳射切割機</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n30"><a class="md-toc-inner" href="#25d-vinyl-cutter割字機">2.5D: Vinyl Cutter割字機</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n33"><a class="md-toc-inner" href="#3d4d5d-cnc銑床">3D、4D、5D: CNC銑床</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n38"><a class="md-toc-inner" href="#2-g-code">2. G-code</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n45"><a class="md-toc-inner" href="#3-主軸轉速spindle-speed進給feed與刀具cutting-tools">3. 主軸轉速(Spindle Speed)、進給(Feed)與刀具(Cutting tools)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n46"><a class="md-toc-inner" href="#31-主軸轉速spindle-speed">3.1 主軸轉速(Spindle Speed)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n49"><a class="md-toc-inner" href="#32-進給速度feed-rate">3.2 進給速度(Feed Rate)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n51"><a class="md-toc-inner" href="#主軸轉速spindle-speed-vs-進給速度feed-rate">主軸轉速(Spindle Speed) vs. 進給速度(Feed Rate)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n73"><a class="md-toc-inner" href="#材料特性">材料特性</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n91"><a class="md-toc-inner" href="#刀具特性">刀具特性</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n105"><a class="md-toc-inner" href="#33-銑刀">3.3 銑刀</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n106"><a class="md-toc-inner" href="#刀刃tool-flute">刀刃(Tool Flute)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n110"><a class="md-toc-inner" href="#球頭銑刀ball-end與平頭銑刀flat-end-tool">球頭銑刀(Ball end)與平頭銑刀(Flat end tool)</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n113"><a class="md-toc-inner" href="#雕刻刀">雕刻刀</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n123"><a class="md-toc-inner" href="#34-表面粗糙度surface-finish和尺寸精度dimensional-accuracy">3.4 表面粗糙度(Surface Finish)和尺寸精度(Dimensional accuracy)</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n138"><a class="md-toc-inner" href="#4-cad--cam">4. CAD &amp; CAM</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n141"><a class="md-toc-inner" href="#41-甚麼是cam">4.1 甚麼是CAM?</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n151"><a class="md-toc-inner" href="#42-cam與cad有甚麼關係">4.2 CAM與CAD有甚麼關係?</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n156"><a class="md-toc-inner" href="#43-cam軟件的角色">4.3 CAM軟件的角色</a></span></p></div><h2 id='1-製造方法'><span>1. 製造方法</span></h2><p><span>工業製造方法分為加法製造和減法製造。加法製造是逐層堆積材料建立物體的方法，常見於3D打印技術；減法製造是通過切削、鏟除或移除材料來形成所需形狀的方法，例如銑削、車削等。兩者各有優點和適用場景。</span></p><p><img src="圖片1.png" alt="圖片1" style="width:45%;" /></p><h3 id='2d-cnc-線切割機'><span>2D: CNC 線切割機</span></h3><p><span>CNC線切割機是一種使用電腦數控技術的機械設備，通過控制金屬線的運動進行高精度的切割和加工。它使用電火花來融化工件，並藉助線的運動進行切割。CNC線切割機適用於金屬加工、模具製造等領域，能夠實現複雜形狀和高精度的切割操作。它具有高效率、重複性好和優秀的表面質量。</span></p><p><span>CNC線切割機的好處是可以切割很厚的金屬，沒有厚度限制；壞處是只能切割外圈，如果要切割內圈的話，就需要先為工件鑽孔，斷開金屬切割線再穿上。</span></p><p><img src="image-20240224185536596.png" alt="image-20240224185536596" style="width:35%;" /><img src="image-20240224185545076.png" alt="image-20240224185545076" style="width:55%;" /></p><h3 id='2d-cnc-車床'><span>2D: CNC 車床</span></h3><p><span>CNC車床，也被稱為數控車床，是一種使用電腦控制的車床。它是一種集機械、電氣、液壓、氣動、微電子和信息等多項技術為一體的機電一體化產品。在CNC車床加工的過程中，加工刀具會固定在車床上面，高速旋轉來削減原料，直到完成加工。</span></p><p><span>CNC車床主要是兩軸控制，通常是X和Z軸，專門用來製作軸、套、盤類的零件。由於它只能控制兩個方向的運動，所以它的加工範圍相對有限。對於更複雜的3D零件，可能需要使用更複雜的CNC機器，如CNC銑床或CNC加工中心。</span></p><p><img src="image-20240226110759502.png" alt="image-20240226110759502" style="width:50%;" /></p><h3 id='25d-water-jet水切割'><span>2.5D: water jet水切割</span></h3><p><span>水切割使用高壓水流混和沙粒來進行材料切割。水切割是一種冷切割過程，幾乎消除了二次加工，並提供了平滑的邊緣質量。其主要優點是能切割所有類型的材料，包括金屬、玻璃、石材、塑料等。</span></p><p><img src="圖片2.gif" alt="圖片2" style="width:45%;" /><img src="image-20240226111830094.png" alt="image-20240226111830094" style="width:45%;" /></p><h3 id='25d-laser-cutting-鐳射切割機'><span>2.5D: laser cutting 鐳射切割機</span></h3><p><span>對於鐳射切割機，同學應該不陌生。鐳射切割機跟水切割有點像，都是控制鐳射頭的XY方向移動來切割。鐳射束可以精確地切割各種材料，包括金屬、塑料、玻璃等。CNC鐳射切割機的主要優點包括高精度、高速度、無材料污染和無限的2D複雜性。</span></p><p><img src="image-20240226112805237.png" alt="image-20240226112805237" style="width:50%;" /></p><p><span>鐳射切割機的鐳射核心，主要分為玻璃管、金屬管和晶體管。</span></p><ol start='' ><li><p><strong><span>玻璃管和金屬管</span></strong><span>：這兩種類型的鐳射管都使用二氧化碳作為鐳射介質，並且通常用於CO2鐳射切割機。他們的主要區別在於壽命和切割效果。一般來說，金屬管的壽命較長，切割效果也較好，但價格較高。</span></p></li><li><p><strong><span>晶體管</span></strong><span>：晶體管鐳射切割機的鐳射核心體積較小，可以直接放在XY軸上帶動，不需要反射鏡。這使得它們在某些應用中具有優勢，例如在需要高精度和高速度的應用中。然而，由於它們的功率較低，所以他們可能不適合所有的切割應用。</span></p></li></ol><h3 id='25d-vinyl-cutter割字機'><span>2.5D: Vinyl Cutter割字機</span></h3><p><span>Vinyl切割機是一種由電腦控制的切割設備，它使用一個刀片從塑膠片（例如自黏塑膠）中切割出形狀和字母。這種設備在製作廣告、標誌、T恤印花等領域中非常常見。</span></p><p><img src="image-20240226114459521.png" alt="image-20240226114459521" style="zOOM:70%;" /></p><h3 id='3d4d5d-cnc銑床'><span>3D、4D、5D: CNC銑床</span></h3><p><span>三軸CNC銑床：這種銑床有三個運動軸，通常是X、Y和Z軸。這意味著刀具可以在三個方向（前後、左右和上下）上移動，從而在三個空間維度中創造複雜的形狀。</span></p><p><span>四軸CNC銑床：這種銑床在3D的基礎上增加了一個旋轉軸，通常是A軸。這使得刀具可以在四個方向（前後、左右、上下和旋轉）上移動，從而創造更複雜的形狀。</span></p><p><span>五軸CNC銑床：這種銑床在4D的基礎上增加了第二個旋轉軸，通常是B軸。這使得刀具可以在五個方向（前後、左右、上下和兩個旋轉軸）上移動，從而創造最複雜的形狀。</span></p><p><img src="image-20240226132850358.png" alt="image-20240226132850358" style="width:33%;" /><img src="f705d0cbf85a896fcb15eb251b2cba9c.jpg" alt="HITECH Multi Heads 4 Axis Wood Engraving CNC Router, CNC Machine for Sale,  Turkey CNC Router | Wood cnc machine, Cnc wood router, Cnc machine for sale" style="width:30%;" /><img src="how-to-choose-between-using-4-axis-and-5-axis-cnc-machining.jpg" alt="4軸、5軸CNC加工とは何ですか? - ラピッドダイレクト" style="width:33%;" /></p><h2 id='2-g-code'><span>2. G-code</span></h2><p><span>G-code，也被稱為RS-274，是最廣泛使用的電腦數字控制（CNC）和3D列印編程語言。它主要用於電腦輔助製造，以控制自動化機床，以及3D列印切片應用。&quot;G&quot;代表幾何。G-code有許多變體。</span></p><p><span>G-code命令和參數用於控制您的3D打印機或CNC機床。例如，G0-G1用於線性移動，G2-G3用於弧形或圓形移動，G10用於回縮，G29用於床平衡，M0-M1用於無條件停止，M3用於主軸順時針/雷射開啟，M4用於主軸逆時針/雷射開啟，M5用於主軸/雷射關閉等。</span></p><p><span>例如以下為一段G-code：</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="GCODE"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="gcode"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.5162px; left: 43.9815px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -35.9954px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">% &nbsp; (開始程序)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">O0001 (程序號碼)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">T1 M06 (選擇工具1並進行刀具更換)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">G90 G00 X0 Y0 Z0 (設定絕對座標系統並將刀具移動到原點)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">S1000 M03 (設定主軸轉速(Spindle Speed)為1000 RPM並開始順時針旋轉)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">G01 Z-1 F100 (以100mm/min的進給速度(Feed Rate)將刀具沿Z軸向下移動1mm)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">X20 (將刀具沿X軸移動到20mm的位置)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Y20 (將刀具沿Y軸移動到20mm的位置)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Z0 (將刀具沿Z軸移動到0mm的位置)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">M05 (停止主軸旋轉)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">M30 (程序結束)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -35.9954px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">% &nbsp; (結束程序)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 276px;"></div><div class="CodeMirror-gutters" style="height: 276px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>這個G-code程序將會創造一個</span><code>」</code><span>的形狀。首先，刀具從原點</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="5.029ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2222.7 1000" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.566ex;"><defs><path id="MJX-4-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-4-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-4-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-4-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-4-TEX-N-28"></use></g><g data-mml-node="mn" transform="translate(389,0)"><use data-c="30" xlink:href="#MJX-4-TEX-N-30"></use></g><g data-mml-node="mo" transform="translate(889,0)"><use data-c="2C" xlink:href="#MJX-4-TEX-N-2C"></use></g><g data-mml-node="mn" transform="translate(1333.7,0)"><use data-c="30" xlink:href="#MJX-4-TEX-N-30"></use></g><g data-mml-node="mo" transform="translate(1833.7,0)"><use data-c="29" xlink:href="#MJX-4-TEX-N-29"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">(0,0)</script><span>開始，然後向下移動1mm（Z=-1）。接著，刀具沿X軸移動到20mm的位置（X=20）</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="6.16ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2722.7 1000" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.566ex;"><defs><path id="MJX-5-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-5-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-5-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-5-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-5-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-5-TEX-N-28"></use></g><g data-mml-node="mn" transform="translate(389,0)"><use data-c="32" xlink:href="#MJX-5-TEX-N-32"></use><use data-c="30" xlink:href="#MJX-5-TEX-N-30" transform="translate(500,0)"></use></g><g data-mml-node="mo" transform="translate(1389,0)"><use data-c="2C" xlink:href="#MJX-5-TEX-N-2C"></use></g><g data-mml-node="mn" transform="translate(1833.7,0)"><use data-c="30" xlink:href="#MJX-5-TEX-N-30"></use></g><g data-mml-node="mo" transform="translate(2333.7,0)"><use data-c="29" xlink:href="#MJX-5-TEX-N-29"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>20</mn><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">(20,0)</script><span>，然後沿Y軸移動到20mm的位置（Y=20）</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="7.291ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3222.7 1000" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.566ex;"><defs><path id="MJX-6-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-6-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-6-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-6-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJX-6-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-6-TEX-N-28"></use></g><g data-mml-node="mn" transform="translate(389,0)"><use data-c="32" xlink:href="#MJX-6-TEX-N-32"></use><use data-c="30" xlink:href="#MJX-6-TEX-N-30" transform="translate(500,0)"></use></g><g data-mml-node="mo" transform="translate(1389,0)"><use data-c="2C" xlink:href="#MJX-6-TEX-N-2C"></use></g><g data-mml-node="mn" transform="translate(1833.7,0)"><use data-c="32" xlink:href="#MJX-6-TEX-N-32"></use><use data-c="30" xlink:href="#MJX-6-TEX-N-30" transform="translate(500,0)"></use></g><g data-mml-node="mo" transform="translate(2833.7,0)"><use data-c="29" xlink:href="#MJX-6-TEX-N-29"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>20</mn><mo>,</mo><mn>20</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">(20,20)</script><span>。最後，刀具沿Z軸移動回到0mm的位置（Z=0）。所以，這個G-code程序將會創造一個底邊和高為20mm，沒有斜邊的直角三角形。</span></p><p>&nbsp;</p><h2 id='3-主軸轉速spindle-speed進給feed與刀具cutting-tools'><span>3. 主軸轉速(Spindle Speed)、進給(Feed)與刀具(Cutting tools)</span></h2><h3 id='31-主軸轉速spindle-speed'><span>3.1 主軸轉速(Spindle Speed)</span></h3><p><span>主軸速度(Spindle Speed)是切割工具的旋轉速度，通常以每分鐘轉數（RPM）來衡量。</span></p><p><span>主軸速度決定了切割工具的切割邊緣與工件接觸的速度，以及施加在材料上的力量。</span></p><h3 id='32-進給速度feed-rate'><span>3.2 進給速度(Feed Rate)</span></h3><p><span>進給速度(Feed Rate)是刀具相對於工件的移動速度。進給速度(Feed Rate)通常以每分鐘的英寸（IPM）或每分鐘的毫米（mm/min）來表示。</span></p><h4 id='主軸轉速spindle-speed-vs-進給速度feed-rate'><span>主軸轉速(Spindle Speed) vs. 進給速度(Feed Rate)</span></h4><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>優點</span></th><th><span>缺點</span></th></tr></thead><tbody><tr><td><span>高主軸轉速(Spindle Speed)</span></td><td><span>- 每分鐘切割更多</span><br /><span>- 速度更快</span></td><td><span>- 振動和噪音更多</span><br /><span>- 可能影響精度和表面質量</span></td></tr><tr><td><span>低主軸轉速(Spindle Speed)</span></td><td><span>- 減少振動和噪音</span><br /><span>- 可以提高精度和表面質量</span></td><td><span>- 每分鐘切割較少</span><br /><span>- 速度較慢</span></td></tr><tr><td><span>高進給速度(Feed Rate)</span></td><td><span>- 材料去除速度更快</span></td><td><span>- 產生更多的熱和摩擦</span><br /><span>- 可能降低工具壽命和表面質量</span></td></tr><tr><td><span>低進給速度(Feed Rate)</span></td><td><span>- 產生較少的熱和摩擦</span><br /><span>- 可以提高工具壽命和表面質量</span></td><td><span>- 材料去除速度較慢</span></td></tr></tbody></table></figure><h4 id='材料特性'><span>材料特性</span></h4><p><span>最適的進給速度和主軸速度取決於工件和刀具的材料特性。不同的材料有不同的硬度、強度、延展性和熱傳導性，這些會影響它們對切割力和熱量的反應。</span></p><figure class='table-figure'><table><thead><tr><th><span>材料</span></th><th><span>例子</span></th><th><span>主軸轉速(Spindle Speed)</span></th><th><span>進給速度(Feed Rate)</span></th></tr></thead><tbody><tr><td><span>硬質材料</span></td><td><span>金屬</span></td><td><span>高</span></td><td><span>低</span></td></tr><tr><td><span>軟質材料</span></td><td><span>木材、塑膠</span></td><td><span>低</span></td><td><span>高</span></td></tr></tbody></table></figure><h4 id='刀具特性'><span>刀具特性</span></h4><figure class='table-figure'><table><thead><tr><th><span>刀具直徑</span></th><th><span>主軸轉速(Spindle Speed)</span></th><th><span>進給速度(Feed Rate)</span></th></tr></thead><tbody><tr><td><span>細直徑</span></td><td><span>高</span></td><td><span>低</span></td></tr><tr><td><span>大直徑</span></td><td><span>低</span></td><td><span>高</span></td></tr></tbody></table></figure><h3 id='33-銑刀'><span>3.3 銑刀</span></h3><h4 id='刀刃tool-flute'><span>刀刃(Tool Flute)</span></h4><p><span>刀刃(Tool Flute )設計決定了你可以切割哪些材料。最常見的選擇是2、3或4刀刃(</span><strong><span>Tool Flute</span></strong><span> )。</span></p><p><span>一般來說，刀刃(</span><strong><span>Tool Flute</span></strong><span> )越少意味著更好的切屑，但是表面粗糙度會變差刀刃(</span><strong><span>Tool Flute</span></strong><span> )越多可以得到更好的表面粗糙度，但是切屑會變差。</span></p><p><img src="image-20240227102222881.png" alt="image-20240227102222881" style="width:67%;" /></p><h4 id='球頭銑刀ball-end與平頭銑刀flat-end-tool'><span>球頭銑刀(Ball end)與平頭銑刀(Flat end tool)</span></h4><p><span>球頭銑刀有半球形的刀尖，用於鑽淺孔或製作模具的多維度輪廓。平頭銑刀則有平底，適用於需要全刀刃接觸的情況，如鑽半孔。選擇球頭還是平頭銑刀，取決於具體需求。</span></p><p><img src="image-20240227102448003.png" alt="image-20240227102448003" style="width:67%;" /></p><h4 id='雕刻刀'><span>雕刻刀</span></h4><p><span>CNC雕刻刀具的角度、直徑和尖頭直徑是根據加工需求和材料類型來選擇的：</span></p><ol start='' ><li><p><strong><span>刀具角度</span></strong><span>：市面上常用的雕刻刀的刀角為30度、45度、60度等3種。</span></p></li><li><p><strong><span>刀具直徑</span></strong><span>：CNC雕刻加工的刀具直徑為0.2-3毫米。</span></p></li><li><p><strong><span>尖頭直徑</span></strong><span>：平底尖刀是一種常見的CNC雕刻刀具，其尖頭直徑為0.1毫米。</span></p></li></ol><p><img src="image-20240227103038649.png" alt="image-20240227103038649" style="width:67%;" /></p><h3 id='34-表面粗糙度surface-finish和尺寸精度dimensional-accuracy'><span>3.4 表面粗糙度(Surface Finish)和尺寸精度(Dimensional accuracy)</span></h3><p><span>這些因素對CNC機械加工部件的表面粗糙度(Surface Finish)和尺寸精度(Dimensional accuracy)有很大影響：</span></p><ol start='' ><li><p><strong><span>進給速度和主軸轉速(Feed rate and spindle speed)</span></strong><span>：這兩者決定了刀具每次過刀去除的材料量。進給速度或主軸轉速越高，去除的材料量越多，但可能導致表面粗糙度增加。</span></p></li><li><p><strong><span>刀具磨損(Tool wear)</span></strong><span>：刀具使用時間越長，磨損越嚴重，這可能會導致表面粗糙度增加和尺寸精度降低。</span></p></li><li><p><strong><span>冷卻液(Coolant)</span></strong><span>：冷卻液可以降低刀具和工件的溫度，減少磨損，從而改善表面粗糙度和尺寸精度。</span></p></li><li><p><strong><span>夾具(Clamping)</span></strong><span>：如果工件沒有被正確地固定，則可能會在加工過程中移動，這會導致尺寸精度降低。</span></p></li><li><p><strong><span>機床剛性(Machine Rigidity)</span></strong><span>：機床剛性越好，振動越小，這有助於提高表面粗糙度和尺寸精度。</span></p></li></ol><p><img src="mjxiz7sUXtjiu5edoY7QCEISjxZX9D8cW3fFxbRYvjSVDER8eyQivJvOo5RXS-UQzVPxa_zi6xZ9JYLGWOZT3gXudQwmtlaoUamiVPEVCfE3KVB5db2Fj314kFnx8STFQNz-vxweyHYtkQYRwuyckAQagA=s2048.png" alt="img" style="width:45%;" /><img src="Y-8S79jWsUZfn181RfGgX1r2R-Lc5njg6kSE-qW-UgNvQvkowN6sFNPK4XxIoLdYIkelLzCRiPkX4r5jsgx6M4FwuxPm00cmkhpTkND98TbYl-ID4M7Rkzc8xK-iwOdv_tkR_YK7HFyWYb00ZMSu0ryd0g=s2048.png" alt="img" style="width:45%;" /></p><h2 id='4-cad--cam'><span>4. CAD &amp; CAM</span></h2><h3 id='41-甚麼是cam'><span>4.1 甚麼是CAM?</span></h3><p><span>CAM，全稱為</span><strong><span>電腦輔助製造 (Computer-aided Manufacturing)</span></strong><span>，是一種利用</span><strong><span>電腦</span></strong><span>來進行生產設備管理</span><strong><span>控制和操作</span></strong><span>的過程。CAM軟體可以為各種CNC機床生成程序，如銑削和車削機床，也適用於3D打印機器。</span></p><p><span>在CAM軟體中，我們需要針對實際的加工參數進行設置。例如，在3D打印上，就有溫度、速度、層厚、填充、壁厚等等非常多的參數設置。CAM軟體會讀取CAD軟體所設計的模型，然後生成刀具加工時的運動軌跡訊息，也就是所謂的</span><em><strong><span>刀路</span></strong></em><span>。這些刀路訊息會被轉換成G代碼（G-code），然後由CNC機床進行讀取和執行。</span></p><p><span>CAM是一個與加工工藝參數密切相關的部分，它將設計師的設計想法轉化為機床可以理解和執行的指令，從而實現從設計到製造的過程。</span></p><h3 id='42-cam與cad有甚麼關係'><span>4.2 CAM與CAD有甚麼關係?</span></h3><p><span>CAD和CAM之間是相輔相成的，它們一般一起使用，</span><strong><span>用CAD設計，然後利用CAM進行製造加工</span></strong><span>。CAD創建的設計，可以通過數據交換，將數據以非常方便的方式輸入CAM軟體系統，從而進行加工。</span></p><h3 id='43-cam軟件的角色'><span>4.3 CAM軟件的角色</span></h3><p><span>平常我們在CAD軟件中劃好立體圖，再匯出為STL檔，放到PrusaSlicer中切片輸出，放到3D打印機中打印，這個過程中，PrusaSlicer其實就是CAM軟件。</span></p><p><span>但正如3D打印需要考慮打印的方向、支撐結構、層厚和材料等因素，利用CAM軟件輸出CNC的G代碼（G-code）時，也要考慮刀具樣式、直徑、刀具路徑、過程先後、切割深度和進給速度等因素，有時生產複雜的幾何形狀和零件，甚至需要用到4軸和5軸的加工能力。CNC發展得比較早，早期這些CAM軟件沒有開源社區支持，大多為付費軟件，而且價錢不菲，這對於許多小型企業和個人用戶來說，可能是一個相當大的投資。</span></p><p><span>現在，隨著開源社區的發展，有越來越多的免費或低成本的CAM軟件可供選擇，這對於CNC加工行業的發展是一個好消息。</span></p></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script><object name="topBar" style="position:fixed; top:0px; z-index:10;" width="100%" height="43px" type="text/html" data="../../topBar.html">
+        </object></body>
+</html>
