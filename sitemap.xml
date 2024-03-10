@@ -1,493 +1,412 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url>
-		<loc>https://www.lokchonmou.github.io</loc>
-		<priority>1.00</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/topBar.html</loc>
-		<priority>0.75</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/templete.html</loc>
-		<priority>0.75</priority>
-		<lastmod>2022-08-13</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/indexSideBarMenu.html</loc>
-		<priority>0.75</priority>
-		<lastmod>2023-11-16</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/googlecbdf726395fc9387.html</loc>
-		<priority>0.75</priority>
-		<lastmod>2024-03-10</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/processing/sideBarMenu.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/private research/點名器</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-01-28</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/private research/sideBarMenu.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-01-28</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/math&robotics/sideBarMenu.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2021-08-31</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/點名器</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-01-28</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/wavefront</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/resistorColorCode</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/noiseGenerator</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/mazeGenerator</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/lineFollowerSim</loc>
-		<priority>0.50</priority>
-		<lastmod>2022-08-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/catAndRat</loc>
-		<priority>0.50</priority>
-		<lastmod>2022-08-27</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/boundaryGame</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-11-06</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/Pong</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/Breakout</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/Artillery</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/interactive/AStar</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/sideBarMenu.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-11-15</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/sideBarMenu.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/Projects/sideBarMenu.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/Construction of geometric figures/context1_1.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/Construction of geometric figures/context1_0.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/Construction of geometric figures/Introduction of Rhinoceros.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/Construction of geometric figures/Introduction of Rhinoceros 2.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/sideBarMenu.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/processing/1/content1_1.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2021-08-31</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/processing/0/content0.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2021-08-31</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/private research/立體機動裝置研究/立體機動裝置研究.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-11-20</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/math&robotics/1/content1_1.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2021-08-31</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/math&robotics/0/content0.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2021-08-31</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/test1/TEST 1 Tic Tac Toe.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Tetris/Tetris.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Spacewar/planet simulator.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-11-15</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Spacewar/Spacewar.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Snake/Snake.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Pong Game/Pong Game.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Pacman/Wavefront algorithm.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Pacman/Maze generation.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Pacman/AStar algorithm.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Getting started with processingPy/Getting started with processingPy.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Flappy bird/物件導向與class.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Flappy bird/Flappy bird.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/ConnectFour/Minimax 演算法.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/ConnectFour/ConnectFour.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Breakout/Breakout.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Asteroids/Asteroids.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Artillery game/Artillery game.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-09-07</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Appendix2/GUI Slider.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Appendix2/GUI Button.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/gamming/Appendix/Appendix 1 Artificial Intelligence.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/4/content4_1.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/3/content3_3.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/3/content3_2.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/3/content3_1.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/3/content3.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/2/content2_6.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/2/content2_5.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/2/content2_4.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/2/content2_3.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/2/content2_2.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/2/content2_1.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/1/content1_4.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/1/content1_3.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/1/content1_2.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/1/content1_1.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/1/content1.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/arduinoXprocessing/0/content0.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-07-30</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/Projects/Line Following Robot/Line Following Robot.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2023-11-13</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/齒輪紀念品/齒輪紀念品.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/齒輪簡介/齒輪簡介.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/雕刻名牌/雕刻名牌.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/行星齒輪/行星齒輪.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/自製PCB/自製PCB.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/自製Arduino/自製Arduino.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/繪製電路圖與佈線圖/繪製電路圖與佈線圖.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/代工生產PCB/代工生產PCB.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Walking linkage robot/Walking linkage robot.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Sumo Robot/Sumo Robot.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Simple Box/Simple Box.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Printed Circuit Boards(PCB)/Printed Circuit Boards(PCB).html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Preparation/Preparation.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Introduction of Rhinoceros 2/Introduction of Rhinoceros 2.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Introduction of Rhinoceros/Introduction of Rhinoceros.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Introduction of CNC/Introduction of CNC.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Fusion360基本設定/Fusion360基本設定.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Brass Canon/Brass Canon.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Basic Drawing/Basic Drawing.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Advanced box/Advanced box.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Advance 3D drawing/Advance 3D drawing.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/Adding library and Real world/Adding library and Real world.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/6 legs walking linkage robot/6 legs walking linkage robot.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/3D繪圖小測試/3D繪圖小測試.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/2D constraints/2D constraints.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
-	<url>
-		<loc>https://www.lokchonmou.github.io/CAD & CAM/2D Sketch/2D Sketch.html</loc>
-		<priority>0.25</priority>
-		<lastmod>2024-03-09</lastmod>
-	</url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://lokchonmou.github.io/</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/sideBarMenu.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/sideBarMenu.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/sideBarMenu.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/Projects/sideBarMenu.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/private%20research/sideBarMenu.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/index.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/0/content0.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/1/content1.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/1/content1_1.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/1/content1_2.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/1/content1_3.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/1/content1_4.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/2/content2_1.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/2/content2_2.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/2/content2_3.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/2/content2_4.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/2/content2_5.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/2/content2_6.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/3/content3.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/3/content3_1.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/3/content3_2.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/3/content3_3.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/arduinoXprocessing/4/content4_1.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Getting%20started%20with%20processingPy/Getting%20started%20with%20processingPy.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Pong%20Game/Pong%20Game.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Breakout/Breakout.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/interactive/boundaryGame/index.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Artillery%20game/Artillery%20game.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Flappy%20bird/Flappy%20bird.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Flappy%20bird/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E8%88%87class.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Asteroids/Asteroids.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Spacewar/Spacewar.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Spacewar/planet%20simulator.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Snake/Snake.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Tetris/Tetris.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/ConnectFour/ConnectFour.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/ConnectFour/Minimax%20%E6%BC%94%E7%AE%97%E6%B3%95.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Pacman/Wavefront%20algorithm.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Pacman/AStar%20algorithm.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Pacman/Maze%20generation.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Appendix/Appendix%201%20Artificial%20Intelligence.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Appendix2/GUI%20Button.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/gamming/Appendix2/GUI%20Slider.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Preparation/Preparation.html</loc>
+  <lastmod>2024-03-10T06:46:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Fusion360%E5%9F%BA%E6%9C%AC%E8%A8%AD%E5%AE%9A/Fusion360%E5%9F%BA%E6%9C%AC%E8%A8%AD%E5%AE%9A.html</loc>
+  <lastmod>2024-03-10T06:46:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/2D%20Sketch/2D%20Sketch.html</loc>
+  <lastmod>2024-03-10T06:46:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/2D%20constraints/2D%20constraints.html</loc>
+  <lastmod>2024-03-10T06:46:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Basic%20Drawing/Basic%20Drawing.html</loc>
+  <lastmod>2024-03-10T06:46:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Advance%203D%20drawing/Advance%203D%20drawing.html</loc>
+  <lastmod>2024-03-10T06:46:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/%E9%BD%92%E8%BC%AA%E7%B0%A1%E4%BB%8B/%E9%BD%92%E8%BC%AA%E7%B0%A1%E4%BB%8B.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/%E9%BD%92%E8%BC%AA%E7%B4%80%E5%BF%B5%E5%93%81/%E9%BD%92%E8%BC%AA%E7%B4%80%E5%BF%B5%E5%93%81.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/%E8%A1%8C%E6%98%9F%E9%BD%92%E8%BC%AA/%E8%A1%8C%E6%98%9F%E9%BD%92%E8%BC%AA.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Walking%20linkage%20robot/Walking%20linkage%20robot.html</loc>
+  <lastmod>2024-03-10T06:46:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Brass%20Canon/Brass%20Canon.html</loc>
+  <lastmod>2024-03-10T06:46:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/6%20legs%20walking%20linkage%20robot/6%20legs%20walking%20linkage%20robot.html</loc>
+  <lastmod>2024-03-10T06:46:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Sumo%20Robot/Sumo%20Robot.html</loc>
+  <lastmod>2024-03-10T06:46:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Simple%20Box/Simple%20Box.html</loc>
+  <lastmod>2024-03-10T06:46:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Advanced%20box/Advanced%20box.html</loc>
+  <lastmod>2024-03-10T06:46:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Printed%20Circuit%20Boards(PCB)/Printed%20Circuit%20Boards(PCB).html</loc>
+  <lastmod>2024-03-10T06:46:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/%E7%B9%AA%E8%A3%BD%E9%9B%BB%E8%B7%AF%E5%9C%96%E8%88%87%E4%BD%88%E7%B7%9A%E5%9C%96/%E7%B9%AA%E8%A3%BD%E9%9B%BB%E8%B7%AF%E5%9C%96%E8%88%87%E4%BD%88%E7%B7%9A%E5%9C%96.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/%E4%BB%A3%E5%B7%A5%E7%94%9F%E7%94%A2PCB/%E4%BB%A3%E5%B7%A5%E7%94%9F%E7%94%A2PCB.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Adding%20library%20and%20Real%20world/Adding%20library%20and%20Real%20world.html</loc>
+  <lastmod>2024-03-10T06:46:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/%E8%87%AA%E8%A3%BDPCB/%E8%87%AA%E8%A3%BDPCB.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/%E8%87%AA%E8%A3%BDArduino/%E8%87%AA%E8%A3%BDArduino.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Introduction%20of%20CNC/Introduction%20of%20CNC.html</loc>
+  <lastmod>2024-03-10T06:46:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/%E9%9B%95%E5%88%BB%E5%90%8D%E7%89%8C/%E9%9B%95%E5%88%BB%E5%90%8D%E7%89%8C.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Introduction%20of%20Rhinoceros/Introduction%20of%20Rhinoceros.html</loc>
+  <lastmod>2024-03-10T06:46:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Introduction%20of%20Rhinoceros%202/Introduction%20of%20Rhinoceros%202.html</loc>
+  <lastmod>2024-03-10T06:46:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/Projects/Line%20Following%20Robot/Line%20Following%20Robot.html</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/interactive/lineFollowerSim/index.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/private%20research/%E7%AB%8B%E9%AB%94%E6%A9%9F%E5%8B%95%E8%A3%9D%E7%BD%AE%E7%A0%94%E7%A9%B6/%E7%AB%8B%E9%AB%94%E6%A9%9F%E5%8B%95%E8%A3%9D%E7%BD%AE%E7%A0%94%E7%A9%B6.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/private%20research/%E9%BB%9E%E5%90%8D%E5%99%A8/index.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/interactive/Pong/index.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/interactive/Breakout/index.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/interactive/wavefront/index.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/interactive/AStar/index.html</loc>
+  <lastmod>2024-03-10T06:46:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Walking%20linkage%20robot/walking_robot__tutor_Drawing_v4.pdf</loc>
+  <lastmod>2024-03-10T06:46:23+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Brass%20Canon/brass_cannon_Drawing_v52.pdf</loc>
+  <lastmod>2024-03-10T06:46:21+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://lokchonmou.github.io/CAD%20&amp;%20CAM/Introduction%20of%20Rhinoceros/week%201.pdf</loc>
+  <lastmod>2024-03-10T06:46:22+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
 </urlset>
