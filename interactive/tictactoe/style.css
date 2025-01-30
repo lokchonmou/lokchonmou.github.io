@@ -1,0 +1,19 @@
+html, body {
+  /* margin: 0; */
+  margin-top: 200px;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  background-color: black;
+}
+
+canvas {
+  display: block;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
