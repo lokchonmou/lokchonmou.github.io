@@ -6,7 +6,7 @@ var gameOver;
 var winner;
 
 function setup() {
-  boardWidth = displayWidth - 100; // 螢幕寬度 - 100
+  boardWidth = displayWidth - 20; // 螢幕寬度 - 100
   createCanvas(boardWidth, boardWidth); // 建立畫布，增加100像素高度用於顯示獲勝者和重置按鈕
   noLoop(); // 只畫一次
   resetGame();
@@ -14,7 +14,7 @@ function setup() {
 
 function draw() {
   background(0); // 黑色背景
-  strokeWeight(12); // 線條粗細
+  strokeWeight(6); // 線條粗細
   drawingContext.shadowBlur = 20; // 發光效果
 
   // 畫 Tic Tac Toe 的格子
@@ -41,6 +41,8 @@ function draw() {
     fill(255);
     noStroke();
     textAlign(CENTER, CENTER);
+    drawingContext.shadowColor = 'white'; // 發光顏色
+    drawingContext.shadowBlur = 20; // 發光效果
     if (winner) {
       text(winner + ' wins!', boardWidth / 2, boardWidth / 2 - 50);
     } else {
