@@ -7,7 +7,7 @@ var winner;
 
 function setup() {
   boardWidth = displayWidth - 100; // 螢幕寬度 - 100
-  createCanvas(boardWidth, boardWidth + 100); // 建立畫布，增加100像素高度用於顯示獲勝者和重置按鈕
+  createCanvas(boardWidth, boardWidth); // 建立畫布，增加100像素高度用於顯示獲勝者和重置按鈕
   noLoop(); // 只畫一次
   resetGame();
 }
@@ -56,13 +56,13 @@ function drawMark(spot, x, y) {
   if (spot == 'X') {
     stroke('blue'); // 藍色線條
     drawingContext.shadowColor = 'blue'; // 發光顏色
-    drawingContext.shadowBlur = 100; // 發光效果
+    drawingContext.shadowBlur = 20; // 發光效果
     line(x + r / 2, y + r / 2, x + r * 1.5, y + r * 1.5);
     line(x + r * 1.5, y + r / 2, x + r / 2, y + r * 1.5);
   } else if (spot == 'O') {
     stroke('red'); // 紅色線條
     drawingContext.shadowColor = 'red'; // 發光顏色
-    drawingContext.shadowBlur = 100; // 發光效果
+    drawingContext.shadowBlur = 20; // 發光效果
     noFill();
     ellipse(x + r, y + r, r);
   }
@@ -133,7 +133,7 @@ function isBoardFull() {
 function drawResetButton() {
   stroke(255); // 白色線條
   drawingContext.shadowColor = 'white'; // 發光顏色
-  drawingContext.shadowBlur = 100; // 發光效果
+  drawingContext.shadowBlur = 20; // 發光效果
   fill(0);
   rect(boardWidth / 2 - 150, boardWidth / 2, 300, 50, 10);
   fill(255);
