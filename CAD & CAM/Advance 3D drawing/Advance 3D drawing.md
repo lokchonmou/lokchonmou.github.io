@@ -283,6 +283,12 @@ Hints:
 
 <img src="image-20220606103313365.png" alt="image-20220606103313365" style="zoom:80%; border: 3px solid #ccc;" />
 
+Hints:
+
+<img src="%25E8%259E%25A2%25E5%25B9%2595%25E6%2588%25AA%25E5%259C%2596%25202025-02-19%2520%25E4%25B8%258B%25E5%258D%25882.58.28.png" alt="img" style="width:45%;" /><img src="%25E8%259E%25A2%25E5%25B9%2595%25E6%2588%25AA%25E5%259C%2596%25202025-02-19%2520%25E4%25B8%258B%25E5%258D%25882.59.54.png" alt="img" style="width:45%;" />
+
+<img src="%25E8%259E%25A2%25E5%25B9%2595%25E6%2588%25AA%25E5%259C%2596%25202025-02-19%2520%25E4%25B8%258B%25E5%258D%25883.00.22.png" alt="img" style="width:45%;" />
+
 ###練習題3
 
 下圖尺寸單位為: inch(吋)， 你可以在fusion360用keyword `unit`搜尋`change active units`指令，將單位修改為吋
