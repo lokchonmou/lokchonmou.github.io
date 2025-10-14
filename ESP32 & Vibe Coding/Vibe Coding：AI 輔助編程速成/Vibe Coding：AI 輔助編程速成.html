@@ -1,0 +1,620 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-width: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; white-space: nowrap; overflow: visible; }
+foreignObject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: medium; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left-width: 0.25em; border-left-style: solid; border-left-color: rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<link rel='stylesheet' href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&amp;subset=latin-ext' type='text/css' />
+<link rel='stylesheet' href='https://fonts.loli.net/css?family=Lato:900,300&amp;subset=latin-ext' type='text/css' />
+<link rel='stylesheet' href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&amp;subset=latin,cyrillic-ext,cyrillic,latin-ext' type='text/css' />
+<style type='text/css'  id="style-theme_css">:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #000000;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* devanagari */
+/* latin-ext */
+/* latin */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "PT Serif", "Noto Serif TC";
+    color: rgb(10,10,10);
+    line-height: 1.6;
+    /* background-color: #e7e7e7; */
+}
+
+#write {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #2c98f0;
+    text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-size: 64px;
+    color: #eee;
+    background-color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h2 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: .3em;
+    font-size: 48px;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    color: #2c98f0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+h3 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+h5 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+h6 {
+    font-family: "Lato","Poppins", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    /* background-color: #e7e7e7; */
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #AAAAAA;
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    /* font-weight: bold;
+    border: 1px solid #333333;
+    border-bottom: 2px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+    background: #2c98f0; */
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #ffffff;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+code {
+    border: 1px solid #CCCCCC;
+    /* background-color: #FFFFFF; */
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "Monaco", "JetBrains Mono", "console", "Courier";
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    /* background-color: #FFFFFF; */
+}
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+    left: -1.5625rem;
+    top: .375rem;
+}
+#write>h4.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h5.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+#write>h6.md-focus:before{
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "PT Serif", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<style type='text/css'  id="style-mac-print"> @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}</style>
+
+<title>Vibe Coding：AI 輔助編程速成</title>
+</head>
+<body class='typora-export typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#vibe-codingai-輔助編程速成">Vibe Coding：AI 輔助編程速成</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#甚麼是vibe-coding">甚麼是Vibe Coding</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#💡-定義">💡 定義</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#⚠️-風險提醒與專業責任">⚠️ 風險提醒與專業責任</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#方法論prd-→-prompt-→-agent">方法論（PRD → Prompt → Agent）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#🧩-prompt-對比示例低配版-vs-專業版">🧩 Prompt 對比示例：低配版 vs 專業版</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#🚫-差的-prompt學生常犯例子">🚫 差的 Prompt（學生常犯例子）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#❌-問題分析">❌ 問題分析</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#✅-標準-prompt可直接使用">✅ 標準 Prompt（可直接使用）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#✅-為什麼呢個好">✅ 為什麼呢個好？</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h3 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#pdrprompt-requirements-document">PDR(Prompt Requirements Document)</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#💡-核心觀念：提示詞需求文件-prd">💡 核心觀念：提示詞需求文件 (PRD)</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#🛠-內容三大支柱">🛠 內容三大支柱</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#🧩-prd-結構化-prompt-組成">🧩 PRD 結構化 Prompt 組成</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#非常重要">非常重要</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#🧾vibe-coding-結構化-prompt-練習-">🧾《Vibe Coding 結構化 Prompt 練習 》</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#工作紙">工作紙</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=' first-line-indent'><h1 id='vibe-codingai-輔助編程速成'><span>Vibe Coding：AI 輔助編程速成</span></h1><p><span>「Vibe Coding」= 以 </span><strong><span>AI 助手／代理</span></strong><span> 為主體、用自然語言驅動程式開發；重點不在手寫語法，而在</span><strong><span>用清晰意圖 + 快速迭代</span></strong><span>把 MVP 拉起來，同時用測試與審查把風險壓住。這個詞近年由 Karpathy 帶火，主流平台（Replit、Microsoft Learn 等）已有入門模組；同時也有媒體對「只憑 vibe 而不審碼」提出質疑。</span></p><h2 id='甚麼是vibe-coding'><span>甚麼是Vibe Coding</span></h2><h3 id='💡-定義'><span>💡 定義</span></h3><p><strong><span>Vibe Coding</span></strong><span> 並非「只憑感覺寫程式」，而是一種</span><strong><span>以 AI 代理（Agent / LLM）為協作核心</span></strong><span>的新式編程工作流。  在這種模式下：</span></p><ul><li><p><strong><span>人類的角色</span></strong><span>：負責「說明需求、設定限制、撰寫驗收條件」。  </span></p></li><li><p><strong><span>AI 的角色</span></strong><span>：根據這些描述生成、修改或測試程式碼。  </span></p></li></ul><p><span>換句話說，</span><strong><span>Vibe Coding = 描述 + 驗收導向的開發流程</span></strong><span>，  而不是傳統「從零開始手寫語法」的編程。</span></p><hr /><h3 id='⚠️-風險提醒與專業責任'><span>⚠️ 風險提醒與專業責任</span></h3><p><span>Vibe Coding 近年成為熱門詞彙，但許多報導也指出其</span><strong><span>潛在誤導與風險</span></strong><span>：</span></p><ol start='' ><li><p><span>🚫 </span><strong><span>誤解 1：Vibe Coding = 不用看程式</span></strong><span></span><br/><span>錯。AI 生成的代碼只是草稿，仍需人工閱讀、理解與測試。</span><br/><span>真正的專業在於：你是否能判斷這段代碼</span><strong><span>是否安全、合理、可維護</span></strong><span>。</span></p></li><li><p><span>🔍 </span><strong><span>誤解 2：AI 生成程式一定正確</span></strong><span></span><br/><span>實際上，LLM 會出現「幻覺」（Hallucination）或腳位錯誤、邏輯漏洞。</span><br/><span>因此必須進行 </span><strong><span>三道關卡</span></strong><span>：</span></p><ul><li><p><span>✅ </span><strong><span>測試 (Testing)</span></strong><span>：確認功能正確與邏輯一致。  </span></p></li><li><p><span>✅ </span><strong><span>審查 (Review)</span></strong><span>：人工逐行檢查程式註解與腳位。  </span></p></li><li><p><span>✅ </span><strong><span>授權 (License Check)</span></strong><span>：確認 AI 是否引用外部程式碼或開源庫。</span></p></li></ul></li><li><p><span>⚙️ </span><strong><span>誤解 3：AI 可以完全取代工程師</span></strong><span></span><br/><span>現階段 AI 仍依賴人類提供明確需求（Prompt Engineering），</span><br/><span>若需求模糊，AI 可能生成錯誤或危險代碼。</span><br/><span>因此，</span><strong><span>Vibe Coding 是「共同創作」而非「全自動化」。</span></strong></p></li></ol><h2 id='方法論prd-→-prompt-→-agent'><span>方法論（PRD → Prompt → Agent）</span></h2><h3 id='🧩-prompt-對比示例低配版-vs-專業版'><span>🧩 Prompt 對比示例：低配版 vs 專業版</span></h3><h4 id='🚫-差的-prompt學生常犯例子'><span>🚫 差的 Prompt（學生常犯例子）</span></h4><blockquote><p><span>整一個呼吸燈。</span></p></blockquote><hr /><h5 id='❌-問題分析'><span>❌ 問題分析</span></h5><figure class='table-figure'><table><thead><tr><th><span>問題</span></th><th><span>為什麼唔得</span></th></tr></thead><tbody><tr><td><span>🎯 目標太模糊</span></td><td><span>「整一個呼吸燈」可以有十種解讀：ESP32？Arduino？用 PWM？用 delay？AI 唔知道。</span></td></tr><tr><td><span>⚙️ 缺少技術細節</span></td><td><span>無講腳位、無講亮度範圍、無講週期長短、無講需唔需要平滑效果。</span></td></tr><tr><td><span>🧪 無驗收標準</span></td><td><span>「呼吸」有幾快先算呼吸？AI 無法測試或優化。</span></td></tr><tr><td><span>📦 無限制條件</span></td><td><span>AI 可能亂用 delay()、亂用外部函式庫，導致程式卡死。</span></td></tr><tr><td><span>🔁 無法迭代</span></td><td><span>因為前面無明確條件，學生後面講「慢啲啦」AI 只會亂調。</span></td></tr></tbody></table></figure><p><span>🧨 結果：AI 可能生成一個閃爍燈（Blink），  而唔係真正亮暗平滑嘅「呼吸燈」。  學生睇落以為「好似啱」，但實際邏輯錯晒。</span></p><hr /><h4 id='✅-標準-prompt可直接使用'><span>✅ 標準 Prompt（可直接使用）</span></h4><blockquote><p><span>你是一名嵌入式系統工程師。</span><br/><span>請為 </span><strong><span>ESP32</span></strong><span> 生成一個可在 </span><strong><span>Arduino IDE</span></strong><span> 執行的程式。</span><br/><span>功能如下：  </span></p><ul><li><p><span>控制一顆 LED（接在 GPIO 2 腳位）  </span></p></li><li><p><span>LED 亮度需平滑地由暗變亮，再由亮變暗，形成「呼吸效果」  </span></p></li><li><p><span>一個完整週期約 </span><strong><span>2 秒</span></strong><span>  </span></p></li><li><p><span>必須使用 </span><strong><span>PWM (analogWrite)</span></strong><span> 控制亮度，不得使用 </span><code>delay()</code><span>  </span></p></li><li><p><span>用 </span><code>millis()</code><span> 控制時間，使主程式可持續運行  </span></p></li><li><p><span>不使用外部函式庫，程式需在單一 </span><code>.ino</code><span> 檔案完成  </span></p></li><li><p><span>請加入清晰註解，說明每段邏輯  </span></p></li><li><p><span>在最後加入一個測試函式，用以改變呼吸速度並列印結果  </span></p></li></ul></blockquote><hr /><h5 id='✅-為什麼呢個好'><span>✅ 為什麼呢個好？</span></h5><figure class='table-figure'><table><thead><tr><th><span>關鍵元素</span></th><th><span>說明</span></th></tr></thead><tbody><tr><td><strong><span>角色明確</span></strong></td><td><span>告訴 AI 佢係嵌入式工程師，代碼風格會自動變專業。</span></td></tr><tr><td><strong><span>目標具體</span></strong></td><td><span>「平滑亮暗」+「週期 2 秒」= 可驗證、可測試。</span></td></tr><tr><td><strong><span>I/O 清楚</span></strong></td><td><span>指定 GPIO 腳位，AI 唔會亂用。</span></td></tr><tr><td><strong><span>限制明確</span></strong></td><td><span>禁止 delay()、禁止外部函式庫。</span></td></tr><tr><td><strong><span>驗收條件</span></strong></td><td><span>可以量化結果，方便檢查與 debug。</span></td></tr><tr><td><strong><span>結構化思維</span></strong></td><td><span>用清單分段，AI 會按邏輯生成乾淨 code。</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='pdrprompt-requirements-document'><span>PDR(Prompt Requirements Document)</span></h3><p><a href='https://medium.com/@takafumi.endo/prompt-requirements-document-prd-a-new-concept-for-the-vibe-coding-era-0fb7bf339400'><span>Prompt Requirements Document (PRD): A New Concept for the Vibe Coding Era</span></a></p><p><span>這篇文章介紹了一個名為</span><strong><span>「提示詞需求文件 (Prompt Requirements Document, PRD)」</span></strong><span>的新概念，它是在</span><strong><span>「Vibe Coding Era)」</span></strong><span>中，因應</span><strong><span>人類與 AI 協作開發軟體</span></strong><span>所誕生的。</span></p><p><span>簡單來說：</span></p><h4 id='💡-核心觀念：提示詞需求文件-prd'><span>💡 核心觀念：提示詞需求文件 (PRD)</span></h4><ul><li><p><strong><span>傳統 PRD</span></strong><span>：主要處理</span><strong><span>非結構化</span></strong><span>資訊，用於</span><strong><span>人類對人類</span></strong><span>的對齊。</span></p></li><li><p><strong><span>新的 PRD (提示詞需求文件)</span></strong><span>：專注於生成、編輯和管理</span><strong><span>結構化</span></strong><span>的</span><strong><span>提示詞</span></strong><span>（包括文字、圖片、影片等），這些提示詞必須是</span><strong><span>AI 和人類都能理解和有效使用</span></strong><span>的。</span></p></li><li><p><strong><span>目的</span></strong><span>：成為人類與 AI 共同理解專案、保持一致性的</span><strong><span>關鍵橋樑</span></strong><span>和</span><strong><span>唯一事實來源</span></strong><span>。</span></p></li></ul><h4 id='🛠-內容三大支柱'><span>🛠 內容三大支柱</span></h4><p><span>一個精心編寫的提示詞 PRD 通常包含三個部分：</span></p><ol start='' ><li><p><strong><span>《指南 (Guideline)：共享 AI-人類理解》</span></strong></p><ul><li><p><span>一個全面的知識庫，建立</span><strong><span>專案背景、技術原理和架構決策</span></strong><span>。</span></p></li><li><p><span>確保 AI 助理和人類團隊成員從</span><strong><span>相同的理解</span></strong><span>基礎上運作，類似於傳統 PRD 讓所有利害關係人對齊需求。</span></p></li></ul></li><li><p><strong><span>《指導 (Guidance)：提示詞演進方法論》</span></strong></p><ul><li><p><span>一種結構化的方法，幫助開發者將</span><strong><span>抽象概念</span></strong><span>演變為 AI 系統能準確解釋和執行的</span><strong><span>精確指令</span></strong><span>。</span></p></li><li><p><span>包括</span><strong><span>帶註解的提示詞範例</span></strong><span>、模式庫、情境最佳實踐和常見錯誤警告，讓新手也能建立有效、高品質的提示詞。</span></p></li></ul></li><li><p><strong><span>《護欄 (Guardrails)：AI 輔助程式碼審查》</span></strong></p><ul><li><p><span>一套明確定義的</span><strong><span>自動化評估標準和品質檢查點</span></strong><span>，專門針對已知的專案風險和常見痛點。</span></p></li><li><p><span>讓 AI 系統能對程式碼進行初步審查，在人工審查前就找出基本問題，減輕人類審查的負擔，確保</span><strong><span>程式碼品質一致</span></strong><span>。</span></p></li></ul></li></ol><h4 id='🧩-prd-結構化-prompt-組成'><span>🧩 PRD 結構化 Prompt 組成</span></h4><figure class='table-figure'><table><thead><tr><th><span>組成元素</span></th><th><span>應包含內容</span></th><th><span>說明（為何重要）</span></th><th><span>示例（以 ESP32 呼吸燈為例）</span></th></tr></thead><tbody><tr><td><span>1. 🎭 </span><strong><span>角色 (Role)</span></strong></td><td><span>指定 AI 的身份、專業角色</span></td><td><span>令 AI 採用正確語氣與知識框架，減少幻覺</span></td><td><span>「你是一名嵌入式系統工程師。」</span></td></tr><tr><td><span>2. 🎯 </span><strong><span>目標 (Goal)</span></strong></td><td><span>明確任務目的與要達成的效果</span></td><td><span>讓 AI 理解最終成果，而非只執行片面動作</span></td><td><span>「請為 ESP32 生成一個 Arduino IDE可執行的呼吸燈控制程式。」</span></td></tr><tr><td><span>3. 🔌 </span><strong><span>輸入 / 輸出 (I/O)</span></strong></td><td><span>清楚列出輸入來源、資料類型、輸出格式</span></td><td><span>幫 AI 知道該讀取／輸出的內容與型態</span></td><td><span>「輸入：無（自動執行）；輸出：LED PWM 亮度變化（0–255）」</span></td></tr><tr><td><span>4. ⚙️ </span><strong><span>限制 (Constraint)</span></strong></td><td><span>指定開發條件、不可做的事、技術邊界</span></td><td><span>限制範圍可令 AI 生成安全、可測試、可重現的結果</span></td><td><span>「不得使用 delay()；不可用外部函式庫；單一 .ino 檔完成。」</span></td></tr><tr><td><span>5. 🧪 </span><strong><span>驗收標準 (Acceptance Tests)</span></strong></td><td><span>寫出 3–5 條可測試條款（PASS / FAIL）</span></td><td><span>學習用「測試」思維驗證 AI 代碼品質</span></td><td><span>「LED 每 2 秒完成一次呼吸週期；變化平滑無閃爍；含註解說明邏輯。」</span></td></tr><tr><td><span>6. 🔁 </span><strong><span>迭代規則 (Iteration Rule)</span></strong></td><td><span>定義 AI 應如何修正或優化</span></td><td><span>應理解 Vibe Coding 不會一次到位，而是多輪調整</span></td><td><span>「若亮暗變化太突兀，請 AI 調整 PWM 步進值或更新間隔。」</span></td></tr><tr><td><span>7. 🧷 </span><strong><span>授權與註解 (License / Comments)</span></strong></td><td><span>要求列出 AI 工具、作者及程式註解</span></td><td><span>建立資料倫理與透明開發習慣</span></td><td><span>「請在程式結尾註明作者與生成工具名稱。」</span></td></tr></tbody></table></figure><ul><li><p><strong><span>Prompt ≠ 句子，而是結構</span></strong><span>： 要學懂「講清楚」，不是「講多啲」。</span></p></li><li><p><strong><span>Role + Goal = Context；Constraint + Test = Guardrail</span></strong><span>：  結構化 prompt 就是為 AI 建立「任務邊界」。</span></p></li><li><p><strong><span>同一個任務，不同結構 → 不同結果</span></strong><span>： 學懂比較「差 prompt」與「結構化 prompt」輸出差異。</span></p></li></ul><h4 id='非常重要'><span>非常重要</span></h4><ul><li><p><mark><span>Vibe coding 不是「不寫程式」；是把人力投到</span><strong><span>定義問題、驗收與風險</span></strong><span>，把低層繁瑣交給代理。</span></mark></p></li><li><p><mark><span>真實世界可交付，靠的是</span><strong><span>清晰 PRD + 可重複測試 + 審查習慣</span></strong><span>，而不是「接受所有建議」。</span></mark></p></li></ul><h3 id='🧾vibe-coding-結構化-prompt-練習-'><span>🧾《Vibe Coding 結構化 Prompt 練習 》</span></h3><figure class='table-figure'><table><thead><tr><th><span>任務主題</span></th><th><span>說明</span></th></tr></thead><tbody><tr><td><strong><span>ESP32 呼吸燈：用 AI 讓燈光有生命</span></strong></td><td><span>學生要寫出控制 LED 呼吸節奏的完整 PRD，理解 I/O、限制、驗收條件。</span></td></tr><tr><td><strong><span>AI 資訊搜尋助手：「AI 教育趨勢 2025」最新資料</span></strong></td><td><span>學生要寫出明確的資訊查詢任務，定義輸入關鍵字、輸出格式、真偽檢核標準。</span></td></tr><tr><td><strong><span>文章生成器：「AI 與創意思維」報告草稿</span></strong></td><td><span>學生要指定主題、字數、語氣、結構，練習量化要求與檢查條件。</span></td></tr><tr><td><strong><span>程式生成：計算平均值與標準差</span></strong></td><td><span>學生要定義輸入格式、輸出精度、錯誤處理與允許使用的標準庫。</span></td></tr></tbody></table></figure><h2 id='工作紙'><span>工作紙</span></h2><ol><li><p><a href='Vibe Coding 1.docx'><span>Vibe Coding 1</span></a></p></li></ol></div></div>
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><object name="topBar" style="position:fixed; top:0px; z-index:10;" width="100%" height="43px" type="text/html" data="../../topBar.html">
+    </object></body>
+</html>
