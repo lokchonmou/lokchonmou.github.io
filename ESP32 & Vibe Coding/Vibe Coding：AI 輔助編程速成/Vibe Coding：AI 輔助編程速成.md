@@ -139,113 +139,18 @@ Vibe Coding 近年成為熱門詞彙，但許多報導也指出其**潛在誤導
 
 ### 🧾《Vibe Coding 結構化 Prompt 練習 》
 
-| 任務主題                                                     | 效果                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **ESP32 呼吸燈**                                             |                                                              |
-| **幫我整一個 ESP32 紅綠燈程式**                              | <img src="Oct-15-2025%2019-22-47.gif" alt="Oct-15-2025 19-22-47" style="width:500px;" /> |
-| **ESP32有線搶答機**                                          | <img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-10-15%2020.03.44.png" alt="螢幕截圖 2025-10-15 20.03.44" style="width:500px;" /> |
-| **(Bonus)為有線搶答機，加入蜂鳴器，報聲時系統照常能復原和搶答** |                                                              |
+1. **ESP32 呼吸燈**
 
-## wokwi 線路圖json
+2. **幫我整一個 ESP32 紅綠燈程式**
 
-``` json
-{
-  "version": 1,
-  "author": "LOK CHON MOU",
-  "editor": "wokwi",
-  "parts": [
-    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -76.8, "left": -4.76, "attrs": {} },
-    {
-      "type": "wokwi-pushbutton",
-      "id": "btn1",
-      "top": 37.8,
-      "left": -313.8,
-      "rotate": 90,
-      "attrs": { "color": "red", "xray": "1" }
-    },
-    {
-      "type": "wokwi-pushbutton",
-      "id": "btn2",
-      "top": 37.8,
-      "left": -256.2,
-      "rotate": 90,
-      "attrs": { "color": "green", "xray": "1" }
-    },
-    {
-      "type": "wokwi-pushbutton",
-      "id": "btn3",
-      "top": 37.8,
-      "left": -198.6,
-      "rotate": 90,
-      "attrs": { "color": "blue", "xray": "1" }
-    },
-    {
-      "type": "wokwi-pushbutton",
-      "id": "btn4",
-      "top": 37.8,
-      "left": -141,
-      "rotate": 90,
-      "attrs": { "color": "white", "xray": "1" }
-    },
-    {
-      "type": "wokwi-led",
-      "id": "led1",
-      "top": 6,
-      "left": 157.4,
-      "attrs": { "color": "red", "flip": "1" }
-    },
-    {
-      "type": "wokwi-led",
-      "id": "led2",
-      "top": 6,
-      "left": 186.6,
-      "attrs": { "color": "green", "flip": "1" }
-    },
-    {
-      "type": "wokwi-led",
-      "id": "led3",
-      "top": 6,
-      "left": 215.4,
-      "attrs": { "color": "blue", "flip": "1" }
-    },
-    {
-      "type": "wokwi-resistor",
-      "id": "r1",
-      "top": 167.15,
-      "left": 9.6,
-      "attrs": { "value": "330" }
-    }
-  ],
-  "connections": [
-    [ "esp:TX", "$serialMonitor:RX", "", [] ],
-    [ "esp:RX", "$serialMonitor:TX", "", [] ],
-    [ "btn1:1.r", "btn1:2.r", "black", [ "v0" ] ],
-    [ "btn2:2.r", "btn1:1.r", "black", [ "v0" ] ],
-    [ "btn2:1.r", "btn2:2.r", "black", [ "v0" ] ],
-    [ "btn3:2.r", "btn2:1.r", "black", [ "v0" ] ],
-    [ "btn3:1.r", "btn3:2.r", "black", [ "v0" ] ],
-    [ "btn3:2.l", "btn3:1.l", "green", [ "v0" ] ],
-    [ "btn2:2.l", "btn2:1.l", "green", [ "v0" ] ],
-    [ "btn1:2.l", "btn1:1.l", "green", [ "v0" ] ],
-    [ "btn4:1.r", "btn4:2.r", "black", [ "v0" ] ],
-    [ "btn4:2.l", "btn4:1.l", "green", [ "v0" ] ],
-    [ "btn4:1.r", "esp:GND.1", "black", [ "v0.2", "h38.4", "v-38.4" ] ],
-    [ "btn3:1.r", "btn4:2.r", "black", [ "v0.2", "h38.6" ] ],
-    [ "btn4:1.l", "esp:12", "green", [ "v0", "h38.4", "v38.4" ] ],
-    [ "esp:14", "btn3:1.l", "green", [ "h-47.85", "v-38.4", "h-105.6" ] ],
-    [ "esp:27", "btn2:1.l", "green", [ "h-38.25", "v-38.4", "h-172.8" ] ],
-    [ "esp:26", "btn1:1.l", "green", [ "h-28.65", "v-38.4", "h-9.6" ] ],
-    [ "esp:GND.1", "r1:1", "black", [ "h-19.05", "v0", "h0", "v96" ] ],
-    [ "r1:2", "led1:C", "green", [ "v0", "h104.4" ] ],
-    [ "led2:C", "r1:2", "green", [ "v124.8", "h-29.2", "v0", "h-57.6" ] ],
-    [ "led3:C", "r1:2", "green", [ "v0" ] ],
-    [ "led1:A", "esp:18", "green", [ "v0", "h-18.8", "v-19.2" ] ],
-    [ "led2:A", "esp:5", "green", [ "v9.6", "h-67.2", "v-19.2" ] ],
-    [ "led3:A", "esp:17", "green", [ "v19.2", "h-115.2", "v-19.2" ] ]
-  ],
-  "dependencies": {}
-}
-```
+	<img src="Oct-15-2025%2019-22-47.gif" alt="Oct-15-2025 19-22-47" style="width:500px;" />
+
+3. **ESP32有線搶答機**
+
+<embed type="text/html" src="./interactive/搶答機/index.html" width="500" height="500">
+
+
+4. **(Bonus)為有線搶答機，加入蜂鳴器，報聲時系統照常能復原和搶答**
 
 
 
