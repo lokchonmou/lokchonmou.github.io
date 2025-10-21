@@ -147,7 +147,8 @@ Vibe Coding 近年成為熱門詞彙，但許多報導也指出其**潛在誤導
 
 3. **ESP32有線搶答機**
 
-<embed type="text/html" src="./interactive/搶答機/index.html" width="500" height="500">
+<div align="center"><embed type="text/html" src="/interactive/搶答機/index.html" width="500" height="500"></div>
+
 
 
 4. **(Bonus)為有線搶答機，加入蜂鳴器，報聲時系統照常能復原和搶答**
