@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間的追逐：人類對精準的百年探索</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: linear-gradient(135deg, #6C93EB 0%, #4A6FD9 100%);
+            background-attachment: fixed;
+            color: #1a202c;
+        }
+        
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+                max-height: 450px;
+            }
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: linear-gradient(135deg, rgba(108, 147, 235, 0.95), rgba(74, 111, 217, 0.95));
+            border-radius: 0 0 24px 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(108, 147, 235, 0.3);
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #6C93EB 0%, #4A6FD9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .timeline-dot {
+            box-shadow: 0 0 0 8px rgba(108, 147, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.3);
+            box-shadow: 0 0 0 12px rgba(108, 147, 235, 0.3);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .fade-in-up:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in-up:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in-up:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in-up:nth-child(4) { animation-delay: 0.4s; }
+        
+        .nav-link {
+            position: relative;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .hero-title {
+            background: linear-gradient(135deg, #6C93EB 0%, #4A6FD9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(108, 147, 235, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="sticky-nav">
+        <nav class="container mx-auto px-4 py-4">
+            <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 md:gap-x-10">
+                <li><a href="#section-intro" class="nav-link text-sm md:text-base font-medium">序章</a></li>
+                <li><a href="#section-mechanical" class="nav-link text-sm md:text-base font-medium">機械的脈搏</a></li>
+                <li><a href="#section-quartz" class="nav-link text-sm md:text-base font-medium">石英的風暴</a></li>
+                <li><a href="#section-atomic" class="nav-link text-sm md:text-base font-medium">原子的心跳</a></li>
+                <li><a href="#section-frontier" class="nav-link text-sm md:text-base font-medium">前沿的競賽</a></li>
+                <li><a href="#section-why" class="nav-link text-sm md:text-base font-medium">為何精準？</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-12">
+        <div class="content-wrapper px-6 md:px-12 py-12">
+
+        <section id="section-intro" class="text-center mb-24 scroll-mt-20">
+            <h1 class="hero-title text-5xl md:text-7xl font-bold mb-8 tracking-tight">時間的追逐</h1>
+            <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                在過去的150年裡，人類對時間的測量，從工匠的精妙手藝飛躍到操控原子的量子心跳。這不僅是技術的演進，更是我們理解宇宙、定義現實的偉大征程。
+            </p>
+        </section>
+
+        <section id="section-mechanical" class="mb-24 scroll-mt-20">
+            <h2 class="section-title text-4xl font-bold text-center mb-4">序章：機械的脈搏</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-12 leading-relaxed">
+                在19世紀末到20世紀中葉，時間的精準度掌握在瑞士製錶師的手中。這是一個關於齒輪、彈簧和寶石軸承的時代。像浪琴（Longines）這樣的品牌，不斷推動機械計時的極限，將懷錶和腕錶從單純的計時器變成了精密工藝的象徵。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="card fade-in-up bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
+                    <div class="text-4xl mb-4">⏱️</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">精密工藝的巔峰 (天文台錶)</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        瑞士的製錶業專注於微型化和可靠性。天文台認證（Chronometer）成為了高精準度的黃金標準，要求機械錶在不同溫度和位置下仍能保持每日僅數秒的誤差。
+                    </p>
+                </div>
+                <div class="card fade-in-up bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">功能的複雜化</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        這個時代不僅追求準確，還催生了複雜功能，如計時碼錶（Chronograph）。例如，浪琴在1878年就推出了其首款計時機芯，標誌著人類開始有能力精確測量「時間段」，而不僅僅是「時間點」。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-quartz" class="mb-24 scroll-mt-20">
+            <h2 class="section-title text-4xl font-bold text-center mb-4">革命：石英的風暴</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-12 leading-relaxed">
+                1969年，日本精工（Seiko）推出了世界首款石英腕錶「Astron」，引發了一場徹底的革命。利用石英晶體在通電時的穩定高頻振盪，電子計時一夜之間讓機械錶的百年積累黯然失色。這場「石英革命」重新定義了手錶的價格和精準度。
+            </p>
+            <div class="card bg-white p-6 md:p-10 rounded-2xl shadow-2xl border border-blue-100">
+                <h3 class="text-2xl font-semibold text-center mb-6 text-gray-800">精準度的飛躍：機械 vs 石英</h3>
+                <div class="chart-container">
+                    <canvas id="quartzChart"></canvas>
+                </div>
+                <p class="text-center text-gray-600 mt-6 text-sm leading-relaxed">
+                    圖表顯示了頂級機械天文台錶與早期石英錶在年誤差上的巨大差異。石英技術將誤差從「每日數秒」提升至「每月數秒」。
+                </p>
+            </div>
+        </section>
+
+        <section id="section-atomic" class="mb-24 scroll-mt-20">
+            <h2 class="section-title text-4xl font-bold text-center mb-4">標尺：原子的心跳</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-12 leading-relaxed">
+                當腕錶在追求「秒」的精準時，科學家們已經轉向了宇宙中最穩定的節拍器——原子。原子鐘不依賴機械運動或晶體振盪，而是利用原子在特定能級間躍遷時釋放的電磁波頻率作為標準。
+            </p>
+            <div class="max-w-2xl mx-auto">
+                <div class="relative pl-8 border-l-4 border-blue-400">
+                    <div class="timeline-item mb-10 relative">
+                        <div class="timeline-dot absolute w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full -left-11 mt-1 ring-4 ring-white"></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">1949年：概念誕生</h3>
+                        <p class="text-gray-600 leading-relaxed">物理學家 Isidor Rabi 首次提出利用原子束共振來製造時鐘的構想。</p>
+                    </div>
+                    <div class="timeline-item mb-10 relative">
+                        <div class="timeline-dot absolute w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full -left-11 mt-1 ring-4 ring-white"></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">1955年：首座實用原子鐘</h3>
+                        <p class="text-gray-600 leading-relaxed">英國國家物理實驗室 (NPL) 的 Louis Essen 製造了第一座基於銫-133原子的原子鐘，其穩定度遠超當時所有的計時器。</p>
+                    </div>
+                    <div class="timeline-item mb-8 relative">
+                        <div class="timeline-dot absolute w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full -left-11 mt-1 ring-4 ring-white"></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">1967年：重新定義「秒」</h3>
+                        <p class="text-gray-600 leading-relaxed">國際度量衡大會正式決定，將「秒」的定義改為：銫-133原子基態的兩個超精細能級之間躍遷所對應輻射的9,192,631,770個週期的持續時間。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-frontier" class="mb-24 scroll-mt-20">
+            <h2 class="section-title text-4xl font-bold text-center mb-4">前沿：光晶格的競賽</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-12 leading-relaxed">
+                進入21世紀，銫原子鐘的霸主地位正受到挑戰。截至2025年，全球最精確的計時器是「光晶格鐘」（Optical Lattice Clock），例如使用鍶（Strontium）或鐿（Ytterbium）原子的時鐘。
+            </p>
+            <div class="card bg-white p-6 md:p-10 rounded-2xl shadow-2xl border border-blue-100 mb-8">
+                <h3 class="text-2xl font-semibold text-center mb-6 text-gray-800">精準的極致：運行多久才會誤差一秒？</h3>
+                <div class="chart-container" style="height: 350px; max-height: 400px;">
+                    <canvas id="precisionChart"></canvas>
+                </div>
+            </div>
+            <div class="max-w-3xl mx-auto text-left bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border-2 border-blue-200 shadow-lg">
+                <div class="text-3xl mb-4">💡</div>
+                <h4 class="text-xl font-semibold text-blue-800 mb-3">理論值還是已在用？</h4>
+                <p class="text-gray-700 leading-relaxed">
+                    光晶格鐘絕非理論！它們是真實存在並在世界頂尖物理實驗室（如美國NIST、JILA，德國PTB等）中運行的設備。它們目前作為下一代「秒」定義的候選標準，用於最前沿的基礎物理研究。其精準度已達到數百億年才誤差一秒（約 $10^{-18}$ 量級），比目前定義「秒」的銫原子鐘精確約100倍。
+                </p>
+            </div>
+        </section>
+
+        <section id="section-why" class="mb-24 scroll-mt-20">
+            <h2 class="section-title text-4xl font-bold text-center mb-4">求索：為何追求極致的精準？</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-12 leading-relaxed">
+                當我們的日常生活早已被足夠精確的石英和原子鐘覆蓋時，為何科學家仍要將精準度推向令人難以置信的極限？這不僅是為了「更準」，更是因為「時間」是我們測量宇宙萬物的基本標尺。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div class="card fade-in-up bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">現代生活的基石</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        全球定位系統 (GPS) 的存在，完全依賴於衛星和地面站之間納秒（十億分之一秒）等級的時間同步。沒有精確的時鐘，導航、金融交易和高速互聯網都將癱瘓。
+                    </p>
+                </div>
+                <div class="card fade-in-up bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
+                    <div class="text-5xl mb-4">🔬</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">驗證基礎物理</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        根據愛因斯坦的廣義相對論，引力會使時間變慢。超高精度的時鐘已經可以在僅幾公分的"高度"差異下，測量到這種微小的時間膨脹效應，從而以前所未有的精度驗證物理學的基石。
+                    </p>
+                </div>
+                <div class="card fade-in-up bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
+                    <div class="text-5xl mb-4">🌌</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">探索宇宙的新工具</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        將超精密時鐘網絡佈置在地球各處，它們可以「感知」到引力波（時空的漣漪）或暗物質的經過。時鐘不再只是計時器，而是變成了探測宇宙奧秘的「感測器」。
+                    </p>
+                </div>
+                <div class="card fade-in-up bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
+                    <div class="text-5xl mb-4">⚛️</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">重新定義基本常數</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        精確測量時間的能力，使我們能夠更準確地定義其他基本單位（如公尺）。對精準的追求，就是對我們測量宇宙的「尺子」進行不斷的打磨和校準。
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <footer class="mt-24 pt-12 border-t-2 border-blue-200">
+            <p class="text-center text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                人類對時間精準度的追求，是一場永不停止的偉大探索。從齒輪的滴答聲，到石英的穩定脈衝，再到原子的量子躍遷。每一步，我們不僅是在定義「一秒鐘」，更是在拓展人類感知的邊界，用理性的光芒，去丈量這個宏偉而精妙的宇宙。
+            </p>
+        </footer>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            initApp();
+        });
+
+        function initApp() {
+            setupNavigation();
+            renderQuartzChart();
+            renderPrecisionChart();
+            // LLM features removed.
+        }
+
+        function setupNavigation() {
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        function renderQuartzChart() {
+            const ctx = document.getElementById('quartzChart').getContext('2d');
+            const data = {
+                labels: ['頂級機械天文台錶 (~1960)', '首款石英腕錶 (1969)'],
+                datasets: [{
+                    label: '每年誤差（分鐘）',
+                    data: [
+                        (5 * 365) / 60, 
+                        (15 * 12) / 60  
+                    ],
+                    backgroundColor: [
+                        'rgba(108, 147, 235, 0.7)', 
+                        'rgba(74, 111, 217, 0.7)'    
+                    ],
+                    borderColor: [
+                        'rgba(108, 147, 235, 1)',
+                        'rgba(74, 111, 217, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: '每年誤差（分鐘）'
+                            },
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        label += context.parsed.x.toFixed(1) + ' 分鐘';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderPrecisionChart() {
+            const ctx = document.getElementById('precisionChart').getContext('2d');
+            
+            const formatNumber = (num) => {
+                if (num >= 1e9) {
+                    return (num / 1e9).toFixed(0) + '0 億'; 
+                }
+                if (num >= 1e6) {
+                    return (num / 1e6).toFixed(0) + '00 萬';
+                }
+                if (num >= 1e4) {
+                    return (num / 1e4).toFixed(0) + ' 萬';
+                }
+                if (num < 1) {
+                    return num.toFixed(4);
+                }
+                return num.toFixed(0);
+            };
+
+            const logData = {
+                labels: ['機械錶 (天文台級)', '石英錶 (標準)', '銫原子鐘 (GPS標準)', '鍶光晶格鐘 (2025前沿)'],
+                values: [
+                    (1 / (365 * 24 * 12)), 
+                    (1 / (12 * 2)), 
+                    30000000,
+                    30000000000 
+                ],
+                displayValues: [
+                    '約 0.0001 年',
+                    '約 0.04 年',
+                    '3000 萬年',
+                    '300 億年'
+                ]
+            };
+
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: logData.labels,
+                    datasets: [{
+                        label: '運行多久誤差一秒（年）',
+                        data: logData.values,
+                        backgroundColor: [
+                            'rgba(108, 147, 235, 0.7)',
+                            'rgba(74, 111, 217, 0.7)',
+                            'rgba(59, 130, 246, 0.7)',
+                            'rgba(96, 165, 250, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(108, 147, 235, 1)',
+                            'rgba(74, 111, 217, 1)',
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(96, 165, 250, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            type: 'logarithmic',
+                            title: {
+                                display: true,
+                                text: '運行多久誤差一秒（年）- (對數尺度)'
+                            },
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return formatNumber(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
