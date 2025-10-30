@@ -214,3 +214,9 @@ configTime(8 * 3600, 0, "pool.ntp.org", "time.nist.gov");
 [人類計時技術的偉大征途：從精工機械計時到光晶格量子極限](人類計時技術的偉大征途：從精工機械計時到光晶格量子極限.html)
 
 [(簡略版)時間的追逐](時間的追逐.html)
+
+## 十、工具
+
+[工作紙](../Computational Thinking × Vibe Coding/Computational Thinking × Vibe Coding worksheet.docx)
+
+[反思表](../Computational Thinking × Vibe Coding/AI 協作編程反思與自檢表.pdf)
