@@ -1,6 +1,5 @@
 # 📡 API 與 JSON —— 從「問時間」到「問世界」
 
-------
 
 ## 1️⃣ 什麼是 API？（Application Programming Interface）
 
@@ -13,7 +12,6 @@
 
 > 「一個程式可以問另一個程式嘅問題。」
 
-------
 
 ### 💬 舉例
 
@@ -30,8 +28,6 @@ ESP32 只要識得：
  4️⃣ 解析資料 →
  就可以問「世界上任何公開 API」。
 
-------
-
 ## 2️⃣ Request 與 Response：API 的骨幹
 
 ### 🚀 Request（請求）
@@ -46,14 +42,14 @@ ESP32 只要識得：
 GET https://api.open-meteo.com/v1/forecast?latitude=22.2&longitude=113.5&current_weather=true
 ```
 
-------
+
 
 ### 📦 Response（回應）
 
 伺服器收到請求後，會回傳一段文字資料。
 通常用 **JSON 格式**（JavaScript Object Notation）。
 
-------
+
 
 ## 3️⃣ 什麼是 JSON？
 
@@ -85,7 +81,6 @@ JSON 就係一種結構化資料嘅表示方式，
 	doc["current_weather"]["temperature"]
 	```
 
-------
 
 ## 4️⃣ ESP32 點樣用 API？
 
@@ -106,7 +101,6 @@ if (httpCode == 200) {
 http.end();
 ```
 
-------
 
 ## 5️⃣ 為什麼要學 JSON？
 
@@ -119,8 +113,6 @@ http.end();
 | 日期時間 | WorldTime API            | 不同地區的時間   |
 | 交通     | Transport API            | 公車、航班資料   |
 
-------
-
 ## 🧠 延伸任務建議（自學鷹架）
 
 學生可以延伸設計：
@@ -129,10 +121,6 @@ http.end();
 	 例如：讀取網上天氣 → 根據氣溫控制 LED 色溫；
 - **「NTP + API 混合任務」**
 	 例如：ESP32 每天早上 8:00 自動讀天氣並顯示；
-- **「Local RTC + API 比對」**
-	 例如：斷網時用 RTC 暫存時間，連回 Wi-Fi 後再校正。
-
-------
 
 ## 🎓 小結
 
