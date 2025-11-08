@@ -3,157 +3,116 @@
 
 <head>
     <title>CAD</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="../assets/site.css">
     <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: "Poppins", sans-serif
-        }
+        body, h1, h2, h3, h4, h5 {font-family: "Poppins", sans-serif}
+        body {font-size: 16px; margin:0; padding:0;}
 
-        body {
-            font-size: 16px;
-        }
-
-        ol {
-            list-style-type: none;
-            margin: 0px;
-            padding-left: 80px;
-            padding-bottom: 5px;
-            counter-reset: item;
-
-        }
-
-        ol>li {
-            display: table;
-            counter-increment: item;
-            /* margin-bottom: 0.6em; */
-        }
-
-        ol>li:before {
-            content: counters(item, ".") ". ";
-            display: table-cell;
-            /* padding-right: 0.6em; */
-        }
-
-        li ol>li {
-            margin: 0;
-        }
-
-        li ol>li:before {
-            content: counters(item, ".") " ";
-        }
     </style>
 </head>
 
-<body style="background-color:#2196F3 ;">
+<body>
 
-
-    <div class="w3-bar-block w3-blue" style="line-height: 1em; color: gray; font-size:18px; font-weight:bold;">
-        <a href="../index.html" target="_top" class="w3-bar-item w3-button w3-hover-white w3-round"
-            style="text-decoration: none;">HOME</a>
+    <nav class="sidebar sidebar-simple" style="width:100%; padding: var(--space-4);">
+        <a href="../index.html" target="_top" style="text-decoration: none;">HOME</a>
 
         <ol>
             <li><a href="./Preparation/Preparation.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Preparation</a>
+                   >Preparation</a>
             </li>
 
             <li>
-                <div class="w3-bar-item w3-button w3-hover-white w3-round">Getting start with Fusion 360</div>
+                <a href="javascript:void(0)" onclick="return false">Getting start with Fusion 360</a>
                 <ol>
                     <li><a href="./Fusion360基本設定/Fusion360基本設定.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Fusion360基本設定</a></li>
+                           >Fusion360基本設定</a></li>
                     <li><a href="./2D Sketch/2D Sketch.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">2D Sketch</a></li>
+                           >2D Sketch</a></li>
                     <li><a href="./2D constraints/2D constraints.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">2D constraints</a></li>
+                           >2D constraints</a></li>
                     <li><a href="./Basic Drawing/Basic Drawing.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Basic Drawing</a></li>
+                           >Basic Drawing</a></li>
                     <li><a href="./Advance 3D drawing/Advance 3D drawing.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Advance 3D drawing</a></li>
-                    <!-- <li><div class="w3-bar-item w3-button w3-hover-white w3-round">*****3D繪圖小測試*****</div></li> -->
+                           >Advance 3D drawing</a></li>
+                    <!-- <li><div>*****3D繪圖小測試*****</div></li> -->
                     <li><a href="./3D繪圖小測試/3D繪圖小測試.html" target="_blank"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">3D繪圖小測試</a></li>
+                       >3D繪圖小測試</a></li>
                 </ol>
             </li>
 
             <li>
-                <div class="w3-bar-item w3-button w3-hover-white w3-round">CAD X Real World</div>
+                <a href="javascript:void(0)" onclick="return false">CAD X Real World</a>
                 <ol>
                     <li><a href="./齒輪簡介/齒輪簡介.html" target="_blank"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">齒輪簡介</a></li>
+                       >齒輪簡介</a></li>
                     <li><a href="./齒輪紀念品/齒輪紀念品.html" target="_blank"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">齒輪紀念品</a></li>
+                       >齒輪紀念品</a></li>
                     <li><a href="./行星齒輪/行星齒輪.html" target="_blank"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">行星齒輪</a></li>
+                       >行星齒輪</a></li>
                     <li><a href="./Walking linkage robot/Walking linkage robot.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Walking linkage robot</a></li>
+                           >Walking linkage robot</a></li>
                     <li><a href="./Brass Canon/Brass Canon.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Brass Cannon</a></li>
+                           >Brass Cannon</a></li>
                     <li><a href="./6 legs walking linkage robot/6 legs walking linkage robot.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">6 legs walking linkage robot</a></li>
+                           >6 legs walking linkage robot</a></li>
                     <li><a href="./Sumo Robot/Sumo Robot.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Sumo Robot</a></li>
+                           >Sumo Robot</a></li>
                     <li><a href="./Simple Box/Simple Box.html" target="_blank"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">Simple Box</a></li>
+                       >Simple Box</a></li>
                     <li><a href="./Advanced box/Advanced box.html" target="_blank"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">Advanced box</a></li>
+                       >Advanced box</a></li>
                         <li><a href="./匯出DXFSTL3MF/匯出DXFSTL3MF.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">匯出DXF/STL/3MF</a></li>
+                           >匯出DXF/STL/3MF</a></li>
                 </ol>
             </li>
             <!-- <li>
                 <a href="./真。3D繪圖測試/真。3D繪圖測試.html" target="_blank"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">真。3D繪圖測試</a></li>
-            </li> -->
+                       >真。3D繪圖測試</a></li>
+            </li>
 
             <li>
-                <div class="w3-bar-item w3-button w3-hover-white w3-round">PCB Design</div>
+                <a href="javascript:void(0)" onclick="return false">PCB Design</a>
                 <ol>
                     <li><a href="./Printed Circuit Boards(PCB)/Printed Circuit Boards(PCB).html" target="_black"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Printed Circuit Boards(PCB)</a></li>
+                           >Printed Circuit Boards(PCB)</a></li>
                     <li><a href="./繪製電路圖與佈線圖/繪製電路圖與佈線圖.html" target="_black"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">繪製電路圖與佈線圖</a></li>
+                           >繪製電路圖與佈線圖</a></li>
                     <li><a href="./代工生產PCB/代工生產PCB.html" target="_black"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">代工生產PCB</a></li>
+                           >代工生產PCB</a></li>
                     <li><a href="./Adding library and Real world/Adding library and Real world.html" target="_black"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Adding library and Real world</a></li>
+                           >Adding library and Real world</a></li>
                     <li><a href="./自製PCB/自製PCB.html" target="_black"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">自製PCB</a></li>
+                       >自製PCB</a></li>
                     <li><a href="./自製Arduino/自製Arduino.html" target="_black"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">自製Arduino</a></li>
+                       >自製Arduino</a></li>
                     <li><a href="https://clever-surgeon-7b2.notion.site/3025eebb0098491ab3940bdeecba33b4"
-                            target="_black" class="w3-bar-item w3-button w3-hover-white w3-round">附錄 常用電子零件</a></li>
+                            target="_black">附錄 常用電子零件</a></li>
                 </ol>
             </li>
 
             <li>
-                <div class="w3-bar-item w3-button w3-hover-white w3-round">CAM & CNC</div>
+                <a href="javascript:void(0)" onclick="return false">CAM & CNC</a>
                 <ol>
                     <li><a href="./Introduction of CNC/Introduction of CNC.html" target="_black"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Introduction of CNC</a></li>
+                           >Introduction of CNC</a></li>
                     <li><a href="./雕刻名牌/雕刻名牌.html" target="_black"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">雕刻名牌</a></li>
+                           >雕刻名牌</a></li>
                 </ol>
             </li>
 
             <li>
-                <div class="w3-bar-item w3-button w3-hover-white w3-round">Introduction of Rhinoceros</div>
+                <a href="javascript:void(0)" onclick="return false">Introduction of Rhinoceros</a>
                 <ol>
                     <li><a href="./Introduction of Rhinoceros/Introduction of Rhinoceros.html" target="_black"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Introduction of Rhinoceros</a></li>
+                           >Introduction of Rhinoceros</a></li>
                     <li><a href="./Introduction of Rhinoceros 2/Introduction of Rhinoceros 2.html" target="_black"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Introduction of Rhinoceros 2</a></li>
+                           >Introduction of Rhinoceros 2</a></li>
                 </ol>
             </li>
 
         </ol>
 
-    </div>
+    </nav>
 
 
 

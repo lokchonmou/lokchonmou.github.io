@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 
 
 <style>
@@ -36,17 +37,31 @@
         opacity: 0.6;
         cursor: pointer
     }
+
+    /* Fix card text color to always be black */
+    .w3-button .w3-display-left,
+    .w3-button:hover .w3-display-left {
+        color: #000 !important;
+    }
+
+    /* Responsive adjustments for main content */
+    @media (max-width: 992px) {
+        .responsive-main {
+            margin-left: 0 !important;
+            margin-top: 60px !important;
+        }
+    }
 </style>
 
 <body>
 
     <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left:340px; margin-right:40px; margin-bottom: 40px;">
+    <div class="w3-main responsive-main" style="margin-left:300px; margin-right:40px; margin-bottom: 40px;">
 
 
         <!-- Header -->
-        <div class="w3-container" style="padding-top:50px;" id="showcase">
-            <h1 class="w3-jumbo"><b>LCM STUDIO</b></h1>
+        <div class="w3-container" style="padding-top:25px;" id="showcase">
+            <h1 class="w3-jumbo; font-color:#394455"><b>LCM STUDIO</b></h1>
             <h1 class="w3-xxxlarge w3-text-red"><b>WELCOME</b></h1>
             <hr style="width:45%;border:5px solid red" class="w3-round-xlarge">
             <!-- <div style="padding: 20px 40px 20px 40px; background-color: lightgray;" class="w3-round-xlarge">
@@ -149,17 +164,12 @@
     </div>
 
     <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-blue w3-collapse w3-display-position w3-large w3-padding"
-        style="top:0px; z-index:9;width:300px;font-weight:bold;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"
-        id="mySidebar"><br>
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
-            style="width:100%;font-size:22px">Close Menu</a>
-        <div class="w3-container">
-            <h3 class="w3-padding-12"><b>LCM STUDIO</b></h3>
-            <hr>
+    <nav id="mySidebar" class="sidebar sidebar-light fixed">
+        <div style="margin-bottom: var(--space-4); padding: var(--space-4); margin: calc(-1 * var(--space-5)) calc(-1 * var(--space-4)) var(--space-4);">
+          <h3 style="margin:0 0 var(--space-2); font-weight:700; letter-spacing:-0.5px; color: #394455;">LCM STUDIO</h3>
+          <hr style="border:0; height:1px; background: #394455;">
         </div>
-        <object name="sideBarMenu" width="100%" height="500px" type="text/html" data="./indexSideBarMenu.html">
-        </object>
+        <div id="sidebar-content">Loading...</div>
     </nav>
 
     <!-- Top menu Navbar -->
@@ -171,7 +181,7 @@
 </object> -->
 
     <!-- Top menu on small screens -->
-    <header class="w3-container w3-top w3-hide-large w3-black w3-large w3-padding" style="z-index:11;">
+    <header class="w3-container w3-top w3-hide-large w3-black w3-large w3-padding" style="z-index:13;">
         <a href="javascript:void(0)" class="w3-button w3-black w3-margin-right" onclick="w3_open()">☰</a>
         <span>LCM STUDIO</span>
     </header>
@@ -189,7 +199,22 @@
         </p>
     </div> -->
 
-    <script>
+        <script>
+                // Dynamic load of sidebar content replaces <object>
+                fetch('indexSideBarMenu.html')
+                    .then(r => r.text())
+                    .then(html => {
+                        // Extract only inner nav links to avoid nested html/body
+                        const temp = document.createElement('div');
+                        temp.innerHTML = html;
+                        const nav = temp.querySelector('nav');
+                        document.getElementById('sidebar-content').innerHTML = nav ? nav.innerHTML : html;
+                    })
+                    .catch(err => {
+                        document.getElementById('sidebar-content').textContent = 'Sidebar load failed.';
+                        console.error('Sidebar fetch error', err);
+                    });
+        
         // Script to open and close sidebar
         function w3_open() {
             document.getElementById("mySidebar").style.display = "block";
@@ -200,6 +225,25 @@
             document.getElementById("mySidebar").style.display = "none";
             document.getElementById("myOverlay").style.display = "none";
         }
+
+        // Reset sidebar display on window resize to handle responsive behavior
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                const sidebar = document.getElementById("mySidebar");
+                const overlay = document.getElementById("myOverlay");
+                if (window.innerWidth > 992) {
+                    // Large screen: show sidebar, hide overlay
+                    sidebar.style.display = "block";
+                    overlay.style.display = "none";
+                } else {
+                    // Small screen: hide both (user must click ☰ to open)
+                    sidebar.style.display = "none";
+                    overlay.style.display = "none";
+                }
+            }, 250);
+        });
 
         // Modal Image Gallery
         function onClick(element) {

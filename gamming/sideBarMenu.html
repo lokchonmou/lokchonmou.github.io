@@ -3,164 +3,123 @@
 
 <head>
     <title>十個遊戲學編程</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="../assets/site.css">
     <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: "Poppins", sans-serif
-        }
+        body, h1, h2, h3, h4, h5 {font-family: "Poppins", sans-serif}
+        body {font-size: 16px; margin:0; padding:0;}
 
-        body {
-            font-size: 16px;
-        }
-
-        ol {
-            list-style-type: none;
-            margin: 0px;
-            padding-left: 80px;
-            padding-bottom: 5px;
-            counter-reset: item;
-
-        }
-
-        ol>li {
-            display: table;
-            counter-increment: item;
-            /* margin-bottom: 0.6em; */
-        }
-
-        ol>li:before {
-            content: counters(item, ".") ". ";
-            display: table-cell;
-            /* padding-right: 0.6em; */
-        }
-
-        li ol>li {
-            margin: 0;
-        }
-
-        li ol>li:before {
-            content: counters(item, ".") " ";
-        }
     </style>
 </head>
 
-<body style="background-color:#2196F3 ;">
+<body>
 
-
-    <div class="w3-bar-block w3-blue" style="line-height: 1em; color: gray; font-size:18px; font-weight:bold;">
-        <a href="../index.html" target="_top" class="w3-bar-item w3-button w3-hover-white w3-round"
-            style="text-decoration: none;">HOME</a>
+    <nav class="sidebar sidebar-simple" style="width:100%; padding: var(--space-4);">
+        <a href="../index.html" target="_top" style="text-decoration: none;">HOME</a>
 
         <ol>
             <li><a href="./Getting started with processingPy/Getting started with processingPy.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Getting started with Processing.py</a>
+                   >Getting started with Processing.py</a>
             </li>
 
             <li>
                 <a href="./Pong Game/Pong Game.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Pong (1972)</a>
+                   >Pong (1972)</a>
             </li>
 
             <li>
                 <a href="./Breakout/Breakout.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Breakout (1978)</a>
+                   >Breakout (1978)</a>
             </li>
 
             <li>
                 <a href="../interactive/boundaryGame/index.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">===========Test1==============</a>
+                   >===========Test1==============</a>
             </li>
 
             <li>
                 <a href="./Artillery game/Artillery game.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Artillery game (1988)</a>
+                   >Artillery game (1988)</a>
             </li>
 
             <li>
                 <a href="./Flappy bird/Flappy bird.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Flappy Bird</a>
+                   >Flappy Bird</a>
                 <ol>
                     <li><a href="./Flappy bird/物件導向與class.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">物件導向與class</a></li>
+                           >物件導向與class</a></li>
                     <li><a href="./Flappy bird/Flappy Bird with AI.html" target="_blank"
-                        class="w3-bar-item w3-button w3-hover-white w3-round">Flappy bird with AI</a></li>
+                       >Flappy bird with AI</a></li>
                 </ol>
             </li>
 
             <li>
                 <a href="./Asteroids/Asteroids.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Asteroids (1979)</a>
+                   >Asteroids (1979)</a>
             </li>
 
             <li>
                 <a href="./Spacewar/Spacewar.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Spacewar! (1962)</a>
+                   >Spacewar! (1962)</a>
                     <ol>
                         <li><a href="./Spacewar/planet simulator.html" target="_blank"
-                                class="w3-bar-item w3-button w3-hover-white w3-round">Planet simulator</a></li>
+                               >Planet simulator</a></li>
                     </ol>
             </li>
 
             <li>
-                <a href="./Snake/Snake.html" target="_blank" class="w3-bar-item w3-button w3-hover-white w3-round">Snake
+                <a href="./Snake/Snake.html" target="_blank">Snake
                     (1982)</a>
             </li>
 
             <li>
                 <a href="./Tetris/Tetris.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Tetris (1984)</a>
+                   >Tetris (1984)</a>
             </li>
 
             <li>
                 <a href="./ConnectFour/ConnectFour.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Connect Four (1977)</a>
+                   >Connect Four (1977)</a>
                 <ol>
                     <li><a href="./ConnectFour/Minimax 演算法.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">Minimax演算法</a></li>
+                           >Minimax演算法</a></li>
                 </ol>
             </li>
 
             <li>
-                <div class="w3-bar-item w3-button w3-hover-white w3-round">PAC-MAN (1980)</div>
+                <a href="javascript:void(0)" onclick="return false">PAC-MAN (1980)</a>
                 <ol>
                     <li><a href="./Pacman/Wavefront algorithm.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">洪水演算法(wavefront algorithm)</a></li>
+                           >洪水演算法(wavefront algorithm)</a></li>
                     <li><a href="./Pacman/AStar algorithm.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">A*演算法</a></li>
+                           >A*演算法</a></li>
                     <li><a href="./Pacman/Maze generation.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">迷宮生成演算法</a></li>
+                           >迷宮生成演算法</a></li>
                 </ol>
             </li>
 
             <li>
                 <a href="./Appendix/Appendix 1 Artificial Intelligence.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Appendix 1 Artificial Intelligence</a>
+                   >Appendix 1 Artificial Intelligence</a>
             </li>
 
             <li>
                 <a href="./toy_neural_Network/toy_Neural_Network.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Appendix 2 Toy Neural Network</a>
+                   >Appendix 2 Toy Neural Network</a>
             </li>
 
             <li>
-                <div class="w3-bar-item w3-button w3-hover-white w3-round">Appendix 3</div>
+                <a href="javascript:void(0)" onclick="return false">Appendix 3</a>
                 <ol>
                     <li><a href="./Appendix2/GUI Button.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">GUI Button</a></li>
+                           >GUI Button</a></li>
                     <li><a href="./Appendix2/GUI Slider.html" target="_blank"
-                            class="w3-bar-item w3-button w3-hover-white w3-round">GUI Slider</a></li>
+                           >GUI Slider</a></li>
                 </ol>
             </li>
 
-        </ol>>
+        </ol>
 
-    </div>
+    </nav>
 
 
 

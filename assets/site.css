@@ -1,0 +1,154 @@
+/* =====================================================
+   Global Modern Theme (Tailwind-like, no build step)
+   Inspired by salient.tailwindui.com design language
+   Author: generated helper
+   ===================================================== */
+:root {
+  --bg: #f8fafc;               /* slate-50 */
+  --bg-alt: #f1f5f9;           /* slate-100 */
+  --surface: #ffffff;          /* white */
+  --border: #e2e8f0;           /* slate-200 */
+  --border-strong: #cbd5e1;    /* slate-300 */
+  --text: #0f172a;             /* slate-900 */
+  --text-dim: #475569;         /* slate-600 */
+  --text-faint: #64748b;       /* slate-500 */
+  --primary: #2563eb;          /* blue-600 */
+  --primary-hover: #1d4ed8;    /* blue-700 */
+  --primary-bg: #eff6ff;       /* blue-50 */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow: 0 2px 6px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --transition: 0.25s cubic-bezier(.4,.2,.2,1);
+  --max-width: 1200px;
+  --sidebar-width: 300px;
+}
+html, body {background: var(--bg); color: var(--text); font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Cantarell, "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;}
+
+/* Typography Scale */
+h1 {font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; letter-spacing: -0.02em; margin: var(--space-8) 0 var(--space-4);} 
+h2 {font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 600; letter-spacing: -0.01em; margin: var(--space-6) 0 var(--space-3);} 
+h3 {font-size: clamp(1.25rem, 2.2vw, 1.5rem); font-weight: 600; margin: var(--space-5) 0 var(--space-2);} 
+h4 {font-size: clamp(1.1rem, 2vw, 1.25rem); font-weight: 600; margin: var(--space-4) 0 var(--space-2);} 
+
+p {margin: 0 0 var(--space-4);} 
+small, .text-small {font-size: 0.8rem; color: var(--text-faint);} 
+.text-dim {color: var(--text-dim);} 
+
+/* Content counters (section numbering) limited to .content area */
+.content {counter-reset: h2counter;}
+.content h2 {counter-reset: h3counter; position: relative; padding-left: 3.2ch;}
+.content h3 {counter-reset: h4counter; position: relative; padding-left: 4.4ch;}
+.content h4 {position: relative; padding-left: 5.6ch;}
+.content h2::before {counter-increment: h2counter; content: counter(h2counter) "."; position: absolute; left: 0; color: var(--primary); font-weight: 600;}
+.content h3::before {counter-increment: h3counter; content: counter(h2counter) "." counter(h3counter) "."; position: absolute; left: 0; color: var(--primary); font-weight: 600;}
+.content h4::before {counter-increment: h4counter; content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "."; position: absolute; left: 0; color: var(--primary); font-weight: 600;}
+
+/* Links */
+a {color: var(--primary); text-decoration: none; transition: var(--transition);} 
+a:hover {color: var(--primary-hover);} 
+a:focus {outline: 2px solid var(--primary); outline-offset: 2px;}
+
+/* Buttons */
+.btn {display: inline-block; background: var(--primary); color: #fff; padding: var(--space-2) var(--space-4); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; letter-spacing: .02em; box-shadow: var(--shadow-sm); transition: var(--transition);} 
+.btn:hover {background: var(--primary-hover); box-shadow: var(--shadow);} 
+.btn.outline {background: transparent; color: var(--primary); border: 1px solid var(--primary);}
+.btn.outline:hover {background: var(--primary-bg);}
+
+/* Cards */
+.card {background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-5); box-shadow: var(--shadow-sm); transition: var(--transition);} 
+.card:hover {box-shadow: var(--shadow-lg); transform: translateY(-4px);} 
+.card h3 {margin-top: 0;}
+.card-tags {margin: var(--space-2) 0 var(--space-3);} 
+.tag {font-size: 0.65rem; text-transform: uppercase; letter-spacing: .05em; background: var(--bg-alt); color: var(--text-dim); padding: var(--space-1) var(--space-2); border-radius: 999px; display: inline-block; margin: 0 var(--space-1) var(--space-1) 0;}
+
+/* Layout helpers */
+.container {width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-6);background: #79b2fc; color: #475569;}  
+.grid {display: grid; gap: var(--space-6);} 
+.grid.cols-3 {grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));}
+
+/* Sidebar */
+.sidebar {background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%); color: #fff; width: var(--sidebar-width); padding: var(--space-5) var(--space-4) var(--space-6); border-right: 1px solid #1e293b; font-weight: 600; line-height: 1.4;} 
+.sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4 {color:#fff; margin: 0 0 var(--space-4);} 
+.sidebar a {display: block; color: #fff; font-size: 0.9rem; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); margin-bottom: 2px; font-weight: 500; letter-spacing: .01em;} 
+.sidebar a:hover {background: rgba(255,255,255,0.08); color: #fff;} 
+.sidebar a:focus {outline: 2px solid var(--primary); outline-offset: 2px;} 
+.sidebar .section-label {color: var(--text-faint); text-transform: uppercase; font-size: 0.6rem; letter-spacing: .15em; margin: var(--space-4) var(--space-1) var(--space-2);}
+/* Fixed layout helper for sidebars placed after content in DOM */
+.sidebar.fixed {position: fixed; left: 0; top: 0; height: 100%; overflow-y: auto; display: block;}
+
+/* Light Sidebar Variant */
+.sidebar-light {background: linear-gradient(180deg, #85baff 0%, #79b2fc 100%); color: var(--text); border-right:1px solid var(--border); box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 8px 24px -8px rgba(15,23,42,0.12);} 
+.sidebar-light a {color: var(--text-dim);} 
+.sidebar-light a:hover {background: #dbeafe; color: var(--primary);} 
+.sidebar-light a:active {background: var(--primary); color:#fff;} 
+.sidebar-light .section-label {color: var(--text-faint);}
+
+/* Simple white sidebar for other sideBarMenu pages */
+.sidebar-simple {background: #ffffff; color: var(--text); padding: var(--space-5) var(--space-4) var(--space-6); font-weight: 500; line-height: 1.4;} 
+.sidebar-simple a {display: block; color: #475569; font-size: 0.9rem; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); margin-bottom: 2px; font-weight: 500; text-align: left; transition: background-color .2s ease, color .2s ease;} 
+.sidebar-simple ul a,
+.sidebar-simple ol a {margin-left: -20px; padding-left: 20px; margin-right: calc(var(--space-4) * -1); padding-right: var(--space-4);}
+.sidebar-simple a:hover {background: #85baff; color: #fff;} 
+.sidebar-simple ol, .sidebar-simple ul {margin:0; padding-left:20px; list-style:none; counter-reset:item;} 
+.sidebar-simple ol > li {display:block; counter-increment:item;}
+/* Numbering inside the anchor so it inherits hover color */
+.sidebar-simple ol > li > a {position:relative; padding-left:56px;}
+.sidebar-simple ol > li > a::before {content:counters(item,".") "."; position:absolute; left:20px; top:0; bottom:0; display:flex; align-items:center; min-width:32px; text-align:right; color:inherit; font-weight:500;}
+.sidebar-simple ol > li > ol > li > a {padding-left:68px;}
+.sidebar-simple ol > li > ol > li > a::before {content:counters(item,"."); min-width:44px;}
+/* Override any existing list-number styling defined inside individual sideBarMenu pages */
+.sidebar-simple ol>li:before,
+.sidebar-simple li ol>li:before {display:none !important; content:none !important;}
+/* Force block layout overriding page-level 'display:table' */
+.sidebar-simple ol>li {display:block !important;}
+.sidebar-simple .section-label {color: var(--text-faint); text-transform: uppercase; font-size: 0.6rem; letter-spacing: .15em; margin: var(--space-4) var(--space-1) var(--space-2);}
+.sidebar-simple div {text-align: left;}
+/* HOME button style for sidebar-simple */
+.sidebar-simple > a[href*="index.html"] {background: #79b2fc; color: #fff; font-weight: 600;}
+.sidebar-simple > a[href*="index.html"]:hover {background: #85baff; color: #fff; font-weight: 600;} 
+/* Icon (emoji) subtle shadow helper */
+.icon-shadow {filter: drop-shadow(0 1px 2px rgba(37,99,235,0.45));}
+
+/* Optional utility to align emoji + text */
+.sidebar-light a .icon-shadow {margin-right:4px;}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  /* Keep sidebar fixed on small screens for overlay behavior */
+  .sidebar.fixed {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    z-index: 12;
+    display: none; /* Hidden by default, shown by w3_open() */
+  }
+  /* When shown, display as block */
+  .sidebar.fixed[style*="display: block"] {
+    display: block !important;
+  }
+}
+
+/* Footer */
+.footer {text-align:center; padding: var(--space-8) 0 var(--space-6); font-size: 0.75rem; color: var(--text-faint);} 
+
+/* Utility classes */
+.m-0 {margin:0;} .mt-0 {margin-top:0;} .mb-0 {margin-bottom:0;} .mb-2 {margin-bottom:var(--space-2);} .mb-4 {margin-bottom:var(--space-4);} .mb-6 {margin-bottom:var(--space-6);} .pt-4 {padding-top:var(--space-4);} .pb-4 {padding-bottom:var(--space-4);} .py-6 {padding-top:var(--space-6); padding-bottom:var(--space-6);} .text-center {text-align:center;} .dim {color:var(--text-dim);} 
+
+/* Scrollbars (WebKit) */
+::-webkit-scrollbar {width:12px;} 
+::-webkit-scrollbar-track {background: var(--bg);} 
+::-webkit-scrollbar-thumb {background: var(--border); border-radius: 6px;} 
+::-webkit-scrollbar-thumb:hover {background: var(--border-strong);} 
+
+/* Dark mode placeholder (future) */
+/* [data-theme="dark"] { --bg:#0f172a; --surface:#1e293b; --text:#f1f5f9; } */

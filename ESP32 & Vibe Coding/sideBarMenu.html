@@ -3,83 +3,42 @@
 
 <head>
     <title>ESP32 & Vibe Coding</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="../assets/site.css">
     <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: "Poppins", sans-serif
-        }
+        body, h1, h2, h3, h4, h5 {font-family: "Poppins", sans-serif}
+        body {font-size: 16px; margin:0; padding:0;}
 
-        body {
-            font-size: 16px;
-        }
-
-        ol {
-            list-style-type: none;
-            margin: 0px;
-            padding-left: 80px;
-            padding-bottom: 5px;
-            counter-reset: item;
-
-        }
-
-        ol>li {
-            display: table;
-            counter-increment: item;
-            /* margin-bottom: 0.6em; */
-        }
-
-        ol>li:before {
-            content: counters(item, ".") ". ";
-            display: table-cell;
-            /* padding-right: 0.6em; */
-        }
-
-        li ol>li {
-            margin: 0;
-        }
-
-        li ol>li:before {
-            content: counters(item, ".") " ";
-        }
     </style>
 </head>
 
-<body style="background-color:#2196F3 ;">
+<body>
 
-
-    <div class="w3-bar-block w3-blue" style="line-height: 1em; color: gray; font-size:18px; font-weight:bold;">
-        <a href="../index.html" target="_top" class="w3-bar-item w3-button w3-hover-white w3-round"
-            style="text-decoration: none;">HOME</a>
+    <nav class="sidebar sidebar-simple" style="width:100%; padding: var(--space-4);">
+        <a href="../index.html" target="_top" style="text-decoration: none;">HOME</a>
 
         <ol>
             <li><a href="./ESP32 getting started/ESP32 getting started.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">ESP32 Getting Started</a>
+                   >ESP32 Getting Started</a>
             </li>
             <li><a href="./Vibe Coding：AI 輔助編程速成/Vibe Coding：AI 輔助編程速成.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Vibe Coding：AI 輔助編程速成</a>
+                   >Vibe Coding：AI 輔助編程速成</a>
             </li>
             <li><a href="./Computational Thinking × Vibe Coding/Computational Thinking × Vibe Coding.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">Computational Thinking × Vibe Coding</a>
+                   >Computational Thinking × Vibe Coding</a>
             </li>
             <li><a href="./ 🕒 時間從哪裡來？——ESP32 × NTP × Wi-Fi 對時實驗/🕒 時間從哪裡來？——ESP32 × NTP × Wi-Fi 對時實驗.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">🕒 時間從哪裡來？——ESP32 × NTP × Wi-Fi 對時實驗</a>
+                   >🕒 時間從哪裡來？——ESP32 × NTP × Wi-Fi 對時實驗</a>
             </li>
             <li><a href="./📡 API 與 JSON —— 從「問時間」到「問世界」/📡 API 與 JSON —— 從「問時間」到「問世界」.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">📡 API 與 JSON —— 從「問時間」到「問世界」</a>
+                   >📡 API 與 JSON —— 從「問時間」到「問世界」</a>
             </li>
             <li><a href="./從 API 到 IoT 資料，讓 ESP32「自己上載資料」/從 API 到 IoT 資料，讓 ESP32「自己上載資料」.html" target="_blank"
-                    class="w3-bar-item w3-button w3-hover-white w3-round">從 API 到 IoT 資料，讓 ESP32「自己上載資料」</a>
+                   >從 API 到 IoT 資料，讓 ESP32「自己上載資料」</a>
             </li>
 
         </ol>
 
-    </div>
+    </nav>
 
 
 
