@@ -85,7 +85,7 @@ void setup() {
     http.addHeader("Content-Type", "application/json");
 
 
-    String payload = String("{\"device\":\"ESP32_A1\", \"value\":") + String(random(20, 41)) + "}";
+    String payload = String("{\"device\":\"ESP32_A1\", \"Value\":") + String(random(20, 41)) + "}";
     // 20–40 隨機整數
     int code = http.POST(payload);
     Serial.printf("HTTP %d", code);
