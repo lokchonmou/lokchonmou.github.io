@@ -377,7 +377,15 @@ flowchart LR
 
 ## 5｜如何從 Google Sheet 取資料
 
-你之前已建立的 Apps Script（`doPost`）可以再新增一個：
+打開上一堂建立的Google Sheet，如果資料數量不多, 請先手動加一點data，一會畫圖表較易看到效果，你可以用AI幫忙生成dummy數據。
+
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2015.53.48.png" alt="螢幕截圖 2025-11-24 15.53.48" style="width:50%;" />
+
+打開`擴充功能`--> `App Script`
+
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2015.56.22.png" alt="螢幕截圖 2025-11-24 15.56.22" style="zoom:40%;" />
+
+你之前已建立的 Apps Script（`doPost`）可以再新增一個`doGet`：
 
 ```javascript
 function doGet(e) {
@@ -397,9 +405,15 @@ function doGet(e) {
 }
 ```
 
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2015.57.47.png" alt="螢幕截圖 2025-11-24 15.57.47" style="width:50%;" />
+
 部署後，`https://script.google.com/.../exec`可以直接取得整份 Sheet 的 JSON。
 
-你下一章會用 JavaScript：
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2015.58.45.png" alt="螢幕截圖 2025-11-24 15.58.45" style="width:30%;" /><img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2015.59.16.png" alt="螢幕截圖 2025-11-24 15.59.16" style="width:50%;" />
+
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2015.59.37.png" alt="螢幕截圖 2025-11-24 15.59.37" style="width:45%;" /><img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2016.00.18.png" alt="螢幕截圖 2025-11-24 16.00.18" style="width:45%;" />
+
+將以下 JavaScript新增到你前端的`script.js`：
 
 ```javascript
 const url = "你的_GAS_URL";
@@ -411,9 +425,27 @@ fetch(url)
   });
 ```
 
-**看到資料成功輸出 console(F12)，即代表下一章可以畫圖。**
+**看到資料成功輸出 console(F12)，即代表下一步可以畫圖。**
 
-## 6｜本章總結
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2016.08.30.png" alt="螢幕截圖 2025-11-24 16.08.30" style="width:60%;" />
+
+## 6｜用Dashboard劃出資料
+
+在任何一個AI工具，輸入以下prompt，重點包括：數據來源、獲取機制、繪圖庫、 圖表類型、更新要求。
+
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2016.23.44.png" alt="螢幕截圖 2025-11-24 16.23.44" style="zoom:40%;" />
+
+之後就可以貼在前端上，觀察效果。
+
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2017.38.37.png" alt="螢幕截圖 2025-11-24 17.38.37" style="width:45%;" />
+
+在Google Sheet中加入數據，等一會，觀察一下折線圖是否有更新數據。
+
+<img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2017.40.30.png" alt="螢幕截圖 2025-11-24 17.40.30" style="width:45%;" /><img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202025-11-24%2017.41.01.png" alt="螢幕截圖 2025-11-24 17.41.01" style="width:45%;" />
+
+當然，要做一個實時的數據監測，還是固定數據顯示的窗口(例如顯示最近一小時的數據)，數據統計的直方圖、餅圖等，而Plotly.js的好處是已經內置了這此統計工具，用一句指令就能即時畫到一幅精美的統計圖。
+
+## 7｜本章總結
 
 - Dashboard = HTML（結構）＋ CSS（外觀）＋ JavaScript（資料 & 圖表）
 - 靜態網站（GitHub Pages）最適合部署你的儀表板
@@ -421,7 +453,3 @@ fetch(url)
 - Google Sheet = 資料庫
 - GAS = API
 - Dashboard = 用 JavaScript 去「讀取資料」＋「畫圖」
-
-下一章將會：
-
-> **把資料變成真 Dashboard：折線圖、長條圖、即時更新。**
