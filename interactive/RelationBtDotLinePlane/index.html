@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Interactions | Points, Lines, Planes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div id="ui-container">
+            <header>
+                <h1>幾何互動教材</h1>
+                <p>探索點、線、面之間的空間關係</p>
+            </header>
+
+            <nav id="topic-selector">
+                <button class="topic-btn" data-topic="pointLine">2D點與直線</button>
+                <button class="topic-btn active" data-topic="2dLines">2D 直線</button>
+                <button class="topic-btn" data-topic="3dLines">3D 直線</button>
+                <button class="topic-btn" data-topic="pointPlane">點與平面</button>
+                <button class="topic-btn" data-topic="linePlane">線與平面</button>
+                <button class="topic-btn" data-topic="planePlane">平面與平面</button>
+            </nav>
+
+            <div id="info-panel">
+                <h2 id="current-title">2D 直線關係</h2>
+                <div id="description">
+                    線 L1 與 L2 的關係取決於它們的斜率與截距...
+                </div>
+                <div id="math-display">
+                    <!-- LaTeX-like equations will go here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="canvas-container"></div>
+    </div>
+
+    <!-- Import Map for Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
