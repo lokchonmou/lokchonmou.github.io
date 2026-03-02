@@ -1,9 +1,13 @@
+---
+title: Preparation
+---
+
 # Preparation
 
 
 ## Fusion360簡介
 
-<img src="ad.jpg" alt="What Is Fusion 360? – Simply Explained | All3DP" style="zoom: 18%;" /><img src="fusion360-complex-design.jpg" alt="Is Fusion 360 good for 3D printing? – 3D Solved" style="zoom:33%;" />
+<img src="/media/Preparation/ad.jpg" alt="What Is Fusion 360? – Simply Explained | All3DP" style="width: 45%;" /><img src="/media/Preparation/fusion360-complex-design.jpg" alt="Is Fusion 360 good for 3D printing? – 3D Solved" style="width:45%;" />
 
 - Fusion360是一款由Autodesk公司推出的3D特徵編輯軟件
 - AutoCAD是一款經典的2D繪圖軟件，但其3D功能非特徵編輯，對於複雜的3D模型繪製會比較吃力
@@ -18,7 +22,7 @@
 - 自從Fusion360的個人版限制增多後，申請教育版變得十分重要
 - 鼓勵同學申請教育版，不浪費教學資源
 - 申請教育版的流程現在比較複雜，以下是2021年9月的申請流程
-- 💡**<u>*資料不要亂填，因Autodesk公司的審查越來越嚴格，如果上載資料與所填資料不符，可能導致不能注冊成功*</u>**
+- 💡<u>*資料不要亂填，因Autodesk公司的審查越來越嚴格，如果上載資料與所填資料不符，可能導致不能注冊成功*</u>
 
 ### Step 1
 
@@ -28,7 +32,7 @@
 
 - 你也可能找到下圖的一個影片，是一個香港導師所拍攝的粵語注冊教學
 
-<img src="螢幕擷取畫面 (4).png" alt="螢幕擷取畫面 (4)" style="zoom:50%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (4).png" alt="螢幕擷取畫面 (4)" style="zoom:50%;" />
 
 ### Step 2
 
@@ -36,7 +40,7 @@
 
 - 按下開始注冊
 
-<img src="螢幕擷取畫面 (5).png" alt="螢幕擷取畫面 (5)" style="zoom:33%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (5).png" alt="螢幕擷取畫面 (5)" style="zoom:33%;" />
 
 ### Step 3
 
@@ -44,13 +48,13 @@
 
 - 在Educational role中，選擇你的身分`Student`
 
-- 在Institution Type中，選擇``High School/Secondary`
+- 在Institution Type中，選擇`High School/Secondary`
 
 - 出生日期則根據自己的出生日期填寫，之後忘記密碼有可能會驗證生日，所以不要亂填
 
 **<u>❗Fusion教育版需要年滿14歲才能注冊，所以如果你未滿14歲的話, 在年份上修改一下到足夠14歲</u>**
 
-<img src="螢幕擷取畫面 (6).png" alt="螢幕擷取畫面 (6)" style="zoom:50%;" /><img src="螢幕擷取畫面 (7).png" alt="螢幕擷取畫面 (7)" style="zoom:50%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (6).png" alt="螢幕擷取畫面 (6)" style="width:45%;" /><img src="/media/Preparation/螢幕擷取畫面 (7).png" alt="螢幕擷取畫面 (7)" style="width:45%;" />
 
 ### Step 4
 
@@ -64,17 +68,17 @@
 
 - 最後填上password和checkbox就可以
 
-<img src="螢幕擷取畫面 (9).png" alt="螢幕擷取畫面 (9)" style="zoom:50%;" /><img src="螢幕擷取畫面 (10).png" alt="螢幕擷取畫面 (10)" style="zoom:50%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (9).png" alt="螢幕擷取畫面 (9)" style="width:45%;" /><img src="/media/Preparation/螢幕擷取畫面 (10).png" alt="螢幕擷取畫面 (10)" style="width:45%;" />
 
 - 之後就會收要求確認電郵地址
 
-<img src="螢幕擷取畫面 (11).png" alt="螢幕擷取畫面 (11)" style="zoom:50%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (11).png" alt="螢幕擷取畫面 (11)" style="zoom:50%;" />
 
 ### Step 5
 
 - 去到你的eclass電郵帳號下，等待收取確認郵件, 並在郵件中的連結按下確認。
 
-<img src="螢幕擷取畫面 (12).png" alt="螢幕擷取畫面 (12)" style="width:45%;" /><img src="螢幕擷取畫面 (13).png" alt="螢幕擷取畫面 (13)" style="width:45%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (12).png" alt="螢幕擷取畫面 (12)" style="width:45%;" /><img src="/media/Preparation/螢幕擷取畫面 (13).png" alt="螢幕擷取畫面 (13)" style="width:45%;" />
 
 ### Step 6
 
@@ -87,7 +91,7 @@
 - 如實填寫自己form1入學的年份， 月份為9月
 - 預計form6畢業的年份，月份為7月
 
-<img src="螢幕擷取畫面 (15).png" alt="螢幕擷取畫面 (15)" style="width:45%;" /><img src="螢幕擷取畫面 (16).png" alt="螢幕擷取畫面 (16)" style="width:45%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (15).png" alt="螢幕擷取畫面 (15)" style="width:45%;" /><img src="/media/Preparation/螢幕擷取畫面 (16).png" alt="螢幕擷取畫面 (16)" style="width:45%;" />
 
 ### Step 7
 
@@ -116,7 +120,7 @@
 
 - 等待驗證的日子內，請經常檢看驗證的email, 如果不能成功驗證的話, 會電郵告訴你缺了甚麼。
 
-<img src="螢幕擷取畫面 (21).png" alt="螢幕擷取畫面 (21)" style="zoom:50%;" /><img src="螢幕擷取畫面 (22).png" alt="螢幕擷取畫面 (22)" style="zoom:33%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (21).png" alt="螢幕擷取畫面 (21)" style="width: 45%;" />
 
-<img src="螢幕擷取畫面 (24).png" alt="螢幕擷取畫面 (24)" style="zoom:50%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (22).png" alt="螢幕擷取畫面 (22)" style="width: 45%;" /><img src="/media/Preparation/螢幕擷取畫面 (24).png" alt="螢幕擷取畫面 (24)" style="width: 45%;" />
 
