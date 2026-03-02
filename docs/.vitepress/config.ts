@@ -1,11 +1,14 @@
 import { defineConfig } from 'vitepress'
 import mathjax3 from 'markdown-it-mathjax3'
+import markdownItContainer from 'markdown-it-container'
 
 const containerDefaultTitles = {
-  info: '💡💡💡',
-  tip: '💁‍♂️💁💁‍♀️',
-  warning: '‼️‼️‼️',
-  danger: '⛔️⛔️⛔️'
+  note: '📝NOTE',
+  info: 'ℹ️INFO',
+  tip: '💡TIP',
+  warning: '⚠️WARNING',
+  danger: '⛔️DANGER',
+  details: '🔍DETAILS',
 } as const
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? ''
@@ -57,6 +60,17 @@ export default defineConfig({
     lineNumbers: true,
     config: (md) => {
       md.use(mathjax3)
+      md.use(markdownItContainer, 'note', {
+        render: (tokens: any[], index: number) => {
+          const token = tokens[index]
+          if (token.nesting === 1) {
+            const info = token.info.trim().slice('note'.length).trim()
+            const title = md.renderInline(info || containerDefaultTitles.note)
+            return `<div class="custom-block note"><p class="custom-block-title">${title}</p>\n`
+          }
+          return '</div>\n'
+        }
+      })
 
       for (const [containerType, title] of Object.entries(containerDefaultTitles)) {
         const ruleName = `container_${containerType}_open`
