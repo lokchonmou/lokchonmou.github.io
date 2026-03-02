@@ -58,8 +58,9 @@ Fusion360特色：
 ### Fix/Unfix(固定/取消固定)
 
 將點、直線或曲線鎖定要固定點或位置，或鎖定其長度。
-
-❗***<u>盡量避免使用這個功能</u>***
+::: warning
+盡量避免使用這個功能
+:::
 
 <img src="/media/2D constraints/fusion19.gif" alt="fusion19" style="width:50%;" />
 
@@ -85,7 +86,9 @@ Fusion360特色：
 
 約束所選的圖元，使其在旗取的一條線兩邊互相對稱。
 
-> 💡  此功能跟`mirror`功能是一樣的，分別在於這功能是所劃好兩邊的圖形再指定對稱
+::: info
+此功能跟`mirror`功能是一樣的，分別在於這功能是所劃好兩邊的圖形再指定對稱
+:::
 
 <img src="/media/2D constraints/fusion113.gif" alt="fusion113" style="width:50%;" />
 
@@ -93,7 +96,9 @@ Fusion360特色：
 
 約束一條曲線，使其與另一條曲線、直線、圓弧相接並保持連續性。
 
-💡 *此功能適用於貝茲曲線*
+:::info
+此功能適用於貝茲曲線
+:::
 
 <img src="/media/2D constraints/fusion114.gif" alt="fusion114" style="width:50%;" />
 

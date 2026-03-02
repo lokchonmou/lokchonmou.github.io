@@ -13,7 +13,7 @@ pageClass: home-legacy
 <h1>LCM STUDIO</h1>
 <p>教學內容與互動專題</p>
 <div class="home-apple-links">
-<a href="/en/">English</a>
+<!-- <a href="/en/">English</a> -->
 <a href="https://lokchonmou.github.io/" target="_blank" rel="noreferrer">舊版網站</a>
 <!-- <a href="/MIGRATION-CHECKLIST">遷移檢查清單</a> -->
 </div>

@@ -21,7 +21,9 @@
 <img src="/media/Basic Drawing/fusion42.gif" alt="fusion42" style="width:50%;" />
 
 2. 用hotkey`c` 和`r`建立圓形和長方形
-> **💡利用hotkey `d` 來標示尺寸**
+:::tip
+利用hotkey `d` 來標示尺寸
+:::
 
 <img src="/media/Basic Drawing/fusion43.png" alt="fusion43" style="width:50%;" />
 
@@ -66,7 +68,9 @@
 4. 隨意劃兩個圓
 
 5. 用2D 約束，將圓指定為相等，垂直和對稱
-> 💡 你也可以劃好一邊後用`mirror`將其鏡像
+:::tip
+你也可以劃好一邊後用`mirror`將其鏡像
+:::
 	
 6. 之後指定其餘的尺寸
 
@@ -178,7 +182,7 @@
 
 ### 3.9 <img src="/media/Basic Drawing/image-20220530154626720.png" alt="image-20220530154626720" style="width:60%;border: 3px solid #ccc;" />
 
-Hints:
+::: details Hints:
 
 1. 先不用理會圓角位置, 建立一個大概的側視圖, 然後標示尺寸, 之後對稱擠出
 
@@ -205,3 +209,4 @@ Hints:
 	- 使用fillet指令來修圓角
 
 <img src="/media/Basic Drawing/image-20220530160228432.png" alt="image-20220530160228432" style="width:50%;" />
+:::

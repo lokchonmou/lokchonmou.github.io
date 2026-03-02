@@ -22,7 +22,9 @@ title: Preparation
 - 自從Fusion360的個人版限制增多後，申請教育版變得十分重要
 - 鼓勵同學申請教育版，不浪費教學資源
 - 申請教育版的流程現在比較複雜，以下是2021年9月的申請流程
-- 💡<u>*資料不要亂填，因Autodesk公司的審查越來越嚴格，如果上載資料與所填資料不符，可能導致不能注冊成功*</u>
+::: warning
+資料不要亂填，因Autodesk公司的審查越來越嚴格，如果上載資料與所填資料不符，可能導致不能注冊成功
+:::
 
 ### Step 1
 
@@ -52,8 +54,9 @@ title: Preparation
 
 - 出生日期則根據自己的出生日期填寫，之後忘記密碼有可能會驗證生日，所以不要亂填
 
-**<u>❗Fusion教育版需要年滿14歲才能注冊，所以如果你未滿14歲的話, 在年份上修改一下到足夠14歲</u>**
-
+::: tip
+Fusion教育版需要年滿14歲才能注冊，所以如果你未滿14歲的話, 在年份上修改一下到足夠14歲
+:::
 <img src="/media/Preparation/螢幕擷取畫面 (6).png" alt="螢幕擷取畫面 (6)" style="width:45%;" /><img src="/media/Preparation/螢幕擷取畫面 (7).png" alt="螢幕擷取畫面 (7)" style="width:45%;" />
 
 ### Step 4
@@ -61,11 +64,14 @@ title: Preparation
 - 在資料注冊頁面填入以下資料
 
 	- First name是名字，Last Name 是你的姓，請用英文，根據你在本校和教青局注冊的資料填寫
+::: warning
+此名稱用於之後核對你上傳的資料，所以請勿亂填，資料要對得上
+:::
 
-	- ***<u>❗此名稱用於之後核對你上傳的資料，所以請勿亂填，資料要對得上</u>***
-
-- 填上email ***<u>❗記得要使用@ism.edu.mo的電郵來注冊</u>***
-
+- 填上email 
+::: warning
+記得要使用@ism.edu.mo的電郵來注冊
+:::
 - 最後填上password和checkbox就可以
 
 <img src="/media/Preparation/螢幕擷取畫面 (9).png" alt="螢幕擷取畫面 (9)" style="width:45%;" /><img src="/media/Preparation/螢幕擷取畫面 (10).png" alt="螢幕擷取畫面 (10)" style="width:45%;" />
@@ -120,7 +126,7 @@ title: Preparation
 
 - 等待驗證的日子內，請經常檢看驗證的email, 如果不能成功驗證的話, 會電郵告訴你缺了甚麼。
 
-<img src="/media/Preparation/螢幕擷取畫面 (21).png" alt="螢幕擷取畫面 (21)" style="width: 45%;" />
+<img src="/media/Preparation/螢幕擷取畫面 (21).png" alt="螢幕擷取畫面 (21)" style="width: 46%;" />
 
 <img src="/media/Preparation/螢幕擷取畫面 (22).png" alt="螢幕擷取畫面 (22)" style="width: 45%;" /><img src="/media/Preparation/螢幕擷取畫面 (24).png" alt="螢幕擷取畫面 (24)" style="width: 45%;" />
 
