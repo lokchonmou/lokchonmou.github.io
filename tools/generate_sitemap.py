@@ -10,6 +10,7 @@ SITE_URL = "https://lokchonmou.github.io"
 DIST_DIR = Path("docs/.vitepress/dist")
 OUTPUT_FILE = DIST_DIR / "sitemap.xml"
 ALT_OUTPUT_FILE = DIST_DIR / "sitemap-main.xml"
+SIMPLE_OUTPUT_FILE = DIST_DIR / "sitemap-simple.xml"
 
 
 def url_for_html(html_file: Path) -> str:
@@ -64,7 +65,23 @@ def main() -> None:
     content = "\n".join(lines) + "\n"
     OUTPUT_FILE.write_text(content, encoding="utf-8")
     ALT_OUTPUT_FILE.write_text(content, encoding="utf-8")
-    print(f"Generated {OUTPUT_FILE} and {ALT_OUTPUT_FILE} with {len(html_files)} URLs")
+
+    simple_urls = [f"{SITE_URL}/", f"{SITE_URL}/zh/", f"{SITE_URL}/en/"]
+    simple_lines: list[str] = [
+        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+        "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">",
+    ]
+    for url in simple_urls:
+        simple_lines.append("  <url>")
+        simple_lines.append(f"    <loc>{escape(url)}</loc>")
+        simple_lines.append("  </url>")
+    simple_lines.append("</urlset>")
+    SIMPLE_OUTPUT_FILE.write_text("\n".join(simple_lines) + "\n", encoding="utf-8")
+
+    print(
+        f"Generated {OUTPUT_FILE}, {ALT_OUTPUT_FILE}, {SIMPLE_OUTPUT_FILE} "
+        f"with {len(html_files)} URLs"
+    )
 
 
 if __name__ == "__main__":
