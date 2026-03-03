@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import quote
 from xml.sax.saxutils import escape
 
 SITE_URL = "https://lokchonmou.github.io"
@@ -19,10 +20,12 @@ def url_for_html(html_file: Path) -> str:
 
     if posix.endswith("/index.html"):
         route = posix[: -len("index.html")]
-        return f"{SITE_URL}/{route}"
+        path = f"/{route}"
+        return f"{SITE_URL}{quote(path, safe='/-._~')}"
 
     route = posix[: -len(".html")]
-    return f"{SITE_URL}/{route}"
+    path = f"/{route}"
+    return f"{SITE_URL}{quote(path, safe='/-._~')}"
 
 
 def should_include(html_file: Path) -> bool:
