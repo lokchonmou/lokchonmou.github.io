@@ -42,6 +42,8 @@ jobs:
         run: npm ci
       - name: Build VitePress site
         run: npm run build
+      - name: Generate sitemap.xml
+        run: python3 tools/generate_sitemap.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
