@@ -14,10 +14,14 @@ pageClass: home-legacy
 <p>教學內容與互動專題</p>
 <div class="home-apple-links">
 <!-- <a href="/en/">English</a> -->
-<a href="https://lokchonmou.github.io/" target="_blank" rel="noreferrer">舊版網站</a>
+<a href="https://lokchonmou.github.io/v2" target="_blank" rel="noreferrer">舊版網站</a>
 <!-- <a href="/MIGRATION-CHECKLIST">遷移檢查清單</a> -->
 </div>
 </div>
+
+<hr class="home-apple-divider">
+
+
 
 <div class="home-apple-sections">
 <!-- <a class="home-apple-card" href="/zh/arduino-processing/" style="background-image:url('/home/circuit.jpg')">

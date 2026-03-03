@@ -40,7 +40,10 @@
 
 .home-apple-hero {
   text-align: center;
+  max-width: 1050px;
+  margin: 0 auto;
   padding: 54px 20px 30px;
+  box-sizing: border-box;
 }
 
 .home-apple-hero h1 {
@@ -78,22 +81,43 @@
   text-decoration: underline;
 }
 
+.home-apple-divider {
+  display: block;
+  width: 500px;
+  max-width: calc(100% - 48px);
+  height: 10px;
+  /* margin: 24px 0 24px; */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  border: 0 !important;
+  border-top: 0 !important;
+  border-radius: 999px;
+  background: #ff1d14;
+}
+
 .home-apple-sections {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 0 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+  box-sizing: border-box;
 }
 
 .home-apple-card {
   position: relative;
   display: block;
   width: 100%;
-  min-height: 320px;
+  min-height: 260px;
   text-decoration: none;
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  border-radius: 18px;
 }
 
 .home-apple-card::before {
@@ -142,6 +166,19 @@
 }
 
 @media (max-width: 900px) {
+  .home-apple-divider {
+    width: 420px;
+    max-width: calc(100% - 24px);
+    height: 14px;
+    margin: 2px 0 16px;
+  }
+
+  .home-apple-sections {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 12px 12px;
+  }
+
   .home-apple-hero h1 {
     font-size: 42px;
   }
@@ -156,6 +193,12 @@
 
   .home-apple-card h2 {
     font-size: 34px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .home-apple-sections {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
