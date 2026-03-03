@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://lokchonmou.github.io/sitemap.xml
+Sitemap: https://lokchonmou.github.io/sitemap-main.xml

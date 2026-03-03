@@ -9,6 +9,7 @@ from xml.sax.saxutils import escape
 SITE_URL = "https://lokchonmou.github.io"
 DIST_DIR = Path("docs/.vitepress/dist")
 OUTPUT_FILE = DIST_DIR / "sitemap.xml"
+ALT_OUTPUT_FILE = DIST_DIR / "sitemap-main.xml"
 
 
 def url_for_html(html_file: Path) -> str:
@@ -60,8 +61,10 @@ def main() -> None:
         lines.append("  </url>")
 
     lines.append("</urlset>")
-    OUTPUT_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"Generated {OUTPUT_FILE} with {len(html_files)} URLs")
+    content = "\n".join(lines) + "\n"
+    OUTPUT_FILE.write_text(content, encoding="utf-8")
+    ALT_OUTPUT_FILE.write_text(content, encoding="utf-8")
+    print(f"Generated {OUTPUT_FILE} and {ALT_OUTPUT_FILE} with {len(html_files)} URLs")
 
 
 if __name__ == "__main__":
