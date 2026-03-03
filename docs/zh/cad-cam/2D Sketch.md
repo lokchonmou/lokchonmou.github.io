@@ -1,5 +1,6 @@
 # 2D Sketch
 
+[[TOC]]
 
 ## New Sketch
 

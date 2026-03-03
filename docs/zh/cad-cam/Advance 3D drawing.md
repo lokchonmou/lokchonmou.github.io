@@ -4,6 +4,8 @@
 如果你打開Fusion360上方的工具列，你會發現有很多各式各樣的工具，這些工具在繪圖時會非常有幫忙，本章會介紹幾個常用的工具。
 
 
+[[TOC]]
+
 ## 1. Plane & axis
 
 輔助平工具是常用的工具之一，其中幾個常用的包括:
@@ -17,7 +19,7 @@
 
 其他功能用到的時候再講解。
 
-###練習題1
+### 練習題1
 
 <img src="/media/Advance 3D drawing/image-20220530162442507.png" alt="image-20220530162442507" style="zoom:75%; border: 3px solid #ccc;" />
 
@@ -119,27 +121,27 @@
 
 
 5. 開啟`hole`指令（快捷鍵為`H`）：
-  - 點選右下角
+	- 點選右下角
 
-  - 使用`reference`指定距離邊緣的距離
+	- 使用`reference`指定距離邊緣的距離
 
-  - 根據圖則，分別為`15mm`和`12mm`
+	- 根據圖則，分別為`15mm`和`12mm`
 
-  - `hole`的深度(`Extents`)選擇`All`
+	- `hole`的深度(`Extents`)選擇`All`
 
-  - `Hole Type`選擇中間的平底孔`Counterbore`
+	- `Hole Type`選擇中間的平底孔`Counterbore`
 
-  - `Hole Tap Type`選擇第一個`Simple`
+	- `Hole Tap Type`選擇第一個`Simple`
 
-  - `Drill Point`選擇任意一個，因為孔是完全穿的
+	- `Drill Point`選擇任意一個，因為孔是完全穿的
 
 6. 根據圖則，孔的要求是`4 HOLES Ø8 THRU ALL ⌴Ø18 ↧3`：
 
-  - `Ø8 THRU ALL`即直徑8、完全鑽穿
+	- `Ø8 THRU ALL`即直徑8、完全鑽穿
 
-  - `⌴Ø18 ↧3`即平底孔直徑18mm，深度3mm
+	- `⌴Ø18 ↧3`即平底孔直徑18mm，深度3mm
 
-<img src="/media/Advance 3D drawing/fdahgjk6.gif" alt="fdahgjk6" style="width:60%;" /><img src="/media/Advance 3D drawing/image-20220601171701680.png" alt="image-20220601171701680" style="width:35%;" />
+<img src="/media/Advance 3D drawing/fdahgjk6.gif" alt="fdahgjk6" style="width:45%;" /><img src="/media/Advance 3D drawing/image-20220601171701680.png" alt="image-20220601171701680" style="width:45%;" />
 
 
 
@@ -148,9 +150,9 @@
 	- `type`選擇`feature`
 	- `objects`選擇剛剛的hole feature
 	- `Directions`可以選擇初始向哪一邊，例如選x軸
-	- `Distance type`選擇`Spacing`，兩個距離分別是100和56mm
+	- `Distance type`選擇`Spacing`，兩個距離分別是 `100mm` 和 `56mm`
 
-<img src="/media/Advance 3D drawing/image-20220601173249910.png" alt="image-20220601173249910" style="width: 60%;" /><img src="/media/Advance 3D drawing/image-20220601173315711.png" alt="image-20220601173315711" style="width:35%;" />
+<img src="/media/Advance 3D drawing/image-20220601173249910.png" alt="image-20220601173249910" style="width: 45%;" /><img src="/media/Advance 3D drawing/image-20220601173315711.png" alt="image-20220601173315711" style="width:45%;" />
 
 
 
@@ -161,32 +163,32 @@
 
 
 9. 最後兩個螺絲孔可以使用`holes`指令完成：
-  - 距離邊緣15mm與40mm
-  - `hole type`選擇第一個`simple`
-  - `hole tap type`選擇第三個`tapped`，即孔都是攻牙
-  - `Thread Offset`選擇第一個
-  - `Drill Point`選擇尖尾的
-  - 圖樣上是M12x1.5即M12螺絲，絲距為1.5mm
-  - 最後選擇`Modeled`，就可以看到模型有螺絲紋了
+	- 距離邊緣15mm與40mm
+	- `hole type`選擇第一個`simple`
+	- `hole tap type`選擇第三個`tapped`，即孔都是攻牙
+	- `Thread Offset`選擇第一個
+	- `Drill Point`選擇尖尾的
+	- 圖樣上是M12x1.5即M12螺絲，絲距為1.5mm
+	- 最後選擇`Modeled`，就可以看到模型有螺絲紋了
 
-<img src="/media/Advance 3D drawing/image-20220601180411189.png" alt="image-20220601180411189" style="zoom:50%;" />
+	<img src="/media/Advance 3D drawing/image-20220601180411189.png" alt="image-20220601180411189" style="zoom:50%;" />
 
 
 
 10. 接著緣著yz平面, mirror這個螺絲孔
-  -  `Compute Option`要用`Optimized`才會將螺絲孔一次過mirror
+    -  `Compute Option`要用`Optimized`才會將螺絲孔一次過mirror
 
-<img src="/media/Advance 3D drawing/image-20220601182653305.png" alt="image-20220601182653305" style="zoom:80%;" />
+	<img src="/media/Advance 3D drawing/image-20220601182653305.png" alt="image-20220601182653305" style="zoom:80%;" />
 
 
 
 11. 在前面建立`new sketch`，用`extrude`減去
 
-<img src="/media/Advance 3D drawing/image-20220601181302659.png" alt="image-20220601181302659" style="width: 60%;" /><img src="/media/Advance 3D drawing/image-20220601181342549.png" alt="image-20220601181342549" style="width: 35%;" />
+<img src="/media/Advance 3D drawing/image-20220601181302659.png" alt="image-20220601181302659" style="width: 45%;" /><img src="/media/Advance 3D drawing/image-20220601181342549.png" alt="image-20220601181342549" style="width: 45%;" />
 
 
 
-12. 最後選取需要做fillet的邊, 修圓角2mm
+12.  最後選取需要做fillet的邊, 修圓角2mm
 
 <img src="/media/Advance 3D drawing/image-20220601181813753.png" alt="image-20220601181813753" style="width:45%;" /><img src="/media/Advance 3D drawing/image-20220601181850640.png" alt="image-20220601181850640" style="width:45%;" />
 
@@ -201,11 +203,11 @@ Shell為十分好用的薄殼功能，點選作為開口的面，指定厚度，
 
 
 
-###練習題1
+### 練習題1
 
 <img src="/media/Advance 3D drawing/image-20220602115633509.png" alt="image-20220602115633509" style="zoom:80%; border: 3px solid #ccc;" />
 
-Hints: 
+::: details Hints: 
 
 <img src="/media/Advance 3D drawing/image-20220602120548881.png" alt="image-20220602120548881" style="width:45%;" /><img src="/media/Advance 3D drawing/image-20220602120046616.png" alt="image-20220602120046616" style="width: 45%;" />
 
@@ -220,12 +222,14 @@ Hints:
 
 
 
-<img src="/media/Advance 3D drawing/fdahgjk7.gif" alt="fdahgjk7" style="width:45%;" />
+<img src="/media/Advance 3D drawing/fdahgjk7.gif" alt="fdahgjk7" style="width:46%;" />
 
 <img src="/media/Advance 3D drawing/image-20220602120244112.png" alt="image-20220602120244112" style="width:45%;" /><img src="/media/Advance 3D drawing/image-20220602120309330.png" alt="image-20220602120309330" style="width:45%;" />
 
 - 在底部開一個`new sketch`來劃
 - 記得這3個圓柱不是到lego的最底，有1.2mm的距離
+
+:::
 
 ## 4. Loft
 
@@ -243,7 +247,7 @@ Hints:
 
 ### 練習題1
 
-<div style=" border: 3px solid #ccc;"><img src="/media/Advance 3D drawing/image-20220602121449150.png" alt="image-20220602121449150" style="width:50%;" /><img src="/media/Advance 3D drawing/image-20220602121522403.png" alt="image-20220602121522403" style="width:45%;" /></div>
+<img src="/media/Advance 3D drawing/image-20220602121449150.png" alt="image-20220602121449150" style="width:45%;" /><img src="/media/Advance 3D drawing/image-20220602121522403.png" alt="image-20220602121522403" style="width:45%;" />
 
 
 
@@ -272,9 +276,9 @@ Hints:
 
 
 
-6. 最後用`shell`功能造成簿殼, 要穿孔的面分別為頂的兩個圓和底部的圓, 選擇`inside ` `2mm`
+6. 最後用`shell`功能造成簿殼, 要穿孔的面分別為頂的兩個圓和底部的圓, 選擇`inside` `2mm`
 
-   <img src="/media/Advance 3D drawing/image-20220602134531662.png" alt="image-20220602134531662" style="width:45%;" /><img src="/media/Advance 3D drawing/fdahgjk9.gif" alt="fdahgjk9" style="width:45%;" />
+<img src="/media/Advance 3D drawing/image-20220602134531662.png" alt="image-20220602134531662" style="width:45%;" /><img src="/media/Advance 3D drawing/fdahgjk9.gif" alt="fdahgjk9" style="width:45%;" />
 
 <img src="/media/Advance 3D drawing/fdahgjk8.gif" alt="fdahgjk8" style="zoom:50%;" />
 
@@ -282,20 +286,28 @@ Hints:
 
 <img src="/media/Advance 3D drawing/image-20220606103313365.png" alt="image-20220606103313365" style="zoom:80%; border: 3px solid #ccc;" />
 
-Hints:
+::: details Hints:
 
 <img src="/media/Advance 3D drawing/%25E8%259E%25A2%25E5%25B9%2595%25E6%2588%25AA%25E5%259C%2596%25202025-02-19%2520%25E4%25B8%258B%25E5%258D%25882.58.28.png" alt="img" style="width:45%;" /><img src="/media/Advance 3D drawing/%25E8%259E%25A2%25E5%25B9%2595%25E6%2588%25AA%25E5%259C%2596%25202025-02-19%2520%25E4%25B8%258B%25E5%258D%25882.59.54.png" alt="img" style="width:45%;" />
 
 <img src="/media/Advance 3D drawing/%25E8%259E%25A2%25E5%25B9%2595%25E6%2588%25AA%25E5%259C%2596%25202025-02-19%2520%25E4%25B8%258B%25E5%258D%25883.00.22.png" alt="img" style="width:45%;" />
 
-###練習題3
+:::
 
+### 練習題3
+
+::: note
 下圖尺寸單位為: inch(吋)， 你可以在fusion360用keyword `unit`搜尋`change active units`指令，將單位修改為吋
-![fusion57](/media/Advance 3D drawing/fusion57.png)
+:::
 
+<img src="/media/Advance 3D drawing/fusion57.png" alt="/media/Advance 3D drawing/fusion57.png" style="width:46%;" />
+
+
+:::details Hints:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8TdObYcsQa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+:::
 
-##5. Revolve
+## 5. Revolve
 
 旋轉成型工具就有點似現實世界中的車床般，透過緣著一個軸旋轉一個profile成型。
 
@@ -303,34 +315,39 @@ Hints:
 
 試試以下這兩題:
 
-###練習題1
+### 練習題1
 
 - 軸承是眾多機械零件中十分重要的一環
 - 軸承的尺寸是固定的，在設計製作時必須首先考量軸承的尺寸才能決定創作物的尺寸
 - 軸承尺寸越大，價錢就會幾何級數上升
 - 對於一些精度和轉速都不高的應用場合，可以考慮使用現成的Ø4.5的不銹鋼珠自製3D打印軸承
 
-<img src="/media/Advance 3D drawing/image-20220606110454114.png" alt="image-20220606110454114" style="zoom:80%; border: 3px solid #ccc;" />
+<img src="/media/Advance 3D drawing/image-20220606110454114.png" alt="image-20220606110454114" style="width:60%; border: 3px solid #ccc;" />
 
 
 1. 首先在正面(xz平面)上建立一個`new sketch`
-	- 根據圖樣，在==邊緣距離原點20mm位置==建立一個`6x6 center rectangle`
+	- 根據圖樣，在 ***<u>邊緣距離原點20mm位置</u>*** 建立一個`6x6 center rectangle`
 	- 邊緣距離原點20mm，因為軸承內徑為40mm，半徑為20mm
 	- 建立一個`Ø4.8 circle`
 	- 補上中心線
 	- 建立兩條對稱線，留空0.5mm空隙
 1. 使用`revolve`指令繞z軸轉360度建立實體
-	- 如果出現一個藍色和一個橙色的`revolve`指令，**<u>*==選擇藍色的，因為藍色才是實體==*</u>**
-	- 橙色的`revolve`只會建立一個曲面
+	
+::: warning
+- 如果出現一個藍色和一個橙色的`revolve`指令
+- ***選擇藍色的***，因為藍色才是實體
+- 橙色的`revolve`只會建立一個曲面
+:::
+
 
 <img src="/media/Advance 3D drawing/image-20220606111438238.png" alt="image-20220606111438238" style="width:45%;" /><img src="/media/Advance 3D drawing/image-20220606111511423.png" alt="image-20220606111511423" style="width:45%;" />
 
 
 
 3. 在xy平面建立一個`new sketch`
-  - 使用快捷鍵`p`投影兩條邊變成兩個點
-  - 補一條中心線
-  - 劃一個Ø4.8的圓
+	- 使用快捷鍵`p`投影兩條邊變成兩個點
+	- 補一條中心線
+	- 劃一個Ø4.8的圓
 4. 用擠出工具減去上面的孔
 
 <img src="/media/Advance 3D drawing/image-20240223164414790.png" alt="image-20240223164414790" style="width:30%;" />
@@ -358,11 +375,11 @@ Hints:
 
 
 
-###練習題2
+### 練習題2
 
 第二題則為常見於3d打印機的8mm直線軸承, 請自行完成。
 
-<div style = " border: 3px solid #ccc;"><img src="/media/Advance 3D drawing/image-20220606113755190.png" alt="image-20220606113755190" style="width:50%;" /><img src="/media/Advance 3D drawing/image-20220606113808241.png" alt="image-20220606113808241" style="width:40%;" /></div>
+<img src="/media/Advance 3D drawing/image-20220606113755190.png" alt="image-20220606113755190" style="width:45%;" /><img src="/media/Advance 3D drawing/image-20220606113808241.png" alt="image-20220606113808241" style="width:45%;" />
 
 ## 6. Sweep
 
@@ -370,9 +387,9 @@ Hints:
 
 <img src="/media/Advance 3D drawing/fusion513.gif" alt="fusion513" style="zoom:33%;" />
 
-###練習題1
+### 練習題1
 
-<img src="/media/Advance 3D drawing/111_1.png" alt="111_1" style="zoom:80%; border: 3px solid #ccc;" />
+<img src="/media/Advance 3D drawing/111_1.png" alt="111_1" style="width:80%;" />
 
 1. 首先在正面(xz平面)建立一個`new sketch`, 跟據圖則先劃管的中心線
 
@@ -416,12 +433,13 @@ Hints:
 <img src="/media/Advance 3D drawing/image-20220606120421460.png" alt="image-20220606120421460" style="zoom:50%;" />
 
 ### 練習題2
-
+::: tip
 這題你需要用到`plane along path`
 
 <img src="/media/Advance 3D drawing/Inkedfusion51_LI.jpg" alt="Inkedfusion51_LI" style="zoom:55%;" />
+:::
 
-<img src="/media/Advance 3D drawing/222_1.png" alt="222_1" style="zoom:80%; border: 3px solid #ccc;" />
+<img src="/media/Advance 3D drawing/222_1.png" alt="222_1" style="width:80%;" />
 
 ## 7. 混合練習
 
@@ -429,7 +447,8 @@ Hints:
 
 ### 練習題1
 
-<img src="/media/Advance 3D drawing/fusion517.png" alt="fusion517" style="zoom:100%;" />
+<img src="/media/Advance 3D drawing/fusion517.png" alt="fusion517" style="width:85%;" />
 
+:::details Hints:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/X-XfcftiMkY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+:::
