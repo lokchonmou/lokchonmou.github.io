@@ -332,8 +332,8 @@
 
 
 .vp-doc .custom-block.note {
-  --admonition-bg-color: #f3f4f6;
-  --admonition-border-color: #9ca3af;
+  --admonition-bg-color: #f2f2f2;
+  --admonition-border-color: #b9b9b9;
 }
 
 .vp-doc .custom-block.info {

@@ -10,3 +10,7 @@
 3. CAD X Real World
    1. [齒輪簡介](./齒輪簡介.md)
    2. [齒輪紀念品](./齒輪紀念品.md)
+   3. [行星齒輪](./行星齒輪.md)
+   4. [Walking linkage robot](./Walking%20linkage%20robot.md)
+   5. [Brass Canon](./Brass%20Canon.md)
+   6. [6 legs walking linkage robot](./6%20legs%20walking%20linkage%20robot.md)  

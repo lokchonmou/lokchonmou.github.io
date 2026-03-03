@@ -1,6 +1,6 @@
 # 2D constraints
 
-::: note
+::: info
 Fusion360特色：
 
 - 特徵編輯性，更接近**數學幾何**的邏輯
