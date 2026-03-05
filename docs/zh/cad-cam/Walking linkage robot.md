@@ -25,7 +25,9 @@
 
 本次會應用到的檔案(以下為step檔)，下載**解壓**後，在fusion左邊欄尋找"upload"鍵，就能上載到fuison中應用
 ::: info
-[useful robotics component step.zip](useful_robotics_component_step.zip)
+<a href="/media/Walking linkage robot/useful_robotics_component_step.zip" download>
+useful robotics component step.zip
+</a>
 :::
 或者你可以在grabcad.com直接下載fusion360檔案(需要注冊登入)
 ::: info
