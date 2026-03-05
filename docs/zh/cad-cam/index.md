@@ -18,3 +18,6 @@
    8. [附錄: 匯出DXF/STL/3MF](./匯出DXFSTL3MF.md)
 4. PCB Design
    1. [Printed Circuit Boards(PCB)](./Printed-Circuit-Boards-PCB.md)
+   2. [繪製電路圖與佈線圖](./繪製電路圖與佈線圖.md)
+   3. [代工生產PCB](./代工生產PCB.md)
+   4. [Adding library and Real world](./Adding%20library%20and%20Real%20world.md)
