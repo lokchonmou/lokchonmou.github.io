@@ -91,6 +91,11 @@ useful robotics component step.zip
 
 - 再用快捷鍵`j`把齒輪箱組合到底板
 
+::: tip
+Fusion360在選擇`joint`的控制點時，可以在目標平面按住`ctrl`鍵，這樣就會鎖定目前的平面，方便選擇
+:::
+
+
 <img src="/media/Walking linkage robot/20210205103611.png" style="width:45%;" /> <img src="/media/Walking linkage robot/20210205103646.png" style="width:45%;" />
 
 <img src="/media/Walking linkage robot/20210204150821.png" style="width:45%;"/>
