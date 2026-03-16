@@ -1,64 +1,69 @@
-# LCM STUDIO（VitePress）
+# LCM STUDIO (VitePress) 🛸
 
-此 repo 正在由舊版靜態 HTML 網站遷移到 VitePress。
+這個 Repo 是 LCM STUDIO 的新版 VitePress 網站。所有開發與內容遷移應遵循以下流程。
 
-## 開發與預覽
+## 🚀 快速開始
 
+### 1. 啟動開發伺服器
+進入目錄後，執行：
 ```bash
-npm install
-npm run dev
+./start.sh
+```
+啟動後，你可以在瀏覽器打開：`http://localhost:5173/` 預覽網站。
+
+### 2. 停止開發伺服器
+執行：
+```bash
+./stop.sh
 ```
 
-## 建置
+---
 
+## 📦 內容遷移教學
+
+如果你要從根目錄的舊資料夾（例如 `CAD & CAM/`）搬運內容到新站，請使用遷移腳本。**請勿直接在 `docs/` 手動建立檔案，除非你很熟悉架構。**
+
+### 遷移腳本用法
 ```bash
-npm run build
-npm run preview
+./migrate_chapter.sh "<原始資料夾>" "<docs目的地>" "[章節名稱]" "[URL前綴]"
 ```
 
-## 部署
+**範例：**
+```bash
+./migrate_chapter.sh "CAD & CAM/真。3D繪圖測試" "docs/zh/cad-cam/" "真。3D繪圖測試" "/media"
+```
 
-- 使用 GitHub Actions
-- 觸發分支：`LCM-STUDIO-2.0`
-- workflow：`.github/workflows/static.yml`
+*   **第 1 參數**: 舊站資料夾路徑。
+*   **第 2 參數**: `docs` 內的存放路徑。建議 `docs/zh/...`。
+*   **第 3 參數**: 媒體資料夾名稱。圖片會被搬到 `docs/public/media/<章節名稱>`。
+*   **第 4 參數**: 圖片網址前綴，固定用 `/media` 即可。
 
-只要 push 到 `LCM-STUDIO-2.0`，會自動 build + deploy。
+---
 
-## 內容放置規則
+## 🛠️ 開發日常流程 (Daily Workflow)
 
-- 文章：`docs/zh/**.md`、`docs/en/**.md`
-- 靜態資源（圖片/影片/PDF）：`docs/public/**`
-  - 例如：`docs/public/media/...`
+1.  **修改舊檔**: 在原始資料夾（如 `CAD & CAM/...`）修改 `.md` 檔案。
+2.  **執行遷移**: 再次執行 `./migrate_chapter.sh ...` 將修改同步到 `docs/`。
+3.  **預覽**: 在 `http://localhost:5173/` 查看結果。
+4.  **更新選單**: 如果是新章節，需要手動編輯 `docs/zh/cad-cam/index.md` 或相關的 `index.md` 加入連結。
 
-## 遷移文件
+---
 
-- 遷移總覽：`docs/MIGRATION-STATUS.md`
-- 遷移任務：`docs/MIGRATION-TASKS.md`
-- 遷移檢查清單：`docs/MIGRATION-CHECKLIST.md`
-- 自動進度報告：`docs/MIGRATION-PROGRESS.md`
-- 盤點腳本：`tools/migration_progress.py`
+## ❓ 常見問題 (Q&A)
 
-## 交接與進度更新（重要）
+### 為什麼我更新了 `.md` 但網站沒變？
+*   檢查你修改的是否是 `docs/` 內的檔案。
+*   如果你修改的是根目錄下的舊資料夾，記得要跑 `migrate_chapter.sh` 同步過去。
 
-每次搬運內容後，請固定做以下步驟：
+### 為什麼出現 404？
+*   檢查路徑名稱是否包含特殊字元（如空格、括號）。腳本會盡力處理，但建議檔名簡單一點。
+*   檢查 `index.md` 內的連結檔名是否跟 `docs/` 內的實際檔名一致。
 
-1. 執行：`python3 tools/migration_progress.py`
-2. 檢查 `docs/MIGRATION-PROGRESS.md`（自動更新）
-3. 手動更新 `docs/MIGRATION-TASKS.md` 勾選項目
-4. 如有策略變更，再更新 `docs/MIGRATION-STATUS.md`
+---
 
-`migration_progress.py` 會自動盤點：
-
-- `docs/`、`docs/zh`、`docs/en` 的 Markdown 數量
-- 舊站（docs 外）HTML 檔案數量
-- 舊資料夾 vs 新 `docs/zh` 章節的對照進度
-- Markdown 內 `/media/...` 引用與 `docs/public/media` 是否對齊
-
-### 何時算「搬完」
-
-可用以下條件判斷：
-
-- `docs/MIGRATION-TASKS.md` 主要任務全勾選
-- `docs/MIGRATION-PROGRESS.md` 顯示各章節已非「僅入口/待搬」
-- 圖片/附件連結檢查無 404
-- 線上站抽樣驗收通過後，才進行舊資料夾刪除
+## 📈 遷移進度追蹤
+每次執行完遷移，請跑一下進度盤點腳本：
+```bash
+python3 tools/migration_progress.py
+```
+這會更新 `docs/MIGRATION-PROGRESS.md`。
