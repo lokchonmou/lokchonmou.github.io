@@ -52,3 +52,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify search engines about sitemap updates
+        run: |
+          set -e
+          SITEMAP_URL="https://lokchonmou.github.io/sitemap.xml"
+          echo "Pinging sitemap: ${SITEMAP_URL}"
+          curl -fsS "https://www.google.com/ping?sitemap=${SITEMAP_URL}" || true
+          curl -fsS "https://www.bing.com/ping?sitemap=${SITEMAP_URL}" || true
