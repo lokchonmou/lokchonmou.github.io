@@ -15,7 +15,7 @@
    5. [Brass Canon](./Brass%20Canon.md)
    6. [6 legs walking linkage robot](./6%20legs%20walking%20linkage%20robot.md)  
    7. [Sumo Robot](./Sumo%20Robot.md)
-   8. [Simple box](./Simple%20box.md)
+   8. [Simple Box](./Simple%20Box.md)
    9. [Advanced box](./Advanced%20box.md)
    10. [附錄: 匯出DXF/STL/3MF](./匯出DXFSTL3MF.md)
 4. PCB Design
