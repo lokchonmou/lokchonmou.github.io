@@ -3,13 +3,14 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-echo "[stop] searching VitePress dev servers..."
+PORT="${1:-${PORT:-5174}}"
+
+echo "[stop] searching VitePress dev servers on port ${PORT}..."
 
 pids="$(
   {
-    lsof -ti tcp:5173 -sTCP:LISTEN 2>/dev/null || true
-    lsof -ti tcp:5174 -sTCP:LISTEN 2>/dev/null || true
-    pgrep -f "vitepress dev docs" 2>/dev/null || true
+    lsof -ti tcp:${PORT} -sTCP:LISTEN 2>/dev/null || true
+    pgrep -f "vitepress dev docs.*--port[= ]${PORT}" 2>/dev/null || true
   } | awk 'NF' | sort -u
 )"
 

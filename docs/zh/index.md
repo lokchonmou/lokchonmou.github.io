@@ -33,9 +33,9 @@ pageClass: home-legacy
 <a class="home-apple-card" href="/zh/esp32-vibe-coding/" style="background-image:url('/home/VideCoding.png')">
 <div class="home-apple-card-content"><h2>ESP32 &amp; Vibe Coding</h2><p>IoT × API × Web</p></div>
 </a>
-<a class="home-apple-card" href="/zh/game-coding/" style="background-image:url('/home/processing.jpg')">
+<!-- <a class="home-apple-card" href="/zh/game-coding/" style="background-image:url('/home/processing.jpg')">
 <div class="home-apple-card-content"><h2>遊戲編程</h2><p>由簡單玩法到 AI</p></div>
-</a>
+</a> -->
 <a class="home-apple-card" href="/zh/projects/" style="background-image:url('/home/math.jpg')">
 <div class="home-apple-card-content"><h2>Projects</h2><p>跨主題整合實作</p></div>
 </a>

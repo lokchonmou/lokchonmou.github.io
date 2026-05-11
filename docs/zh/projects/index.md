@@ -1,8 +1,3 @@
 # Projects
 
-> 章節骨架已建立，內容待加入。
-
-## 下一步
-
-- 新增第一篇文章：`./lesson-01.md`
-- 在本文加入文章連結
+1. [Line Following Robot](./Line%20Following%20Robot.md)
