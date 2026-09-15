@@ -1,0 +1,25 @@
+class Rocket(object):
+
+    def __init__(self):
+        self.pos =  PVector(width/2, height/2)
+        self.vec =  PVector(0,0)
+        self.accel =  PVector(0,0)
+        self.heading = 0   #unit in degrees
+
+    def show(self):
+        scale = 10
+        pushMatrix()
+        translate(self.pos.x, self.pos.y)
+        rotate(radians(self.heading))
+        beginShape()
+        vertex(0  *scale , 0    *scale)
+        vertex(1  *scale , 0.6 *scale)
+        vertex(0  *scale , -3    *scale)
+        vertex(-1 *scale , 0.6  *scale)
+        endShape()
+        popMatrix()
+
+    def rotateRocket(self, angle):
+       self.heading += angle
+       self.vec.rotate(radians(angle))
+       self.accel.rotate(radians(angle))

@@ -80,7 +80,10 @@ def rewrite_image_link(raw_link: str, md_source_dir: Path, source_root: Path, ch
     except ValueError:
         return raw_link
 
-    new_path = f"{url_prefix}/{chapter_name}/{rel.as_posix()}"
+    # Markdown destinations cannot contain literal spaces unless wrapped in
+    # angle brackets. Encode them here so migrated images render instead of
+    # leaking their raw Markdown syntax into the page.
+    new_path = f"{url_prefix}/{chapter_name}/{rel.as_posix()}".replace(' ', '%20')
     return urlunsplit((parts.scheme, parts.netloc, new_path, parts.query, parts.fragment))
 
 

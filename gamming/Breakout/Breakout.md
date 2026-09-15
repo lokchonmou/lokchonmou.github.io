@@ -4,7 +4,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Breakout2600.svg/1920px-Breakout2600.svg.png" alt="img" style="zoom:80%;" />
 
-<iframe src="../../interactive/Breakout/index.html" height= "600" width=100% title="Breakout"></iframe>
+<iframe src="/interactive/Breakout/index.html" height="600" width="100%" title="Breakout"></iframe>
 
 [TOC]
 
@@ -54,7 +54,7 @@ def draw():
 
 <img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202022-09-24%20%E4%B8%8B%E5%8D%883.05.24.png" alt="螢幕截圖 2022-09-24 下午3.05.24" style="width:60%;" />
 
-###1.1 Vector(向量)
+### 1.1 Vector(向量)
 
 上述的程式碼沒有甚麼問題，一切都可以運作起來，但你想想，如果是2D遊戲，每個球的座標會有兩個變數，如果是3D的遊戲，每個球的座標就會是3個變數；除了變數較多外，這些變數也不好運作。
 
@@ -189,7 +189,7 @@ rect(beam.x, beam.y, 50, 10)
 
 在`draw()`中，每幀都指定`beam`的位置為`(mouseX, height-15)`，跟上一次的Pong一樣，當球撞到板後，就反彈球。而今次我們最後將`beam`畫出來。
 
-##3. 美化一下更加像原版
+## 3. 美化一下更加像原版
 
 ```python
 ballPos = PVector()

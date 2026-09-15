@@ -15,6 +15,8 @@
    5. [Brass Canon](./Brass%20Canon.md)
    6. [6 legs walking linkage robot](./6%20legs%20walking%20linkage%20robot.md)  
    7. [Sumo Robot](./Sumo%20Robot.md)
+   <!-- 8. [Line Following Robot CAD](./Line%20Following%20Robot%20CAD.md) -->
+   <!-- 8. [3D打印時鐘](./3D打印時鐘.md) -->
    8. [Simple Box](./Simple%20Box.md)
    9. [Advanced box](./Advanced%20box.md)
    10. [附錄: 匯出DXF/STL/3MF](./匯出DXFSTL3MF.md)
@@ -30,3 +32,6 @@
 5. CAM & CNC
    1. [Introduction of CNC](./Introduction%20of%20CNC.md)
    2. [雕刻名牌](./雕刻名牌.md)
+6. Rhinoceros
+   1. [Introduction of Rhinoceros](./Introduction%20of%20Rhinoceros.md)
+   2. [Introduction of Rhinoceros 2](./Introduction%20of%20Rhinoceros%202.md)

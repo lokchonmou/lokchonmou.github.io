@@ -4,7 +4,7 @@
 
 ![img](Pong.png)
 
-<iframe src="../../interactive/Pong/index.html" height= "600" width=100% title="PONG"></iframe>
+<iframe src="/interactive/Pong/index.html" height="600" width="100%" title="PONG"></iframe>
 
 [TOC]
 
@@ -40,9 +40,9 @@ def draw():
 		- 對應`size()`中的長和寬
 - 下一步，就要令中間的球移動
 
-##2 令球移動
+## 2 令球移動
 
-###創建一個會動的球
+### 創建一個會動的球
 
 ```python
 ballX=0
@@ -109,7 +109,7 @@ ballY += ballSpeedY
 
 
 
-###令球懂得撞牆反彈
+### 令球懂得撞牆反彈
 
 ```python
 ballX=0
@@ -150,7 +150,7 @@ if ballY <= 0 or ballY >= height:
 
 ## 3. 製作player1球拍
 
-###製作球拍
+### 製作球拍
 
 ```python
 ballX=0

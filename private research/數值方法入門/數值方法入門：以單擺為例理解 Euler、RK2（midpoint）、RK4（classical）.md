@@ -18,32 +18,38 @@ y(t+h)=y(t)+h f(t,y)+\tfrac{h^2}{2} f'(t,y)+O(h^3).
 $$
 
 - **Euler（顯式）**：只保留第一項
-	$$
-	\boxed{y_{n+1}=y_n+h\,f(t_n,y_n)}
-	$$
-	幾何上等於**長方形積分**；Local error $O(h^2)$、Global error $O(h)$。
+
+  $$
+  \boxed{y_{n+1}=y_n+h\,f(t_n,y_n)}
+  $$
+
+  幾何上等於**長方形積分**；Local error $O(h^2)$、Global error $O(h)$。
 
 - **RK2（midpoint）**：取**中點斜率**
-	$$
-	\begin{aligned}
-	k_1&=f(t_n,y_n),\\
-	k_2&=f\!\Bigl(t_n+\tfrac{h}{2},\,y_n+\tfrac{h}{2}k_1\Bigr),\\
-	\boxed{y_{n+1}=y_n+h\,k_2}
-	\end{aligned}
-	$$
-	類似**梯形／中點積分**；Global error $O(h^2)$。
+
+  $$
+  \begin{aligned}
+  k_1&=f(t_n,y_n),\\
+  k_2&=f\!\Bigl(t_n+\tfrac{h}{2},\,y_n+\tfrac{h}{2}k_1\Bigr),\\
+  \boxed{y_{n+1}=y_n+h\,k_2}
+  \end{aligned}
+  $$
+
+  類似**梯形／中點積分**；Global error $O(h^2)$。
 
 - **RK4（classical）**：四點加權平均
-	$$
-	\begin{aligned}
-	k_1&=f(t_n,y_n),\\
-	k_2&=f\!\Bigl(t_n+\tfrac{h}{2},\,y_n+\tfrac{h}{2}k_1\Bigr),\\
-	k_3&=f\!\Bigl(t_n+\tfrac{h}{2},\,y_n+\tfrac{h}{2}k_2\Bigr),\\
-	k_4&=f(t_n+h,\,y_n+h\,k_3),\\
-	\boxed{y_{n+1}=y_n+\tfrac{h}{6}\bigl(k_1+2k_2+2k_3+k_4\bigr)}
-	\end{aligned}
-	$$
-	幾何上＝**多點平均斜率**；Global error $O(h^4)$。
+
+  $$
+  \begin{aligned}
+  k_1&=f(t_n,y_n),\\
+  k_2&=f\!\Bigl(t_n+\tfrac{h}{2},\,y_n+\tfrac{h}{2}k_1\Bigr),\\
+  k_3&=f\!\Bigl(t_n+\tfrac{h}{2},\,y_n+\tfrac{h}{2}k_2\Bigr),\\
+  k_4&=f(t_n+h,\,y_n+h\,k_3),\\
+  \boxed{y_{n+1}=y_n+\tfrac{h}{6}\bigl(k_1+2k_2+2k_3+k_4\bigr)}
+  \end{aligned}
+  $$
+
+  幾何上＝**多點平均斜率**；Global error $O(h^4)$。
 
 ## 2. 單擺（Pendulum）作為非線性測試牀
 

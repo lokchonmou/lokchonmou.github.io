@@ -1,0 +1,65 @@
+#create a silder demo using processing.py
+
+bWidth = bHeight = 0	#bar width and height
+bXpos = bYpos = 0 #bar x and y position
+sPos = 0 #slider position
+sPosMin = SPosMax = 0 #slider position min and max
+isOver = False #is mouse over slider
+ratio = 0 #ratio of slider position to bar width
+
+sliderMinValue = 0 #slider min value
+sliderMaxValue = 100 #slider max value
+sliderValue = 40 #slider value
+
+def setup():
+	global bXpos, bYpos, bWidth, bHeight, sPosMin, sPosMax, sPos
+	size(600,600)
+	rectMode(CENTER)
+	bXpos = width/2
+	bYpos = height/2
+	bWidth = 400
+	bHeight = 20
+	sPosMin = bXpos - bWidth/2
+	sPosMax = bXpos + bWidth/2
+	sPos = map(sliderValue,sliderMinValue,sliderMaxValue,sPosMin,sPosMax)
+
+def draw():
+	background(200)
+
+	#draw the slider
+	fill(255)
+	rect(bXpos,bYpos,bWidth,bHeight)
+	#draw the slider button
+	if isOver:
+		fill(100)
+	else:
+		fill(127)
+	rect(sPos,bYpos,20,40)
+
+
+def mousePressed():
+	global isOver, ratio, sliderValue
+	if (mouseX > sPos-10 and mouseX < sPos+10 and mouseY > bYpos-20 and mouseY < bYpos+20):
+		isOver = True
+	else:
+		isOver = False
+
+def mouseDragged():
+	global isOver, sliderValue, sPos
+	if isOver:
+		if mouseX > sPosMin and mouseX < sPosMax:
+			sPos = mouseX
+			sliderValue = map(sPos,sPosMin,sPosMax,sliderMinValue,sliderMaxValue)
+			print(sliderValue)
+
+	#snap to the min or max value
+	if mouseX < sPosMin:
+		sliderValue = sliderMinValue
+		sPos = map(sliderValue,sliderMinValue,sliderMaxValue,sPosMin,sPosMax)
+	if mouseX > sPosMax:
+		sliderValue = sliderMaxValue
+		sPos = map(sliderValue,sliderMinValue,sliderMaxValue,sPosMin,sPosMax)
+
+def mouseReleased():
+	global isOver
+	isOver = False

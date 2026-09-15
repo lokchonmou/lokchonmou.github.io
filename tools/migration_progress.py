@@ -27,15 +27,12 @@ IGNORE_TOP_DIRS = {
 }
 
 SECTION_MAP = {
-    "arduinoXprocessing": "arduino-processing",
     "CAD & CAM": "cad-cam",
     "ESP32 & Vibe Coding": "esp32-vibe-coding",
     "gamming": "game-coding",
     "Construction of geometric figures": "geometry-construction",
     "interactive": "interactive-lab",
-    "math&robotics": "math-robotics",
     "private research": "private-research",
-    "processing": "processing",
     "Projects": "projects",
 }
 

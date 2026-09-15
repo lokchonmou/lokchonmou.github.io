@@ -1,0 +1,108 @@
+birdPos = PVector()  # 鳥的位置
+birdVec = PVector()  # 鳥的速度
+birdAccel = PVector(0, 0.3)  # 鳥的向下加速度
+
+panSpeed = 5
+
+myPipe = []
+
+GAMEOVER = False
+
+score = 0
+pipeCount = 0
+
+def setup():
+    global birdPos, birdVec, myPipe, GAMEOVER, score, pipeCount
+
+    size(800, 600)
+    frameRate(60)
+    birdPos = PVector(50, height/2)
+    birdVec = PVector(0, 0)
+
+    if len(myPipe) > 0:
+        myPipe.clear()
+
+    myPipe.append(Pipe())
+
+    GAMEOVER = False
+
+    score = 0
+    pipeCount = 0
+
+
+def draw():
+    global GAMEOVER
+
+    if not GAMEOVER:
+        runGame()
+
+    else:
+        textSize(64)
+        textAlign(CENTER, CENTER)
+        fill(255, 255, 0)
+        text("GAME OVER", width/2, height/2)
+
+
+def keyPressed():
+    if (key == ' '):
+        birdVec.y = -8
+    if (key == 'R' or key == 'r'):
+        setup()
+
+
+def runGame():
+    global birdPos, birdVec, GAMEOVER, score
+
+    score += 1
+    if (score % 100 == 0):
+        myPipe.append(Pipe())
+
+    background("#70C6D5")
+
+    birdVec = birdVec.add(birdAccel)
+    birdPos = birdPos.add(birdVec)
+
+    fill("#D5BB06")
+    ellipse(birdPos.x, birdPos.y, 25, 25)
+
+    for p in myPipe:
+        p.update(birdPos)
+        p.show()
+
+        # if p.collide(birdPos) == True or birdPos.y > height:
+        #     GAMEOVER = True
+        
+        if (p.x < - p.w):
+            myPipe.remove(p)
+    
+
+# =======================Pipe Object=======================================
+
+
+class Pipe(object):
+    x = 0
+    w = 80
+    h = 0
+    gap = 80
+    isPassed = False
+
+    def __init__(self):
+        self.x = width + self.w
+        self.h = random(100, height - 100)
+
+    def update(self, _birdPos):
+        self.x -= panSpeed
+        if (self.isPassed == False and _birdPos.x > self.x+self.w):
+            self.isPassed = True
+  
+
+
+    def show(self):
+        fill(0, 204, 0)
+        rect(self.x, height - self.h, self.w, self.h)
+        rect(self.x, height - self.h - self.gap, self.w, -(height-self.h))
+
+    def collide(self, _birdPos):
+        if (_birdPos.x > self.x and _birdPos.x < self.x+self.w):
+            if (_birdPos.y > height - self.h or _birdPos.y < height - self.h - self.gap):
+                return True

@@ -1,0 +1,21 @@
+class Snake(object):
+    
+    def __init__(self, _grids):
+        self.grids = _grids
+        self.snakeHead = self.grids[10][10]
+        self.snakeHead = 0
+
+        self.dirID = 3  #[0:UP, 1:RIGHT, 2: DOWN, 3: LEFT]
+        self.next = 0
+        
+        for i in range(3,0,-1):
+            self.snakeBody.append(self.grids[10+i][10])
+
+    def show(self):
+        for i in range(len(self.snakeBody)):
+            self.snakeBody[i].show('#00FF00')
+        self.snakeHead.show('#00AA00')
+
+        self.next = self.snakeHead.neighbors[self.dirID]
+        self.snakeHead = self.next
+        self.snakeBody.pop(0)

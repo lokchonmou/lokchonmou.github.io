@@ -1,0 +1,19 @@
+from rocket import *
+
+r = 0
+
+def setup():
+    global r;
+    size(600,600)
+    r = Rocket()
+
+def draw():
+    background(50)
+
+    if (keyPressed and key == CODED):
+        if (keyCode == LEFT):
+            r.rotateRocket(-5)
+        if (keyCode == RIGHT):
+            r.rotateRocket(5)
+
+    r.show()

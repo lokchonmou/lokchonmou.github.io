@@ -1,34 +1,31 @@
 # 搬運進度報告（自動產生）
 
-> 產生時間：2026-03-04 01:14:55 +0800
+> 產生時間：2026-09-16 00:09:51 +0800
 
 ## 總覽
 
-- `docs/` Markdown 總數：**42**
-- `docs/zh` Markdown：**24**
-- `docs/en` Markdown：**11**
-- 舊站 HTML（docs 外）：**127**
-- 已有內容章節（md > 1）：**1/10**
+- `docs/` Markdown 總數：**81**
+- `docs/zh` Markdown：**66**
+- `docs/en` Markdown：**8**
+- 舊站 HTML（docs 外）：**103**
+- 已有內容章節（md > 1）：**4/7**
 
 ## 章節對照（舊 -> 新）
 
 | 舊資料夾 | 新路徑 slug | 新站 md 數量 | 狀態 |
 |---|---|---:|---|
-| arduinoXprocessing | `arduino-processing` | 1 | 🟡 僅入口/待搬 |
-| CAD & CAM | `cad-cam` | 14 | ✅ 進行中 |
+| CAD & CAM | `cad-cam` | 31 | ✅ 進行中 |
 | ESP32 & Vibe Coding | `esp32-vibe-coding` | 1 | 🟡 僅入口/待搬 |
-| gamming | `game-coding` | 1 | 🟡 僅入口/待搬 |
+| gamming | `game-coding` | 23 | ✅ 進行中 |
 | Construction of geometric figures | `geometry-construction` | 1 | 🟡 僅入口/待搬 |
 | interactive | `interactive-lab` | 1 | 🟡 僅入口/待搬 |
-| math&robotics | `math-robotics` | 1 | 🟡 僅入口/待搬 |
-| private research | `private-research` | 1 | 🟡 僅入口/待搬 |
-| processing | `processing` | 1 | 🟡 僅入口/待搬 |
-| Projects | `projects` | 1 | 🟡 僅入口/待搬 |
+| private research | `private-research` | 6 | ✅ 進行中 |
+| Projects | `projects` | 2 | ✅ 進行中 |
 
 ## 媒體資源檢查（`/media/...`）
 
-- Markdown 內引用到的 media 子資料夾：**6**
-- `docs/public/media` 現有子資料夾：**13**
+- Markdown 內引用到的 media 子資料夾：**20**
+- `docs/public/media` 現有子資料夾：**37**
 - 缺少子資料夾：**0**
 
 ## 倉庫頂層資料夾（排除 docs/node_modules/.git）
@@ -37,15 +34,12 @@
 - `Construction of geometric figures`
 - `ESP32 & Vibe Coding`
 - `Projects`
-- `arduinoXprocessing`
 - `assets`
 - `gamming`
 - `interactive`
 - `libraries`
-- `math&robotics`
 - `portal`
 - `private research`
-- `processing`
 - `tools`
 
 ## 下一步建議

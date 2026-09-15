@@ -107,7 +107,7 @@ class Pipe:
 
 ## 2. 加入大腦和作簡單測試
 
-從[Toy Neural Network](../toy_neural_Network/toy_Neural_Network.html)將`Matrix.py`和`nn.py`複製到這個項目中，像下圖，你的項目中應該有4個頁面。
+從[Toy Neural Network](../toy_neural_Network/toy_Neural_Network.md)將`Matrix.py`和`nn.py`複製到這個項目中，像下圖，你的項目中應該有4個頁面。
 
 <img src="%E8%9E%A2%E5%B9%95%E6%88%AA%E5%9C%96%202024-03-31%20%E4%B8%8B%E5%8D%884.29.00.png" alt="螢幕截圖 2024-03-31 下午4.29.00" style="zoom:50%;" />
 
@@ -1490,4 +1490,3 @@ def generate(oldBirds):
 1. 鳥的大腦，中間隱藏層只有4個神經源，在The Coding Train的例子中，神經網路不是我們的`NeuralNetwork(4, 4, 1)`，即4個輸入變量，4層隱藏層和1個輸出，而是`NeuralNetwork(5, 8, 2)`，他的例子有2個輸出，如果輸出1少於輸出2，則鳥就會跳，令神經網路的複雜度增加，你試試先將神經網路轉成`NeuralNetwork(4, 16, 1)`，看看鳥有沒有更聰明。之後再試著變成`NeuralNetwork(4, 8, 2)`。
 2. 在原例子中，神經網路是`NeuralNetwork(5, 8, 2)`，因為輸入的考慮因素，還有一個是`birdVec`，試著將`birdVec.y`加入變為考慮: `inputs.append( map(this.birdVec.y, -5, 5, 0, 1))`
 3. 鳥的生命沒有限制，令成功生存的鳥一直生存下去，沒有機會變下一世代，不利基因遺傳，試設定一個liftcount，鳥在經過2000個`frameCount`後就會滅亡，還入下一個世代。
-

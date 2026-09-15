@@ -20,9 +20,6 @@ pageClass: home-legacy
 </div>
 
 <div class="home-apple-sections">
-<!-- <a class="home-apple-card" href="/en/arduino-processing/" style="background-image:url('/home/circuit.jpg')">
-<div class="home-apple-card-content"><h2>Arduino × Processing</h2><p>Hardware + creative coding</p></div>
-</a> -->
 <a class="home-apple-card" href="/en/cad-cam/" style="background-image:url('/home/cad.webp')">
 <div class="home-apple-card-content"><h2>CAD &amp; CAM</h2><p>From modeling to making</p></div>
 </a>

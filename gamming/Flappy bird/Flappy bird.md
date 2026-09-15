@@ -190,7 +190,7 @@ class Pipe(object):
 
 ### 4.1 物件導向與class
 
-詳見[這裡](./物件導向與class.html)。
+詳見[這裡](./物件導向與class.md)。
 
 
 
@@ -313,7 +313,7 @@ if myPipe.collide(birdPos) == True or birdPos.y > height:
 
 之後就可以去到`draw()`的最後，加入這句，如果鳥撞到柱或者y座標大於`height`就`println("Game Over")`。
 
-##6. 測試gameover(續)
+## 6. 測試gameover(續)
 
 ```python
 birdPos = PVector()  # 鳥的位置
@@ -584,7 +584,7 @@ def setup():
 
 但如果你按下`r`鍵重設遊戲時，你會發現會有上面的bugs。原因是`myPipe`這個列表只有新增，沒有減少，也沒有清空。
 
-##8. 清空和減少水管列表
+## 8. 清空和減少水管列表
 
 ```PYTHON
 birdPos = PVector()  # 鳥的位置
