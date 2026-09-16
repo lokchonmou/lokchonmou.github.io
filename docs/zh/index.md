@@ -39,6 +39,10 @@ pageClass: home-legacy
 <a class="home-apple-card" href="/zh/private-research/" style="background-image:url('/home/research.png')">
 <div class="home-apple-card-content"><h2>探索與隨筆</h2><p>技術實驗、研究筆記與隨筆</p></div>
 </a>
+<!-- Background photo: Patrick Martin, Unsplash (Unsplash License). -->
+<a class="home-apple-card" href="/zh/interactive-lab/" style="background-image:url('/home/interactive-lab.jpg')">
+<div class="home-apple-card-content"><h2>互動模擬／展示</h2><p>教學、遊戲、模擬與實用工具</p></div>
+</a>
 </div>
 </div>
 </div>

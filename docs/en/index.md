@@ -35,6 +35,10 @@ pageClass: home-legacy
 <a class="home-apple-card" href="/en/private-research/" style="background-image:url('/home/research.png')">
 <div class="home-apple-card-content"><h2>Private Research</h2><p>Experiments and explorations</p></div>
 </a>
+<!-- Background photo: Patrick Martin, Unsplash (Unsplash License). -->
+<a class="home-apple-card" href="/en/interactive-lab/" style="background-image:url('/home/interactive-lab.jpg')">
+<div class="home-apple-card-content"><h2>Interactive Lab</h2><p>Lessons, games, simulations and tools</p></div>
+</a>
 </div>
 </div>
 </div>

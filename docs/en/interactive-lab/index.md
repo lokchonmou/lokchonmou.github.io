@@ -1,8 +1,5 @@
 # Interactive Lab
 
-> Section skeleton created. Add content gradually.
+The complete collection is currently documented in Traditional Chinese.
 
-## Next Step
-
-- Add first article: `./lesson-01.md`
-- Link it from this page
+[Open the Interactive Lab](/zh/interactive-lab/)

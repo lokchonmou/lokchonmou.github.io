@@ -6,12 +6,14 @@ from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import unquote
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = REPO_ROOT / "docs"
 ZH_DIR = DOCS_DIR / "zh"
 EN_DIR = DOCS_DIR / "en"
 PUBLIC_MEDIA_DIR = DOCS_DIR / "public" / "media"
+PUBLIC_INTERACTIVE_DIR = DOCS_DIR / "public" / "interactive"
 REPORT_PATH = DOCS_DIR / "MIGRATION-PROGRESS.md"
 
 IGNORE_TOP_DIRS = {
@@ -30,7 +32,6 @@ SECTION_MAP = {
     "CAD & CAM": "cad-cam",
     "ESP32 & Vibe Coding": "esp32-vibe-coding",
     "gamming": "game-coding",
-    "Construction of geometric figures": "geometry-construction",
     "interactive": "interactive-lab",
     "private research": "private-research",
     "Projects": "projects",
@@ -84,7 +85,7 @@ def referenced_media_dirs() -> set[str]:
     for md_file in DOCS_DIR.rglob("*.md"):
         text = md_file.read_text(encoding="utf-8", errors="ignore")
         for match in MEDIA_REF_RE.finditer(text):
-            refs.add(match.group(1))
+            refs.add(unquote(match.group(1)))
     return refs
 
 
@@ -98,12 +99,19 @@ def build_section_progress() -> list[SectionProgress]:
     counts = zh_md_counts()
     items: list[SectionProgress] = []
     for legacy_name, docs_slug in SECTION_MAP.items():
+        content_count = counts.get(docs_slug, 0)
+        if legacy_name == "interactive" and PUBLIC_INTERACTIVE_DIR.exists():
+            content_count = sum(
+                1
+                for path in PUBLIC_INTERACTIVE_DIR.iterdir()
+                if path.is_dir() and (path / "index.html").exists()
+            )
         items.append(
             SectionProgress(
                 legacy_name=legacy_name,
                 docs_slug=docs_slug,
                 legacy_exists=(REPO_ROOT / legacy_name).exists(),
-                md_count=counts.get(docs_slug, 0),
+                md_count=content_count,
             )
         )
     return items
@@ -138,12 +146,12 @@ def render_report() -> str:
     lines.append(f"- `docs/zh` Markdown：**{total_zh_md}**")
     lines.append(f"- `docs/en` Markdown：**{total_en_md}**")
     lines.append(f"- 舊站 HTML（docs 外）：**{legacy_html}**")
-    lines.append(f"- 已有內容章節（md > 1）：**{ready_sections}/{total_sections}**")
+    lines.append(f"- 已有完整內容章節：**{ready_sections}/{total_sections}**")
     lines.append("")
 
     lines.append("## 章節對照（舊 -> 新）")
     lines.append("")
-    lines.append("| 舊資料夾 | 新路徑 slug | 新站 md 數量 | 狀態 |")
+    lines.append("| 舊資料夾 | 新路徑 slug | 新站內容數 | 狀態 |")
     lines.append("|---|---|---:|---|")
     for item in section_items:
         status = "✅ 進行中" if item.md_count > 1 else "🟡 僅入口/待搬"
