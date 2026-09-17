@@ -1,0 +1,22 @@
+# ESP32 & Vibe Coding
+
+由 AI 協作編程的方法開始，逐步學習 ESP32、Wi-Fi、API、IoT 資料與 Web Dashboard。
+
+## 1. Vibe Coding 與運算思維
+
+1. [Vibe Coding：AI 輔助編程速成](./Vibe%20Coding%EF%BC%9AAI%20%E8%BC%94%E5%8A%A9%E7%B7%A8%E7%A8%8B%E9%80%9F%E6%88%90.md)
+   - [練習參考答案](./Vibe%20Coding%EF%BC%9AAI%20%E8%BC%94%E5%8A%A9%E7%B7%A8%E7%A8%8B%E9%80%9F%E6%88%90_ans.md)
+2. [Computational Thinking × Vibe Coding](./Computational%20Thinking%20%C3%97%20Vibe%20Coding.md)
+
+## 2. ESP32 與網絡基礎
+
+1. [ESP32 getting started](./ESP32%20getting%20started.md)
+2. [時間從哪裡來？——ESP32 × NTP × Wi-Fi 對時實驗](./%F0%9F%95%92%20%E6%99%82%E9%96%93%E5%BE%9E%E5%93%AA%E8%A3%A1%E4%BE%86%EF%BC%9F%E2%80%94%E2%80%94ESP32%20%C3%97%20NTP%20%C3%97%20Wi-Fi%20%E5%B0%8D%E6%99%82%E5%AF%A6%E9%A9%97.md)
+   - [延伸閱讀：人類計時技術的偉大征途](./%E4%BA%BA%E9%A1%9E%E8%A8%88%E6%99%82%E6%8A%80%E8%A1%93%E7%9A%84%E5%81%89%E5%A4%A7%E5%BE%81%E9%80%94%EF%BC%9A%E5%BE%9E%E7%B2%BE%E5%B7%A5%E6%A9%9F%E6%A2%B0%E8%A8%88%E6%99%82%E5%88%B0%E5%85%89%E6%99%B6%E6%A0%BC%E9%87%8F%E5%AD%90%E6%A5%B5%E9%99%90.md)
+3. [API 與 JSON——從「問時間」到「問世界」](./%F0%9F%93%A1%20API%20%E8%88%87%20JSON%20%E2%80%94%E2%80%94%20%E5%BE%9E%E3%80%8C%E5%95%8F%E6%99%82%E9%96%93%E3%80%8D%E5%88%B0%E3%80%8C%E5%95%8F%E4%B8%96%E7%95%8C%E3%80%8D.md)
+
+## 3. IoT 資料與 Web 應用
+
+1. [從 API 到 IoT 資料，讓 ESP32「自己上載資料」](./%E5%BE%9E%20API%20%E5%88%B0%20IoT%20%E8%B3%87%E6%96%99%EF%BC%8C%E8%AE%93%20ESP32%E3%80%8C%E8%87%AA%E5%B7%B1%E4%B8%8A%E8%BC%89%E8%B3%87%E6%96%99%E3%80%8D.md)
+2. [建立你的 Web Dashboard——HTML / CSS / JavaScript 基礎](./%E5%BB%BA%E7%AB%8B%E4%BD%A0%E7%9A%84%20Web%20Dashboard%20%E2%80%94%E2%80%94%20HTML%20%20CSS%20%20JavaScript%20%E5%9F%BA%E7%A4%8E.md)
+3. [ESP32 進階應用：無線通訊 × Web 控制 RGB](./ESP32%20%E9%80%B2%E9%9A%8E%E6%87%89%E7%94%A8%EF%BC%9A%E7%84%A1%E7%B7%9A%E9%80%9A%E8%A8%8A%20%C3%97%20Web%20%E6%8E%A7%E5%88%B6%20RGB%EF%BC%88ESP-NOW%20%C3%97%20Web%20Server%EF%BC%89.md)

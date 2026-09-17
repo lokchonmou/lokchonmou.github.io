@@ -1,0 +1,31 @@
+from spot import *
+
+grids = []
+
+def setup():
+    global grids
+    size(600,600)
+
+    grids = []
+
+    for x in range(20):
+        tempGrids = []
+        for y in range(20):
+            tempGrids.append(Spot(x, y, width/20, height/20))
+        grids.append(tempGrids)
+    
+    for x in range(20):
+        for y in range(20):
+            grids[x][y].addNeighbors(grids)
+    
+def draw():
+    background(50)
+    for x in range(20):
+        for y in range(20):
+            grids[x][y].show('#29A9FC')
+    
+
+    grids[10][10].neighbors[0].show('#FF0000')
+    grids[10][10].neighbors[1].show('#00FF00')
+    grids[10][10].neighbors[2].show('#0000FF')
+    grids[10][10].neighbors[3].show('#FFFF00')

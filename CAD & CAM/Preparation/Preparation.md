@@ -1,6 +1,5 @@
-#Preparation
+# Preparation
 
-[TOC]
 
 ## Fusion360簡介
 
@@ -14,7 +13,7 @@
 - Fusion360受到廣大maker所喜愛，並整合了Autodesk其下的pcb編程軟件Eagle的功能
 - Inventor比較適合機械工程的深度用家，而Fusion360除了比較適合初學者外，也因為整合了pcb功能，變得十分適合機電整合的項目製作
 
-##注冊教育版
+## 注冊教育版
 
 - 自從Fusion360的個人版限制增多後，申請教育版變得十分重要
 - 鼓勵同學申請教育版，不浪費教學資源

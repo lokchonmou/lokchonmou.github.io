@@ -4,7 +4,7 @@
 
 [toc]
 
-##0. 初始化
+## 0. 初始化
 
 `planetSimulator.pyde`
 

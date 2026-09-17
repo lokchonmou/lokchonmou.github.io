@@ -6,7 +6,7 @@ Wavefront 演算法是BFS(廣度優先搜索)演算法的其中一種，常見�
 
 [toc]
 
-##1. 準備網格2D地圖
+## 1. 準備網格2D地圖
 
 ```python
 # A demo about wavefront algorithm
@@ -58,7 +58,7 @@ for i in range(cols):
 spots = [[Spot(i, j) for i in range(cols)] for j in range(rows)]
 ```
 
-##2. 為每個格加入鄰居和加入牆
+## 2. 為每個格加入鄰居和加入牆
 
 
 ```python
@@ -167,7 +167,7 @@ class Spot:
 
 加入兩個函數，隨機抽出`0`至`1`之間的任意值，如果是少於`0.25`的話，就將`self.wall`設定成`True`，否則就是`False`。
 
-之後就將為每一個spot加入鄰居，如果鄰居不是牆，而且又不是邊緣的話，就將旁邊的spot加入做鄰居。這裡的做法跟第7章十分相似，如果忘記的同學可以參考第7章的[7. Snake](../7/content_7.html#73-為每個格加上鄰居)。
+之後就將為每一個spot加入鄰居，如果鄰居不是牆，而且又不是邊緣的話，就將旁邊的spot加入做鄰居。這裡的做法跟第7章十分相似，如果忘記的同學可以參考第7章的[Snake](../Snake/Snake.md#73-為每個格加上鄰居)。
 
 ```python
 def show(self, _color):
@@ -214,7 +214,7 @@ def draw():
 
 最後獨立將start和end顯示成不同顏色。
 
-##3. 為每個格打上分數
+## 3. 為每個格打上分數
 
 ```python
 # A demo about wavefront algorithm
@@ -404,7 +404,7 @@ def draw():
 
 最後，在`draw()`的最上方，加入如果`queue`候選列長度為零(即已將所有鄰居都找查完，就設成`noLoop()`和`return`。
 
-##4. 找出路徑
+## 4. 找出路徑
 
 ```python
 # A demo about wavefront algorithm
@@ -553,7 +553,7 @@ class Spot:
 
 所以我們首先將`neighbor`和`current`加入`path`中，之後再找出鄰居的鄰居，如果是累減的分數，就將其加入`path`，再將這個鄰居變成`current`。
 
-##考考你: 將效果美化一下
+## 考考你: 將效果美化一下
 
 
 

@@ -8,7 +8,7 @@
 
 <img src="backtracking 1.gif" alt="backtracking 1" style="zoom:67%;" />
 
-##1. 準備好格
+## 1. 準備好格
 
 ```python
 # A demo of backtracking maze generator
@@ -56,7 +56,7 @@ class Spot(object):
 
 跟以往一樣，我們首先準備好格的class。今次比較特別的是，我們會準備n+1格，20x20的話就會是21x21格，因為要為迷宮準備好四面牆。
 
-##2. 加入cell class
+## 2. 加入cell class
 
 ```python
 # A demo of backtracking maze generator
@@ -214,7 +214,7 @@ def setup():
 
 接著返回主程式，在`setup()`中，新增`cols/2`和`row/2`個cell(因為每4個spot為一個cell，所以只要一半就可以了)，接著跟之前一樣幫這此cell加係鄰居。
 
-##3. 加入左邊界和右邊界
+## 3. 加入左邊界和右邊界
 
 ```python
 # A demo of backtracking maze generator
@@ -373,7 +373,7 @@ def draw():
 
 此外，在cell class中，在加係spot的同時，除了右下角的Spot被標記為牆以外，右上角和左下角的Spot也被標記為牆。因backtracking演算法是將走過的地方的牆拆除，而不是建牆的。
 
-##4. Backtracking
+## 4. Backtracking
 
 ```python
 # A demo of backtracking maze generator
@@ -626,4 +626,4 @@ def removeWall(a, b):
 
 為程式加入上一章的AStar找尋路徑的演算法，做到跟我下面的程式一樣，先生成地圖再找路徑
 
-<iframe src="\interactive\mazeGenerator\index.html" weight="100%" height = "650"></iframe>
+<iframe src="/interactive/mazeGenerator/index.html" width="100%" height="650"></iframe>

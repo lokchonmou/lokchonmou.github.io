@@ -55,7 +55,7 @@ def show():
 
 <img src="ball1.gif" alt="ball1" style="zoom:70%;" />
 
-##2. 用`for`製作多粒波子
+## 2. 用`for`製作多粒波子
 
 那如果要做20粒的話, 你會怎樣做？之前有教過一個方法，是用List去做，方法如下：
 

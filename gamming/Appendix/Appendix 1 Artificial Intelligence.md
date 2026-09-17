@@ -1,4 +1,4 @@
-#Appendix 1 Artificial Intelligence
+# Appendix 1 Artificial Intelligence
 
 
 [TOC]
@@ -27,7 +27,7 @@
 
 ## 1.3 How Neural Network work?
 
-###A Neural Network Playground
+### A Neural Network Playground
 
 https://playground.tensorflow.org/
 
@@ -35,9 +35,8 @@ https://playground.tensorflow.org/
 
 https://teachablemachine.withgoogle.com/
 
-##1.4 Neuro Evolution of Augmenting Topologies (NEAT)
+## 1.4 Neuro Evolution of Augmenting Topologies (NEAT)
 
 <iframe  height="315" src="https://www.youtube.com/embed/qv6UVOQ0F44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe height="315" src="https://www.youtube.com/embed/WSW-5m8lRMs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-

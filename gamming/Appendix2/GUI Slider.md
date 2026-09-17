@@ -6,7 +6,7 @@
 
 [toc]
 
-##1. 不使用class
+## 1. 不使用class
 
 ```python
 #create a silder demo using processing.py

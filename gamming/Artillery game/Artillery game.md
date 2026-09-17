@@ -265,7 +265,7 @@ def keyPressed():
 <div style="text-align: center;"><img src="https://processing.org/133e7f3a323ec67b6f3fe3f7393ba7a9/degrees.svg" alt="img" style="width:50%;">
 <br  style="text-align: center;">processing的旋轉角度跟數學不同，是順時針而非逆時針的</br>
 </div>
-##5. 嘗試直線發炮
+## 5. 嘗試直線發炮
 
 ```python
 player1Height = 0
@@ -639,7 +639,7 @@ windAccel = PVector()
 
 
 
-```pyhton
+```python
 windAccel = PVector(random(-0.01, 0.01), 0)
 ```
 

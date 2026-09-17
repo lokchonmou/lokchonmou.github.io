@@ -1,4 +1,4 @@
-#Connect 4
+# Connect 4
 
 > 屏風式四子棋（Connect Four），簡稱四子棋，是Howard Wexler在1974年推出的連棋類遊戲。
 
@@ -10,7 +10,7 @@
 
 1. 怎樣用演算法去製這一個會捉棋的AI。
 
-##1. 建立`spot` class, `gameBoard` class和遊戲畫面
+## 1. 建立`spot` class, `gameBoard` class和遊戲畫面
 
 `connectFour.pyde`:
 
@@ -316,7 +316,7 @@ def swapPlayer(self):
 
 
 
-最後記得在最上面的`__init()__`中，加入`self.currentPlayer = 'R'`紅子先下棋。原本我的設計中，是有動畫做落子動作，模擬現實情況棋子會一步一步落下的，但為簡潔起見，這次的遊戲重點並不在此，就不做這個功能了，如果你有與趣做到一步一步落棋的效果，可以參考上一章[tetris遊戲](../8/content_8.html)。
+最後記得在最上面的`__init()__`中，加入`self.currentPlayer = 'R'`紅子先下棋。原本我的設計中，是有動畫做落子動作，模擬現實情況棋子會一步一步落下的，但為簡潔起見，這次的遊戲重點並不在此，就不做這個功能了，如果你有與趣做到一步一步落棋的效果，可以參考上一章[Tetris 遊戲](../Tetris/Tetris.md)。
 
 ## 4. 檢查是否勝出
 

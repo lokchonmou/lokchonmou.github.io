@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兩點距離介紹工具 (p5.js)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 p5.js 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        /* 確保Canvas響應式並居中 */
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 1rem;
+            min-height: 600px;
+            transition: all 0.3s ease-in-out;
+        }
+        canvas {
+            border: 1px solid #e0e0e0;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            user-select: none;
+            cursor: grab;
+        }
+
+        /* Maximize Mode 樣式 */
+        body.maximized-mode {
+            overflow: hidden; /* 防止頁面滾動 */
+            background-color: #f9fafb;
+        }
+
+        /* 隱藏非 Canvas 元素 */
+        body.maximized-mode .app-ui-wrapper > *:not(#p5_canvas_container) {
+            display: none !important;
+        }
+        
+        /* 讓 Canvas Container 填滿視窗 */
+        body.maximized-mode .canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            padding: 2rem;
+            margin: 0;
+            z-index: 1000;
+        }
+
+        /* 保持最大化按鈕可見 */
+        #toggleMaximize {
+            display: block !important;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1001;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans p-4 md:p-8">
+
+    <div id="toggleMaximize" class="maximized-ui bg-white hover:bg-indigo-100 text-indigo-700 font-bold py-2 px-4 rounded-lg shadow cursor-pointer">
+        最大化 (Maximize)
+    </div>
+
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-2xl app-ui-wrapper">
+        <h1 class="text-3xl font-bold text-center text-indigo-700 mb-6 border-b pb-2">
+            平面坐標兩點距離互動教學 (p5.js)
+        </h1>
+
+        <!-- 控制面板 -->
+        <div class="flex flex-wrap justify-center gap-4 mb-6 p-4 bg-indigo-50 rounded-lg shadow-inner">
+            <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="toggleGrid" checked
+                       class="toggle-checkbox h-5 w-5 rounded-md border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                <span class="text-gray-700 font-medium">顯示網格</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="togglePointer" checked
+                       class="toggle-checkbox h-5 w-5 rounded-md border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                <span class="text-gray-700 font-medium">顯示座標虛線 (Pointer)</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="toggleTriangle" checked
+                       class="toggle-checkbox h-5 w-5 rounded-md border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                <span class="text-gray-700 font-medium">顯示距離三角形 (Δx/Δy)</span>
+            </label>
+        </div>
+
+        <!-- 座標顯示面板 -->
+        <div id="coordDisplay" class="text-center mb-6 p-4 bg-gray-100 rounded-lg font-mono">
+            <p id="pointA_coords" class="text-xl font-semibold text-red-600">A 點座標: (3, 5)</p>
+            <p id="pointB_coords" class="text-xl font-semibold text-blue-600">B 點座標: (-4, -2)</p>
+            <p id="distance" class="text-2xl font-bold text-green-700 mt-2">距離 D ≈ 9.90 (Δx = 7, Δy = 7)</p>
+            <p class="text-xs text-gray-500 mt-2">提示: 使用滑鼠滾輪縮放，或在未選中點時拖動畫布平移。</p>
+        </div>
+        
+        <!-- Canvas 繪圖區域 -->
+        <div class="canvas-container" id="p5_canvas_container">
+            <!-- p5.js 將在此處創建 canvas -->
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        // 核心參數
+        const INITIAL_CANVAS_SIZE = 600;
+        const GRID_SIZE = 30; // 每個單位格的像素大小 (Base scale)
+        const MAX_GRID_EXTENT = 12; // 網格顯示的最大範圍（坐標單位）
+        const POINT_RADIUS = 5;
+
+        // 點的狀態 (使用 p5.Vector 方便操作)
+        let pointA; 
+        let pointB; 
+        
+        // 視圖狀態 (Panning and Zooming)
+        let panX = 0; // 畫布X方向平移量 (in p5 pixels)
+        let panY = 0; // 畫布Y方向平移量 (in p5 pixels)
+        let zoomLevel = 1.0; // 縮放級別
+        const MIN_ZOOM = 0.5;
+        const MAX_ZOOM = 3.0;
+        const ZOOM_SENSITIVITY = 0.1;
+
+        // UI 狀態
+        let isGridVisible = true;
+        let isPointerVisible = true;
+        let isTriangleVisible = true;
+        let isMaximized = false;
+        
+        // 拖動狀態
+        let isDragging = null; // null, 'A', 'B' (拖動點)
+        let isPanning = false; // 是否正在平移畫布
+        let lastMouseX, lastMouseY; // 用於平移計算
+        let canvasContainer;
+
+        // DOM 元素 (用於更新顯示)
+        let coordA_el;
+        let coordB_el;
+        let distance_el;
+        let maximizeButton;
+
+        // --- p5.js 核心代碼 ---
+
+        // p5.js 腳本
+        const sketch = (p) => {
+            // 在 setup() 之前先初始化 DOM 元素和點
+            p.preload = () => {
+                coordA_el = document.getElementById('pointA_coords');
+                coordB_el = document.getElementById('pointB_coords');
+                distance_el = document.getElementById('distance');
+                canvasContainer = document.getElementById('p5_canvas_container');
+                maximizeButton = document.getElementById('toggleMaximize');
+
+                // 初始化點的坐標
+                pointA = p.createVector(3, 5);
+                pointB = p.createVector(-4, -2);
+            };
+
+            p.setup = () => {
+                const canvas = p.createCanvas(INITIAL_CANVAS_SIZE, INITIAL_CANVAS_SIZE);
+                canvas.parent(canvasContainer); // 將 Canvas 放入指定的 div
+                
+                // 設置事件監聽器 
+                document.getElementById('toggleGrid').addEventListener('change', (e) => {
+                    isGridVisible = e.target.checked;
+                });
+                document.getElementById('togglePointer').addEventListener('change', (e) => {
+                    isPointerVisible = e.target.checked;
+                });
+                document.getElementById('toggleTriangle').addEventListener('change', (e) => {
+                    isTriangleVisible = e.target.checked;
+                });
+                maximizeButton.addEventListener('click', () => toggleMaximize(p));
+            };
+
+            p.draw = () => {
+                p.background(255);
+                p.strokeJoin(p.ROUND);
+
+                // --- 坐標系變換 (從左上角原點變成中心原點，Y軸向上) ---
+                p.push();
+                
+                // 1. 平移到中心 + Panning 偏移
+                p.translate(p.width / 2 + panX, p.height / 2 + panY);
+                
+                // 2. 縮放
+                p.scale(zoomLevel);
+                
+                // 3. 翻轉 Y 軸 (關鍵步驟：將 p5.js Y軸向下為正，轉換為笛卡爾坐標系 Y軸向上為正)
+                p.scale(1, -1);
+                
+                // 4. 繪圖
+                drawGrid(p);
+                drawAxes(p);
+                drawDistanceElements(p);
+                drawPoint(p, pointA, 'A', '#DC2626');
+                drawPoint(p, pointB, 'B', '#2563EB');
+                
+                p.pop();
+                // --- 結束變換 ---
+                
+                // 更新顯示
+                updateDisplay();
+            };
+
+            // --- 繪圖輔助函數 (使用 p5 函式) ---
+
+            function drawGrid(p) {
+                if (!isGridVisible) return;
+
+                p.stroke('#D1D5DB'); // 稍深的淺灰線，增強視覺對比
+                p.strokeWeight(1 / zoomLevel); // 縮放線寬
+                p.drawingContext.setLineDash([]); // 實線
+
+                const effectiveScale = GRID_SIZE; 
+                
+                // 繪製垂直線和水平線 (在變換後的坐標系中，它們是垂直和水平的)
+                // 使用 p.width / zoomLevel 確保線條延伸至畫布邊緣，無視平移
+                const halfWidthInWorld = (p.width / 2) / zoomLevel;
+                const halfHeightInWorld = (p.height / 2) / zoomLevel;
+                
+                for (let i = -MAX_GRID_EXTENT; i <= MAX_GRID_EXTENT; i++) {
+                    // 垂直線
+                    p.line(i * effectiveScale, -halfHeightInWorld, i * effectiveScale, halfHeightInWorld);
+                    // 水平線
+                    p.line(-halfWidthInWorld, i * effectiveScale, halfWidthInWorld, i * effectiveScale);
+                }
+            }
+
+            function drawAxes(p) {
+                p.stroke('#6B7280'); // 深灰
+                p.strokeWeight(2 / zoomLevel);
+                p.drawingContext.setLineDash([]); // 實線
+
+                const effectiveScale = GRID_SIZE;
+                const halfWidthInWorld = (p.width / 2) / zoomLevel;
+                const halfHeightInWorld = (p.height / 2) / zoomLevel;
+
+                // X 軸 (y=0)
+                p.line(-halfWidthInWorld, 0, halfWidthInWorld, 0);
+                // Y 軸 (x=0)
+                p.line(0, -halfHeightInWorld, 0, halfHeightInWorld);
+
+                // 刻度線 (Ticks) - 在翻轉後的笛卡爾空間繪製
+                p.stroke('#6B7280');
+                p.strokeWeight(1 / zoomLevel);
+                for (let i = -MAX_GRID_EXTENT; i <= MAX_GRID_EXTENT; i++) {
+                    if (i === 0) continue;
+                    
+                    const pX = i * effectiveScale;
+                    const pY = i * effectiveScale;
+
+                    // X 軸刻度線
+                    p.line(pX, 5 / zoomLevel, pX, -5 / zoomLevel);
+
+                    // Y 軸刻度線
+                    p.line(-5 / zoomLevel, pY, 5 / zoomLevel, pY);
+                }
+
+                // 刻度及標籤
+                p.fill('#1F2937');
+                p.noStroke();
+                // 根據縮放調整字體大小
+                p.textSize(Math.max(10, 12 / Math.sqrt(zoomLevel))); 
+                p.textAlign(p.CENTER, p.CENTER);
+                
+                // 翻轉 Y 軸前的文字修正 (讓文字正向顯示)
+                p.push();
+                // 再次翻轉 Y 軸，抵消主翻轉，讓文字處於正常方向
+                p.scale(1, -1); 
+
+                // 繪製所有文字標籤
+                for (let i = -MAX_GRID_EXTENT; i <= MAX_GRID_EXTENT; i++) {
+                    if (i === 0) continue;
+                    
+                    const pX = i * effectiveScale;
+                    const pY = i * effectiveScale; // 數學坐標 Y 的像素值
+
+                    // X 軸標籤: 在文字空間中，Y軸位置仍然是向下為正
+                    p.text(i, pX, 15 / zoomLevel);
+
+                    // Y 軸標籤: 
+                    // 必須使用 -pY 來繪製，因為 pY 在翻轉前是正數(代表向上)，但在文字空間(未翻轉)中必須是負數(代表向上)
+                    p.text(i, -15 / zoomLevel, -pY); 
+                }
+
+                // 原點
+                p.text('0', 10 / zoomLevel, -10 / zoomLevel);
+                
+                // 箭頭和標籤 (X, Y)
+                p.textSize(16 / Math.sqrt(zoomLevel));
+                p.text('X', halfWidthInWorld - 15 / zoomLevel, -20 / zoomLevel);
+                p.text('Y', -20 / zoomLevel, -halfHeightInWorld + 15 / zoomLevel);
+                
+                p.pop();
+            }
+
+            function drawPoint(p, point, label, color) {
+                const pX = point.x * GRID_SIZE;
+                const pY = point.y * GRID_SIZE;
+                const radius = POINT_RADIUS / zoomLevel;
+
+                // 繪製虛線 (Pointer)
+                if (isPointerVisible) {
+                    p.stroke(color);
+                    p.strokeWeight(1 / zoomLevel);
+                    p.drawingContext.setLineDash([5 / zoomLevel, 5 / zoomLevel]); 
+                    
+                    // X 軸投影線 (垂直，到 y=0)
+                    p.line(pX, pY, pX, 0); 
+                    // Y 軸投影線 (水平，到 x=0)
+                    p.line(pX, pY, 0, pY); 
+                }
+                p.drawingContext.setLineDash([]); // 恢復實線
+
+                // 繪製點本身
+                p.stroke('#1F2937');
+                p.strokeWeight(2 / zoomLevel);
+                p.fill(color);
+                p.ellipse(pX, pY, radius * 2);
+
+                // 點標籤 (需要再次翻轉文字，使其正向顯示)
+                p.fill('#1F2937');
+                p.noStroke();
+                p.textSize(14 / Math.sqrt(zoomLevel));
+                p.push();
+                p.scale(1, -1); // 翻轉回正常文字方向
+                p.text(label, pX, -pY - 8 / zoomLevel - radius);
+                p.pop();
+            }
+
+            function drawDistanceElements(p) {
+                const pAX = pointA.x * GRID_SIZE;
+                const pAY = pointA.y * GRID_SIZE;
+                const pBX = pointB.x * GRID_SIZE;
+                const pBY = pointB.y * GRID_SIZE;
+
+                // 距離線 (斜邊)
+                p.stroke('#059669'); // Green
+                p.strokeWeight(3 / zoomLevel);
+                p.line(pAX, pAY, pBX, pBY);
+                
+                // 繪製距離三角形 (Delta X, Delta Y)
+                if (isTriangleVisible) {
+                    // 輔助點 C (x_B, y_A)
+                    const pCX = pBX; 
+                    const pCY = pAY; 
+                    
+                    p.strokeWeight(2 / zoomLevel);
+                    
+                    // Delta X (水平線)
+                    p.stroke('#DC2626'); // Red for X-diff
+                    p.line(pAX, pAY, pCX, pCY);
+
+                    // Delta Y (垂直線)
+                    p.stroke('#2563EB'); // Blue for Y-diff
+                    p.line(pBX, pBY, pCX, pCY);
+                    
+                    // 標註直角 (簡化為一個小方塊)
+                    p.fill('rgba(0,0,0,0.1)');
+                    p.noStroke();
+                    const rectSize = 10 / zoomLevel;
+                    p.rect(pCX - rectSize * Math.sign(pointA.x - pointB.x), pCY - rectSize * Math.sign(pointA.y - pointB.y), rectSize * Math.sign(pointA.x - pointB.x), rectSize * Math.sign(pointA.y - pointB.y));
+                }
+            }
+
+            function updateDisplay() {
+                const dx = p.abs(pointB.x - pointA.x);
+                const dy = p.abs(pointB.y - pointA.y);
+                const distance = p.sqrt(dx * dx + dy * dy);
+
+                coordA_el.textContent = `A 點座標: (${pointA.x}, ${pointA.y})`;
+                coordB_el.textContent = `B 點座標: (${pointB.x}, ${pointB.y})`;
+                distance_el.textContent = `距離 D ≈ ${distance.toFixed(2)} (Δx = ${dx}, Δy = ${dy})`;
+            }
+
+            // --- 互動邏輯 (利用 p5 內建的滑鼠變數和事件) ---
+
+            /**
+             * 將 p5 像素坐標 (基於左上角) 轉換為數學坐標 (x, y)
+             * @param {number} px 
+             * @param {number} py 
+             * @returns {{x: number, y: number}}
+             */
+            function screenToWorld(px, py) {
+                const x = (px - p.width / 2 - panX) / (GRID_SIZE * zoomLevel);
+                // 關鍵轉換：將電腦螢幕Y軸(正值向下)轉為笛卡爾Y軸(正值向上)
+                const y = (p.height / 2 + panY - py) / (GRID_SIZE * zoomLevel); 
+                return { x, y };
+            }
+
+            /**
+             * 檢查點是否在點擊範圍內
+             * @returns {'A' | 'B' | null}
+             */
+            function hitTest(px, py) {
+                // p5 坐標到數學坐標
+                const { x, y } = screenToWorld(px, py);
+                
+                // 容差範圍隨縮放級別調整
+                const threshold = POINT_RADIUS / (GRID_SIZE * zoomLevel); 
+
+                if (p.dist(x, y, pointA.x, pointA.y) < threshold) {
+                    return 'A';
+                }
+                if (p.dist(x, y, pointB.x, pointB.y) < threshold) {
+                    return 'B';
+                }
+                return null;
+            }
+
+            p.mousePressed = () => {
+                // 只有滑鼠在畫布內時才執行拖動/平移邏輯
+                if (p.mouseX < 0 || p.mouseX > p.width || p.mouseY < 0 || p.mouseY > p.height) {
+                    return true;
+                }
+
+                isDragging = hitTest(p.mouseX, p.mouseY);
+                
+                if (isDragging) {
+                    p.cursor('grabbing');
+                } else {
+                    isPanning = true;
+                    lastMouseX = p.mouseX;
+                    lastMouseY = p.mouseY;
+                    p.cursor('move');
+                }
+                return false; // 防止瀏覽器默認行為
+            };
+
+            p.mouseDragged = () => {
+                if (isDragging) {
+                    // 拖動點的邏輯
+                    let { x, y } = screenToWorld(p.mouseX, p.mouseY);
+
+                    // 應用吸附到網格 (Snap-to-Grid)
+                    x = p.round(x);
+                    y = p.round(y);
+                    
+                    // 限制坐標在網格範圍內
+                    x = p.max(-MAX_GRID_EXTENT, p.min(MAX_GRID_EXTENT, x));
+                    y = p.max(-MAX_GRID_EXTENT, p.min(MAX_GRID_EXTENT, y));
+
+                    if (isDragging === 'A') {
+                        if (pointA.x !== x || pointA.y !== y) {
+                            pointA.set(x, y);
+                        }
+                    } else if (isDragging === 'B') {
+                        if (pointB.x !== x || pointB.y !== y) {
+                            pointB.set(x, y);
+                        }
+                    }
+                } else if (isPanning) {
+                    // 平移畫布的邏輯
+                    panX += p.mouseX - lastMouseX;
+                    panY += p.mouseY - lastMouseY;
+
+                    lastMouseX = p.mouseX;
+                    lastMouseY = p.mouseY;
+                }
+                return false;
+            };
+
+            p.mouseReleased = () => {
+                isDragging = null;
+                isPanning = false;
+                p.cursor('grab');
+            };
+
+            p.mouseWheel = (event) => {
+                // 只有滑鼠在畫布範圍內時，才處理縮放事件
+                if (p.mouseX < 0 || p.mouseX > p.width || p.mouseY < 0 || p.mouseY > p.height) {
+                    return true; // 允許瀏覽器處理滾動 (例如滾動頁面)
+                }
+
+                const delta = event.delta * -0.01;
+
+                const newZoom = zoomLevel + delta * ZOOM_SENSITIVITY;
+
+                // 限制縮放級別
+                const clampedZoom = p.max(MIN_ZOOM, p.min(MAX_ZOOM, newZoom));
+                
+                // 為了實現 "Zoom to Mouse" 效果，我們需要計算縮放中心
+                if (clampedZoom !== zoomLevel) {
+                    const mouseX_world = (p.mouseX - p.width / 2 - panX) / zoomLevel;
+                    const mouseY_world = (p.mouseY - p.height / 2 - panY) / zoomLevel;
+                    
+                    zoomLevel = clampedZoom;
+
+                    // 重新計算平移量，以保持滑鼠下的點在縮放後不移動
+                    panX = p.mouseX - p.width / 2 - mouseX_world * zoomLevel;
+                    panY = p.mouseY - p.height / 2 - mouseY_world * zoomLevel;
+                }
+                
+                return false; // 阻止瀏覽器默認行為 (滾動頁面)
+            };
+
+            /**
+             * 處理最大化/還原邏輯
+             * @param {p5} p 
+             */
+            function toggleMaximize(p) {
+                isMaximized = !isMaximized;
+                const body = document.body;
+                
+                if (isMaximized) {
+                    body.classList.add('maximized-mode');
+                    maximizeButton.textContent = '還原 (Restore)';
+                    
+                    // 根據視窗大小計算新的 Canvas 尺寸 (減去 padding)
+                    const newSize = Math.min(window.innerWidth - 64, window.innerHeight - 64);
+                    p.resizeCanvas(newSize, newSize);
+                } else {
+                    body.classList.remove('maximized-mode');
+                    maximizeButton.textContent = '最大化 (Maximize)';
+                    
+                    // 恢復原始尺寸
+                    p.resizeCanvas(INITIAL_CANVAS_SIZE, INITIAL_CANVAS_SIZE);
+                }
+                
+                // 無論最大化還是還原，都重置平移以確保畫布位於中心
+                panX = 0;
+                panY = 0;
+            }
+        };
+
+        // 啟動 p5.js 實例
+        new p5(sketch);
+    </script>
+</body>
+</html>

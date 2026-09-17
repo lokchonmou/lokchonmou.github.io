@@ -1,0 +1,57 @@
+# 搬運進度報告（自動產生）
+
+> 產生時間：2026-09-16 17:14:56 +0800
+
+## 總覽
+
+- `docs/` Markdown 總數：**91**
+- `docs/zh` Markdown：**77**
+- `docs/en` Markdown：**7**
+- 舊站 HTML（docs 外）：**103**
+- 已有完整內容章節：**6/6**
+
+## 章節對照（舊 -> 新）
+
+| 舊資料夾 | 新路徑 slug | 新站內容數 | 狀態 |
+|---|---|---:|---|
+| CAD & CAM | `cad-cam` | 31 | ✅ 進行中 |
+| ESP32 & Vibe Coding | `esp32-vibe-coding` | 11 | ✅ 進行中 |
+| gamming | `game-coding` | 23 | ✅ 進行中 |
+| interactive | `interactive-lab` | 20 | ✅ 進行中 |
+| private research | `private-research` | 6 | ✅ 進行中 |
+| Projects | `projects` | 4 | ✅ 進行中 |
+
+## 媒體資源檢查（`/media/...`）
+
+- Markdown 內引用到的 media 子資料夾：**27**
+- `docs/public/media` 現有子資料夾：**46**
+- 缺少子資料夾：**0**
+
+## 倉庫頂層資料夾（排除 docs/node_modules/.git）
+
+- `CAD & CAM`
+- `Construction of geometric figures`
+- `ESP32 & Vibe Coding`
+- `Projects`
+- `arduinoXprocessing`
+- `assets`
+- `gamming`
+- `interactive`
+- `libraries`
+- `math&robotics`
+- `portal`
+- `private research`
+- `processing`
+- `scripts`
+- `tools`
+
+## 下一步建議
+
+1. 優先把非 `cad-cam` 章節由入口頁擴充為完整內容。
+2. 每次搬運後執行一次本腳本，更新本報告。
+3. 抽樣檢查圖片、PDF、影片連結是否正常。
+4. 確認新站內容齊全後，分批刪除舊站根目錄資料夾。
+
+---
+
+_此檔由 `tools/migration_progress.py` 產生，請勿手動長篇改寫。_

@@ -1,0 +1,37 @@
+class Rock(object):
+
+    def __init__(self, _level):
+        self.pos =  PVector(random(0, width), random(0, height))
+        self.vec =  PVector.random2D()
+        self.level = _level
+        self.angle = random(0, TWO_PI)
+
+    def update(self):
+        self.pos = PVector.add(self.pos, self.vec)
+        if (self.pos.x > width):
+            self.pos.x = 0
+        if (self.pos.x < 0):
+            self.pos.x = width
+        if (self.pos.y > height):
+            self.pos.y = 0
+        if (self.pos.y < 0):
+            self.pos.y = height   
+        self.angle += 0.01
+
+    def show(self):
+        scale = pow(3, self.level)
+        fill('#CBD3FF')
+        pushMatrix()
+        translate(self.pos.x, self.pos.y)
+        rotate(self.angle)
+        beginShape()
+        vertex(-2  *scale,  scale *  -1)
+        vertex(-.5 *scale,  scale *   0)
+        vertex(-2  *scale,  scale *   1)
+        vertex(-1  *scale,  scale *   2)
+        vertex(1   *scale,  scale *   2)
+        vertex(2   *scale,  scale *   0)
+        vertex(1   *scale,  scale *  -2)
+        vertex(-1  *scale,  scale *  -2)
+        endShape()
+        popMatrix()
